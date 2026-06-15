@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kindario">
-  <rect width="64" height="64" rx="16" fill="#12362b"/>
-  <path d="M16 44V16h8v11.6L36.5 16H47L33.8 29.1 48 44H37.4L27.8 33.3 24 37v7h-8Z" fill="#f7f0df"/>
-  <circle cx="47" cy="17" r="5" fill="#dff56f"/>
+  <rect width="64" height="64" rx="18" fill="#0c3327"/>
+  <circle cx="32" cy="32" r="20" fill="#ddff55"/>
+  <path d="M24 18h8v13l10-13h9L39 33l13 13H41L32 36v10h-8V18z" fill="#0c3327"/>
 </svg>
