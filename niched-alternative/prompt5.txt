@@ -1,0 +1,419 @@
+@product-design
+
+# Purpose
+
+Prepare the planning files and Goal prompts for a future static front page implementation.
+
+Do not build the front page in this prompt.
+
+All generated project files, prompts, site copy, comments, documentation, and assistant responses for this project must be in English.
+
+The main correction this prompt must enforce is simple:
+
+The future implementation must be driven by the visual reference screenshots, not by generic landing-page patterns, default design instincts, Product Design defaults, or any installed design/UI/UX/frontend/copywriting/SEO skill.
+
+# Source Of Truth Priority
+
+Use this priority order for all future planning and implementation instructions:
+
+1. The selected screenshots from `screenshots-references/`.
+2. The visual extraction written from those selected screenshots.
+3. The Product Design plugin, only when it helps inspect, reason about, or translate the selected screenshots.
+4. Existing project metadata and project assets.
+
+Never reverse this order.
+
+If Product Design suggests a generic structure that conflicts with the selected screenshot references, reject the generic structure and follow the screenshots.
+
+# Allowed And Forbidden Assistance
+
+Use the Product Design plugin only.
+
+Do not use any other skill for planning, writing, design, UI, UX, frontend, SEO, copywriting, content strategy, brand strategy, accessibility, review, or implementation.
+
+Forbidden examples include, but are not limited to:
+
+- frontend-design
+- ui-ux-pro-max
+- ckm-design
+- ckm-ui-styling
+- ckm-design-system
+- ckm-brand
+- ckm-banner-design
+- web-design-guidelines
+- seo-audit
+- copywriting
+- content-strategy
+- programmatic-seo
+- writing-guidelines
+
+If a non-Product Design skill is available in the environment, ignore it.
+
+The future implementation prompts must repeat this restriction clearly.
+
+# Current Project Context
+
+Use project metadata already provided in the conversation or stored in existing project files.
+
+Do not write the project name or category terms in this prompt file.
+
+If required context is missing during a future run, the generated files may mark that missing context as an assumption. Do not invent unverifiable claims, awards, customers, metrics, certifications, or real-world outcomes.
+
+# Files To Create Or Update In A Future Run
+
+Create or update these files:
+
+- `project_brand.md`
+- `PLAN.md`
+- `GOAL.md`
+- `design.md`
+- `prd.md`
+- `roadmap.md`
+- `AGENTS.md`
+- `generic-goal-prompt.txt`
+- `niched-goal-prompt.txt`
+
+If any of these files are empty, rebuild them from the rules in this prompt.
+
+If any of these files already contain useful non-generic information, preserve only the parts that do not weaken the screenshot-led direction.
+
+# Mandatory Screenshot Reference Workflow
+
+The folder `screenshots-references/` is the dominant visual source of truth.
+
+The future planning files and Goal prompts must require the implementation agent to inspect `screenshots-references/` visually before writing any production HTML, CSS, or JavaScript.
+
+The future implementation agent must select 40 screenshot references if at least 40 usable references exist.
+
+If fewer than 40 usable references exist, select every usable reference and report the limitation before implementation.
+
+The future implementation agent must not select references randomly. It must select the strongest references by visual quality and by usefulness for specific page parts.
+
+The selected screenshots must be copied into `used/`.
+
+Create or update `used/manifest.md` with a detailed reference map.
+
+The manifest must explain:
+
+- The 40 selected files.
+- The exact section, component, layout, interaction, typography, image crop, spacing, color, or footer pattern each selected file contributes.
+- Which references are primary structural references.
+- Which references are secondary detail references.
+- Which references are rejected and why, when a rejected reference is tempting but generic.
+- How the final page combines screenshot parts without using a generic template skeleton.
+
+# Near-Screenshot Construction Rule
+
+The future implementation should prefer near-screenshot construction over generic invention.
+
+This means:
+
+- It is preferable to follow the layout, section rhythm, content density, image placement, CTA placement, header treatment, and footer structure of selected screenshots very closely.
+- It is preferable to combine strong sections from different screenshots than to invent a standard landing-page flow.
+- It is preferable to reproduce a screenshot section pattern almost one-to-one at the structural level, then adapt content and assets to the current project.
+- Do not copy third-party logos, names, proprietary brand marks, or long proprietary text verbatim.
+- Do not clone a full page from one reference end to end.
+- Do not create a generic “inspired by” version that only borrows colors and typography.
+
+The implementation must be assembled from concrete screenshot-derived parts.
+
+Every major section in the future front page must trace back to at least two selected screenshots:
+
+- one primary reference for structure;
+- one secondary reference for detail, spacing, interaction, imagery, or typography.
+
+# Anti-Generic Rule
+
+Do not build from a generic landing-page skeleton.
+
+Do not start with:
+
+- standard hero plus cards plus stats plus CTA;
+- default nonprofit layout;
+- default SaaS layout;
+- default agency layout;
+- default Bootstrap starter structure;
+- default Product Design prototype structure;
+- default skill-generated page structure.
+
+Start from the selected screenshot reference direction only.
+
+If the implementation begins to resemble a previous template, stop and redesign the structure before continuing.
+
+The future agent must explicitly compare the new structure against any previous local template and avoid reusing:
+
+- the same top bar composition;
+- the same hero split;
+- the same CTA placement;
+- the same card grid rhythm;
+- the same section order;
+- the same visual pacing.
+
+# Required Visual Extraction Before Implementation
+
+The future Goal prompts must require a written extraction before any HTML/CSS/JS is created.
+
+The extraction must include:
+
+- Header/navigation treatment.
+- Hero composition.
+- Section order.
+- Section rhythm.
+- Typography scale.
+- Font pairing logic.
+- CTA treatment.
+- Button shape and state behavior.
+- Card composition.
+- Form or input treatment when applicable.
+- Image cropping.
+- Image scale.
+- Image overlay rules.
+- Icon style.
+- Color palette.
+- Contrast strategy.
+- Spacing system.
+- Grid behavior.
+- Mobile stacking pattern.
+- Footer structure.
+- Animation and interaction style.
+
+The extraction must cite selected screenshot filenames for each decision.
+
+If a decision cannot be tied to a screenshot, it must be removed or justified as a technical requirement.
+
+# `used/` Requirements
+
+The `used/` folder is mandatory.
+
+The future implementation agent must:
+
+1. Empty previous selected references from `used/` unless the current run intentionally reuses them.
+2. Copy the 40 selected screenshot references into `used/`.
+3. Create `used/manifest.md`.
+4. Use that manifest as the active design contract.
+5. Compare the final page against the references in `used/` before calling the implementation complete.
+
+# `dont-create-like-this/` Requirements
+
+If a folder named `dont-create-like-this/` exists, the future prompts must require the implementation agent to inspect it before implementation.
+
+Those files are negative references.
+
+The future implementation must explicitly avoid:
+
+- similar structure;
+- similar header treatment;
+- similar hero layout;
+- similar card rhythm;
+- similar color balance;
+- similar generic page pacing;
+- similar low-effort section assembly.
+
+# Future Implementation Scope
+
+The future front page must be implemented only inside `template/`.
+
+Use static frontend files only:
+
+- HTML.
+- CSS.
+- JavaScript.
+- Images.
+- Fonts.
+- Local vendor assets only when actually needed.
+
+Do not use:
+
+- React.
+- Next.js.
+- Vue.
+- Angular.
+- Vite.
+- Backend code.
+- Database code.
+- Admin panels.
+- CMS implementation.
+- Real payment processing.
+- Real booking processing.
+- Real account/authentication processing.
+- Fake backend behavior.
+
+Static forms and controls may be present only if they are honest front-end interactions and do not pretend to submit real data.
+
+# Future Front Page Structure
+
+The future front page must include:
+
+- Header/navigation.
+- Hero section.
+- Exactly 7 main sections after the hero.
+- Footer.
+
+Do not count subsections, nested panels, columns, overlays, or card groups as additional main sections.
+
+The seven main sections must be chosen from the selected screenshot references, not from a pre-existing template formula.
+
+The visible page copy must not mention the word `template`.
+
+# Assets And Images
+
+If an `imagens/`, `images/`, `assets/images/`, or similar project image folder exists, the future prompts must require the implementation agent to inspect it.
+
+Image selection must be guided by the selected screenshots:
+
+- match crop style;
+- match subject scale;
+- match light direction;
+- match color temperature;
+- match documentary/editorial/product tone as shown in the references;
+- avoid mismatched stock-like substitutions.
+
+Avoid watermarked, low-resolution, misleading, or visually incompatible images.
+
+Alt text must describe images truthfully.
+
+# Future Metadata And Semantics
+
+The future Goal prompts must require:
+
+- One H1 only.
+- Clear semantic headings.
+- Descriptive title tag.
+- Meta description.
+- Canonical placeholder.
+- Open Graph metadata.
+- Twitter card metadata.
+- JSON-LD only where appropriate and truthful.
+- Descriptive alt text.
+- No keyword stuffing.
+- No hidden text.
+
+These requirements must be satisfied without using SEO or content skills.
+
+# Future Responsive And QA Requirements
+
+The future Goal prompts must require browser screenshots or Playwright verification at minimum:
+
+- 375px.
+- 430px.
+- 768px.
+- 1024px.
+- 1366px.
+- 1440px.
+
+The Definition of Done must require:
+
+- No horizontal overflow.
+- No broken local assets.
+- No missing images.
+- No overlapping text.
+- No clipped CTAs.
+- Header/navigation working.
+- Mobile navigation working.
+- Interactive controls working.
+- Keyboard focus visible.
+- Reduced-motion support for heavy animation.
+- No console errors.
+- Final visual comparison against the selected references in `used/`.
+
+The final visual comparison is mandatory and cannot be replaced by technical checks.
+
+# Quality Bar
+
+The future implementation must feel like a high-end site assembled from excellent reference sections.
+
+The result must not feel like:
+
+- an AI template;
+- a recolored previous template;
+- a Bootstrap starter page;
+- a generic Product Design output;
+- a generic skill-generated landing page;
+- a safe fallback layout.
+
+Visual quality is part of the Definition of Done.
+
+If the final screenshot does not clearly show influence from the selected references, the work is not done.
+
+# Blockers
+
+The future prompts must require the implementation agent to stop and report before implementation if:
+
+- `screenshots-references/` is missing.
+- Fewer than 40 usable screenshot references exist.
+- The screenshot files cannot be opened or visually inspected.
+- The screenshots are too low-resolution to extract useful design patterns.
+- The screenshots conflict strongly with required functionality.
+- Available project images cannot support the selected screenshot-led direction.
+- Required verification tools cannot run.
+- The agent cannot avoid generic fallback structure.
+
+If blocked, the agent must report:
+
+- What is limiting the implementation.
+- Which requirement is affected.
+- Which screenshot-led decision cannot be made.
+- What user decision or asset is needed.
+- Whether a reduced fallback can still meet the quality bar.
+
+# Deliverables For This Prompt
+
+Create:
+
+1. `project_brand.md`
+   - Include the project metadata available outside this prompt.
+   - Include audience, positioning, assumptions, and constraints.
+
+2. `PLAN.md`
+   - Include phases for screenshot audit, 40-reference selection, visual extraction, structure mapping, implementation, QA, and final comparison.
+
+3. `GOAL.md`
+   - Include a strict Goal prompt for the current project.
+   - Include a Definition of Done that requires screenshot-led visual evidence.
+
+4. `design.md`
+   - Include the extracted design system process.
+   - Require every design decision to cite screenshot files.
+
+5. `prd.md`
+   - Include requirements for the static front page.
+   - Require the seven main sections to be assembled from selected screenshot parts.
+
+6. `roadmap.md`
+   - Include milestones for reference selection, visual extraction, implementation, QA, and final comparison.
+
+7. `AGENTS.md`
+   - Include project rules.
+   - Require Product Design plugin only.
+   - Forbid all non-Product Design skills.
+   - Require screenshot-first construction.
+   - Require 40 selected references when available.
+
+8. `generic-goal-prompt.txt`
+   - A reusable Goal prompt for any static front page.
+   - It must mention:
+     - `project_brand.md`
+     - `screenshots-references/`
+     - `used/`
+     - selecting 40 screenshot references when available
+     - extracting concrete visual direction before implementation
+     - treating selected screenshots as the primary visual source of truth
+     - using Product Design plugin only
+     - avoiding all non-Product Design skills
+     - visual comparison before completion
+
+9. `niched-goal-prompt.txt`
+   - A second Goal prompt for the current project context.
+   - It must follow all generic requirements.
+   - It must not weaken the screenshot-first rules.
+
+# Final Instruction
+
+After creating or updating the files, summarize:
+
+- Which files were created or changed.
+- How the new Goal prompts enforce screenshot-led construction.
+- Which non-Product Design skills were ignored.
+- Any limitation that could still prevent high-quality implementation from `screenshots-references/`.
+
+Do not create the front page yet.

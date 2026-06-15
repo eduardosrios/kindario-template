@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.vite/
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Local archives and generated bundles
+*.zip
+*.rar
+*.7z
+
+# Local scratch notes and private browsing references
+Novo(a) Documento de Texto.txt
+
+# Design/reference material kept outside the public source history
+0imagens/
+references/
+footers/
+charity2/
+Charity 3/
+Charity 4/
+lightreach-template/
+
+# Local project working material not intended for the public template repo
+.agents/
+dont-create-like-this/
+imagens/
+screenshots-references/
+test-results/
+tmp/
+/index.html
