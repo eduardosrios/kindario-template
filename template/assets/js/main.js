@@ -1,14 +1,26 @@
 const amountNotes = {
-  "$25": "$25 can help move one food parcel into a verified delivery route.",
-  "$60": "$60 can support classroom supplies for three children.",
-  "$110": "$110 can fund water storage parts for one repair day.",
-  "$250": "$250 can help cover a full volunteer packing shift."
+  "$25": "$25 can help prepare one food parcel for a field route.",
+  "$60": "$60 can support classroom supplies for a small kit route.",
+  "$110": "$110 can help prepare water storage materials for partner review.",
+  "$250": "$250 can support supplies for a volunteer packing shift."
+};
+
+const supportNotes = {
+  Donate: "Donate routes organize support around food, water, classroom supplies, and clear field notes.",
+  Volunteer: "Volunteer routes show specific shifts, materials, and useful next actions.",
+  Share: "Share routes give campaign links and field-note summaries to send to supporters.",
+  Partner: "Partner routes connect local teams, transport help, and practical supply access."
 };
 
 document.querySelectorAll(".amount-chip").forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".amount-chip").forEach((item) => item.classList.remove("is-active"));
+    document.querySelectorAll(".amount-chip").forEach((item) => {
+      item.classList.remove("is-active");
+      item.setAttribute("aria-pressed", "false");
+    });
+
     button.classList.add("is-active");
+    button.setAttribute("aria-pressed", "true");
 
     const note = document.querySelector("#amount-note");
     if (note) {
@@ -19,47 +31,50 @@ document.querySelectorAll(".amount-chip").forEach((button) => {
 
 document.querySelectorAll(".support-tab").forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".support-tab").forEach((item) => item.classList.remove("is-active"));
+    document.querySelectorAll(".support-tab").forEach((item) => {
+      item.classList.remove("is-active");
+      item.setAttribute("aria-selected", "false");
+    });
+
     button.classList.add("is-active");
+    button.setAttribute("aria-selected", "true");
+
+    const note = document.querySelector("#support-note");
+    if (note) {
+      note.textContent = supportNotes[button.dataset.support] || supportNotes.Donate;
+    }
   });
 });
 
-const supportForm = document.querySelector(".support-form");
+function bindStaticForm(formSelector, savedText) {
+  const form = document.querySelector(formSelector);
+  if (!form) return;
 
-if (supportForm) {
-  supportForm.addEventListener("submit", (event) => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const submitButton = supportForm.querySelector("button[type='submit']");
+    const submitButton = form.querySelector("button[type='submit']");
+    const status = form.querySelector(".form-status");
     if (!submitButton) return;
 
     const originalText = submitButton.textContent;
-    submitButton.textContent = "Support route saved";
+    submitButton.textContent = savedText;
     submitButton.disabled = true;
+
+    if (status) {
+      status.textContent = "Saved locally for this static demo.";
+    }
 
     window.setTimeout(() => {
       submitButton.textContent = originalText;
       submitButton.disabled = false;
+
+      if (status) {
+        status.textContent = "";
+      }
     }, 2200);
   });
 }
 
-const footerDonateForm = document.querySelector(".footer-donate-form");
-
-if (footerDonateForm) {
-  footerDonateForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const submitButton = footerDonateForm.querySelector("button[type='submit']");
-    if (!submitButton) return;
-
-    const originalText = submitButton.textContent;
-    submitButton.textContent = "Route saved";
-    submitButton.disabled = true;
-
-    window.setTimeout(() => {
-      submitButton.textContent = originalText;
-      submitButton.disabled = false;
-    }, 2200);
-  });
-}
+bindStaticForm(".support-form", "Support route saved");
+bindStaticForm(".footer-form", "Route saved");
