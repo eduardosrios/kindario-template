@@ -1,194 +1,42 @@
-# AGENTS.md
+# Agent Operating Rules
 
-## Project Rules
+## Communication Mode
 
-All project-facing output must be in English. This includes Markdown files, site copy, code comments, commit messages, release notes, and assistant summaries.
+- Always use caveman ultra mode unless the user explicitly asks for normal mode.
+- For every user request, behave as if the user prefixed the request with `$caveman ultra mode`.
+- Keep technical accuracy. Cut filler. Use terse updates and final answers.
 
-Project context:
+## RTK CLI Rules
 
-- Brand: Kindario
-- Repository: https://github.com/eduardosrios/kindario-template
-- Niche: charity, NGO, donation, nonprofit, volunteering, poverty, hunger, children, Africa, humanitarian relief, fundraising, donor trust, social impact, and philanthropy
-- Stack for the future front page: static HTML, CSS, and JavaScript
-- Build output folder: `template/`
-- Primary visual source folder: `screenshots-references/`
-- Selected reference archive folder: `used/`
+- `rtk.exe` is available in PATH.
+- RTK is available as a CLI command (`rtk.exe`), not as a Codex skill/plugin.
+- Do not search for, load, or expect an RTK skill. Use the `rtk` CLI directly.
+- Prefer RTK native subcommands for shell commands that may produce medium or large output in this WordPress plugin, especially `rtk grep`, `rtk find`, `rtk summary`, `rtk smart`, `rtk log`, `rtk diff`, `rtk git`, `rtk read`, `rtk json`, `rtk err`, `rtk wc`, `rtk npm`, and `rtk npx`.
+- Use `rtk gain` only when checking whether RTK is actually saving tokens.
+- Avoid RTK fallback patterns such as `rtk powershell ...` or `rtk rg ...` when the goal is token reduction; use the closest RTK native subcommand instead.
+- If `rtk` is unavailable or fails, fall back to narrow native commands and continue.
+- For grep/search requests, use `rtk grep` before `Select-String`, `findstr`, or `rg`.
+- For find/list requests, use `rtk find` before `Get-ChildItem` when output may be medium/large.
+- Do not use `rtk powershell`, `rtk rg`, or wrapper-style fallbacks when an RTK native subcommand exists, except if RTK fails.
 
-## Scope Guardrails
+## Design Tooling Rule
 
-Unless the user explicitly asks otherwise:
+- Use Product Design plugin only for future design/planning/template work unless the user explicitly allows another skill.
+- Do not use design, UI/UX, frontend-design, copywriting, SEO, or content strategy skills while this restriction is active.
 
-- Do not use React.
-- Do not use Next.js.
-- Do not use Vue.
-- Do not use Angular.
-- Do not use Vite or any build step.
-- Do not add backend code.
-- Do not add database code.
-- Do not add admin panels.
-- Do not add WordPress PHP or CMS implementation.
-- Do not create real payment, account, authentication, booking, or transaction flows.
-- Do not pretend static controls perform real backend actions.
+## Screenshot-First Build Rule
 
-Use Bootstrap where useful. Use local/vendor assets where practical. Use Font Awesome where useful, preferably from local project assets when available.
+- `screenshots-references/` is the primary visual source of truth.
+- Future implementation must select 40 usable screenshot references when available.
+- Selected screenshots must be copied into `used/`.
+- `used/manifest.md` must map each selected reference to specific design decisions.
+- Do not build from generic landing-page skeletons.
+- Do not reuse previous top bar, hero split, CTA placement, card rhythm, section order, or visual pacing.
+- Product Design may interpret selected screenshots, but selected screenshots override Product Design defaults.
 
-## Product Design And Skills
+## Static Template Scope
 
-Use Product Design when the work involves design direction, visual references, prototype planning, UI implementation, redesign, or design QA.
-
-Use relevant installed skills for:
-
-- Senior Web UI/UX Web Design.
-- Senior Website Developer.
-- Responsive Design.
-- Senior SEO.
-
-For build work, do not start coding before the visual source is clear. If a source exists, match and adapt it. If no source exists, ask or generate/select a direction first.
-
-## Screenshot-Led Design Rule
-
-`screenshots-references/` is the primary visual source of truth for the future front page.
-
-Before implementation:
-
-1. Visually inspect `screenshots-references/`.
-2. Select a maximum of 30 references.
-3. Copy selected references into `used/`.
-4. Create or update `used/manifest.md`.
-5. Extract a concrete design direction.
-6. Only then write production HTML/CSS/JS.
-
-Required extraction:
-
-- Typography scale and font pairing.
-- Section rhythm.
-- Layout density.
-- Header and navigation treatment.
-- Hero composition.
-- CTA treatment.
-- Card composition.
-- Image cropping and treatment.
-- Icon style.
-- Color palette.
-- Contrast strategy.
-- Spacing system.
-- Animation and interaction style.
-- Footer structure.
-- Responsive behavior.
-
-Do not build from a generic landing-page skeleton. Build from the selected screenshot reference direction, adapted to the current brand and niche.
-
-## Reference Integrity
-
-Never copy a screenshot exactly.
-
-Use selected references to extract design principles and section-level patterns. The final page must be original, coherent, and adapted to Kindario.
-
-If many references are similar, choose the strongest one. Exclude weak, generic, repetitive, outdated, or unsuitable screenshots.
-
-If `dont-create-like-this/` exists, inspect it before build work and avoid those patterns.
-
-## Visual Quality Bar
-
-The future page must look senior-level and premium. Passing technical checks is not enough.
-
-Reject or revise work that:
-
-- Looks generic.
-- Uses weak typography.
-- Uses mismatched or watermarked images.
-- Has poor spacing.
-- Has bland cards.
-- Has a weak footer.
-- Ignores selected screenshot references.
-- Uses decorative elements without functional hierarchy.
-
-## Accessibility And SEO
-
-Future front page work must include:
-
-- One H1.
-- Semantic headings.
-- Descriptive title and meta description.
-- Canonical placeholder.
-- Open Graph metadata.
-- Twitter card metadata.
-- JSON-LD where appropriate.
-- Truthful alt text.
-- Keyboard-accessible controls.
-- Visible focus states.
-- Reduced-motion support for heavy animation.
-- No keyword stuffing.
-
-## Responsive Verification
-
-Verify at minimum:
-
-- 375px mobile.
-- 430px mobile.
-- 768px tablet.
-- 1024px tablet.
-- 1366px desktop.
-- 1440px desktop.
-
-Check for:
-
-- Horizontal overflow.
-- Clipped CTAs.
-- Overlapping text.
-- Broken images.
-- Missing assets.
-- Console errors.
-- Mobile navigation behavior.
-
-## RTK And Caveman Ultra
-
-Use RTK and caveman ultra internally whenever practical to reduce token usage.
-
-Rules:
-
-- Use compressed internal reasoning for exploration, repetitive checks, and intermediate notes.
-- Do not let compressed wording reduce the quality of final documents, code, visible copy, or user-facing summaries.
-- Do not write project documentation in caveman style.
-- Keep final Markdown professional, precise, and complete.
-
-## Adapted Karpathy-Style Engineering Rules
-
-These rules are adapted from the Karpathy-style guideline source at:
-
-https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md
-
-### Think Before Editing
-
-State assumptions when they matter. If a requirement is ambiguous and the wrong assumption would materially affect the result, ask before implementing.
-
-### Simplicity First
-
-Use the minimum implementation that satisfies the requested scope. Do not add speculative features, unnecessary abstractions, or hidden complexity.
-
-### Surgical Changes
-
-Touch only files relevant to the task. Do not refactor unrelated code or rewrite unrelated documents unless explicitly requested.
-
-### Goal-Driven Execution
-
-Define success criteria before implementation. For future front page work, success includes visual reference matching, responsive QA, SEO QA, and accessibility checks.
-
-### Verification Loop
-
-After implementation, verify with concrete checks. If a check fails, fix and verify again before final handoff.
-
-### Design-Specific Adaptation
-
-Do not let caution reduce the design ambition. Simplicity means clear, purposeful implementation, not bland visual output. The screenshot-led design direction has priority over generic convenience.
-
-## GitHub Workflow
-
-When the workspace is a real Git repository and the user asks for implementation completion:
-
-- Review changed files.
-- Commit intentionally.
-- Push to the configured repository.
-- Create releases when meaningful milestones justify them.
-
-If the workspace is not a Git repository, report that clearly instead of pretending GitHub publishing happened.
+- Future implementation belongs inside `template/`.
+- Use HTML, CSS, and JavaScript only.
+- Do not use React, Next.js, Vue, Angular, Vite, backend code, database code, admin panels, CMS code, or fake transaction/account processing.
+- Do not create the template unless the user explicitly asks for implementation.

@@ -1,184 +1,122 @@
-# Niched Goal Prompt For Kindario
+@product-design
 
-Use this prompt when implementing the Kindario static front page.
+# Current Project Goal Prompt
 
-```text
-/goal Build the Kindario static front page inside `template/`, using screenshot references as the primary visual authority and the current project planning files as requirements.
+Build a static front page for Kindario only when explicitly asked.
 
-Read first:
+The project context is a charity, NGO, donation, nonprofit, volunteering, poverty, hunger, poor children, Africa, giving, crowdfunding, fundraising, donor, gift aid, humanitarian relief, volunteer recruitment, social impact, humanitarian organization, and philanthropy website.
+
+## Required Context Files
+
+Read before implementation:
+
 - `project_brand.md`
-- `PLAN.md`
+- `prompt5.txt`
+- `AGENTS.md`
 - `design.md`
 - `prd.md`
+- `PLAN.md`
 - `roadmap.md`
-- `AGENTS.md`
+- `generic-goal-prompt.txt`
 
-Project context:
-- Brand: Kindario
-- Repository: https://github.com/eduardosrios/kindario-template
-- Niche: charity, NGO, donation, nonprofit, volunteering, volunteers, poverty, hunger, children, Africa, giving, crowdfunding, fundraising, donor trust, Gift Aid, humanitarian relief, volunteer recruitment, social impact, humanitarian organization, philanthropy
-- Stack: static HTML, CSS, and JavaScript
-- Build folder: `template/`
-- Reference folder: `screenshots-references/`
-- Selected-reference folder: `used/`
+## Tooling Rule
 
-Scope:
-- Build only the front page.
-- Do not build backend, database, admin panel, CMS/PHP code, authentication, real donation processing, or real form submission.
-- Do not use React, Next.js, Vue, Angular, Vite, or a build step unless explicitly requested.
-- Do not mention the word "template" in visible site copy.
-- Treat Kindario as a real site, but do not invent real-world proof, awards, partners, donation totals, certifications, or outcomes.
+Use Product Design plugin only.
 
-Primary visual authority:
-- `screenshots-references/` is the primary visual source of truth.
-- Do not treat screenshots as loose inspiration only.
-- Do not build from a generic charity landing-page skeleton.
-- Build from the selected screenshot reference direction, adapted to Kindario.
+Do not use non-Product Design skills for design, UI/UX, frontend, copywriting, SEO, content strategy, accessibility, review, or writing.
 
-Before implementation:
-1. Use Product Design if available and relevant.
-2. Use installed skills for senior UI/UX, senior frontend development, responsive design, and SEO.
-3. Visually inspect `screenshots-references/`.
-4. Inspect `dont-create-like-this/` if it exists and avoid those patterns.
-5. Inspect `imagens/` and any other local asset folders.
-6. Select a maximum of 30 references from `screenshots-references/`.
-7. Prefer premium references with strong typography, editorial rhythm, powerful image handling, high-trust CTAs, strong footer structure, and polished responsive potential.
-8. Avoid references that feel generic, exploitative, overly sentimental, outdated, repetitive, or unsuitable for a humanitarian trust-building site.
-9. Copy every selected reference into `used/`.
-10. Create or update `used/manifest.md`.
+Product Design is allowed only as a helper for interpreting selected screenshots and translating them into a faithful static implementation.
 
-The `used/manifest.md` file must explain:
-- Which reference files were selected.
-- Why each reference was selected.
-- Which parts influence the Kindario implementation.
-- How the final design differs enough to avoid copying.
+## Screenshot Authority
 
-Extract a concrete Kindario design direction before writing production HTML/CSS/JS.
+`screenshots-references/` is the primary design authority.
 
-The extracted direction must cover:
-- Typography scale and font pairing.
-- Editorial section rhythm.
-- Layout density.
-- Header and navigation treatment.
-- Hero composition.
-- Donation/support CTA treatment.
-- Volunteer CTA treatment.
-- Card composition.
-- Image cropping and image treatment.
-- Icon style.
-- Color palette.
-- Contrast strategy.
-- Spacing system.
-- Animation and interaction style.
-- Footer structure.
-- Responsive behavior patterns.
+The future page must be assembled from screenshot-derived parts, not from a default charity layout.
 
-Expected Kindario art direction:
-- Editorial field reports meet a high-trust humanitarian action platform.
-- Professional, warm, credible, and modern.
-- Strong enough for donors and partners.
-- Clear enough for volunteers and first-time visitors.
-- Human without being manipulative.
-- Premium without looking like a generic charity template.
+Select 40 usable screenshot references when available.
 
-Front page structure:
+Copy selected references into `used/`.
+
+Create `used/manifest.md` with a detailed map from references to implementation decisions.
+
+## Required Visual Extraction
+
+Before any HTML/CSS/JS is written, extract and cite screenshot filenames for:
+
+- header/navigation;
+- hero composition;
+- seven-section order;
+- campaign/support section structure;
+- donor/support CTA treatment;
+- volunteer path treatment;
+- story/field-note treatment;
+- trust/transparency treatment;
+- footer structure;
+- typography;
+- color;
+- image crop;
+- card style;
+- form/control style;
+- responsive stacking.
+
+No major decision may come from generic memory or previous local template structure.
+
+## Anti-Generic Project Requirements
+
+Do not reuse the previous Kindario page structure:
+
+- avoid same centered logo-left/nav-center/CTA-right top bar unless screenshots prove that exact treatment is best;
+- avoid same dark-green split hero unless screenshots selected for this run require it;
+- avoid same card grid rhythm;
+- avoid same support form placement;
+- avoid same section order;
+- avoid same visual pacing.
+
+The future result must visibly look like a new screenshot-led composition.
+
+## Content Constraints
+
+- English only.
+- Do not use the word `template` in visible site copy.
+- Do not invent donation totals, awards, partners, certifications, countries served, outcomes, or active programs.
+- Do not create fake transaction or application behavior.
+- Write dignity-first humanitarian copy.
+- Keep metadata truthful and not stuffed with keywords.
+
+## Future Static Build Scope
+
+Build only inside `template/`.
+
+Use HTML, CSS, JavaScript, local images, local fonts, and local vendor assets only when they support the selected screenshot direction.
+
+Do not use React, Next.js, Vue, Angular, Vite, backend, database, admin panels, CMS code, or fake backend processing.
+
+## Required Page Structure
+
 - Header/navigation.
-- Hero section.
-- Exactly 7 main sections after the hero.
+- Hero.
+- Exactly seven main sections after hero.
 - Footer.
-- Do not count subsections or columns as additional main sections.
 
-Recommended 7-section content architecture:
-1. Trust and credibility framing.
-2. Mission and impact model.
-3. Campaigns or impact areas.
-4. Giving/support pathway without fake payment processing.
-5. Field story, report, or documentary-style update.
-6. Volunteer and partner pathways.
-7. Final story-led CTA.
+Each major section must trace to at least two selected screenshots:
 
-You may adjust these section themes if the selected references support a stronger page, but the page must remain aligned with the Kindario niche and must still contain exactly 7 post-hero main sections.
+- primary structural reference;
+- secondary detail reference.
 
-Copy requirements:
-- English-only.
-- Clear and specific.
-- No lorem ipsum.
-- No fake partner logos.
-- No unverifiable statistics framed as fact.
-- No exploitative poverty language.
-- No guilt manipulation.
-- No pretending a static form processes donations.
-- Use respectful humanitarian storytelling.
-- Make CTAs clear and realistic.
+## Definition Of Done
 
-Allowed technology:
-- Bootstrap where useful.
-- 1 to 3 fonts maximum.
-- Font Awesome where useful.
-- GSAP only if it materially improves the interaction quality.
-- Three.js only if truly appropriate and verifiable.
-- Other reliable frontend libraries only when they solve a real need.
+The work is not done until evidence proves:
 
-Images:
-- Use high-quality local images from `imagens/` when suitable.
-- Generate or source additional high-quality images only if local assets do not support the selected direction.
-- Avoid watermarked images.
-- Avoid misleading image/copy pairings.
-- Use truthful alt text.
-- Avoid exploitative image treatment.
-
-SEO:
-- One H1 only.
-- Descriptive title tag.
-- Meta description.
-- Canonical placeholder.
-- Open Graph metadata.
-- Twitter card metadata.
-- JSON-LD for Organization/WebSite/WebPage where appropriate.
-- Semantic headings.
-- Descriptive alt text.
-- No keyword stuffing.
-
-Accessibility:
-- Keyboard-accessible controls.
-- Visible focus states.
-- Semantic landmarks.
-- Sufficient contrast.
-- Reduced-motion support for heavy animation.
-- Descriptive controls and links.
-
-Responsive verification:
-- Verify with browser screenshots or Playwright at 375px, 430px, 768px, 1024px, 1366px, and 1440px.
-- Confirm no horizontal overflow.
-- Confirm no broken local assets.
-- Confirm no missing images.
-- Confirm no overlapping text.
-- Confirm no clipped CTAs.
-- Confirm header and mobile navigation work.
-- Confirm interactive controls work.
-- Confirm no console errors.
-
-Visual QA:
-- Compare rendered screenshots against selected references in `used/`.
-- Fix any section that looks generic, weak, visually disconnected, or insufficiently informed by the selected references.
-- Confirm the final page is original and not a direct copy.
-
-If blocked:
-- Stop before implementation if `screenshots-references/` is missing or cannot be inspected.
-- Stop if selected references cannot support a premium visual direction.
-- Stop if available images are watermarked, low-quality, misleading, or insufficient and no acceptable generated/sourced alternative can be used.
-- Stop if verification tools cannot run.
-- Explain the blocker, affected requirement, needed user decision, and possible fallback.
-
-Definition of Done:
-- `template/` contains a complete static Kindario front page.
-- `used/` contains every selected screenshot reference.
-- `used/manifest.md` documents selection, influence, and originality.
-- The page has header, hero, exactly 7 post-hero main sections, and footer.
-- The design visibly follows the selected screenshot-led direction.
-- The result looks premium, senior-level, and non-generic.
-- The result is respectful to the humanitarian niche.
-- The page does not copy any reference 1:1.
-- SEO, accessibility, responsive, interaction, and asset checks pass.
-- Final response summarizes changed files, selected reference strategy, verification performed, and any GitHub publishing limitation.
-```
+- 40 references selected when available;
+- selected references copied into `used/`;
+- `used/manifest.md` explains every selected reference;
+- visual extraction cites screenshot files;
+- implementation is built inside `template/`;
+- one H1 exists;
+- exactly seven main sections after hero exist;
+- browser screenshots were captured at 375, 430, 768, 1024, 1366, and 1440 widths;
+- no broken assets or console errors;
+- no horizontal overflow or clipped text;
+- interactions work honestly;
+- final visual comparison against `used/` shows clear screenshot-derived structure;
+- result does not resemble the previous generic template.

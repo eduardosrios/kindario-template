@@ -1,117 +1,102 @@
-# Goal Prompt For Kindario Front Page Implementation
+# Goal Prompt
 
-Use this Goal when it is time to build the Kindario front page. Do not use this Goal for the current planning-only pass.
+@product-design
 
-```text
-/goal Build the Kindario static front page inside `template/` using the current project context, `project_brand.md`, `design.md`, `prd.md`, `PLAN.md`, and `roadmap.md`.
+Read `project_brand.md`, `prompt5.txt`, `PLAN.md`, `design.md`, `prd.md`, `roadmap.md`, `AGENTS.md`, `generic-goal-prompt.txt`, and `niched-goal-prompt.txt`.
 
-Project context:
-- Brand: Kindario
-- Repository: https://github.com/eduardosrios/kindario-template
-- Niche: charity, NGO, donation, nonprofit, volunteering, poverty, hunger, children, Africa, humanitarian relief, fundraising, donor trust, social impact, and philanthropy
-- Stack: static HTML, CSS, and JavaScript only
-- Do not use React, Next.js, Vue, Angular, Vite, backend code, database code, admin panels, CMS/PHP code, or fake transaction processing.
-- Do not mention the word "template" in visible site copy. Treat Kindario as a real site.
+Build only when the user explicitly asks to create the front page. Until then, prepare and preserve the screenshot-led design contract.
 
-Primary visual authority:
-- `screenshots-references/` is the primary visual source of truth.
-- Do not treat screenshots as loose inspiration.
-- Do not build from a generic landing-page skeleton.
-- Build from the selected screenshot reference direction, adapted to Kindario and the humanitarian nonprofit niche.
+## Mission
 
-Before implementation:
-1. Use Product Design and relevant installed UI/UX, frontend, responsive, and SEO skills.
-2. Visually inspect `screenshots-references/`.
-3. Inspect `dont-create-like-this/` if it exists and avoid those patterns.
-4. Inspect `imagens/` or similar local image folders.
-5. Select a maximum of 30 screenshot references.
-6. Copy every selected reference into `used/`.
-7. Create or update `used/manifest.md` with:
-   - selected reference filenames
-   - why each was selected
-   - which section or visual behavior it influences
-   - how the final design avoids direct copying
-8. Extract a concrete design direction before writing production HTML/CSS/JS.
+Create a static front page for Kindario using HTML, CSS, and JavaScript inside `template/`.
 
-The extracted design direction must cover:
-- typography scale and font pairing
-- section rhythm
-- layout density
-- header/navigation treatment
-- hero composition
-- CTA treatment
-- card composition
-- image cropping and image treatment
-- icon style
-- color palette
-- contrast strategy
-- spacing system
-- animation and interaction style
-- footer structure
-- responsive behavior patterns
+Do not build from a generic landing-page skeleton. Build from selected screenshot reference parts.
 
-Front page requirements:
-- Header/navigation
-- Hero section
-- Exactly 7 main sections after the hero
-- Footer
-- Subsections or columns do not count as additional main sections
-- Use real, high-quality images
-- Avoid watermarked, low-quality, misleading, or visually mismatched assets
-- Use truthful alt text
-- Use Bootstrap where useful
-- Use Font Awesome where useful
-- Use GSAP or Three.js only if they materially improve the result and can be verified
-- Keep all files and copy in English
+## Tooling
 
-Suggested Kindario content direction:
-- High-trust humanitarian storytelling
-- Clear giving or support pathway without fake payment processing
-- Volunteer recruitment and partner pathways
-- Transparent impact explanation without invented proof
-- Field-report or editorial story rhythm
-- Respectful imagery and copy that avoids exploitation, guilt manipulation, or unverifiable claims
+- Use Product Design plugin only.
+- Do not use any other design, UI/UX, frontend, copywriting, SEO, content, or accessibility skill.
+- Treat Product Design as a helper for interpreting screenshots, not as a replacement for the screenshots.
+- If Product Design defaults conflict with selected screenshots, follow the screenshots.
 
-SEO requirements:
-- One H1 only
-- Descriptive title tag
-- Meta description
-- Canonical placeholder
-- Open Graph metadata
-- Twitter card metadata
-- JSON-LD where appropriate
-- Semantic headings
-- Descriptive alt text
-- No keyword stuffing
+## Mandatory Reference Workflow
 
-Responsive and QA requirements:
-- Verify with browser screenshots or Playwright at 375px, 430px, 768px, 1024px, 1366px, and 1440px.
-- Confirm no horizontal overflow.
-- Confirm no broken local assets.
-- Confirm no missing images.
-- Confirm no overlapping text.
-- Confirm no clipped CTAs.
-- Confirm header and mobile navigation work.
-- Confirm interactive controls work.
-- Confirm keyboard focus is visible.
-- Confirm reduced-motion handling for heavy animation.
-- Confirm no console errors.
-- Compare rendered output against the selected references in `used/`.
+1. Visually inspect `screenshots-references/`.
+2. Inspect `dont-create-like-this/` if present.
+3. Select 40 usable screenshot references when available.
+4. Copy selected references into `used/`.
+5. Create `used/manifest.md`.
+6. Extract the visual system before writing code.
+7. Cite screenshot filenames for every design decision.
+8. Build each major section from at least two selected screenshots.
+9. Compare final rendered screenshots against `used/`.
 
-If blocked:
-- Stop before implementation if `screenshots-references/` is missing or cannot be visually inspected.
-- Stop if required visual assets are unusable and no acceptable alternative can be generated or sourced.
-- Stop if browser verification cannot run and visual QA cannot be reasonably completed.
-- Explain the blocker, affected requirement, and needed user decision.
+## Structure
 
-Definition of Done:
-- The build exists in `template/`.
-- `used/` contains all selected screenshot references.
-- `used/manifest.md` explains reference selection and influence.
-- The page has header, hero, exactly 7 post-hero main sections, and footer.
-- The result visibly follows the selected screenshot-led design direction.
-- The design looks premium, senior-level, and non-generic.
-- The result is original and not a direct copy of any reference.
-- SEO, accessibility, responsive, and asset checks pass.
-- Final response lists files changed, selected references summary, verification performed, and any GitHub publishing limitation.
-```
+The future page must include:
+
+- Header/navigation.
+- Hero section.
+- Exactly seven main sections after hero.
+- Footer.
+
+Do not count nested cards, columns, overlays, or subsections as main sections.
+
+## Anti-Generic Requirements
+
+Do not reuse the previous design structure:
+
+- no same top bar composition;
+- no same hero split;
+- no same CTA placement;
+- no same card rhythm;
+- no same section order;
+- no same visual pacing.
+
+If the result resembles the previous template, stop and revise before completion.
+
+## Technical Scope
+
+Allowed:
+
+- HTML.
+- CSS.
+- JavaScript.
+- local images.
+- local fonts.
+- local vendor assets only when needed.
+
+Forbidden:
+
+- React.
+- Next.js.
+- Vue.
+- Angular.
+- Vite.
+- backend code.
+- database code.
+- admin panel.
+- CMS implementation.
+- fake payment, booking, login, account, or backend submission behavior.
+
+## Definition Of Done
+
+Completion requires evidence:
+
+- `used/` contains 40 selected references when available.
+- `used/manifest.md` maps every selected reference to specific design use.
+- Written visual extraction exists before implementation.
+- Each major section cites screenshot references.
+- Front page has one H1.
+- Front page has exactly seven main sections after hero.
+- Browser screenshots exist for required widths.
+- No broken local assets.
+- No console errors.
+- No horizontal overflow.
+- No clipped CTAs.
+- Header/navigation works.
+- Interactions work.
+- Focus states are visible.
+- Reduced motion is supported for heavy animation.
+- Final visual comparison proves screenshot influence.
+- Final result does not resemble a generic fallback or previous template.

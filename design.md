@@ -1,155 +1,83 @@
-# Design Direction
+# Design Direction Process
 
-## Design Objective
+## Principle
 
-Kindario should feel like an editorial humanitarian platform with clear action pathways. The future front page must be visually led by selected references from `screenshots-references/`, not by a generic charity or landing-page pattern.
+The future design must be screenshot-led.
 
-The page should communicate trust, clarity, urgency, and care through layout, typography, imagery, and interaction quality.
+The selected screenshots in `used/` are the design contract. Product Design may help interpret those references, but no skill or default layout may override them.
 
-## Primary Visual Source
+## Required Reference Count
 
-`screenshots-references/` is the primary visual authority for the future build.
+Select 40 usable screenshot references from `screenshots-references/` when available.
 
-The implementation agent must:
+If fewer than 40 usable references exist, select every usable reference and report the limitation.
 
-- Inspect the screenshot folder visually before coding.
-- Select no more than 30 references.
-- Copy selected references into `used/`.
-- Document the references in `used/manifest.md`.
-- Extract a design direction before writing production HTML/CSS/JS.
-- Compare the rendered page against the selected references before completion.
+## Reference Roles
 
-## Reference Extraction Checklist
+Each selected screenshot must be assigned at least one role:
 
-For each selected reference, extract only what is useful:
+- Primary structural reference.
+- Secondary detail reference.
+- Header/navigation reference.
+- Hero reference.
+- Section rhythm reference.
+- Typography reference.
+- CTA reference.
+- Card reference.
+- Form/input reference.
+- Image treatment reference.
+- Footer reference.
+- Interaction reference.
 
-- Hero composition.
-- Header/nav density.
-- Type scale.
-- Font personality.
-- Section transitions.
-- Grid rhythm.
-- Card proportions.
-- Image crop style.
-- CTA visual treatment.
-- Motion expectations.
-- Footer layout.
-- Mobile adaptations.
+## Extraction Template
 
-Do not copy a full screenshot 1:1. Combine the strongest design patterns into a coherent Kindario-specific page.
+Before writing implementation code, create an extraction table with these columns:
 
-## Intended Art Direction
+| Decision | Screenshot File(s) | Extracted Pattern | How It Will Be Used |
+| --- | --- | --- | --- |
+| Header | filename | treatment, spacing, alignment | implementation rule |
+| Hero | filename | composition, image scale, type scale | implementation rule |
+| Section | filename | rhythm, density, contrast | implementation rule |
+| Footer | filename | columns, CTA, legal/social rhythm | implementation rule |
 
-Direction: editorial field reports meet high-trust action platform.
+Every major decision must cite screenshot files.
 
-The final design should feel:
+## Near-Screenshot Construction
 
-- Premium and intentional.
-- Human and photographic.
-- Serious enough for donors and partners.
-- Clear enough for volunteers and first-time visitors.
-- Original enough to avoid stock-template sameness.
+The future page should be assembled from concrete screenshot parts:
 
-Avoid:
+- one screenshot for the header pattern;
+- one or more screenshots for hero composition;
+- seven screenshot-derived post-hero section patterns;
+- at least one screenshot-derived footer pattern;
+- secondary screenshots for details.
 
-- Generic beige charity layouts unless a selected reference strongly justifies it.
-- Predictable hero plus card-grid structures.
-- Weak decorative shapes.
-- Low-density content that feels empty.
-- Overly sentimental copy or manipulative imagery.
-- Fake proof, fake partner logos, fake donation processing, or unverifiable statistics.
+This is not freeform inspiration. It is section-level reconstruction with adapted content and assets.
 
-## Typography
+## Anti-Generic Design Tests
 
-The final font pairing must be chosen after reviewing selected references.
+Reject work if it looks like:
 
-Preferred direction:
+- a recolor of the previous page;
+- a standard hero/image split;
+- a default Bootstrap page;
+- a generic nonprofit template;
+- a generic Product Design output;
+- a safe AI landing page.
 
-- A strong editorial display face for large headings.
-- A highly readable sans-serif for navigation, body copy, forms, and UI.
-- No more than three font families.
-- Strong hierarchy between hero, section titles, cards, metadata, and CTAs.
-- No viewport-width font scaling.
-- No negative letter spacing.
+## Negative References
 
-## Color And Contrast
+If `dont-create-like-this/` exists, inspect it before future implementation. The future design must avoid similar page structure, header treatment, card rhythm, color balance, and generic section pacing.
 
-The final palette must come from the selected screenshot direction and Kindario's humanitarian context.
+## Visual QA
 
-Recommended principles:
+After implementation, compare rendered screenshots to the selected files in `used/`.
 
-- Use a mature, trustworthy base palette.
-- Reserve high-energy accents for CTAs and progress/action states.
-- Avoid a one-note palette dominated by a single hue family.
-- Avoid decorative gradients unless they are clearly supported by selected references.
-- Maintain accessible contrast for text and controls.
+Completion is not allowed unless screenshot influence is obvious in:
 
-## Layout Rhythm
-
-The future page must have a deliberate sequence:
-
-- Strong first viewport.
-- Clear proof or trust-building moment.
-- Mission/positioning.
-- Action or campaign architecture.
-- Deeper story/report content.
-- Participation paths.
-- Final conversion section.
-- Professional footer.
-
-Spacing should feel designed, not generated. Section proportions, image sizes, and card density must be based on selected screenshots.
-
-## Imagery
-
-Use real, high-quality images from `imagens/` when suitable. Generate or source additional images only if local assets do not support the selected direction.
-
-Image rules:
-
-- No watermarks.
-- No misleading alt text.
-- No image that contradicts visible copy.
-- No lazily cropped subjects.
-- No low-resolution hero imagery.
-- Subject placement must work on mobile and desktop.
-
-For the Kindario niche, imagery should be respectful and grounded. Avoid exploitative poverty framing.
-
-## Interaction Direction
-
-Interactions should be useful and restrained:
-
-- Mobile navigation.
-- CTA states.
-- Optional static contribution/support controls.
-- Optional video/story modal.
-- Optional reveal or scroll effects only if smooth and reduced-motion safe.
-
-Do not add complex interaction just for novelty.
-
-## Footer Quality
-
-The footer must be treated as a designed section, not an afterthought.
-
-It should include:
-
-- Brand statement.
-- Key navigation.
-- Action links.
-- Contact placeholders.
-- Trust/legal placeholders.
-- Clear responsive stacking.
-
-The footer structure should be informed by selected references.
-
-## Responsive Design
-
-Responsive behavior must be planned from the selected references and verified at:
-
-- 375px
-- 430px
-- 768px
-- 1024px
-- 1366px
-- 1440px
-
-The implementation must avoid horizontal overflow, clipped CTAs, unstable card heights, and text overlap.
+- header;
+- hero;
+- section composition;
+- typography;
+- image treatment;
+- footer.

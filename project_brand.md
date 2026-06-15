@@ -1,48 +1,42 @@
 # Project Brand
 
-## Core Identity
+## Identity
 
-- Project Brand: Kindario
+- Brand: Kindario
 - Repository: https://github.com/eduardosrios/kindario-template
-- Project type: static front page template
-- Implementation stack: HTML, CSS, and JavaScript
-- Primary output folder for the future build: `template/`
-- Source-of-truth visual reference folder for the future build: `screenshots-references/`
-- Used-reference archive folder for the future build: `used/`
+- Format: static front page built with HTML, CSS, and JavaScript
+- Future build folder: `template/`
 
-## Categories And Keywords
+## Project Category
 
-Charity, NGO, Donation, Nonprofit, Volunteering, Volunteers, Poverty, Hunger, Poor Children, Africa, Giving, Crowdfunding, Fundraising, Donor, Gift Aid, Humanitarian Relief, Volunteer Recruitment, Social impact, Humanitarian Organization, Philanthropy.
-
-## Positioning
-
-Kindario is a high-trust front page concept for a humanitarian nonprofit, charity, or impact organization. The site should feel editorial, credible, emotionally intelligent, and action-oriented. It should help visitors understand the mission, evaluate trust, explore campaigns or impact areas, and choose a clear next action.
+Kindario is planned for a charity, NGO, donation, nonprofit, volunteering, humanitarian relief, fundraising, donor, social impact, philanthropy, poverty relief, hunger relief, poor children, Africa, gift aid, crowdfunding, and volunteer recruitment context.
 
 ## Audience
 
-- Individual donors looking for credible ways to give.
-- Potential volunteers looking for specific ways to help.
-- Partners, schools, churches, companies, and community groups evaluating collaboration.
-- Press, grant reviewers, and institutional stakeholders looking for concise proof of legitimacy.
-- Supporters who want transparent impact storytelling rather than vague emotional appeals.
+- Donors who need credible, clear support paths.
+- Volunteers who need role clarity before committing.
+- Partner groups that need a serious public-facing organization page.
+- Humanitarian supporters who expect dignity-first stories and transparent next steps.
 
-## Brand Assumptions
+## Positioning
 
-- Kindario is a fictional or placeholder brand for a static website template unless later connected to a real organization.
-- The future front page must not invent real achievements, certifications, awards, named partners, donation totals, or verified outcomes.
-- Metrics may be shown only as sample/template/demo values if clearly framed as replaceable content in code or documentation.
-- Visible site copy should treat Kindario as a real organization, but should avoid unverifiable claims.
+Kindario should feel like a serious humanitarian organization with a premium editorial site, not like a generic charity landing page.
 
-## Brand Personality
+The future front page must be assembled from specific patterns found in `screenshots-references/`. The selected screenshots are the primary design source. Product Design may help interpret or translate references, but it must not replace them with a generic Product Design structure.
 
-- Trustworthy, direct, and human.
-- Modern but not trend-chasing.
-- Warm without being sentimental.
-- Urgent without being manipulative.
-- Editorial and field-informed rather than generic fundraising.
+## Assumptions
 
-## Visual Direction Requirement
+- The page is static and informational.
+- No donation processor exists yet.
+- No real volunteer application backend exists yet.
+- No real partner, award, certification, donation total, or field outcome should be invented.
+- Static forms and controls must not imply real backend processing.
 
-The final visual direction for the future front page must be extracted from `screenshots-references/`. The screenshots are not loose inspiration; they are the primary visual source of truth for layout rhythm, typography, image treatment, CTA design, section structure, and responsive behavior.
+## Hard Constraints
 
-The future implementation must select at most 30 references, copy them to `used/`, document them in `used/manifest.md`, and compare the rendered page against those selected references before completion.
+- Use Product Design plugin only for design/planning/template work.
+- Do not use non-Product Design design, UI/UX, frontend, copywriting, SEO, content, or accessibility skills unless the user explicitly allows them later.
+- Future implementation must inspect `screenshots-references/` visually.
+- Future implementation must select 40 usable screenshot references when available.
+- Future implementation must copy selected references into `used/` and document them in `used/manifest.md`.
+- Future implementation must not recreate the previous top bar, hero split, card rhythm, or generic section order.

@@ -1,150 +1,62 @@
 # Roadmap
 
-## Milestone 0: Planning Files
+## Milestone 1: Reset
 
-Status: ready for update in this pass.
+- Remove old authored HTML/CSS/JS.
+- Clear old prompt-generated planning documents.
+- Preserve assets that may support future screenshot-led implementation.
 
-Deliverables:
+## Milestone 2: Strict Prompt Contract
 
-- `project_brand.md`
-- `PLAN.md`
-- `GOAL.md`
-- `design.md`
-- `prd.md`
-- `roadmap.md`
-- `AGENTS.md`
-- `generic-goal-prompt.txt`
-- `niched-goal-prompt.txt`
+- Update `prompt5.txt`.
+- Require Product Design plugin only.
+- Forbid non-Product Design skills.
+- Require 40 selected screenshot references when available.
+- Require near-screenshot construction.
+- Require avoidance of previous template structure.
 
-Exit criteria:
+## Milestone 3: Planning Files
 
-- Files are English-only.
-- Files preserve Kindario context.
-- Files enforce screenshot-led implementation.
-- Files do not start front page implementation.
+- Recreate `project_brand.md`.
+- Recreate `PLAN.md`.
+- Recreate `GOAL.md`.
+- Recreate `design.md`.
+- Recreate `prd.md`.
+- Recreate `roadmap.md`.
+- Recreate `AGENTS.md`.
+- Recreate `generic-goal-prompt.txt`.
+- Recreate `niched-goal-prompt.txt`.
 
-## Milestone 1: Reference Audit
+## Milestone 4: Skill Environment
 
-Future build task.
+- Disable local design/UI/UX skills for a while.
+- Keep Product Design plugin available.
+- Keep RTK CLI and caveman ultra rules active.
 
-Actions:
+## Milestone 5: Future Reference Audit
 
 - Inspect `screenshots-references/`.
 - Inspect `dont-create-like-this/`.
-- Inspect local media folders such as `imagens/`.
-- Identify visual blockers.
-
-Exit criteria:
-
-- References can be visually inspected.
-- Unsuitable asset or verification blockers are reported before coding.
-
-## Milestone 2: Reference Selection
-
-Future build task.
-
-Actions:
-
-- Select up to 30 strongest references.
+- Select 40 usable references.
 - Copy selected files to `used/`.
-- Create/update `used/manifest.md`.
+- Write `used/manifest.md`.
 
-Exit criteria:
+## Milestone 6: Future Visual Extraction
 
-- Each selected reference has a documented reason.
-- Similar references are deduplicated.
-- Weak/generic references are excluded.
+- Extract header, hero, section, CTA, image, typography, grid, interaction, and footer patterns.
+- Cite screenshot filenames for every decision.
+- Reject any decision that cannot be tied to reference evidence or technical necessity.
 
-## Milestone 3: Design Direction Extraction
+## Milestone 7: Future Implementation
 
-Future build task.
+- Build static files inside `template/`.
+- Assemble each major section from selected screenshot parts.
+- Avoid previous structure and generic fallback patterns.
 
-Actions:
+## Milestone 8: Future Verification
 
-- Extract typography, spacing, layout rhythm, cards, CTAs, image treatment, footer, palette, and responsive patterns.
-- Define a Kindario-specific design direction from selected references.
-
-Exit criteria:
-
-- The build has a concrete design system before HTML/CSS/JS production begins.
-
-## Milestone 4: Static Front Page Build
-
-Future build task.
-
-Actions:
-
-- Build inside `template/`.
-- Use static HTML/CSS/JS.
-- Include header, hero, exactly 7 post-hero sections, and footer.
-- Add interactions without fake backend behavior.
-- Use high-quality truthful images.
-
-Exit criteria:
-
-- Local files are organized.
-- Page renders without missing assets.
-- Structure matches the planned section count.
-
-## Milestone 5: SEO And Accessibility QA
-
-Future build task.
-
-Actions:
-
-- Verify one H1.
-- Verify metadata.
-- Verify JSON-LD where appropriate.
-- Verify alt text.
-- Verify keyboard access and focus states.
-
-Exit criteria:
-
-- SEO basics pass.
-- Accessibility basics pass.
-
-## Milestone 6: Responsive QA
-
-Future build task.
-
-Actions:
-
-- Capture or inspect at 375px, 430px, 768px, 1024px, 1366px, and 1440px.
-- Fix overflow, clipping, overlap, unstable components, and unreadable text.
-
-Exit criteria:
-
-- No horizontal overflow.
-- No clipped CTAs.
-- No overlapping content.
-- Layout remains professional across all required viewports.
-
-## Milestone 7: Visual Comparison
-
-Future build task.
-
-Actions:
-
-- Compare the rendered page against selected references in `used/`.
-- Fix generic, weak, or mismatched sections.
-- Confirm originality.
-
-Exit criteria:
-
-- The final page visibly follows the selected reference direction.
-- The result does not copy any reference exactly.
-- Visual quality meets the premium/senior bar.
-
-## Milestone 8: Repository Publishing
-
-Future build task only if the workspace is a Git repository.
-
-Actions:
-
-- Commit verified changes.
-- Push to the configured GitHub repository.
-- Create releases when meaningful milestones justify them.
-
-Exit criteria:
-
-- Git history reflects completed work, or a clear blocker is reported if the workspace is not a Git repository.
+- Run browser checks at required widths.
+- Capture screenshots.
+- Verify interactions and assets.
+- Compare final page against `used/`.
+- Commit and push only after evidence proves completion.
