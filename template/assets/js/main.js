@@ -43,3 +43,23 @@ if (supportForm) {
     }, 2200);
   });
 }
+
+const footerDonateForm = document.querySelector(".footer-donate-form");
+
+if (footerDonateForm) {
+  footerDonateForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const submitButton = footerDonateForm.querySelector("button[type='submit']");
+    if (!submitButton) return;
+
+    const originalText = submitButton.textContent;
+    submitButton.textContent = "Route saved";
+    submitButton.disabled = true;
+
+    window.setTimeout(() => {
+      submitButton.textContent = originalText;
+      submitButton.disabled = false;
+    }, 2200);
+  });
+}
