@@ -13,49 +13,39 @@
 </head>
 <body>
   <div class="site-shell">
-    <header class="hero" id="top">
-      <div class="hero-rail" aria-label="Kindario quick navigation">
-        <a class="brand-mark" href="#top" aria-label="Kindario home">
+    <header class="hero hero-campaign" id="top">
+      <div class="campaign-topbar">
+        <a class="campaign-brand" href="#top" aria-label="Kindario home">
           <span>K</span>
           <strong>Kindario</strong>
         </a>
-        <nav class="rail-nav" aria-label="Primary navigation">
-          <a href="#priorities">Priorities</a>
-          <a href="#ledger">Ledger</a>
-          <a href="#proof">Proof</a>
-          <a href="#stories">Stories</a>
-          <a href="#help">Help</a>
-          <a href="#volunteer">Volunteer</a>
-        </nav>
-        <a class="rail-cta" href="#help">Support a live need</a>
-      </div>
-
-      <div class="hero-main">
-        <p class="eyebrow">Field-led humanitarian support</p>
-        <h1>Changing lives through clear next steps.</h1>
-        <p class="hero-copy">Kindario turns urgent community needs into visible campaigns, volunteer shifts, and field reports donors can follow from pledge to delivery.</p>
-        <div class="hero-actions" aria-label="Hero actions">
-          <a class="button button-primary" href="#ledger">View active campaigns</a>
-          <a class="button button-secondary" href="#stories">Read field notes</a>
+        <div class="campaign-contact">
+          <p><span>Call anytime</span><strong>98 66 888 000</strong></p>
+          <p><span>Send email</span><strong>contact@example.com</strong></p>
+          <p><span>Visit office</span><strong>80 Brooklyn Street</strong></p>
         </div>
+        <a class="campaign-donate" href="#help">Donate</a>
       </div>
 
-      <div class="hero-collage" aria-label="Kindario field images">
-        <figure class="collage-card collage-large">
-          <img src="assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg" alt="Children smiling together during a community program">
-          <figcaption>
-            <span>Field update</span>
-            School meals prepared for 420 children this week.
-          </figcaption>
-        </figure>
-        <figure class="collage-card collage-small">
-          <img src="assets/images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg" alt="Volunteer helping children during a local outreach program">
-        </figure>
-        <aside class="hero-status">
-          <span>Today</span>
-          <strong>3 open needs</strong>
-          <p>Food bags, clean water storage, and classroom supplies are awaiting support.</p>
-        </aside>
+      <nav class="campaign-nav" aria-label="Primary navigation">
+        <a class="is-active" href="#top">Home</a>
+        <a href="#priorities">Our Causes</a>
+        <a href="#volunteer">Events</a>
+        <a href="#stories">News</a>
+        <a href="#proof">Impact</a>
+        <a href="#questions">Contact Us</a>
+      </nav>
+
+      <div class="campaign-hero-stage">
+        <img src="assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg" alt="Children smiling during a community education program">
+        <div class="campaign-overlay"></div>
+        <button type="button" class="campaign-arrow campaign-arrow-left" aria-label="Previous hero">‹</button>
+        <button type="button" class="campaign-arrow campaign-arrow-right" aria-label="Next hero">›</button>
+        <div class="campaign-copy">
+          <p>Helping them today</p>
+          <h1>Help every child <span>in Need</span></h1>
+          <a class="campaign-cta" href="#ledger">Learn more</a>
+        </div>
       </div>
     </header>
 
@@ -152,28 +142,38 @@
       </section>
 
       <section class="proof-wall" id="proof" data-main-section="3">
-        <div class="section-kicker">
-          <span>03</span>
-          <p>Proof Wall</p>
+        <div class="proof-intro">
+          <div class="section-kicker">
+            <span>03</span>
+            <p>Proof Wall</p>
+          </div>
+          <h2>Visible impact, verified by field teams.</h2>
+          <a class="inline-link" href="#stories">View the latest field report</a>
         </div>
         <div class="proof-strip">
-          <article>
+          <article class="proof-card proof-card-large">
+            <p>Meals delivered</p>
             <span>14,820</span>
-            <p>meals routed through local partners this quarter</p>
+            <strong>Food support routed through local partners this quarter.</strong>
           </article>
-          <article class="proof-photo">
-            <img src="assets/images/premium_photo-1663090106056-bbb60d2be552.jpg" alt="Child receiving support through a community program">
+          <article class="proof-card proof-card-photo">
+            <img src="assets/images/larm-rmah-AEaTUnvneik-unsplash.jpg" alt="Volunteers organizing food bags for delivery">
+            <div>
+              <p>Route closed</p>
+              <strong>Seven delivery points confirmed before release.</strong>
+            </div>
           </article>
-          <article>
+          <article class="proof-card proof-card-light">
+            <p>Field updates</p>
             <span>91%</span>
-            <p>of active campaigns updated with field notes in 10 days</p>
+            <strong>Active campaigns updated with notes in 10 days.</strong>
           </article>
-          <article class="proof-dark">
+          <article class="proof-card proof-card-dark">
+            <p>Volunteer shifts</p>
             <span>28</span>
-            <p>volunteer shifts coordinated across school and food routes</p>
+            <strong>School, food, and water support routes coordinated.</strong>
           </article>
         </div>
-        <a class="inline-link" href="#stories">View the latest field report</a>
       </section>
 
       <section class="story-mosaic" id="stories" data-main-section="4">

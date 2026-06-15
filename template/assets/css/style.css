@@ -954,6 +954,339 @@ details p {
   color: var(--ink);
 }
 
+.hero-campaign {
+  display: block;
+  min-height: 760px;
+  padding: 0 0 3rem;
+  background: #111a20;
+  color: #ffffff;
+  border-bottom: 0;
+}
+
+.hero-campaign::after {
+  display: none;
+}
+
+.campaign-topbar {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.55fr) minmax(520px, 1.45fr) 92px;
+  gap: 1.4rem;
+  align-items: center;
+  max-width: 1320px;
+  min-height: 92px;
+  margin: 0 auto;
+  padding: 0 1.7rem;
+  background: #171a29;
+}
+
+.campaign-brand {
+  display: inline-grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0.65rem;
+  align-items: center;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.campaign-brand span {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: #13cba6;
+  border: 2px solid #13cba6;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 1.45rem;
+}
+
+.campaign-contact {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.campaign-contact p {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.campaign-contact span {
+  display: block;
+  color: #13cba6;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.campaign-contact strong {
+  display: block;
+  margin-top: 0.14rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.9rem;
+}
+
+.campaign-donate {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  background: #12c9a3;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.campaign-nav {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  max-width: 980px;
+  min-height: 76px;
+  align-items: center;
+  gap: 1.6rem;
+  margin: -1px auto -38px;
+  padding: 0 1.7rem;
+  background: #ffffff;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+}
+
+.campaign-nav a {
+  color: #263039;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.campaign-nav .is-active {
+  color: #12c9a3;
+  border-bottom: 3px solid #12c9a3;
+  padding-bottom: 0.45rem;
+}
+
+.campaign-hero-stage {
+  position: relative;
+  max-width: 1320px;
+  min-height: 660px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #222936;
+}
+
+.campaign-hero-stage img {
+  position: absolute;
+  inset: 0;
+  filter: grayscale(1) contrast(1.05) brightness(0.7);
+  object-position: center 34%;
+}
+
+.campaign-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 49% 45%, rgba(18, 201, 163, 0.2) 0 7%, transparent 8%),
+    linear-gradient(90deg, rgba(13, 17, 25, 0.94) 0%, rgba(13, 17, 25, 0.64) 38%, rgba(13, 17, 25, 0.18) 100%);
+}
+
+.campaign-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 690px;
+  padding: 170px 0 0 72px;
+}
+
+.campaign-copy p {
+  margin: 0 0 0.4rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: "Segoe Script", "Brush Script MT", cursive;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 1;
+  transform: rotate(-4deg);
+}
+
+.campaign-copy h1 {
+  position: relative;
+  max-width: 11ch;
+  margin: 0;
+  color: #ffffff;
+  font-family: var(--sans);
+  font-size: clamp(4.2rem, 7.6vw, 7.6rem);
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.campaign-copy h1::after {
+  content: "";
+  position: absolute;
+  right: 0.2em;
+  top: 0.15em;
+  width: 2.4em;
+  height: 0.72em;
+  border: 7px solid #12c9a3;
+  border-radius: 50%;
+  transform: rotate(-8deg);
+}
+
+.campaign-copy h1 span {
+  display: block;
+}
+
+.campaign-cta {
+  display: inline-flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 1.55rem;
+  background: #12c9a3;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.campaign-arrow {
+  position: absolute;
+  z-index: 3;
+  top: 52%;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 0;
+  background: rgba(255, 255, 255, 0.62);
+  color: #263039;
+  font-size: 2.1rem;
+  cursor: pointer;
+}
+
+.campaign-arrow-left {
+  left: 0;
+}
+
+.campaign-arrow-right {
+  right: 0;
+}
+
+.proof-wall {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(1.2rem, 3vw, 3rem);
+  align-items: center;
+  background: #f0e6d1;
+}
+
+.proof-intro h2 {
+  max-width: 9ch;
+  margin: 0 0 1.5rem;
+  font-family: var(--serif);
+  font-size: clamp(3.4rem, 6vw, 6.5rem);
+  line-height: 0.9;
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 1rem;
+  min-height: 0;
+  border: 0;
+}
+
+.proof-card {
+  position: relative;
+  min-height: 280px;
+  padding: 1.35rem;
+  overflow: hidden;
+  border: 0;
+  background: #fffaf0;
+  box-shadow: 0 26px 70px rgba(19, 41, 31, 0.13);
+}
+
+.proof-strip .proof-card {
+  min-height: 280px;
+  padding: 1.35rem;
+  border: 0;
+  background: #fffaf0;
+}
+
+.proof-card p {
+  margin: 0 0 1rem;
+  color: var(--orange);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.proof-card span {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(4.3rem, 8vw, 8.2rem);
+  line-height: 0.82;
+}
+
+.proof-card strong {
+  display: block;
+  max-width: 20rem;
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.proof-strip .proof-card-large {
+  grid-row: span 2;
+  min-height: 576px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background: #0b3d2f;
+  color: #fffaf0;
+}
+
+.proof-strip .proof-card-large p {
+  color: #ddff55;
+}
+
+.proof-strip .proof-card-photo {
+  min-height: 280px;
+  padding: 0;
+  color: #ffffff;
+}
+
+.proof-strip .proof-card-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 10%, rgba(10, 24, 19, 0.8) 100%);
+}
+
+.proof-strip .proof-card-photo div {
+  position: absolute;
+  z-index: 2;
+  left: 1.1rem;
+  right: 1.1rem;
+  bottom: 1.1rem;
+}
+
+.proof-strip .proof-card-photo p {
+  color: #ddff55;
+}
+
+.proof-strip .proof-card-light {
+  background: #f7cf4d;
+}
+
+.proof-strip .proof-card-dark {
+  background: #151a29;
+  color: #ffffff;
+}
+
+.proof-strip .proof-card-dark p {
+  color: #12c9a3;
+}
+
 @media (max-width: 1120px) {
   .hero {
     grid-template-columns: 170px 1fr;
