@@ -1,0 +1,147 @@
+# Generic Goal Prompt For Any Static Front Page Template
+
+Use this prompt for any niche when the goal is to implement a premium static front page from screenshot references.
+
+```text
+/goal Build a senior-quality static front page template inside `template/` using the current project context and planning files.
+
+Read first:
+- `project_brand.md`
+- `PLAN.md`
+- `design.md`
+- `prd.md`
+- `roadmap.md`
+- `AGENTS.md`
+
+Project context:
+- Use the Project Brand, Current GitHub repository, and Categories/Keywords already provided in the conversation or `project_brand.md`.
+- If context is missing, make a minimal assumption and mark it clearly.
+- Keep all project files, site copy, comments, and summaries in English.
+
+Scope:
+- Build only the front page.
+- Use static HTML, CSS, and JavaScript.
+- Build inside `template/`.
+- Do not use React, Next.js, Vue, Angular, Vite, backend code, database code, admin panels, server/CMS code, or fake backend processing unless explicitly requested.
+- Do not mention the word "template" in visible site copy. Treat the page as a real site for the niche.
+
+Primary visual authority:
+- `screenshots-references/` is the primary visual source of truth.
+- Do not treat screenshots as loose inspiration only.
+- Do not build from a generic landing-page skeleton.
+- Build from the selected screenshot reference direction, adapted to the current brand and niche.
+
+Before implementation:
+1. Use Product Design if available and relevant.
+2. Use installed skills for senior UI/UX, frontend development, responsive design, and SEO when available.
+3. Visually inspect `screenshots-references/`.
+4. Inspect `dont-create-like-this/` if it exists and avoid those patterns.
+5. Inspect local image folders such as `imagens/`, `images/`, or similar if present.
+6. Select a maximum of 30 screenshot references.
+7. Prefer the strongest, most premium, least generic references.
+8. Avoid references or sections that are generic, low-quality, repetitive, outdated, visually weak, or unsuitable for the niche.
+9. Copy every selected reference into `used/`.
+10. Create or update `used/manifest.md`.
+
+The `used/manifest.md` file must explain:
+- Which reference files were selected.
+- Why each reference was selected.
+- Which specific parts influenced the implementation.
+- How the final design differs enough to avoid direct copying.
+
+Extract a concrete visual direction before writing production HTML/CSS/JS.
+
+The extracted direction must cover:
+- Typography scale and font pairing.
+- Section rhythm.
+- Layout density.
+- Header and navigation treatment.
+- Hero composition.
+- CTA treatment.
+- Card composition.
+- Image cropping and image treatment.
+- Icon style.
+- Color palette.
+- Contrast strategy.
+- Spacing system.
+- Animation and interaction style.
+- Footer structure.
+- Responsive behavior patterns.
+
+Front page structure:
+- Header/navigation.
+- Hero section.
+- Exactly 7 main sections after the hero.
+- Footer.
+- Do not count subsections or columns as additional main sections.
+- Main sections may include 2 or 3 columns when that improves layout variety and storytelling.
+
+Allowed technology:
+- Bootstrap where useful.
+- 1 to 3 fonts maximum.
+- Font Awesome where useful.
+- GSAP only if it materially improves interaction quality.
+- Three.js only if truly appropriate and verifiable.
+- Other reliable frontend libraries only when they solve a real interaction need.
+
+Images and media:
+- Use high-quality local assets when suitable.
+- Generate or source additional high-quality assets only when needed.
+- Avoid watermarked, low-resolution, mismatched, or misleading images.
+- Alt text must describe the image truthfully.
+
+SEO:
+- One H1 only.
+- Descriptive title tag.
+- Meta description.
+- Canonical placeholder.
+- Open Graph metadata.
+- Twitter card metadata.
+- JSON-LD where appropriate.
+- Semantic headings.
+- Descriptive alt text.
+- No keyword stuffing.
+
+Accessibility:
+- Keyboard-accessible controls.
+- Visible focus states.
+- Semantic landmarks.
+- Sufficient contrast.
+- Reduced-motion support for heavy animation.
+- Descriptive labels for controls and links.
+
+Responsive verification:
+- Verify with browser screenshots or Playwright at 375px, 430px, 768px, 1024px, 1366px, and 1440px.
+- Confirm no horizontal overflow.
+- Confirm no broken local assets.
+- Confirm no missing images.
+- Confirm no overlapping text.
+- Confirm no clipped CTAs.
+- Confirm header and mobile navigation work.
+- Confirm interactive controls work.
+- Confirm no console errors.
+
+Visual QA:
+- Compare the rendered page against the selected references copied into `used/`.
+- Fix weak typography, generic layout, poor image crops, bland cards, weak footer design, and any visible mismatch with the extracted direction.
+- The result must be original and not a 1:1 copy of any reference.
+
+If blocked:
+- Stop before implementation if `screenshots-references/` is missing.
+- Stop if the screenshots cannot be opened or visually inspected.
+- Stop if references are too low-quality or irrelevant to support a premium design.
+- Stop if required assets are unusable and no acceptable fallback exists.
+- Stop if verification tools cannot run and visual QA cannot be completed.
+- Explain the blocker, affected requirement, needed user decision, and possible fallback.
+
+Definition of Done:
+- `template/` contains the complete static front page.
+- `used/` contains all selected screenshot references.
+- `used/manifest.md` documents reference usage.
+- The page has header, hero, exactly 7 post-hero sections, and footer.
+- The page visibly follows the selected screenshot-led visual direction.
+- The page does not look generic.
+- SEO, accessibility, assets, and responsive checks pass.
+- Final visual comparison against selected references is complete.
+- Final response summarizes changed files, verification, selected reference strategy, and limitations.
+```
