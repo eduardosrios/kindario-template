@@ -6,28 +6,37 @@ The project is designed for organizations that need a warm, modern web presence 
 
 ## Features
 
-- Responsive charity landing page built with HTML, CSS, and JavaScript.
+- Static front page built with HTML, CSS, and JavaScript.
 - Donation and volunteer-oriented calls to action.
-- Storytelling sections for mission, impact metrics, supporters, and humanitarian programs.
+- Editorial storytelling sections for mission, trust, field notes, support paths, and humanitarian programs.
+- Curated screenshot reference manifest for traceable visual direction.
 - English-first project documentation and repository governance files.
 
-## Repository structure
+## Repository Structure
 
 ```text
 .
-├── index.html
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── SECURITY.md
-└── CONTRIBUTORS.md
+|-- template/
+|   |-- index.html
+|   `-- assets/
+|       |-- css/
+|       |-- js/
+|       |-- images/
+|       `-- vendor/
+|-- used/
+|   `-- manifest.md
+|-- CODE_OF_CONDUCT.md
+|-- CONTRIBUTING.md
+|-- LICENSE
+|-- SECURITY.md
+`-- CONTRIBUTORS.md
 ```
 
-## Running the template
+## Running the Template
 
-Open `index.html` directly in a browser.
+Open `template/index.html` directly in a browser, or serve the `template/` folder with any static file server.
 
-## Recommended repository About text
+## Recommended Repository About Text
 
 Use this short description in the GitHub repository About section:
 
