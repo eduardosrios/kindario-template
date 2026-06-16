@@ -368,6 +368,57 @@ select {
   background: linear-gradient(180deg, transparent 24%, rgba(0, 0, 0, 0.72));
 }
 
+.tile-badge {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  right: 24px;
+  display: grid;
+  place-items: center;
+  width: 92px;
+  aspect-ratio: 1;
+  padding: 12px;
+  background: #da2d3b;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  clip-path: polygon(
+    50% 0%,
+    61% 6%,
+    73% 2%,
+    81% 12%,
+    94% 11%,
+    97% 24%,
+    100% 36%,
+    94% 47%,
+    100% 59%,
+    91% 69%,
+    94% 82%,
+    82% 87%,
+    79% 100%,
+    66% 97%,
+    56% 100%,
+    45% 95%,
+    34% 100%,
+    22% 93%,
+    18% 81%,
+    6% 78%,
+    9% 66%,
+    0% 55%,
+    5% 43%,
+    0% 31%,
+    7% 20%,
+    6% 8%,
+    19% 10%,
+    27% 1%,
+    39% 6%
+  );
+  box-shadow: 0 16px 30px rgba(217, 45, 59, 0.28);
+}
+
 .tile-caption {
   position: absolute;
   z-index: 1;
@@ -1285,6 +1336,13 @@ details p {
     grid-auto-rows: minmax(220px, auto);
   }
 
+  .tile-badge {
+    top: 20px;
+    right: 20px;
+    width: 82px;
+    font-size: 0.72rem;
+  }
+
   .tile-left,
   .tile-green,
   .tile-center,
@@ -1412,6 +1470,13 @@ details p {
 
   .hero-content {
     max-width: 100%;
+  }
+
+  .tile-badge {
+    top: 18px;
+    right: 18px;
+    width: 72px;
+    font-size: 0.66rem;
   }
 
   .hero-title {
