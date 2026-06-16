@@ -565,7 +565,7 @@ select {
   z-index: 1;
   top: calc(50% - 92px);
   left: 50%;
-  width: 54px;
+  width: 50px;
   height: auto;
   object-fit: contain;
   filter: invert(1);
@@ -593,22 +593,6 @@ select {
   font-size: clamp(1.45rem, 1.85vw, 2.05rem);
   font-weight: 700;
   line-height: 1.4;
-}
-
-.tile-caption-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  width: 100%;
-  margin: 5px 0 4px;
-}
-
-.tile-caption-dots span {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #fff;
 }
 
 .tile-mask-content .tile-caption span {
@@ -645,6 +629,19 @@ select {
   font-family: var(--font-display);
   font-size: clamp(1.45rem, 1.85vw, 2.05rem);
   line-height: 1.65;
+}
+
+.tile-blue-icon {
+  position: relative;
+  width: 58px;
+  height: 120px;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  padding: 68px 15px 15px;
+  border-radius: 0 0 50px 50px;
+  background: #fff;
+  color: #315cdb;
+  font-size: 32px;
 }
 
 .tile-blue a {
