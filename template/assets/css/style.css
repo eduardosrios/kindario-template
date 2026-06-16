@@ -490,9 +490,13 @@ select {
 }
 
 .tile-mask-content .tile-caption {
-  left: calc(20% + 30px);
-  right: calc(20% + 30px);
-  bottom: calc(20% + 30px);
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  width: min(70%, 20rem);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .tile-blue {
