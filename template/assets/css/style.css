@@ -33,7 +33,11 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+body :not(h1):not(h2) {
+  line-height: 1.6;
 }
 
 img {
@@ -250,7 +254,7 @@ select {
 }
 
 .hero-collage .hero-tile:nth-child(3) {
-  border-radius: var(--radius-b);
+  border-radius: 600px;
 }
 
 .hero-collage .hero-tile:nth-child(4) {
@@ -274,7 +278,7 @@ select {
   font-family: var(--font-display);
   font-size: clamp(1.05rem, 1.25vw, 1.45rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.6;
 }
 
 .tile-left {
@@ -297,7 +301,7 @@ select {
 .tile-green strong {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 3.2vw, 3.7rem);
-  line-height: 0.95;
+  line-height: 1.6;
 }
 
 .tile-green span {
@@ -308,6 +312,12 @@ select {
 .tile-center {
   grid-column: 5 / span 4;
   grid-row: 1 / span 3;
+}
+
+.tile-center .tile-caption {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
 }
 
 .tile-blue {
@@ -327,7 +337,7 @@ select {
   max-width: 18rem;
   font-family: var(--font-display);
   font-size: clamp(1.45rem, 1.85vw, 2.05rem);
-  line-height: 1.1;
+  line-height: 1.6;
 }
 
 .tile-blue a {
@@ -363,7 +373,7 @@ select {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 1.35vw, 1.55rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.6;
 }
 
 .tile-small {
@@ -402,7 +412,7 @@ h2 {
 h3 {
   margin: 0;
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.6;
 }
 
 .section-copy {
@@ -543,7 +553,7 @@ h3 {
 .color-card strong {
   font-family: var(--font-display);
   font-size: clamp(4rem, 6vw, 6rem);
-  line-height: 0.9;
+  line-height: 1.6;
 }
 
 .color-card a {
@@ -581,7 +591,7 @@ h3 {
   font-family: var(--font-body);
   font-size: clamp(3.6rem, 5vw, 5.8rem);
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.6;
 }
 
 .metric-card h3 {
@@ -672,7 +682,7 @@ h3 {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.4vw, 2.7rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.6;
 }
 
 .quote-card {
