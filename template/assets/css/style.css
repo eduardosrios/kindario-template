@@ -406,20 +406,21 @@ select {
 
 .tile-caption-badge {
   position: absolute;
-  left: 30px;
+  left: 21px;
   top: -12px;
   display: inline-flex;
   align-items: center;
   min-height: 24px;
-  border-radius: 0 8px;
+  border-radius: 40px;
   background: #b856a2;
-  padding: 5px 10px;
+  padding: 5px 12px;
   color: #fff;
   font-family: var(--font-body);
   font-size: 0.68rem;
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .tile-green {
