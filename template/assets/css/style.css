@@ -512,9 +512,10 @@ select {
   bottom: auto;
   width: min(70%, 20rem);
   padding-inline: 15px;
-  font-size: clamp(1.2075rem, 1.4375vw, 1.6675rem);
-  font-weight: 800;
-  text-shadow: 1px 1px 0 rgba(0,0,0,1);
+  margin-top: 35px;
+  font-size: clamp(1.45rem, 1.85vw, 1.95rem);
+  font-weight: 700;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
   transform: translate(-50%, -50%);
   text-align: center;
 }
