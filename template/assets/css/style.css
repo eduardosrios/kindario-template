@@ -582,11 +582,11 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: -5px;
 }
 
 .tile-blue a img {
-  width: 70px;
+  width: 66px;
   height: auto;
   object-fit: contain;
   filter: invert(1);
