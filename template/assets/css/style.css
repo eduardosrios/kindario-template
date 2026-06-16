@@ -392,6 +392,10 @@ select {
 }
 
 .tile-left .tile-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   background: #fff;
   color: #000;
   width: calc(100% - 60px);
@@ -402,6 +406,21 @@ select {
   bottom: 30px;
   padding: 22px 30px;
   border-radius: 0 12px;
+}
+
+.tile-caption-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  border-radius: 999px;
+  background: var(--orange);
+  padding: 5px 10px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .tile-green {
