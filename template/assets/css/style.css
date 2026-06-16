@@ -34,7 +34,7 @@ body {
   line-height: 1.6;
 }
 
-body :not(h1):not(h2) {
+body :not(h1):not(h2):not(h3) {
   line-height: 1.6;
 }
 
@@ -394,7 +394,7 @@ h2 {
 h3 {
   margin: 0;
   font-weight: 900;
-  line-height: 1.6;
+  line-height: 1.1;
 }
 
 .section-copy {
