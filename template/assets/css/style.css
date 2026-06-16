@@ -108,59 +108,71 @@ select {
 
 .page-frame {
   min-height: 100vh;
-  padding: 30px 0 0;
+  padding: 0;
 }
 
 .site-header {
   position: relative;
-  z-index: 10;
+  z-index: 2;
 }
 
-.navbar {
+.hero-nav {
   padding: 0;
 }
 
-.navbar > .container {
-  min-height: 74px;
-  padding-block: 10px;
-  border-radius: 0;
+.hero-nav-shell {
+  display: flex;
+  min-height: 80px;
+  align-items: center;
+  gap: 24px;
+  padding: 0 26px 0 40px;
+  border-radius: 999px;
   background: var(--white);
-  box-shadow: 0 12px 32px rgba(25, 22, 18, 0.1);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
 .brand-lockup {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   color: var(--ink);
+  font-size: 1.08rem;
   font-weight: 900;
 }
 
 .brand-mark {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
   place-items: center;
   border-radius: 50%;
-  background: var(--green);
-  color: var(--lime);
+  background: #2f8b37;
+  color: var(--white);
   font-family: var(--font-display);
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
 .navbar-nav {
-  gap: clamp(0.4rem, 1vw, 1.2rem);
+  gap: clamp(0.9rem, 1.5vw, 2rem);
 }
 
 .nav-link {
   color: var(--ink);
-  font-size: 0.86rem;
+  font-size: 0.8rem;
   font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--blue);
+  color: var(--green);
+}
+
+.hero-nav-actions {
+  display: flex;
+  align-items: center;
 }
 
 .btn-pill {
@@ -188,49 +200,144 @@ select {
 }
 
 .hero-section {
-  padding: 30px 0 90px;
+  padding: 42px 0 56px;
+  background: #f5f5f1;
 }
 
 .hero-shell {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(24, 24, 20, 0.1);
-  background: var(--paper);
-  padding: clamp(70px, 8vw, 120px) 30px 70px;
+  min-height: 760px;
+  padding: 26px 26px 56px;
+  border-radius: 44px;
+  background:
+    linear-gradient(90deg, rgba(18, 72, 53, 0.96) 0%, rgba(18, 72, 53, 0.92) 44%, rgba(18, 72, 53, 0.58) 76%, rgba(18, 72, 53, 0.38) 100%),
+    url("../images/annie-spratt-qMvcuYEPnO0-unsplash.jpg") center center / cover no-repeat,
+    #124835;
+  color: var(--white);
+}
+
+.hero-shell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 132px;
+  height: 132px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 56%);
+  clip-path: polygon(0 100%, 0 0, 100% 100%);
+}
+
+.hero-nav {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-nav .navbar-collapse {
+  align-items: center;
+}
+
+.hero-nav-cta {
+  min-width: 190px;
+  min-height: 58px;
+  padding-inline: 28px;
+  border: 0;
+  background: #2f8b37;
+  color: var(--white);
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.hero-nav-cta:hover {
+  background: #23692a;
+  color: var(--white);
+}
+
+.hero-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  padding: 76px 34px 20px;
+}
+
+.hero-content {
+  max-width: 680px;
 }
 
 .hero-proof {
-  margin: 0 0 18px;
-  color: var(--blue);
-  font-size: clamp(0.95rem, 1.35vw, 1.35rem);
+  margin: 0 0 20px;
+  color: rgba(255, 253, 249, 0.82);
+  font-size: 0.88rem;
   font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .hero-title {
-  max-width: 980px;
-  margin: 0 auto;
-  font-family: var(--font-display);
-  font-size: clamp(3.1rem, 5.8vw, 5.9rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.035em;
+  max-width: 9ch;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(3.4rem, 6.1vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0;
   text-wrap: balance;
 }
 
-.hero-title::first-line {
-  color: var(--ink);
-}
-
 .hero-lead {
-  max-width: 620px;
-  margin-top: 24px;
-  color: var(--muted);
-  font-size: 1.05rem;
+  max-width: 38rem;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.18rem;
+  font-weight: 500;
 }
 
 .hero-actions {
-  gap: 15px;
-  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.hero-actions .btn-pill {
+  min-width: 176px;
+  min-height: 58px;
+  padding: 0.9rem 1.65rem;
+  border-width: 1px;
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: none;
+}
+
+.btn-hero-primary {
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  background: transparent;
+}
+
+.btn-hero-primary:hover {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--green);
+}
+
+.btn-hero-outline {
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.btn-hero-outline:hover {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--green);
+}
+
+.hero-highlights {
+  background: var(--paper);
+  padding: 30px 0 90px;
 }
 
 .hero-collage {
@@ -240,7 +347,7 @@ select {
   gap: 30px;
   align-items: stretch;
   max-width: 1380px;
-  margin: 56px auto 0;
+  margin: 0 auto;
 }
 
 .hero-tile {
@@ -268,7 +375,7 @@ select {
   font-family: var(--font-display);
   font-size: clamp(1.05rem, 1.25vw, 1.45rem);
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.2;
 }
 
 .tile-left {
@@ -291,7 +398,7 @@ select {
 .tile-green strong {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 3.2vw, 3.7rem);
-  line-height: 1.6;
+  line-height: 1;
 }
 
 .tile-green span {
@@ -321,7 +428,7 @@ select {
   max-width: 18rem;
   font-family: var(--font-display);
   font-size: clamp(1.45rem, 1.85vw, 2.05rem);
-  line-height: 1.6;
+  line-height: 1.08;
 }
 
 .tile-blue a {
@@ -360,7 +467,7 @@ select {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 1.35vw, 1.55rem);
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.12;
 }
 
 .tile-small {
@@ -1156,6 +1263,20 @@ details p {
 }
 
 @media (max-width: 1199.98px) {
+  .hero-shell {
+    min-height: 680px;
+    padding: 24px 24px 48px;
+  }
+
+  .hero-body {
+    min-height: 500px;
+    padding: 64px 24px 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 6.8vw, 5.4rem);
+  }
+
   .hero-collage {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: minmax(220px, auto);
@@ -1181,6 +1302,7 @@ details p {
   .footer-cta {
     grid-template-columns: 1fr;
   }
+
   .footer-cta {
     margin-top: -40px;
   }
@@ -1208,21 +1330,75 @@ details p {
   }
 }
 
+@media (max-width: 991.98px) {
+  .hero-shell {
+    min-height: 620px;
+    padding: 18px 18px 40px;
+  }
+
+  .hero-nav-shell {
+    min-height: 72px;
+    padding: 0 18px 0 24px;
+  }
+
+  .hero-nav .navbar-collapse {
+    margin-top: 12px;
+    border-top: 1px solid var(--line);
+    padding: 14px 4px 2px;
+    border-radius: 24px;
+    background: rgba(255, 253, 249, 0.96);
+  }
+
+  .navbar-nav {
+    gap: 0;
+  }
+
+  .hero-nav-actions {
+    padding-top: 10px;
+  }
+
+  .hero-body {
+    min-height: 460px;
+    padding: 52px 12px 4px;
+  }
+
+  .hero-content {
+    max-width: 560px;
+  }
+}
+
 @media (max-width: 767.98px) {
-  .page-frame {
-    padding-top: 0;
-  }
-
-  .navbar > .container {
-    border-radius: 0;
-  }
-
   .hero-section {
-    padding-top: 15px;
+    padding: 18px 0 30px;
   }
 
   .hero-shell {
-    padding: 50px 15px;
+    min-height: 560px;
+    padding: 14px 14px 26px;
+    border-radius: 30px;
+    background:
+      linear-gradient(180deg, rgba(18, 72, 53, 0.9) 0%, rgba(18, 72, 53, 0.86) 46%, rgba(18, 72, 53, 0.72) 100%),
+      url("../images/annie-spratt-qMvcuYEPnO0-unsplash.jpg") center center / cover no-repeat,
+      #124835;
+  }
+
+  .hero-nav-shell {
+    min-height: 64px;
+    padding: 0 14px 0 18px;
+    border-radius: 22px;
+  }
+
+  .hero-nav-cta {
+    min-width: 100%;
+  }
+
+  .hero-body {
+    min-height: 420px;
+    padding: 38px 6px 0;
+  }
+
+  .hero-highlights {
+    padding: 54px 0 70px;
   }
 
   .hero-collage,
@@ -1231,8 +1407,25 @@ details p {
     gap: 30px;
   }
 
+  .hero-content {
+    max-width: 100%;
+  }
+
   .hero-title {
-    font-size: clamp(2.8rem, 14vw, 4.3rem);
+    font-size: clamp(2.8rem, 14vw, 4.4rem);
+    max-width: 8ch;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .hero-actions .btn-pill {
+    min-width: 124px;
   }
 
   .section-block {
@@ -1259,6 +1452,7 @@ details p {
   .footer-bottom {
     flex-direction: column;
   }
+
   .footer-cta {
     margin-top: 0;
   }
