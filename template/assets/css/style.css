@@ -359,11 +359,27 @@ select {
 }
 
 .hero-tile {
+  --tile-hover-x: -10px;
+  --tile-outline-x: 10px;
+  --tile-outline-y: 10px;
   position: relative;
   overflow: hidden;
   min-height: 124px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.hero-tile:hover {
+  transform: translate(var(--tile-hover-x), -10px);
+  box-shadow: var(--tile-outline-x) var(--tile-outline-y) 0 0 var(--green), var(--shadow);
+}
+
+.tile-right,
+.tile-orange,
+.tile-small {
+  --tile-hover-x: 10px;
+  --tile-outline-x: -10px;
 }
 
 .tile-photo::after {
