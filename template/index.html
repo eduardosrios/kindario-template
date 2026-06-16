@@ -4,32 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kindario | Field-Led Giving for Children and Communities</title>
-  <meta name="description" content="Kindario connects donors, volunteers, and field teams through transparent campaign routes for food, water, education, and community relief.">
+  <meta name="description" content="Kindario connects donors, volunteers, and field teams through transparent campaigns for food, water, education, and community relief.">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700;6..72,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-
   <div class="site-shell">
-    <header class="site-header" id="top">
-      <div class="contact-rail" aria-label="Contact details">
-        <a class="brand" href="#top" aria-label="Kindario home">
-          <span aria-hidden="true">K</span>
+    <header class="hero hero-campaign" id="top">
+      <div class="campaign-topbar">
+        <a class="campaign-brand" href="#top" aria-label="Kindario home">
+          <span>K</span>
           <strong>Kindario</strong>
         </a>
-        <div class="contact-list">
+        <div class="campaign-contact">
           <p><span>Call anytime</span><strong>98 66 888 000</strong></p>
           <p><span>Send email</span><strong>contact@example.com</strong></p>
           <p><span>Visit office</span><strong>80 Brooklyn Street</strong></p>
         </div>
-        <a class="header-action" href="#help">Donate</a>
+        <a class="campaign-donate" href="#help">Donate</a>
       </div>
 
-      <nav class="main-nav" aria-label="Primary navigation">
+      <nav class="campaign-nav" aria-label="Primary navigation">
         <a class="is-active" href="#top">Home</a>
         <a href="#priorities">Our Causes</a>
         <a href="#volunteer">Events</a>
@@ -38,226 +36,253 @@
         <a href="#questions">Contact Us</a>
       </nav>
 
-      <section class="hero" aria-label="Kindario introduction">
-        <img src="assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg" width="1600" height="1067" alt="Children smiling during a community education program">
-        <div class="hero-overlay"></div>
-        <button type="button" class="hero-arrow hero-arrow-left" aria-label="Previous hero feature">‹</button>
-        <button type="button" class="hero-arrow hero-arrow-right" aria-label="Next hero feature">›</button>
-        <div class="hero-copy">
-          <p>Field-led support with visible next steps</p>
-          <h1>Help families in need.</h1>
-          <a class="button button-primary" href="#ledger">View campaign routes</a>
+      <div class="campaign-hero-stage">
+        <img src="assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg" alt="Children smiling during a community education program">
+        <div class="campaign-overlay"></div>
+        <button type="button" class="campaign-arrow campaign-arrow-left" aria-label="Previous hero">‹</button>
+        <button type="button" class="campaign-arrow campaign-arrow-right" aria-label="Next hero">›</button>
+        <div class="campaign-copy">
+          <p>Helping them today</p>
+          <h1>Help every child <span>in Need</span></h1>
+          <a class="campaign-cta" href="#ledger">Learn more</a>
         </div>
-      </section>
+      </div>
     </header>
 
-    <main id="main-content">
+    <main>
       <section class="priority-board" id="priorities" data-main-section="1">
-        <div class="section-copy">
-          <p class="section-label">Field Priority Board</p>
-          <h2>Urgent needs work better when every route has a clear owner.</h2>
+        <div class="section-kicker">
+          <span>01</span>
+          <p>Field Priority Board</p>
+        </div>
+        <div class="section-heading">
+          <h2>Urgent needs move as a live operations board.</h2>
+          <a href="#help">Fund the next step</a>
         </div>
 
         <div class="priority-grid">
-          <article class="priority-lead">
-            <p>Food security</p>
-            <h3>Meal packs prepared around family, school, and volunteer availability.</h3>
-            <div class="route-tags" aria-label="Food route details">
-              <span>Food route</span>
-              <span>Local handoff</span>
-              <span>Field notes</span>
+          <article class="priority-card priority-card-large">
+            <p class="card-label">Food security</p>
+            <h3>Emergency meals for families leaving the dry corridor.</h3>
+            <div class="priority-meta">
+              <span>18 days left</span>
+              <span>68% funded</span>
+              <span>Field team ready</span>
             </div>
-            <a href="#help">Support this route</a>
+            <a href="#ledger">Open brief</a>
           </article>
-
-          <figure class="priority-image">
-            <img src="assets/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg" width="1200" height="800" loading="lazy" alt="Children gathered for a community education program">
-            <figcaption>Classroom kits and field notes for local teachers.</figcaption>
-          </figure>
-
-          <article class="priority-note">
-            <p>Water access</p>
-            <h3>Storage repair, clean containers, and partner planning.</h3>
+          <article class="priority-card priority-card-image">
+            <img src="assets/images/annie-spratt-cVEOh_JJmEE-unsplash.jpg" alt="Children gathered for a community education program">
+            <div>
+              <p class="card-label">Education access</p>
+              <h3>Class kits for 240 students.</h3>
+              <a href="#ledger">Open brief</a>
+            </div>
           </article>
-
-          <article class="priority-note priority-note-soft">
-            <p>Volunteer route</p>
-            <h3>Hands-on packing shifts with specific times and materials.</h3>
-            <a href="#volunteer">View shifts</a>
+          <article class="priority-card priority-card-signal">
+            <p class="card-label">Water point</p>
+            <h3>Repair a school storage tank before term starts.</h3>
+            <span class="signal-note">Local contractor confirmed</span>
+          </article>
+          <article class="priority-card priority-card-paper">
+            <p class="card-label">Volunteer route</p>
+            <h3>Saturday packing line needs 14 extra hands.</h3>
+            <a href="#volunteer">Join shift</a>
           </article>
         </div>
       </section>
 
       <section class="campaign-ledger" id="ledger" data-main-section="2">
-        <div class="section-copy">
-          <p class="section-label">Campaign Ledger</p>
-          <h2>Campaigns show the useful unit before asking for support.</h2>
+        <div class="section-kicker">
+          <span>02</span>
+          <p>Campaign Ledger</p>
         </div>
-
-        <div class="ledger-layout">
-          <div class="campaign-stack">
-            <article class="campaign-row">
-              <img src="assets/images/larm-rmah-AEaTUnvneik-unsplash.jpg" width="900" height="1200" loading="lazy" alt="Volunteers organizing bags of food for delivery">
-              <div>
-                <p>Food route</p>
-                <h3>Family meal packs</h3>
-                <span>Supplies, packing time, and local handoff notes grouped into one route.</span>
-              </div>
-            </article>
-
-            <article class="campaign-row">
-              <img src="assets/images/premium_photo-1661775322183-bf9d38cff431.jpg" width="900" height="1200" loading="lazy" alt="Clean water collection point in a community">
-              <div>
-                <p>Water access</p>
-                <h3>Clean storage repair</h3>
-                <span>Repair materials and partner updates listed before support.</span>
-              </div>
-            </article>
+        <div class="ledger-wrap">
+          <div class="ledger-main">
+            <p class="eyebrow">Open campaigns</p>
+            <h2>Every campaign shows target, progress, and field use.</h2>
+            <div class="campaign-progress-list">
+              <article class="campaign-progress">
+                <img src="assets/images/larm-rmah-AEaTUnvneik-unsplash.jpg" alt="Volunteers organizing bags of food for delivery">
+                <div>
+                  <div class="progress-top">
+                    <h3>Food bags for Kitali homes</h3>
+                    <strong>$18,420</strong>
+                  </div>
+                  <div class="meter" aria-label="72 percent funded"><span style="width: 72%"></span></div>
+                  <p>$25,500 target. Delivery list verified by two local coordinators.</p>
+                </div>
+              </article>
+              <article class="campaign-progress">
+                <img src="assets/images/premium_photo-1661775322183-bf9d38cff431.jpg" alt="Clean water collection point in a community">
+                <div>
+                  <div class="progress-top">
+                    <h3>Clean water storage</h3>
+                    <strong>$9,780</strong>
+                  </div>
+                  <div class="meter" aria-label="48 percent funded"><span style="width: 48%"></span></div>
+                  <p>$20,400 target. Tank repair and chlorine reserve are budgeted.</p>
+                </div>
+              </article>
+            </div>
           </div>
 
-          <aside class="amount-panel" aria-label="Giving amount guide">
+          <aside class="ledger-side" aria-label="Giving amount guide">
             <h3>Choose a field unit</h3>
             <div class="amount-grid">
-              <button type="button" class="amount-chip is-active" data-amount="$25" aria-pressed="true">$25</button>
-              <button type="button" class="amount-chip" data-amount="$60" aria-pressed="false">$60</button>
-              <button type="button" class="amount-chip" data-amount="$110" aria-pressed="false">$110</button>
-              <button type="button" class="amount-chip" data-amount="$250" aria-pressed="false">$250</button>
+              <button type="button" class="amount-chip is-active" data-amount="$25">$25</button>
+              <button type="button" class="amount-chip" data-amount="$60">$60</button>
+              <button type="button" class="amount-chip" data-amount="$110">$110</button>
+              <button type="button" class="amount-chip" data-amount="$250">$250</button>
             </div>
-            <p id="amount-note" aria-live="polite">$25 can help prepare one food parcel for a field route.</p>
-            <a class="button button-light" href="#help">Continue support</a>
+            <p id="amount-note">$25 can help move one food parcel into a verified delivery route.</p>
+            <a class="button button-primary" href="#help">Continue support</a>
           </aside>
         </div>
       </section>
 
       <section class="proof-wall" id="proof" data-main-section="3">
-        <div class="section-copy">
-          <p class="section-label">Proof Wall</p>
-          <h2>Evidence blocks should feel useful, not decorative.</h2>
-          <a href="#stories">Read field notes</a>
+        <div class="proof-intro">
+          <div class="section-kicker">
+            <span>03</span>
+            <p>Proof Wall</p>
+          </div>
+          <h2>Visible impact, verified by field teams.</h2>
+          <a class="inline-link" href="#stories">View the latest field report</a>
         </div>
-
-        <div class="proof-grid">
-          <article>
-            <strong>Food</strong>
-            <span>Meal route planning</span>
+        <div class="proof-strip">
+          <article class="proof-card proof-card-large">
+            <p>Meals delivered</p>
+            <span>14,820</span>
+            <strong>Food support routed through local partners this quarter.</strong>
           </article>
-          <figure>
-            <img src="assets/images/tom-paolini-nXKDqpmdx_8-unsplash.jpg" width="1200" height="800" loading="lazy" alt="Fresh vegetables prepared for a community support route">
-          </figure>
-          <article>
-            <strong>Water</strong>
-            <span>Repair parts and handoff notes</span>
+          <article class="proof-card proof-card-photo">
+            <img src="assets/images/larm-rmah-AEaTUnvneik-unsplash.jpg" alt="Volunteers organizing food bags for delivery">
+            <div>
+              <p>Route closed</p>
+              <strong>Seven delivery points confirmed before release.</strong>
+            </div>
           </article>
-          <article>
-            <strong>Help</strong>
-            <span>Volunteer shifts and packing windows</span>
+          <article class="proof-card proof-card-light">
+            <p>Field updates</p>
+            <span>91%</span>
+            <strong>Active campaigns updated with notes in 10 days.</strong>
+          </article>
+          <article class="proof-card proof-card-dark">
+            <p>Volunteer shifts</p>
+            <span>28</span>
+            <strong>School, food, and water support routes coordinated.</strong>
           </article>
         </div>
       </section>
 
       <section class="story-mosaic" id="stories" data-main-section="4">
-        <div class="section-copy">
-          <p class="section-label">Field Stories</p>
-          <h2>Stories should show the route, not just decorate the page.</h2>
+        <div class="section-kicker">
+          <span>04</span>
+          <p>Field Stories</p>
         </div>
-
         <div class="story-grid">
           <figure class="story-lead">
-            <img src="assets/images/annie-spratt-V-XM4kkWpng-unsplash.jpg" width="1200" height="800" alt="Children standing together outside a community program">
-            <figcaption>Support feels trustworthy when people can see the next practical step.</figcaption>
+            <img src="assets/images/annie-spratt-V-XM4kkWpng-unsplash.jpg" alt="Children standing together outside a community program">
+            <figcaption>
+              <span>North route field note</span>
+              <strong>Meals arrived before the school break, and attendance stayed steady through the week.</strong>
+            </figcaption>
           </figure>
-
-          <blockquote>
-            <p>"When donors can see what moved, trust becomes practical."</p>
-            <cite>Kindario field team</cite>
-          </blockquote>
-
-          <figure class="story-side">
-            <img src="assets/images/michael-ali-y9dxpbveFmU-unsplash.jpg" width="1200" height="800" alt="Community members gathered in a local relief setting">
+          <div class="story-quote">
+            <p>"When donors can see what moved, when it moved, and who confirmed it, trust becomes practical."</p>
+            <span>Amara N., field coordinator</span>
+          </div>
+          <figure class="story-thumb">
+            <img src="assets/images/michael-ali-y9dxpbveFmU-unsplash.jpg" alt="Community members gathered in a local relief setting">
           </figure>
-
-          <figure class="story-side story-side-tall">
-            <img src="assets/images/mathias-reding-R9Od-0R_d10-unsplash.jpg" width="900" height="1200" alt="Fresh food prepared for community support">
+          <figure class="story-thumb story-thumb-tall">
+            <img src="assets/images/tom-paolini-nXKDqpmdx_8-unsplash.jpg" alt="Volunteer handing supplies during a relief activity">
           </figure>
         </div>
       </section>
 
       <section class="help-console" id="help" data-main-section="5">
-        <figure class="help-image">
-          <img src="assets/images/photo-1573246123716-6b1782bfc499.jpg" width="1200" height="800" alt="Fresh food prepared for community distribution">
-        </figure>
-
+        <div class="help-image">
+          <img src="assets/images/photo-1573246123716-6b1782bfc499.jpg" alt="Fresh food prepared for community distribution">
+        </div>
         <div class="help-panel">
-          <p class="section-label">Ways To Help</p>
+          <div class="section-kicker">
+            <span>05</span>
+            <p>Ways To Help</p>
+          </div>
           <h2>Pick the kind of support the field team can use now.</h2>
           <div class="support-tabs" role="tablist" aria-label="Support options">
-            <button type="button" class="support-tab is-active" data-support="Donate" role="tab" aria-selected="true" aria-controls="support-note">Donate</button>
-            <button type="button" class="support-tab" data-support="Volunteer" role="tab" aria-selected="false" aria-controls="support-note">Volunteer</button>
-            <button type="button" class="support-tab" data-support="Share" role="tab" aria-selected="false" aria-controls="support-note">Share</button>
-            <button type="button" class="support-tab" data-support="Partner" role="tab" aria-selected="false" aria-controls="support-note">Partner</button>
+            <button type="button" class="support-tab is-active" data-support="Donate">Donate</button>
+            <button type="button" class="support-tab" data-support="Volunteer">Volunteer</button>
+            <button type="button" class="support-tab" data-support="Share">Share</button>
+            <button type="button" class="support-tab" data-support="Partner">Partner</button>
           </div>
-          <p class="support-note" id="support-note" role="tabpanel" tabindex="0">Donate routes organize support around food, water, classroom supplies, and field notes.</p>
-          <form class="support-form" novalidate>
-            <label for="support-focus">Support focus</label>
-            <select id="support-focus" name="focus" autocomplete="off">
-              <option>Food bags and family meals</option>
-              <option>Water storage repair</option>
-              <option>Classroom kits</option>
-              <option>Volunteer supply route</option>
-            </select>
-
-            <label for="support-email">Email for field updates</label>
-            <input id="support-email" type="email" name="email" placeholder="you@example.com" autocomplete="email">
-
+          <form class="support-form">
+            <label>
+              Support focus
+              <select name="focus">
+                <option>Food bags and family meals</option>
+                <option>Water storage repair</option>
+                <option>Classroom kits</option>
+                <option>Volunteer supply route</option>
+              </select>
+            </label>
+            <label>
+              Email for field updates
+              <input type="email" name="email" placeholder="you@example.com">
+            </label>
             <button class="button button-primary" type="submit">Continue support</button>
-            <p class="form-status" aria-live="polite"></p>
           </form>
+          <p class="form-note">Kindario sends campaign updates and field notes before asking for another pledge.</p>
         </div>
       </section>
 
       <section class="volunteer-dispatch" id="volunteer" data-main-section="6">
-        <div class="section-copy">
-          <p class="section-label">Volunteer Dispatch</p>
-          <h2>Volunteer requests should be specific enough to act on.</h2>
+        <div class="section-kicker">
+          <span>06</span>
+          <p>Volunteer Dispatch</p>
         </div>
-
         <div class="dispatch-grid">
           <div class="dispatch-word" aria-label="Volunteer">
             <span>V</span><span>O</span><span>L</span><span>U</span><span>N</span><span>T</span><span>E</span><span>E</span><span>R</span>
           </div>
-          <article class="shift-card">
+          <article class="shift-card shift-card-green">
             <p>Sat 08:30</p>
             <h3>Food packing line</h3>
-            <span>Route preparation</span>
+            <span>14 spots open</span>
             <a href="#help">Join shift</a>
           </article>
-          <article class="shift-card shift-card-accent">
+          <article class="shift-card shift-card-red">
             <p>Tue 15:00</p>
             <h3>School kit sort</h3>
-            <span>Classroom materials</span>
+            <span>6 spots open</span>
             <a href="#help">Join shift</a>
           </article>
-          <figure class="shift-photo">
-            <img src="assets/images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg" width="1200" height="800" alt="Volunteers working together during a support activity">
-          </figure>
+          <article class="shift-photo">
+            <img src="assets/images/nico-smit-NFoerQuvzrs-unsplash.jpg" alt="Volunteers working together during a support activity">
+          </article>
         </div>
       </section>
 
       <section class="notes-and-questions" id="questions" data-main-section="7">
         <div class="faq-panel">
-          <p class="section-label">Questions</p>
+          <div class="section-kicker">
+            <span>07</span>
+            <p>Questions</p>
+          </div>
           <h2>Clear answers before people commit time or money.</h2>
           <details open>
             <summary>How does Kindario decide which needs appear first?</summary>
-            <p>Needs are ranked by urgency, partner readiness, budget clarity, and whether support can move the next practical step.</p>
+            <p>Needs are ranked by field urgency, partner readiness, budget clarity, and whether donor support can move the next step within a defined window.</p>
           </details>
           <details>
             <summary>Can volunteers help without donating?</summary>
-            <p>Yes. Volunteer shifts, transport support, sorting days, and local introductions are listed as separate routes.</p>
+            <p>Yes. Volunteer shifts, transport support, sorting days, and local partner introductions are listed as separate support routes.</p>
           </details>
           <details>
             <summary>What does a donor receive after supporting?</summary>
-            <p>Supporters receive campaign updates and field-note summaries when a local team closes an activity.</p>
+            <p>Supporters receive campaign updates, field-note summaries, and delivery confirmation when the local team closes the activity.</p>
           </details>
         </div>
 
@@ -265,15 +290,15 @@
           <h3>Latest notes</h3>
           <article>
             <span>Food route</span>
-            <p>Meal packing list prepared for next field update.</p>
+            <p>Seven delivery points confirmed for next Friday.</p>
           </article>
           <article>
             <span>Water repair</span>
-            <p>Parts request ready for partner review.</p>
+            <p>Parts quote approved by school committee.</p>
           </article>
           <article>
             <span>Volunteer team</span>
-            <p>Saturday packing roles split into short shifts.</p>
+            <p>Two new coordinators joined the Saturday packing line.</p>
           </article>
         </aside>
       </section>
@@ -281,57 +306,76 @@
 
     <footer class="site-footer">
       <section class="footer-cta" aria-label="Kindario closing call to action">
-        <figure>
-          <img src="assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg" width="1600" height="1067" loading="lazy" alt="Children smiling during a Kindario education program">
-        </figure>
-        <div>
-          <p class="section-label">Keep the next field route moving</p>
-          <h2>Give children practical help they can feel soon.</h2>
-          <form class="footer-donate-form" novalidate>
-            <label for="footer-amount">Choose amount</label>
-            <select id="footer-amount" name="footer-amount" autocomplete="off">
-              <option>$60 classroom kit</option>
-              <option>$110 food route support</option>
-              <option>$250 volunteer packing shift</option>
-            </select>
-
-            <label for="footer-email">Email for field notes</label>
-            <input id="footer-email" type="email" name="footer-email" placeholder="you@example.com" autocomplete="email">
-
+        <div class="footer-cta-image">
+          <img src="assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg" alt="Children smiling during a Kindario education program">
+        </div>
+        <div class="footer-cta-panel">
+          <p class="footer-eyebrow">Keep the next field route moving</p>
+          <h2>Give children practical help they can feel this week.</h2>
+          <form class="footer-donate-form">
+            <label>
+              <span>Choose amount</span>
+              <select name="footer-amount">
+                <option>$60 - classroom kit</option>
+                <option>$110 - food route support</option>
+                <option>$250 - volunteer packing shift</option>
+              </select>
+            </label>
+            <label>
+              <span>Email for field notes</span>
+              <input type="email" name="footer-email" placeholder="you@example.com">
+            </label>
             <button type="submit">Continue support</button>
-            <p class="form-status" aria-live="polite"></p>
           </form>
         </div>
       </section>
 
+      <div class="footer-contact-strip" aria-label="Contact details">
+        <p><span>Call anytime</span><strong>98 66 888 000</strong></p>
+        <p><span>Send email</span><strong>contact@example.com</strong></p>
+        <p><span>Visit office</span><strong>80 Brooklyn Street</strong></p>
+      </div>
+
       <div class="footer-main">
         <div class="footer-about">
           <a class="footer-brand" href="#top">
-            <span aria-hidden="true">K</span>
+            <span>K</span>
             Kindario
           </a>
           <p>Field-led giving for children, families, volunteers, and local partners moving food, education, and clean water support.</p>
+          <div class="footer-social" aria-label="Social links">
+            <a href="#top">Fb</a>
+            <a href="#top">Ig</a>
+            <a href="#top">In</a>
+          </div>
         </div>
 
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#priorities">Our causes</a>
-          <a href="#ledger">Campaign ledger</a>
-          <a href="#proof">Impact proof</a>
-          <a href="#stories">Field stories</a>
-          <a href="#help">Donate now</a>
-          <a href="#volunteer">Volunteer shifts</a>
-          <a href="#questions">Questions</a>
+          <div>
+            <h3>Explore</h3>
+            <a href="#priorities">Our causes</a>
+            <a href="#ledger">Campaign ledger</a>
+            <a href="#proof">Impact proof</a>
+            <a href="#stories">Field stories</a>
+          </div>
+          <div>
+            <h3>Get involved</h3>
+            <a href="#help">Donate now</a>
+            <a href="#volunteer">Volunteer shifts</a>
+            <a href="#questions">Questions</a>
+            <a href="#top">Partner route</a>
+          </div>
         </nav>
 
         <aside class="footer-note-card">
           <span>Field note</span>
-          <p>Meal packing list prepared for next field update.</p>
+          <p>Seven food delivery points confirmed before next Friday's release.</p>
           <a href="#stories">Read latest note</a>
         </aside>
       </div>
 
       <div class="footer-bottom">
-        <p>2026 Kindario. All rights reserved.</p>
+        <p>© 2026 Kindario. All rights reserved.</p>
         <div>
           <a href="#top">Privacy</a>
           <a href="#top">Terms</a>
