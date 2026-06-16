@@ -582,15 +582,14 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
   margin-top: 30px;
-  border-radius: var(--button-radius);
-  background: var(--ink);
-  padding: 0.85rem 1.4rem;
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 900;
-  text-transform: uppercase;
+}
+
+.tile-blue a img {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  filter: invert(1);
 }
 
 .tile-right {
