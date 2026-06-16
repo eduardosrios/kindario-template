@@ -14,14 +14,14 @@ if (window.gsap && !reduceMotion) {
 
   gsap.to(".tile-mask-frame", {
     rotation: 360,
-    duration: 6,
+    duration: 12,
     repeat: -1,
     ease: "none"
   });
 
   gsap.to(".tile-mask-content", {
     rotation: -360,
-    duration: 6,
+    duration: 12,
     repeat: -1,
     ease: "none"
   });
