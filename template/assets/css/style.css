@@ -12,8 +12,8 @@
   --blue: #93b7d8;
   --line: rgba(21, 33, 25, 0.14);
   --shadow: 0 24px 70px rgba(11, 39, 30, 0.16);
-  --sans: "Inter", Arial, sans-serif;
-  --serif: "Newsreader", Georgia, serif;
+  --sans: "Outfit", system-ui, sans-serif;
+  --serif: "Fraunces", Georgia, serif;
 }
 
 * {
@@ -1653,5 +1653,529 @@ details p {
 
   .footer-bottom div {
     flex-wrap: wrap;
+  }
+}
+
+/* Redesign pass: targeted premium upgrade without changing the static stack. */
+:root {
+  --ink: #151811;
+  --deep: #0b3a2d;
+  --forest: #164f3b;
+  --cream: #f7efdd;
+  --paper: #fffaf1;
+  --lime: #d8f25e;
+  --mustard: #edc654;
+  --orange: #dc6848;
+  --rose: #eeb8a8;
+  --blue: #5c8ab8;
+  --line: rgba(21, 24, 17, 0.11);
+  --shadow: 0 32px 90px rgba(48, 38, 19, 0.14);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-padding-top: 2rem;
+}
+
+body {
+  background:
+    radial-gradient(circle at 76% 12%, rgba(216, 242, 94, 0.3), transparent 27rem),
+    radial-gradient(circle at 8% 48%, rgba(220, 104, 72, 0.08), transparent 24rem),
+    repeating-linear-gradient(90deg, rgba(21, 24, 17, 0.045) 0 1px, transparent 1px 86px),
+    linear-gradient(180deg, #fff8ea 0%, var(--cream) 48%, #e6f0d5 100%);
+  font-variant-numeric: tabular-nums;
+  text-rendering: geometricPrecision;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: radial-gradient(rgba(21, 24, 17, 0.8) 0.55px, transparent 0.55px);
+  background-size: 5px 5px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 40;
+  transform: translateY(-160%);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0.8rem 1rem;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 4px;
+}
+
+a,
+button,
+input,
+select,
+summary {
+  transition:
+    transform 280ms var(--ease-out),
+    background-color 280ms var(--ease-out),
+    color 280ms var(--ease-out),
+    border-color 280ms var(--ease-out),
+    box-shadow 280ms var(--ease-out),
+    opacity 280ms var(--ease-out);
+}
+
+a:hover,
+button:hover {
+  transform: translateY(-1px);
+}
+
+a:active,
+button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.button,
+.campaign-donate,
+.campaign-cta,
+.footer-donate-form button {
+  border-radius: 999px;
+  box-shadow: 0 18px 38px rgba(111, 48, 28, 0.18);
+}
+
+.button::after,
+.campaign-donate::after,
+.campaign-cta::after,
+.footer-donate-form button::after {
+  content: "↗";
+  display: grid;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-left: 0.7rem;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 250, 240, 0.2);
+}
+
+.button-primary {
+  background: var(--orange);
+}
+
+.hero-campaign {
+  padding: 1rem clamp(0.8rem, 2vw, 1.5rem) 3.6rem;
+  background:
+    radial-gradient(circle at 72% 42%, rgba(19, 203, 166, 0.22), transparent 28rem),
+    linear-gradient(180deg, #171a29 0%, #0f1720 100%);
+}
+
+.campaign-topbar {
+  max-width: 1280px;
+  min-height: 88px;
+  border: 1px solid rgba(255, 250, 240, 0.1);
+  border-radius: 1.6rem;
+  background: rgba(255, 250, 240, 0.055);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.24);
+}
+
+.campaign-contact p {
+  border-left: 0;
+  border-radius: 1rem;
+  background: rgba(255, 250, 240, 0.055);
+  padding: 0.75rem 0.9rem;
+}
+
+.campaign-nav {
+  width: min(980px, calc(100% - 2rem));
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.96);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.18);
+}
+
+.campaign-nav .is-active {
+  border-bottom: 0;
+  border-radius: 999px;
+  background: rgba(18, 201, 163, 0.14);
+  padding: 0.55rem 0.86rem;
+}
+
+.campaign-hero-stage {
+  max-width: 1280px;
+  border: 7px solid rgba(255, 250, 240, 0.065);
+  border-radius: 2rem;
+  box-shadow: 0 44px 110px rgba(0, 0, 0, 0.28);
+}
+
+.campaign-hero-stage::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 1.45rem;
+}
+
+.campaign-copy h1 {
+  letter-spacing: -0.045em;
+  max-width: 9.4ch;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.campaign-copy p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "SOFT" 75, "WONK" 1;
+}
+
+.campaign-copy h1::after {
+  border-color: #36d6b1;
+}
+
+.campaign-cta,
+.campaign-donate {
+  background: #36d6b1;
+  color: #0f1720;
+}
+
+.campaign-arrow {
+  border-radius: 50%;
+  background: rgba(255, 250, 240, 0.76);
+}
+
+main > section {
+  padding-top: clamp(5.5rem, 8vw, 8.5rem);
+  padding-bottom: clamp(6.5rem, 9vw, 9.5rem);
+}
+
+.section-kicker {
+  display: inline-flex;
+  width: max-content;
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.62);
+  padding: 0.28rem 0.72rem 0.28rem 0.28rem;
+  box-shadow: inset 0 0 0 1px rgba(21, 24, 17, 0.08);
+}
+
+.section-kicker span {
+  border-radius: 50%;
+}
+
+.section-heading h2,
+.campaign-ledger h2,
+.help-panel h2,
+.faq-panel h2,
+.proof-intro h2,
+.footer-cta-panel h2 {
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.section-heading a,
+.inline-link,
+.priority-card a,
+.shift-card a {
+  text-decoration: none;
+}
+
+.section-heading a::after,
+.inline-link::after,
+.priority-card a::after,
+.shift-card a::after {
+  content: "↗";
+  display: inline-grid;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-left: 0.45rem;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(21, 24, 17, 0.08);
+}
+
+.priority-grid,
+.ledger-wrap,
+.proof-strip,
+.story-grid,
+.help-console,
+.dispatch-grid,
+.notes-and-questions {
+  gap: clamp(0.9rem, 1.8vw, 1.25rem);
+}
+
+.priority-card,
+.ledger-main,
+.ledger-side,
+.campaign-progress,
+.proof-card,
+.story-lead,
+.story-thumb,
+.story-quote,
+.help-panel,
+.help-image,
+.dispatch-word,
+.shift-card,
+.shift-photo,
+.faq-panel,
+.latest-notes {
+  border: 0;
+  border-radius: 1.45rem;
+  box-shadow: var(--shadow);
+}
+
+.priority-card,
+.ledger-main,
+.campaign-progress,
+.proof-card,
+.help-panel,
+.faq-panel {
+  background: rgba(255, 250, 241, 0.9);
+}
+
+.priority-card-large,
+.ledger-side,
+.latest-notes {
+  background:
+    radial-gradient(circle at 90% 8%, rgba(216, 242, 94, 0.16), transparent 12rem),
+    var(--deep);
+}
+
+.priority-card-image,
+.story-lead,
+.story-thumb,
+.help-image,
+.shift-photo,
+.footer-cta-image {
+  isolation: isolate;
+}
+
+.priority-card-image img,
+.story-lead img,
+.story-thumb img,
+.help-image img,
+.shift-photo img,
+.footer-cta-image img {
+  transition: transform 800ms var(--ease-out), filter 800ms var(--ease-out);
+}
+
+.priority-card-image:hover img,
+.story-lead:hover img,
+.story-thumb:hover img,
+.help-image:hover img,
+.shift-photo:hover img,
+.footer-cta-image:hover img {
+  transform: scale(1.035);
+}
+
+.priority-card-signal {
+  transform: rotate(0.7deg);
+}
+
+.priority-card-paper {
+  background: linear-gradient(135deg, var(--rose), #f1c9b6);
+}
+
+.signal-note,
+.progress-top strong {
+  border-radius: 999px;
+}
+
+.amount-chip,
+.support-tab {
+  border: 0;
+  border-radius: 999px;
+}
+
+.amount-chip {
+  background: rgba(255, 250, 240, 0.08);
+}
+
+.amount-chip.is-active,
+.support-tab.is-active {
+  box-shadow: inset 0 0 0 1px rgba(21, 24, 17, 0.12);
+}
+
+.meter {
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.meter span {
+  border-radius: inherit;
+}
+
+.proof-card span {
+  letter-spacing: -0.055em;
+}
+
+.story-mosaic,
+.site-footer {
+  background:
+    radial-gradient(circle at 14% 20%, rgba(216, 242, 94, 0.08), transparent 18rem),
+    var(--forest);
+}
+
+.story-lead figcaption {
+  border-radius: 1rem;
+}
+
+.support-form input,
+.support-form select,
+.footer-donate-form input,
+.footer-donate-form select {
+  border: 0;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(21, 24, 17, 0.13);
+}
+
+.support-form input:focus,
+.support-form select:focus,
+.footer-donate-form input:focus,
+.footer-donate-form select:focus {
+  box-shadow:
+    inset 0 0 0 1px rgba(21, 24, 17, 0.18),
+    0 0 0 4px rgba(216, 242, 94, 0.28);
+}
+
+.form-note[data-state="error"],
+.footer-form-note[data-state="error"] {
+  color: #9f321d;
+}
+
+.form-note[data-state="success"],
+.footer-form-note[data-state="success"] {
+  color: var(--deep);
+}
+
+.footer-form-note {
+  margin: 0.8rem 0 0;
+  color: rgba(21, 24, 17, 0.72);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.shift-card-red {
+  transform: rotate(-0.8deg);
+}
+
+.footer-cta {
+  gap: 0.8rem;
+  box-shadow: none;
+}
+
+.footer-cta-image,
+.footer-cta-panel {
+  border-radius: 1.6rem;
+}
+
+.footer-cta-panel {
+  background:
+    radial-gradient(circle at 86% 18%, rgba(255, 250, 240, 0.3), transparent 12rem),
+    #efc94f;
+}
+
+.footer-social a {
+  border-radius: 50%;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 1120px) {
+  .campaign-topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-contact {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campaign-donate {
+    width: max-content;
+  }
+
+  .campaign-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .campaign-topbar,
+  .campaign-hero-stage,
+  .priority-card,
+  .ledger-main,
+  .ledger-side,
+  .campaign-progress,
+  .proof-card,
+  .story-lead,
+  .story-thumb,
+  .story-quote,
+  .help-panel,
+  .help-image,
+  .dispatch-word,
+  .shift-card,
+  .shift-photo,
+  .faq-panel,
+  .latest-notes {
+    border-radius: 1.1rem;
+  }
+
+  .campaign-contact {
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-copy {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .campaign-copy h1 {
+    letter-spacing: -0.055em;
+    line-height: 1.02;
+  }
+
+  .priority-card-signal,
+  .shift-card-red {
+    transform: none;
+  }
+
+  .proof-wall,
+  .proof-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-strip .proof-card-large {
+    min-height: 300px;
   }
 }
