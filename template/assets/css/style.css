@@ -13,8 +13,8 @@
   --shadow: 0 18px 45px rgba(30, 27, 20, 0.16);
   --radius: 18px;
   --gap: 30px;
-  --font-body: "Archivo", system-ui, sans-serif;
-  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
 }
 
 * {
