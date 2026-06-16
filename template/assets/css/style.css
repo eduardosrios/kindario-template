@@ -472,6 +472,10 @@ select {
   box-shadow: none;
 }
 
+.tile-center:hover {
+  box-shadow: none;
+}
+
 .tile-center::after {
   content: none;
 }
