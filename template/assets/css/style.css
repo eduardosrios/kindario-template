@@ -574,6 +574,14 @@ h3 {
   color: #fff;
 }
 
+.stories-section .section-label,
+.story-lead-card span,
+.dark-mini span,
+.shift-dark span,
+.latest-notes span {
+  color: var(--lime);
+}
+
 .stories-section .section-copy {
   color: rgba(255, 255, 255, 0.76);
 }
@@ -853,6 +861,10 @@ details p {
   background: var(--yellow);
   color: var(--ink);
   padding: clamp(30px, 4vw, 60px);
+}
+
+.footer-cta .section-label {
+  color: #8f2f1a;
 }
 
 .footer-cta h2 {
