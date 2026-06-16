@@ -462,6 +462,54 @@ select {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  clip-path: polygon(
+    50% 0%,
+    57% 3%,
+    64% 0.8%,
+    71% 4.2%,
+    79% 1.4%,
+    85% 7%,
+    93% 5.5%,
+    96% 13.5%,
+    100% 20%,
+    97.5% 28%,
+    100% 36%,
+    96.5% 43.5%,
+    100% 51%,
+    95.5% 58.5%,
+    99% 66.5%,
+    94% 73.5%,
+    96% 82%,
+    89% 86.5%,
+    88% 95%,
+    79.5% 95.5%,
+    74% 100%,
+    66.5% 97.2%,
+    59% 100%,
+    50% 97.2%,
+    41% 100%,
+    33.5% 97.2%,
+    26% 100%,
+    20.5% 95.5%,
+    12% 95%,
+    11% 86.5%,
+    4% 82%,
+    6% 73.5%,
+    1% 66.5%,
+    4.5% 58.5%,
+    0% 51%,
+    3.5% 43.5%,
+    0% 36%,
+    2.5% 28%,
+    0% 20%,
+    4% 13.5%,
+    7% 5.5%,
+    15% 7%,
+    21% 1.4%,
+    29% 4.2%,
+    36% 0.8%,
+    43% 3%
+  );
   -webkit-mask-image: url("../images/badge-mask.svg");
   mask-image: url("../images/badge-mask.svg");
   -webkit-mask-repeat: no-repeat;
@@ -471,15 +519,17 @@ select {
   -webkit-mask-size: calc(100% - 20px) calc(100% - 20px);
   mask-size: calc(100% - 20px) calc(100% - 20px);
   transform-origin: center;
-  animation: tileMaskSpin 18s linear infinite;
+  animation: tileMaskSpin 6s linear infinite;
   filter: drop-shadow(0 18px 45px rgba(30, 27, 20, 0.16));
+  will-change: transform;
 }
 
 .tile-mask-content {
   position: absolute;
   inset: -20%;
   transform-origin: center;
-  animation: tileMaskCounterSpin 18s linear infinite;
+  animation: tileMaskCounterSpin 6s linear infinite;
+  will-change: transform;
 }
 
 .tile-mask-content::after {
