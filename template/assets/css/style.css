@@ -479,7 +479,7 @@ select {
 .tile-mask-content {
   position: absolute;
   inset: -20%;
-  background-color: var(--yellow);
+  background-color: #ff4a9a;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4=");
   background-position: center;
   background-size: cover;
@@ -517,7 +517,7 @@ select {
   margin-top: 35px;
   font-size: clamp(1.45rem, 1.85vw, 1.95rem);
   font-weight: 700;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.18);
   transform: translate(-50%, -50%);
   text-align: center;
 }
