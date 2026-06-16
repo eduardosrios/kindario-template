@@ -407,6 +407,32 @@ select {
   grid-row: 1 / span 3;
 }
 
+.tile-left::before,
+.tile-green::before,
+.tile-right::before,
+.tile-small::before {
+  content: "\f4be";
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  font-family: "Font Awesome 6 Free";
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.tile-left::before {
+  top: 28px;
+  left: 28px;
+}
+
 .tile-left .tile-caption {
   background: #fff;
   color: #000;
@@ -449,6 +475,11 @@ select {
   background: var(--green);
   color: #fff;
   padding: 30px;
+}
+
+.tile-green::before {
+  top: 26px;
+  right: 26px;
 }
 
 .tile-green strong {
@@ -597,6 +628,11 @@ select {
   grid-row: 2 / span 3;
 }
 
+.tile-right::before {
+  top: 28px;
+  left: 28px;
+}
+
 .tile-orange {
   grid-column: 11 / span 2;
   grid-row: 1 / span 2;
@@ -619,6 +655,11 @@ select {
 .tile-small {
   grid-column: 11 / span 2;
   grid-row: 3 / span 2;
+}
+
+.tile-small::before {
+  top: 28px;
+  left: 28px;
 }
 
 .section-block {
