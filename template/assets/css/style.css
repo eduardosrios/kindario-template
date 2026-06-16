@@ -467,7 +467,7 @@ select {
   --tile-outline-x: 0;
   grid-column: 5 / span 4;
   grid-row: 1 / span 3;
-  background-color: #004F3B;
+  background-color: #fff;
   border-radius: 12px;
   overflow: visible;
   box-shadow: none;
