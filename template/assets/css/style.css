@@ -515,7 +515,7 @@ select {
   width: min(70%, 20rem);
   padding-inline: 15px;
   margin-top: 35px;
-  font-size: clamp(1.45rem, 1.85vw, 1.95rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.55rem);
   font-weight: 700;
   text-shadow: 1px 1px 0 rgba(0,0,0,0.18);
   transform: translate(-50%, -50%);
