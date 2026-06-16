@@ -449,6 +449,18 @@ select {
   grid-column: 5 / span 4;
   grid-row: 1 / span 3;
   border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+}
+
+.tile-center::after {
+  content: none;
+}
+
+.tile-mask-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
   -webkit-mask-image: url("../images/badge-mask.svg");
   mask-image: url("../images/badge-mask.svg");
   -webkit-mask-repeat: no-repeat;
@@ -457,6 +469,41 @@ select {
   mask-position: center;
   -webkit-mask-size: calc(100% - 20px) calc(100% - 20px);
   mask-size: calc(100% - 20px) calc(100% - 20px);
+  transform-origin: center;
+  animation: tileMaskSpin 18s linear infinite;
+  filter: drop-shadow(0 18px 45px rgba(30, 27, 20, 0.16));
+}
+
+.tile-mask-content {
+  position: absolute;
+  inset: -20%;
+  transform-origin: center;
+  animation: tileMaskCounterSpin 18s linear infinite;
+}
+
+.tile-mask-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 24%, rgba(0, 0, 0, 0.72));
+}
+
+.tile-mask-content .tile-caption {
+  left: calc(20% + 30px);
+  right: calc(20% + 30px);
+  bottom: calc(20% + 30px);
+}
+
+@keyframes tileMaskSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tileMaskCounterSpin {
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 .tile-blue {
@@ -1307,6 +1354,11 @@ details p {
     scroll-behavior: auto !important;
     transition-duration: 1ms !important;
     animation-duration: 1ms !important;
+  }
+
+  .tile-mask-frame,
+  .tile-mask-content {
+    animation: none !important;
   }
 }
 
