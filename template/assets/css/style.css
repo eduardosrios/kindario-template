@@ -392,10 +392,6 @@ select {
 }
 
 .tile-left .tile-caption {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
   background: #fff;
   color: #000;
   width: calc(100% - 60px);
@@ -409,6 +405,9 @@ select {
 }
 
 .tile-caption-badge {
+  position: absolute;
+  left: 30px;
+  top: -12px;
   display: inline-flex;
   align-items: center;
   min-height: 24px;
