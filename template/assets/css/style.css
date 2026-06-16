@@ -402,7 +402,6 @@ select {
   bottom: 30px;
   padding: 22px 30px;
   border-radius: 0 12px;
-  white-space: nowrap;
 }
 
 .tile-green {
