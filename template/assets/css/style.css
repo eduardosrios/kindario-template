@@ -471,7 +471,7 @@ select {
   font-weight: 900;
   line-height: 1.65;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .tile-green {
@@ -731,7 +731,9 @@ h2::before {
 }
 
 .text-center h2::before {
-  left: calc(50% - 4.5em);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h3 {
@@ -746,6 +748,21 @@ h3 {
   color: var(--muted);
   font-size: 1.05rem;
   font-weight: 600;
+}
+
+@media (min-width: 992px) {
+  .row.align-items-end:not(.text-center) .section-copy {
+    position: relative;
+    top: 15px;
+  }
+
+  .hero-highlights-intro .col-lg-5 {
+    align-self: flex-start;
+  }
+
+  .hero-highlights-intro .section-copy {
+    top: 0;
+  }
 }
 
 .campaign-row,
