@@ -366,13 +366,12 @@ select {
   overflow: hidden;
   min-height: 124px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   transition: transform 220ms ease, box-shadow 220ms ease;
+  box-shadow: var(--tile-outline-x) var(--tile-outline-y) 0 0 #fff, var(--shadow);
 }
 
 .hero-tile:hover {
   transform: translate(var(--tile-hover-x), -10px);
-  box-shadow: var(--tile-outline-x) var(--tile-outline-y) 0 0 #fff, var(--shadow);
 }
 
 .tile-right,
