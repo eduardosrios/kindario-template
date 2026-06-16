@@ -7,12 +7,8 @@ const amountNotes = {
 
 document.querySelectorAll(".amount-chip").forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".amount-chip").forEach((item) => {
-      item.classList.remove("is-active");
-      item.setAttribute("aria-pressed", "false");
-    });
+    document.querySelectorAll(".amount-chip").forEach((item) => item.classList.remove("is-active"));
     button.classList.add("is-active");
-    button.setAttribute("aria-pressed", "true");
 
     const note = document.querySelector("#amount-note");
     if (note) {
@@ -23,12 +19,8 @@ document.querySelectorAll(".amount-chip").forEach((button) => {
 
 document.querySelectorAll(".support-tab").forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".support-tab").forEach((item) => {
-      item.classList.remove("is-active");
-      item.setAttribute("aria-selected", "false");
-    });
+    document.querySelectorAll(".support-tab").forEach((item) => item.classList.remove("is-active"));
     button.classList.add("is-active");
-    button.setAttribute("aria-selected", "true");
   });
 });
 
@@ -70,32 +62,4 @@ if (footerDonateForm) {
       submitButton.disabled = false;
     }, 2200);
   });
-}
-
-const revealTargets = document.querySelectorAll(
-  "main > section, .priority-card, .campaign-progress, .proof-card, .story-lead, .story-quote, .story-thumb, .help-image, .help-panel, .shift-card, .shift-photo, .faq-panel, .latest-notes, .footer-cta, .footer-main"
-);
-
-revealTargets.forEach((item) => item.setAttribute("data-reveal", ""));
-
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-  );
-
-  revealTargets.forEach((item) => revealObserver.observe(item));
-
-  window.setTimeout(() => {
-    revealTargets.forEach((item) => item.classList.add("is-visible"));
-  }, 1200);
-} else {
-  revealTargets.forEach((item) => item.classList.add("is-visible"));
 }
