@@ -119,15 +119,17 @@ select {
 
 .hero-nav {
   padding: 0;
+  width: 100%;
 }
 
 .hero-nav-shell {
   display: flex;
+  width: 100%;
   min-height: 80px;
   align-items: center;
   gap: 24px;
   padding: 0 26px 0 40px;
-  border-radius: 999px;
+  border-radius: 12px;
   background: var(--white);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
@@ -1385,7 +1387,7 @@ details p {
   .hero-nav-shell {
     min-height: 64px;
     padding: 0 14px 0 18px;
-    border-radius: 22px;
+    border-radius: 12px;
   }
 
   .hero-nav-cta {
