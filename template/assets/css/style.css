@@ -538,7 +538,7 @@ select {
   bottom: auto;
   width: min(70%, 20rem);
   padding-inline: 30px;
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: clamp(1.2rem, 1.4vw, 1.55rem);
   font-weight: 700;
   text-shadow: none;
