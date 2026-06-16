@@ -417,10 +417,7 @@ select {
   grid-row: 1 / span 3;
 }
 
-.tile-left::before,
-.tile-green::before,
-.tile-right::before,
-.tile-small::before {
+.tile-corner-icon {
   position: absolute;
   z-index: 2;
   display: inline-flex;
@@ -437,8 +434,7 @@ select {
   opacity: 0;
 }
 
-.tile-left::before {
-  content: "\f004";
+.tile-left .tile-corner-icon {
   top: 28px;
   left: 28px;
   background: #b856a2;
@@ -491,8 +487,7 @@ select {
   padding: 30px;
 }
 
-.tile-green::before {
-  content: "\f4c4";
+.tile-green .tile-corner-icon {
   top: 26px;
   right: 26px;
   background: #315cdb;
@@ -575,7 +570,7 @@ select {
   object-fit: contain;
   filter: invert(1);
   transform: translateX(-50%);
-  margin-top: 15px;
+  margin-top: 0;
 }
 
 .tile-mask-content .tile-caption {
@@ -591,6 +586,33 @@ select {
   text-shadow: none;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.tile-mask-content .tile-caption h3 {
+  margin: 10px 0 0;
+  font-size: clamp(1.45rem, 1.85vw, 2.05rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.tile-caption-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  margin: 5px 0 4px;
+}
+
+.tile-caption-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.tile-mask-content .tile-caption span {
+  font-size: clamp(1.05rem, 1.25vw, 1.45rem);
 }
 
 @keyframes tileMaskSpin {
@@ -655,8 +677,7 @@ select {
   object-fit: cover;
 }
 
-.tile-right::before {
-  content: "\f19d";
+.tile-right .tile-corner-icon {
   top: 28px;
   left: 28px;
   background: #ff7247;
@@ -686,8 +707,7 @@ select {
   grid-row: 3 / span 2;
 }
 
-.tile-small::before {
-  content: "\f4d8";
+.tile-small .tile-corner-icon {
   top: 28px;
   left: 28px;
   background: #004f3b;
@@ -722,8 +742,7 @@ select {
   content: none;
 }
 
-.tile-left::before {
-  content: "\f004";
+.tile-left .tile-corner-icon {
   z-index: 2;
   inset: auto;
   top: 28px;
