@@ -463,6 +463,8 @@ select {
 }
 
 .tile-center {
+  --tile-hover-x: 0;
+  --tile-outline-x: 0;
   grid-column: 5 / span 4;
   grid-row: 1 / span 3;
   border-radius: 0;
