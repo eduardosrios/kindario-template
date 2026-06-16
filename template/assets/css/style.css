@@ -12,6 +12,8 @@
   --line: rgba(24, 24, 20, 0.12);
   --shadow: 0 18px 45px rgba(30, 27, 20, 0.16);
   --radius: 18px;
+  --radius-a: 40px 0;
+  --radius-b: 0 40px;
   --gap: 30px;
   --font-body: "Archivo", system-ui, sans-serif;
   --font-display: "Libre Baskerville", Georgia, serif;
@@ -235,8 +237,24 @@ select {
   position: relative;
   overflow: hidden;
   min-height: 124px;
-  border-radius: 18px;
+  border-radius: var(--radius-a);
   box-shadow: var(--shadow);
+}
+
+.hero-collage .hero-tile:nth-child(even) {
+  border-radius: var(--radius-b);
+}
+
+.hero-collage .hero-tile:nth-child(odd) {
+  border-radius: var(--radius-a);
+}
+
+.hero-collage .hero-tile:nth-child(3) {
+  border-radius: var(--radius-b);
+}
+
+.hero-collage .hero-tile:nth-child(4) {
+  border-radius: var(--radius-a);
 }
 
 .tile-photo::after {
@@ -407,8 +425,28 @@ h3 {
 .faq-panel,
 .latest-notes,
 .footer-cta {
-  border-radius: 18px;
+  border-radius: var(--radius-a);
   box-shadow: var(--shadow);
+}
+
+.campaign-row > div:nth-child(even) .campaign-card,
+.campaign-row .row > div:nth-child(even) .campaign-card,
+.metric-row > div:nth-child(even) .metric-card,
+.story-board > :nth-child(even),
+.volunteer-section .row > div:nth-child(even) .shift-card,
+.questions-section .row > div:nth-child(even) > *,
+.donate-panel,
+.footer-cta {
+  border-radius: var(--radius-b);
+}
+
+.campaign-row > div:nth-child(odd) .campaign-card,
+.campaign-row .row > div:nth-child(odd) .campaign-card,
+.metric-row > div:nth-child(odd) .metric-card,
+.story-board > :nth-child(odd),
+.volunteer-section .row > div:nth-child(odd) .shift-card,
+.questions-section .row > div:nth-child(odd) > * {
+  border-radius: var(--radius-a);
 }
 
 .campaign-card {
@@ -666,7 +704,7 @@ h3 {
 
 .donate-photo {
   min-height: 650px;
-  border-radius: 18px;
+  border-radius: var(--radius-a);
   box-shadow: var(--shadow);
 }
 
