@@ -523,11 +523,12 @@ select {
   z-index: 1;
   top: calc(50% - 92px);
   left: 50%;
-  width: 60px;
+  width: 54px;
   height: auto;
   object-fit: contain;
   filter: invert(1);
   transform: translateX(-50%);
+  margin-top: 15px;
 }
 
 .tile-mask-content .tile-caption {
