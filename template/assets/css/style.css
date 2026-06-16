@@ -437,6 +437,19 @@ select {
   grid-row: 1 / span 3;
 }
 
+.tile-left .tile-caption {
+  background: #fff;
+  color: #000;
+  width: calc(100% - 60px);
+  position: absolute;
+  left: 30px;
+  right: auto;
+  top: auto;
+  bottom: 122px;
+  padding: 22px 30px;
+  border-radius: 12px 50px 50px 12px;
+}
+
 .tile-green {
   grid-column: 1 / span 4;
   grid-row: 4 / span 1;
