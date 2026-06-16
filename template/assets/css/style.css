@@ -722,12 +722,16 @@ h2::before {
   content: "";
   position: absolute;
   z-index: -1;
-  top: 0.07em;
-  left: -0.08em;
-  width: 0.92em;
-  height: 0.92em;
+  top: -0.16em;
+  left: -0.3em;
+  width: 1.32em;
+  height: 1.32em;
   border-radius: 50%;
   background: var(--yellow);
+}
+
+.text-center h2::before {
+  left: calc(50% - 4.5em);
 }
 
 h3 {
