@@ -277,7 +277,6 @@ select {
 }
 
 .hero-title {
-  max-width: 9ch;
   margin: 0;
   font-family: var(--font-body);
   font-size: clamp(3.4rem, 6.1vw, 6.5rem);
