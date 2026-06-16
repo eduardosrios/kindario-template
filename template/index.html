@@ -378,34 +378,57 @@
     <footer class="site-footer">
       <div class="container">
         <div class="footer-cta">
-          <div>
+          <div class="footer-cta-image">
+            <img src="assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg" alt="Children smiling in a classroom support program">
+          </div>
+          <div class="footer-cta-panel">
             <p class="section-label">Keep the next field route moving</p>
             <h2>Give children practical help they can feel this week.</h2>
+            <form class="footer-donate-form">
+              <label>
+                <span>Choose amount</span>
+                <select name="footer-amount">
+                  <option>$60 - classroom kit</option>
+                  <option>$110 - food route support</option>
+                  <option>$250 - volunteer packing shift</option>
+                </select>
+              </label>
+              <label>
+                <span>Email for field notes</span>
+                <input type="email" name="footer-email" placeholder="you@example.com">
+              </label>
+              <button type="submit">Continue support</button>
+            </form>
           </div>
-          <form class="footer-donate-form">
-            <label>
-              <span>Choose amount</span>
-              <select name="footer-amount">
-                <option>$60 - classroom kit</option>
-                <option>$110 - food route support</option>
-                <option>$250 - volunteer packing shift</option>
-              </select>
-            </label>
-            <label>
-              <span>Email for field notes</span>
-              <input type="email" name="footer-email" placeholder="you@example.com">
-            </label>
-            <button type="submit"><i class="fa-solid fa-circle-arrow-right" aria-hidden="true"></i> Continue support</button>
-          </form>
+        </div>
+        <div class="footer-contact-strip" aria-label="Contact details">
+          <div>
+            <span>Call anytime</span>
+            <strong>98 66 888 000</strong>
+          </div>
+          <div>
+            <span>Send email</span>
+            <strong>contact@example.com</strong>
+          </div>
+          <div>
+            <span>Visit office</span>
+            <strong>80 Brooklyn Street</strong>
+          </div>
         </div>
         <div class="row footer-main">
-          <div class="col-lg-5">
+          <div class="col-lg-4">
             <a class="footer-brand" href="#top"><span>K</span>Kindario</a>
             <p>Field-led giving for children, families, volunteers, and local partners moving food, education, and clean water support.</p>
+            <div class="footer-social">
+              <a href="#top" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="#top" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+              <a href="#top" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            </div>
           </div>
           <div class="col-lg-3">
             <h3>Explore</h3>
             <a href="#causes">Our causes</a>
+            <a href="#proof">Campaign ledger</a>
             <a href="#proof">Impact proof</a>
             <a href="#stories">Field stories</a>
           </div>
@@ -414,11 +437,14 @@
             <a href="#donate">Donate now</a>
             <a href="#volunteer">Volunteer shifts</a>
             <a href="#questions">Questions</a>
+            <a href="#causes">Partner route</a>
           </div>
-          <div class="col-lg-1 footer-social">
-            <a href="#top" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="#top" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-            <a href="#top" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <div class="col-lg-2">
+            <article class="footer-note-card">
+              <span>Field note</span>
+              <h3>Seven food delivery points confirmed before next Friday's release.</h3>
+              <a href="#stories">Read latest note</a>
+            </article>
           </div>
         </div>
         <div class="footer-bottom">
