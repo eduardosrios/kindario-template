@@ -519,7 +519,6 @@ select {
   -webkit-mask-size: calc(100% - 20px) calc(100% - 20px);
   mask-size: calc(100% - 20px) calc(100% - 20px);
   transform-origin: center;
-  animation: tileMaskSpin 6s linear infinite;
   filter: drop-shadow(0 18px 45px rgba(30, 27, 20, 0.16));
   will-change: transform;
 }
@@ -528,7 +527,6 @@ select {
   position: absolute;
   inset: -20%;
   transform-origin: center;
-  animation: tileMaskCounterSpin 6s linear infinite;
   will-change: transform;
 }
 
@@ -543,18 +541,6 @@ select {
   left: calc(20% + 30px);
   right: calc(20% + 30px);
   bottom: calc(20% + 30px);
-}
-
-@keyframes tileMaskSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes tileMaskCounterSpin {
-  to {
-    transform: rotate(-360deg);
-  }
 }
 
 .tile-blue {

@@ -5,6 +5,28 @@ const amountNotes = {
   "$250": "$250 can help cover a full volunteer packing shift."
 };
 
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (window.gsap && !reduceMotion) {
+  gsap.set([".tile-mask-frame", ".tile-mask-content"], {
+    transformOrigin: "50% 50%"
+  });
+
+  gsap.to(".tile-mask-frame", {
+    rotation: 360,
+    duration: 6,
+    repeat: -1,
+    ease: "none"
+  });
+
+  gsap.to(".tile-mask-content", {
+    rotation: -360,
+    duration: 6,
+    repeat: -1,
+    ease: "none"
+  });
+}
+
 document.querySelectorAll(".amount-chip").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".amount-chip").forEach((item) => {
