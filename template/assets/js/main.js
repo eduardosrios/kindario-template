@@ -7,8 +7,13 @@ const amountNotes = {
 
 document.querySelectorAll(".amount-chip").forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".amount-chip").forEach((item) => item.classList.remove("is-active"));
+    document.querySelectorAll(".amount-chip").forEach((item) => {
+      item.classList.remove("is-active");
+      item.setAttribute("aria-pressed", "false");
+    });
+
     button.classList.add("is-active");
+    button.setAttribute("aria-pressed", "true");
 
     const note = document.querySelector("#amount-note");
     if (note) {
@@ -19,9 +24,23 @@ document.querySelectorAll(".amount-chip").forEach((button) => {
 
 document.querySelectorAll(".support-tab").forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".support-tab").forEach((item) => item.classList.remove("is-active"));
+    document.querySelectorAll(".support-tab").forEach((item) => {
+      item.classList.remove("is-active");
+      item.setAttribute("aria-selected", "false");
+    });
+
     button.classList.add("is-active");
+    button.setAttribute("aria-selected", "true");
   });
+});
+
+document.querySelectorAll(".amount-chip").forEach((button) => {
+  button.setAttribute("aria-pressed", button.classList.contains("is-active") ? "true" : "false");
+});
+
+document.querySelectorAll(".support-tab").forEach((button) => {
+  button.setAttribute("role", "tab");
+  button.setAttribute("aria-selected", button.classList.contains("is-active") ? "true" : "false");
 });
 
 const supportForm = document.querySelector(".support-form");
@@ -47,19 +66,36 @@ if (supportForm) {
 const footerDonateForm = document.querySelector(".footer-donate-form");
 
 if (footerDonateForm) {
+  const footerInput = footerDonateForm.querySelector("input[type='email']");
+  const footerNote = document.createElement("p");
+  footerNote.className = "footer-form-note";
+  footerNote.setAttribute("aria-live", "polite");
+  footerDonateForm.appendChild(footerNote);
+
   footerDonateForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    if (footerInput && !footerInput.validity.valid) {
+      footerNote.textContent = "Enter a valid email to receive field updates.";
+      footerNote.dataset.state = "error";
+      footerInput.focus();
+      return;
+    }
 
     const submitButton = footerDonateForm.querySelector("button[type='submit']");
     if (!submitButton) return;
 
     const originalText = submitButton.textContent;
     submitButton.textContent = "Route saved";
+    footerNote.textContent = "Your field update route was saved.";
+    footerNote.dataset.state = "success";
     submitButton.disabled = true;
 
     window.setTimeout(() => {
       submitButton.textContent = originalText;
       submitButton.disabled = false;
+      footerNote.textContent = "";
+      delete footerNote.dataset.state;
     }, 2200);
   });
 }
