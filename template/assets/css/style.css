@@ -266,7 +266,8 @@ select {
 }
 
 .hero-content {
-  max-width: 680px;
+  width: min(980px, calc(100% - 40px));
+  max-width: 100%;
 }
 
 .hero-proof {
