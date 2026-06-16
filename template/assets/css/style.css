@@ -164,9 +164,17 @@ select {
 }
 
 .btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
   border-radius: 999px;
   padding: 0.85rem 1.35rem;
   font-weight: 900;
+}
+
+.btn-pill .fa-solid {
+  font-size: 0.92em;
 }
 
 .btn-dark {
@@ -318,6 +326,9 @@ select {
 
 .tile-blue a {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
   margin-top: 30px;
   border-radius: 999px;
   background: var(--ink);
@@ -465,6 +476,8 @@ h3 {
 .campaign-card a,
 .shift-card a {
   display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-top: 0;
   color: var(--green);
   font-weight: 900;
@@ -696,6 +709,10 @@ h3 {
 
 .support-tab,
 .amount-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   min-height: 48px;
   border: 0;
   border-radius: 999px;
@@ -922,6 +939,10 @@ details p {
 }
 
 .footer-donate-form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
   min-height: 54px;
   border: 0;
   border-radius: 999px;
@@ -977,6 +998,11 @@ details p {
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
+}
+
+.footer-social a:hover {
+  border-color: var(--lime);
+  color: var(--lime);
 }
 
 .footer-bottom {
