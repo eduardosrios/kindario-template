@@ -493,6 +493,18 @@ select {
   background: linear-gradient(180deg, transparent 24%, rgba(0, 0, 0, 0.72));
 }
 
+.tile-mask-icon {
+  position: absolute;
+  z-index: 1;
+  top: calc(50% - 92px);
+  left: 50%;
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  filter: invert(1);
+  transform: translateX(-50%);
+}
+
 .tile-mask-content .tile-caption {
   top: 50%;
   left: 50%;
