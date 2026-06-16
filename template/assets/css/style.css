@@ -479,7 +479,7 @@ select {
 .tile-mask-content {
   position: absolute;
   inset: -20%;
-  background-color: #ff4a9a;
+  background-color: #FFD532;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4=");
   background-position: center;
   background-size: cover;
