@@ -368,57 +368,6 @@ select {
   background: linear-gradient(180deg, transparent 24%, rgba(0, 0, 0, 0.72));
 }
 
-.tile-badge {
-  position: absolute;
-  z-index: 2;
-  top: 24px;
-  right: 24px;
-  display: grid;
-  place-items: center;
-  width: 92px;
-  aspect-ratio: 1;
-  padding: 12px;
-  background: #da2d3b;
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-  clip-path: polygon(
-    50% 0%,
-    61% 6%,
-    73% 2%,
-    81% 12%,
-    94% 11%,
-    97% 24%,
-    100% 36%,
-    94% 47%,
-    100% 59%,
-    91% 69%,
-    94% 82%,
-    82% 87%,
-    79% 100%,
-    66% 97%,
-    56% 100%,
-    45% 95%,
-    34% 100%,
-    22% 93%,
-    18% 81%,
-    6% 78%,
-    9% 66%,
-    0% 55%,
-    5% 43%,
-    0% 31%,
-    7% 20%,
-    6% 8%,
-    19% 10%,
-    27% 1%,
-    39% 6%
-  );
-  box-shadow: 0 16px 30px rgba(217, 45, 59, 0.28);
-}
-
 .tile-caption {
   position: absolute;
   z-index: 1;
@@ -476,6 +425,55 @@ select {
 .tile-center {
   grid-column: 5 / span 4;
   grid-row: 1 / span 3;
+  border-radius: 0;
+  clip-path: polygon(
+    50% 0%,
+    57% 3%,
+    64% 0.8%,
+    71% 4.2%,
+    79% 1.4%,
+    85% 7%,
+    93% 5.5%,
+    96% 13.5%,
+    100% 20%,
+    97.5% 28%,
+    100% 36%,
+    96.5% 43.5%,
+    100% 51%,
+    95.5% 58.5%,
+    99% 66.5%,
+    94% 73.5%,
+    96% 82%,
+    89% 86.5%,
+    88% 95%,
+    79.5% 95.5%,
+    74% 100%,
+    66.5% 97.2%,
+    59% 100%,
+    50% 97.2%,
+    41% 100%,
+    33.5% 97.2%,
+    26% 100%,
+    20.5% 95.5%,
+    12% 95%,
+    11% 86.5%,
+    4% 82%,
+    6% 73.5%,
+    1% 66.5%,
+    4.5% 58.5%,
+    0% 51%,
+    3.5% 43.5%,
+    0% 36%,
+    2.5% 28%,
+    0% 20%,
+    4% 13.5%,
+    7% 5.5%,
+    15% 7%,
+    21% 1.4%,
+    29% 4.2%,
+    36% 0.8%,
+    43% 3%
+  );
 }
 
 .tile-blue {
@@ -1349,13 +1347,6 @@ details p {
     grid-auto-rows: minmax(220px, auto);
   }
 
-  .tile-badge {
-    top: 20px;
-    right: 20px;
-    width: 82px;
-    font-size: 0.72rem;
-  }
-
   .tile-left,
   .tile-green,
   .tile-center,
@@ -1483,13 +1474,6 @@ details p {
 
   .hero-content {
     max-width: 100%;
-  }
-
-  .tile-badge {
-    top: 18px;
-    right: 18px;
-    width: 72px;
-    font-size: 0.66rem;
   }
 
   .hero-title {
