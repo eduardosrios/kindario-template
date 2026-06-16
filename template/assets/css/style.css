@@ -497,6 +497,8 @@ select {
   width: min(70%, 20rem);
   padding-inline: 15px;
   font-size: clamp(1.2075rem, 1.4375vw, 1.6675rem);
+  font-weight: 800;
+  text-shadow: 1px 1px 0 rgba(0,0,0,1);
   transform: translate(-50%, -50%);
   text-align: center;
 }
