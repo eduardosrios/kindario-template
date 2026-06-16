@@ -478,6 +478,10 @@ select {
 .tile-mask-content {
   position: absolute;
   inset: -20%;
+  background-color: var(--yellow);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4=");
+  background-position: center;
+  background-size: cover;
   transform-origin: center;
   will-change: transform;
 }
