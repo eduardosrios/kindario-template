@@ -411,7 +411,6 @@ select {
 .tile-green::before,
 .tile-right::before,
 .tile-small::before {
-  content: "\f4be";
   position: absolute;
   z-index: 2;
   display: inline-flex;
@@ -420,8 +419,7 @@ select {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #fff;
-  color: #000;
+  color: #fff;
   font-family: var(--fa-style-family-classic, "Font Awesome 7 Free");
   font-size: 1.25rem;
   font-weight: 900;
@@ -429,8 +427,10 @@ select {
 }
 
 .tile-left::before {
+  content: "\f004";
   top: 28px;
   left: 28px;
+  background: #b856a2;
 }
 
 .tile-left .tile-caption {
@@ -478,8 +478,10 @@ select {
 }
 
 .tile-green::before {
+  content: "\f4c4";
   top: 26px;
   right: 26px;
+  background: #315cdb;
 }
 
 .tile-green strong {
@@ -629,8 +631,10 @@ select {
 }
 
 .tile-right::before {
+  content: "\f19d";
   top: 28px;
   left: 28px;
+  background: #ff7247;
 }
 
 .tile-orange {
@@ -658,8 +662,10 @@ select {
 }
 
 .tile-small::before {
+  content: "\f4d8";
   top: 28px;
   left: 28px;
+  background: #004f3b;
 }
 
 .section-block {
