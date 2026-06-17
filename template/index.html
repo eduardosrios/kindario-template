@@ -24,7 +24,7 @@
     <header class="site-header" id="top">
       <section class="hero-section" aria-label="Kindario community support campaign">
         <div class="container">
-          <div class="hero-shell">
+          <div class="hero-shell" data-hero-slider-shell data-hero-slide="0">
             <nav class="hero-nav navbar navbar-expand-lg" aria-label="Primary navigation">
               <div class="hero-nav-shell">
                 <div class="hero-nav-inner container">
@@ -36,7 +36,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="primaryNav">
-                    <ul class="navbar-nav mx-auto">
+                    <ul class="navbar-nav ms-auto">
                       <li class="nav-item"><a class="nav-link active" href="#top">Home</a></li>
                       <li class="nav-item nav-dropdown">
                         <a class="nav-link" href="#causes">Mission <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
@@ -79,14 +79,65 @@
               </div>
             </nav>
 
-            <div class="hero-body container">
-              <div class="hero-content">
-                <h1 class="hero-title">Education and community relief made visible.</h1>
-                <p class="hero-lead">Kindario funds school routes, food support, and practical field needs with updates that show what moved, where it arrived, and who confirmed it.</p>
-                <div class="hero-actions">
-                  <a class="btn btn-pill btn-hero-primary" href="#donate">Donate now</a>
-                  <a class="btn btn-pill btn-hero-outline" href="#stories">See field notes</a>
+            <div class="hero-body container" data-hero-slider>
+              <div class="hero-slide is-active" data-hero-slide="0">
+                <div class="hero-content">
+                  <h1 class="hero-title">Education and community relief made visible.</h1>
+                  <p class="hero-lead">Kindario funds school routes, food support, and practical field needs with updates that show what moved, where it arrived, and who confirmed it.</p>
+                  <div class="hero-actions">
+                    <a class="btn btn-pill btn-hero-primary" href="#donate">Donate now</a>
+                    <a class="btn btn-pill btn-hero-outline" href="#stories">See field notes</a>
+                  </div>
                 </div>
+              </div>
+              <div class="hero-slide" data-hero-slide="1">
+                <div class="hero-content">
+                  <h1 class="hero-title">Meals and supplies delivered with proof.</h1>
+                  <p class="hero-lead">Move support into food parcels, classroom kits, and volunteer routes with updates families, teachers, and donors can trust.</p>
+                  <div class="hero-actions">
+                    <a class="btn btn-pill btn-hero-primary" href="#donate">Start giving</a>
+                    <a class="btn btn-pill btn-hero-outline" href="#volunteer">Join volunteers</a>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-slide" data-hero-slide="2">
+                <div class="hero-content">
+                  <h1 class="hero-title">Classrooms ready before the first bell.</h1>
+                  <p class="hero-lead">Help teachers open stronger days with books, learning kits, and practical support packed for the next confirmed school route.</p>
+                  <div class="hero-actions">
+                    <a class="btn btn-pill btn-hero-primary" href="#causes">Fund supplies</a>
+                    <a class="btn btn-pill btn-hero-outline" href="#proof">View impact</a>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-slide" data-hero-slide="3">
+                <div class="hero-content">
+                  <h1 class="hero-title">Volunteer teams move faster together.</h1>
+                  <p class="hero-lead">Join packing shifts, delivery prep, and local outreach that turns donor intent into completed support families can see.</p>
+                  <div class="hero-actions">
+                    <a class="btn btn-pill btn-hero-primary" href="#volunteer">Volunteer now</a>
+                    <a class="btn btn-pill btn-hero-outline" href="#stories">Read stories</a>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-slide" data-hero-slide="4">
+                <div class="hero-content">
+                  <h1 class="hero-title">Every gift follows a real route.</h1>
+                  <p class="hero-lead">Choose a campaign, follow the update, and see how school support, meals, and care arrive where they are needed most.</p>
+                  <div class="hero-actions">
+                    <a class="btn btn-pill btn-hero-primary" href="#donate">Choose route</a>
+                    <a class="btn btn-pill btn-hero-outline" href="#causes">Open needs</a>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-slider-dots" aria-label="Hero slides">
+                <button class="hero-slider-nav" type="button" data-hero-prev aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="is-active" type="button" data-hero-dot="0" aria-label="Show slide 1" aria-current="true"></button>
+                <button type="button" data-hero-dot="1" aria-label="Show slide 2" aria-current="false"></button>
+                <button type="button" data-hero-dot="2" aria-label="Show slide 3" aria-current="false"></button>
+                <button type="button" data-hero-dot="3" aria-label="Show slide 4" aria-current="false"></button>
+                <button type="button" data-hero-dot="4" aria-label="Show slide 5" aria-current="false"></button>
+                <button class="hero-slider-nav" type="button" data-hero-next aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
               </div>
             </div>
           </div>

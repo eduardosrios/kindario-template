@@ -5,6 +5,70 @@ const amountNotes = {
   "$250": "$250 can help cover a full volunteer packing shift."
 };
 
+const heroSlider = document.querySelector("[data-hero-slider]");
+
+if (heroSlider) {
+  const heroShell = document.querySelector("[data-hero-slider-shell]");
+  const slides = Array.from(heroSlider.querySelectorAll("[data-hero-slide]"));
+  const dots = Array.from(heroSlider.querySelectorAll("[data-hero-dot]"));
+  const prevButton = heroSlider.querySelector("[data-hero-prev]");
+  const nextButton = heroSlider.querySelector("[data-hero-next]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let activeSlide = 0;
+  let slideTimer;
+
+  const showHeroSlide = (index) => {
+    activeSlide = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === activeSlide);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeSlide;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+
+    if (heroShell) {
+      heroShell.dataset.heroSlide = String(activeSlide);
+    }
+  };
+
+  const startHeroSlider = () => {
+    if (reduceMotion || slides.length < 2) return;
+
+    window.clearInterval(slideTimer);
+    slideTimer = window.setInterval(() => {
+      showHeroSlide(activeSlide + 1);
+    }, 6500);
+  };
+
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => {
+      showHeroSlide(dotIndex);
+      startHeroSlider();
+    });
+  });
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      showHeroSlide(activeSlide - 1);
+      startHeroSlider();
+    });
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      showHeroSlide(activeSlide + 1);
+      startHeroSlider();
+    });
+  }
+
+  showHeroSlide(0);
+  startHeroSlider();
+}
+
 document.querySelectorAll(".amount-chip").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".amount-chip").forEach((item) => {

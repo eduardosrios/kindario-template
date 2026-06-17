@@ -305,21 +305,22 @@ select {
   display: flex;
   align-items: center;
   align-self: stretch;
-  padding-left: 28px;
+  margin-left: 28px;
+  padding-left: 36px;
 }
 
 .hero-nav-actions::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: -30px;
   right: calc((100vw - 100%) / -2);
-  bottom: auto;
-  left: 7px;
+  bottom: -30px;
+  left: 0;
   z-index: 0;
-  height: 90px;
-  border-radius: 200px 0 0 200px;
+  height: auto;
+  border-radius: 0;
   background: #ffd84a;
-  transform: translateY(-50%);
+  transform: none;
 }
 
 .hero-nav-cta-wrap {
@@ -328,7 +329,7 @@ select {
   display: flex;
   align-items: center;
   padding: 0;
-  border-radius: 100px;
+  border-radius: 4px;
   background: transparent;
 }
 
@@ -372,11 +373,44 @@ select {
   min-height: 760px;
   padding: 26px 26px 56px;
   border-radius: 0;
+  background: #124835;
+  color: var(--white);
+  transition: background 360ms ease;
+}
+
+.hero-shell[data-hero-slide="0"] {
   background:
     linear-gradient(90deg, rgba(18, 72, 53, 0.96) 0%, rgba(18, 72, 53, 0.92) 44%, rgba(18, 72, 53, 0.58) 76%, rgba(18, 72, 53, 0.38) 100%),
     url("../images/annie-spratt-qMvcuYEPnO0-unsplash.jpg") center center / cover no-repeat,
     #124835;
-  color: var(--white);
+}
+
+.hero-shell[data-hero-slide="1"] {
+  background:
+    linear-gradient(90deg, rgba(49, 92, 219, 0.94) 0%, rgba(49, 92, 219, 0.82) 42%, rgba(49, 92, 219, 0.56) 76%, rgba(49, 92, 219, 0.34) 100%),
+    url("../images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg") center center / cover no-repeat,
+    #315cdb;
+}
+
+.hero-shell[data-hero-slide="2"] {
+  background:
+    linear-gradient(90deg, rgba(255, 114, 71, 0.94) 0%, rgba(255, 114, 71, 0.82) 42%, rgba(255, 114, 71, 0.58) 76%, rgba(255, 114, 71, 0.36) 100%),
+    url("../images/annie-spratt-cVEOh_JJmEE-unsplash.jpg") center center / cover no-repeat,
+    #ff7247;
+}
+
+.hero-shell[data-hero-slide="3"] {
+  background:
+    linear-gradient(90deg, rgba(184, 86, 162, 0.94) 0%, rgba(184, 86, 162, 0.82) 42%, rgba(184, 86, 162, 0.56) 76%, rgba(184, 86, 162, 0.34) 100%),
+    url("../images/larm-rmah-AEaTUnvneik-unsplash.jpg") center center / cover no-repeat,
+    #b856a2;
+}
+
+.hero-shell[data-hero-slide="4"] {
+  background:
+    linear-gradient(90deg, rgba(134, 174, 69, 0.96) 0%, rgba(134, 174, 69, 0.84) 42%, rgba(134, 174, 69, 0.58) 76%, rgba(134, 174, 69, 0.36) 100%),
+    url("../images/michael-ali-y9dxpbveFmU-unsplash.jpg") center center / cover no-repeat,
+    #86ae45;
 }
 
 .hero-shell::before {
@@ -405,7 +439,7 @@ select {
   gap: 18px;
   padding: 0 12px 0 28px;
   border: 0;
-  border-radius: 100px;
+  border-radius: 4px;
   background: #2f8b37;
   color: var(--white);
   font-size: 1.105rem;
@@ -431,15 +465,81 @@ select {
 .hero-body {
   position: relative;
   z-index: 1;
-  display: flex;
+  display: grid;
   align-items: center;
   min-height: 560px;
   padding: 76px calc(var(--bs-gutter-x) * 0.5) 20px;
 }
 
+.hero-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 360ms ease, transform 360ms ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 .hero-content {
   width: min(980px, calc(100% - 40px));
   max-width: 100%;
+}
+
+.hero-slider-dots {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 42px;
+  transform: translateY(-50%);
+}
+
+.hero-slider-dots::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  width: 14px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.hero-slider-dots button {
+  position: relative;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  padding: 0;
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.hero-slider-dots button.is-active,
+.hero-slider-dots .hero-slider-nav {
+  background: #fff;
+}
+
+.hero-slider-dots button.is-active {
+  transform: scale(1.5);
+}
+
+.hero-slider-dots .hero-slider-nav {
+  display: inline-grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  color: var(--green);
+  font-size: 0.7rem;
 }
 
 .hero-proof {
@@ -500,13 +600,17 @@ select {
 .btn-hero-outline {
   border-color: transparent;
   background: var(--white);
-  color: var(--ink);
+  color: #000;
+}
+
+.hero-actions .btn-hero-outline {
+  color: #000;
 }
 
 .btn-hero-outline:hover {
   border-color: var(--white);
   background: var(--white);
-  color: var(--green);
+  color: #000;
 }
 
 .hero-highlights {
