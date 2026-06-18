@@ -13,7 +13,16 @@ if (heroSlider) {
   const dots = Array.from(heroSlider.querySelectorAll("[data-hero-dot]"));
   const prevButton = heroSlider.querySelector("[data-hero-prev]");
   const nextButton = heroSlider.querySelector("[data-hero-next]");
+  const timerIndicator = heroSlider.querySelector("[data-hero-timer]");
+  const timerIcon = heroSlider.querySelector("[data-hero-timer-icon]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const heroSlideDuration = 6500;
+  const heroTimerIcons = [
+    "https://cdn-icons-png.flaticon.com/512/3162/3162269.png",
+    "https://cdn-icons-png.flaticon.com/512/733/733638.png",
+    "https://cdn-icons-png.flaticon.com/512/1030/1030021.png",
+    "https://cdn-icons-png.flaticon.com/512/2813/2813180.png"
+  ];
   let activeSlide = 0;
   let slideTimer;
 
@@ -33,15 +42,35 @@ if (heroSlider) {
     if (heroShell) {
       heroShell.dataset.heroSlide = String(activeSlide);
     }
+
+    if (timerIcon && heroTimerIcons[activeSlide]) {
+      timerIcon.src = heroTimerIcons[activeSlide];
+    }
+  };
+
+  const resetHeroTimer = () => {
+    if (!timerIndicator) return;
+
+    if (reduceMotion || slides.length < 2) {
+      timerIndicator.classList.remove("is-running");
+      return;
+    }
+
+    timerIndicator.classList.remove("is-running");
+    void timerIndicator.offsetWidth;
+    timerIndicator.classList.add("is-running");
   };
 
   const startHeroSlider = () => {
+    resetHeroTimer();
+
     if (reduceMotion || slides.length < 2) return;
 
     window.clearInterval(slideTimer);
     slideTimer = window.setInterval(() => {
       showHeroSlide(activeSlide + 1);
-    }, 6500);
+      resetHeroTimer();
+    }, heroSlideDuration);
   };
 
   dots.forEach((dot, dotIndex) => {

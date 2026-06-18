@@ -126,13 +126,22 @@
               </div>
               <div class="hero-slider-dots" aria-label="Hero slides">
                 <div class="hero-slider-arrows">
+                  <div class="hero-slider-timer" data-hero-timer aria-hidden="true">
+                    <svg class="hero-slider-timer-ring" viewBox="0 0 144 144" aria-hidden="true">
+                      <circle class="hero-slider-timer-ring-circle" cx="72" cy="72" r="69"></circle>
+                      <circle class="hero-slider-timer-ring-thumb" cx="72" cy="3" r="8"></circle>
+                    </svg>
+                    <img class="hero-slider-timer-icon" data-hero-timer-icon src="https://cdn-icons-png.flaticon.com/512/3162/3162269.png" alt="">
+                  </div>
                   <button class="hero-slider-nav" type="button" data-hero-prev aria-label="Previous slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
                   <button class="hero-slider-nav" type="button" data-hero-next aria-label="Next slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
                 </div>
-                <button class="is-active" type="button" data-hero-dot="0" data-label="Field Relief" aria-label="Show slide 1" aria-current="true"></button>
-                <button type="button" data-hero-dot="1" data-label="Meal Kits" aria-label="Show slide 2" aria-current="false"></button>
-                <button type="button" data-hero-dot="2" data-label="Classroom Aid" aria-label="Show slide 3" aria-current="false"></button>
-                <button type="button" data-hero-dot="3" data-label="Volunteer Teams" aria-label="Show slide 4" aria-current="false"></button>
+                <div class="hero-slider-items">
+                  <button class="is-active" type="button" data-hero-dot="0" aria-label="Show slide 1" aria-current="true"><span class="hero-slider-dot-label">Field Relief</span><span class="hero-slider-dot-marker" aria-hidden="true"></span></button>
+                  <button type="button" data-hero-dot="1" aria-label="Show slide 2" aria-current="false"><span class="hero-slider-dot-label">Meal Kits</span><span class="hero-slider-dot-marker" aria-hidden="true"></span></button>
+                  <button type="button" data-hero-dot="2" aria-label="Show slide 3" aria-current="false"><span class="hero-slider-dot-label">Classroom Aid</span><span class="hero-slider-dot-marker" aria-hidden="true"></span></button>
+                  <button type="button" data-hero-dot="3" aria-label="Show slide 4" aria-current="false"><span class="hero-slider-dot-label">Volunteer Teams</span><span class="hero-slider-dot-marker" aria-hidden="true"></span></button>
+                </div>
               </div>
             </div>
           </div>
