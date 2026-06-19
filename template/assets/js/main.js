@@ -17,14 +17,17 @@ if (heroSlider) {
   const timerIcon = heroSlider.querySelector("[data-hero-timer-icon]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const heroSlideDuration = 6500;
+  const heroTimerFlipDuration = 520;
   const heroTimerIcons = [
     "https://cdn-icons-png.flaticon.com/512/3162/3162269.png",
     "https://cdn-icons-png.flaticon.com/512/733/733638.png",
-    "https://cdn-icons-png.flaticon.com/512/1030/1030021.png",
-    "https://cdn-icons-png.flaticon.com/512/2813/2813180.png"
+    "https://cdn-icons-png.flaticon.com/512/17123/17123553.png",
+    "https://cdn-icons-png.flaticon.com/512/11618/11618743.png"
   ];
   let activeSlide = 0;
   let slideTimer;
+  let timerFlipSwapTimeout;
+  let timerFlipCleanupTimeout;
 
   const showHeroSlide = (index) => {
     activeSlide = (index + slides.length) % slides.length;
@@ -43,6 +46,10 @@ if (heroSlider) {
       heroShell.dataset.heroSlide = String(activeSlide);
     }
 
+    if (timerIndicator) {
+      timerIndicator.dataset.timerSlide = String(activeSlide);
+    }
+
     if (timerIcon && heroTimerIcons[activeSlide]) {
       timerIcon.src = heroTimerIcons[activeSlide];
     }
@@ -50,6 +57,10 @@ if (heroSlider) {
 
   const resetHeroTimer = () => {
     if (!timerIndicator) return;
+
+    window.clearTimeout(timerFlipSwapTimeout);
+    window.clearTimeout(timerFlipCleanupTimeout);
+    timerIndicator.classList.remove("is-flipping");
 
     if (reduceMotion || slides.length < 2) {
       timerIndicator.classList.remove("is-running");
@@ -61,6 +72,40 @@ if (heroSlider) {
     timerIndicator.classList.add("is-running");
   };
 
+  const showHeroSlideWithFlip = (index) => {
+    const nextSlideIndex = (index + slides.length) % slides.length;
+
+    if (!timerIndicator || reduceMotion || slides.length < 2) {
+      showHeroSlide(index);
+      resetHeroTimer();
+      return;
+    }
+
+    timerIndicator.classList.remove("is-running");
+    timerIndicator.classList.remove("is-flipping");
+    timerIndicator.dataset.timerSlide = String(nextSlideIndex);
+
+    if (timerIcon && heroTimerIcons[nextSlideIndex]) {
+      timerIcon.src = heroTimerIcons[nextSlideIndex];
+    }
+
+    void timerIndicator.offsetWidth;
+    timerIndicator.classList.add("is-flipping");
+
+    timerFlipSwapTimeout = window.setTimeout(() => {
+      showHeroSlide(index);
+      resetHeroTimer();
+    }, heroTimerFlipDuration / 2);
+
+    timerFlipCleanupTimeout = window.setTimeout(() => {
+      timerIndicator.classList.remove("is-flipping");
+    }, heroTimerFlipDuration);
+  };
+
+  const advanceHeroSlideWithFlip = () => {
+    showHeroSlideWithFlip(activeSlide + 1);
+  };
+
   const startHeroSlider = () => {
     resetHeroTimer();
 
@@ -68,29 +113,41 @@ if (heroSlider) {
 
     window.clearInterval(slideTimer);
     slideTimer = window.setInterval(() => {
-      showHeroSlide(activeSlide + 1);
-      resetHeroTimer();
+      advanceHeroSlideWithFlip();
     }, heroSlideDuration);
+  };
+
+  const restartHeroSliderAfterClick = () => {
+    window.clearInterval(slideTimer);
+
+    if (reduceMotion || slides.length < 2) return;
+
+    window.setTimeout(() => {
+      window.clearInterval(slideTimer);
+      slideTimer = window.setInterval(() => {
+        advanceHeroSlideWithFlip();
+      }, heroSlideDuration);
+    }, heroTimerFlipDuration);
   };
 
   dots.forEach((dot, dotIndex) => {
     dot.addEventListener("click", () => {
-      showHeroSlide(dotIndex);
-      startHeroSlider();
+      showHeroSlideWithFlip(dotIndex);
+      restartHeroSliderAfterClick();
     });
   });
 
   if (prevButton) {
     prevButton.addEventListener("click", () => {
-      showHeroSlide(activeSlide - 1);
-      startHeroSlider();
+      showHeroSlideWithFlip(activeSlide - 1);
+      restartHeroSliderAfterClick();
     });
   }
 
   if (nextButton) {
     nextButton.addEventListener("click", () => {
-      showHeroSlide(activeSlide + 1);
-      startHeroSlider();
+      showHeroSlideWithFlip(activeSlide + 1);
+      restartHeroSliderAfterClick();
     });
   }
 
@@ -191,4 +248,63 @@ if (footerDonateForm) {
       delete footerNote.dataset.state;
     }, 2200);
   });
+}
+
+const languageSwitcher = document.querySelector(".language-switcher");
+
+if (languageSwitcher) {
+  const languagePanel = languageSwitcher.closest(".hero-top-panel");
+  const languageMenu = languagePanel?.querySelector(".language-menu");
+  const currentButton = languageSwitcher.querySelector(".language-current");
+  const currentCode = currentButton?.querySelector(".language-code");
+  const languageLinks = Array.from(languageMenu?.querySelectorAll("a[lang]") || []);
+  const closeLanguageMenu = () => {
+    languageSwitcher.classList.remove("is-open");
+    currentButton?.setAttribute("aria-expanded", "false");
+  };
+
+  const toggleLanguageMenu = () => {
+    const isOpen = languageSwitcher.classList.toggle("is-open");
+    currentButton?.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  };
+
+  const setCurrentLanguage = (lang) => {
+    const selectedLink = languageLinks.find((link) => link.lang === lang);
+    if (!selectedLink || !currentCode) return;
+
+    const selectedLabel = selectedLink.dataset.languageLabel || selectedLink.textContent.trim();
+    const selectedCode = selectedLink.dataset.languageCode || selectedLink.textContent.trim();
+
+    languageSwitcher.dataset.currentLanguage = lang;
+    currentCode.textContent = selectedCode;
+    currentButton?.setAttribute("aria-label", `Current language: ${selectedLabel}`);
+
+    languageLinks.forEach((link) => {
+      link.hidden = link.lang === lang;
+    });
+  };
+
+  languageLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      setCurrentLanguage(link.lang);
+      closeLanguageMenu();
+      currentButton?.focus();
+    });
+  });
+
+  currentButton?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleLanguageMenu();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (languagePanel && !languagePanel.contains(event.target)) {
+      closeLanguageMenu();
+    }
+  });
+
+  setCurrentLanguage(languageSwitcher.dataset.currentLanguage || "en");
+  currentButton?.setAttribute("aria-expanded", "false");
 }
