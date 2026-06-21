@@ -28,6 +28,34 @@ if (heroSlider) {
   let slideTimer;
   let timerFlipSwapTimeout;
   let timerFlipCleanupTimeout;
+  let heroBgTransitionTimeout;
+
+  const animateHeroBackgroundSwap = () => {
+    if (!heroShell || reduceMotion) return;
+
+    const shellStyles = window.getComputedStyle(heroShell);
+    const oldImage = shellStyles.getPropertyValue("--hero-shell-image").trim();
+    const oldOverlay = shellStyles.getPropertyValue("--hero-shell-overlay").trim();
+    const oldBackgroundColor = shellStyles.getPropertyValue("--hero-shell-bg").trim();
+
+    if (!oldImage || oldImage === "none") return;
+
+    const previousTransition = heroShell.querySelector(".hero-bg-transition");
+    if (previousTransition) previousTransition.remove();
+
+    const transitionLayer = document.createElement("span");
+    transitionLayer.className = "hero-bg-transition";
+    transitionLayer.setAttribute("aria-hidden", "true");
+    transitionLayer.style.backgroundColor = oldBackgroundColor || "transparent";
+    transitionLayer.style.backgroundImage = oldOverlay && oldOverlay !== "none" ? `${oldOverlay}, ${oldImage}` : oldImage;
+
+    heroShell.prepend(transitionLayer);
+
+    window.clearTimeout(heroBgTransitionTimeout);
+    heroBgTransitionTimeout = window.setTimeout(() => {
+      transitionLayer.remove();
+    }, 760);
+  };
 
   const showHeroSlide = (index) => {
     activeSlide = (index + slides.length) % slides.length;
@@ -43,6 +71,9 @@ if (heroSlider) {
     });
 
     if (heroShell) {
+      if (heroShell.dataset.heroSlide !== String(activeSlide)) {
+        animateHeroBackgroundSwap();
+      }
       heroShell.dataset.heroSlide = String(activeSlide);
     }
 
