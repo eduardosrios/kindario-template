@@ -662,3 +662,146 @@ if (floatingCtaCard) {
     animationFrame = window.requestAnimationFrame(tick);
   }
 }
+
+const courseFeatureWaveCard = document.querySelector(".course-feature-wide");
+
+if (courseFeatureWaveCard) {
+  const outerWave = courseFeatureWaveCard.querySelector(".course-feature-wave--outer");
+  const innerWave = courseFeatureWaveCard.querySelector(".course-feature-wave--inner");
+  const thirdWave = courseFeatureWaveCard.querySelector(".course-feature-wave--third");
+  const canTrackHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const staticWaveState = {
+    outer: { left: "-230px", bottom: "-280px", width: "720px", height: "720px" },
+    inner: { left: "-130px", bottom: "-180px", width: "520px", height: "520px" },
+    third: { left: "-30px", bottom: "-80px", width: "320px", height: "320px" }
+  };
+  const waveVarMap = {
+    outer: {
+      left: "--course-wave-outer-left",
+      bottom: "--course-wave-outer-bottom",
+      width: "--course-wave-outer-width",
+      height: "--course-wave-outer-height"
+    },
+    inner: {
+      left: "--course-wave-inner-left",
+      bottom: "--course-wave-inner-bottom",
+      width: "--course-wave-inner-width",
+      height: "--course-wave-inner-height"
+    },
+    third: {
+      left: "--course-wave-third-left",
+      bottom: "--course-wave-third-bottom",
+      width: "--course-wave-third-width",
+      height: "--course-wave-third-height"
+    }
+  };
+  let settleFrame;
+
+  const readWaveState = () => {
+    const outerStyles = outerWave ? window.getComputedStyle(outerWave) : null;
+    const innerStyles = innerWave ? window.getComputedStyle(innerWave) : null;
+    const thirdStyles = thirdWave ? window.getComputedStyle(thirdWave) : null;
+
+    return {
+      outer: outerStyles
+        ? {
+            left: outerStyles.left,
+            bottom: outerStyles.bottom,
+            width: outerStyles.width,
+            height: outerStyles.height
+          }
+        : staticWaveState.outer,
+      inner: innerStyles
+        ? {
+            left: innerStyles.left,
+            bottom: innerStyles.bottom,
+            width: innerStyles.width,
+            height: innerStyles.height
+          }
+        : staticWaveState.inner,
+      third: thirdStyles
+        ? {
+            left: thirdStyles.left,
+            bottom: thirdStyles.bottom,
+            width: thirdStyles.width,
+            height: thirdStyles.height
+          }
+        : staticWaveState.third
+    };
+  };
+
+  const applyWaveState = (state) => {
+    Object.entries(waveVarMap).forEach(([waveName, vars]) => {
+      const waveState = state[waveName];
+      courseFeatureWaveCard.style.setProperty(vars.left, waveState.left);
+      courseFeatureWaveCard.style.setProperty(vars.bottom, waveState.bottom);
+      courseFeatureWaveCard.style.setProperty(vars.width, waveState.width);
+      courseFeatureWaveCard.style.setProperty(vars.height, waveState.height);
+    });
+  };
+
+  const clearWaveState = () => {
+    Object.values(waveVarMap).forEach((vars) => {
+      courseFeatureWaveCard.style.removeProperty(vars.left);
+      courseFeatureWaveCard.style.removeProperty(vars.bottom);
+      courseFeatureWaveCard.style.removeProperty(vars.width);
+      courseFeatureWaveCard.style.removeProperty(vars.height);
+    });
+  };
+
+  const settleWavesToStaticState = () => {
+    window.cancelAnimationFrame(settleFrame);
+
+    const currentState = readWaveState();
+    applyWaveState(currentState);
+    courseFeatureWaveCard.classList.add("is-wave-settling");
+    void courseFeatureWaveCard.offsetWidth;
+
+    settleFrame = window.requestAnimationFrame(() => {
+      applyWaveState(staticWaveState);
+    });
+  };
+
+  const resumeWaveAnimation = () => {
+    window.cancelAnimationFrame(settleFrame);
+    courseFeatureWaveCard.classList.remove("is-wave-settling");
+    clearWaveState();
+  };
+
+  if (canTrackHover) {
+    courseFeatureWaveCard.addEventListener("mouseenter", settleWavesToStaticState);
+    courseFeatureWaveCard.addEventListener("mouseleave", resumeWaveAnimation);
+  }
+}
+
+document.querySelectorAll("[data-countdown-target]").forEach((countdown) => {
+  const targetValue = countdown.getAttribute("data-countdown-target");
+  const targetTime = targetValue ? Date.parse(targetValue) : NaN;
+
+  if (Number.isNaN(targetTime)) return;
+
+  const fields = {
+    days: countdown.querySelector('[data-countdown-value="days"]'),
+    hours: countdown.querySelector('[data-countdown-value="hours"]'),
+    minutes: countdown.querySelector('[data-countdown-value="minutes"]'),
+    seconds: countdown.querySelector('[data-countdown-value="seconds"]')
+  };
+
+  const updateCountdown = () => {
+    const now = Date.now();
+    const remaining = Math.max(0, targetTime - now);
+    const totalSeconds = Math.floor(remaining / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    if (fields.days) fields.days.textContent = String(days);
+    if (fields.hours) fields.hours.textContent = String(hours).padStart(2, "0");
+    if (fields.minutes) fields.minutes.textContent = String(minutes).padStart(2, "0");
+    if (fields.seconds) fields.seconds.textContent = String(seconds).padStart(2, "0");
+  };
+
+  updateCountdown();
+  window.setInterval(updateCountdown, 1000);
+});
