@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -152,6 +153,7 @@
                     </ul>
                     <div class="hero-nav-actions">
                       <div class="hero-top-panel" aria-label="Account and language">
+                        <button class="hero-utility-search fa-solid fa-search" type="button" aria-label="Search"></button>
                         <div class="language-switcher" data-current-language="en">
                           <button class="language-current" type="button" aria-label="Change language">
                             <span class="language-code">EN</span>
@@ -251,7 +253,176 @@
       </section>
     </header>
 
+    <section class="hero-impact-strip" aria-label="Kindario impact summary">
+      <div class="container">
+        <div class="hero-impact-grid">
+          <article class="hero-impact-item hero-impact-video">
+            <a class="rotating-play kindario-video-lightbox" href="https://www.youtube.com/watch?v=N7izqmrBSDg" data-gallery="kindario-video-gallery" data-type="video" data-title="How Kindness Changes Destinies" data-description="A short overview for the Kindario support journey." aria-label="Open Kindario video gallery">
+              <svg class="rotating-play-text" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+                <defs>
+                  <path id="rotating-play-circle" d="M100 100 m -64 0 a 64 64 0 1 1 128 0 a 64 64 0 1 1 -128 0"></path>
+                </defs>
+                <text>
+                  <textPath href="#rotating-play-circle" startOffset="50%" text-anchor="middle">How kindness Changes Destinies</textPath>
+                </text>
+              </svg>
+              <div class="rotating-play-core" aria-hidden="true">
+                <div class="rotating-play-badge"></div>
+                <svg class="rotating-play-outline" viewBox="0 0 24 24" focusable="false">
+                  <path d="M8 5.5 18 12 8 18.5Z"></path>
+                </svg>
+              </div>
+            </a>
+            <div class="video-gallery-links" aria-hidden="true">
+              <a class="kindario-video-lightbox" href="https://www.youtube.com/watch?v=uG6RxcDNSBE" data-gallery="kindario-video-gallery" data-type="video" data-title="Field Routes and Verified Support" data-description="See how practical relief can move from donor intent to confirmed local action."></a>
+            </div>
+          </article>
+          <article class="hero-impact-item">
+            <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+            <div>
+              <strong>4200+</strong>
+              <span>Worldwide Volunteers</span>
+            </div>
+          </article>
+          <article class="hero-impact-item">
+            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+            <div>
+              <strong>50+</strong>
+              <span>Active Campaigns</span>
+            </div>
+          </article>
+          <article class="hero-impact-item">
+            <i class="fa-regular fa-gem" aria-hidden="true"></i>
+            <div>
+              <strong>$56M</strong>
+              <span>Raised last year</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <main id="main-content">
+
+      <section class="color-accordion-section" aria-label="Colorful accordion palette">
+        <div class="container">
+          <div class="color-accordion" data-color-accordion>
+            <article class="color-accordion-item is-open" style="--panel-color: #282828; --panel-text: #fff8ec;">
+              <button class="color-accordion-trigger" type="button" aria-expanded="true">
+                <span class="color-accordion-logo" aria-hidden="true"><img src="assets/images/favicon.svg" alt=""></span>
+                <span class="color-accordion-title">Signal Black</span>
+              </button>
+              <div class="color-accordion-panel">
+                <p>High-contrast base for nav, proof panels, and serious campaign copy.</p>
+              </div>
+            </article>
+
+            <article class="color-accordion-item" style="--panel-color: #f8f3ec; --panel-text: #111111;">
+              <button class="color-accordion-trigger" type="button" aria-expanded="false">
+                <span class="color-accordion-logo" aria-hidden="true"><img src="assets/images/favicon.svg" alt=""></span>
+                <span class="color-accordion-title">Creamy Milk</span>
+              </button>
+              <div class="color-accordion-panel">
+                <p>Soft page canvas for donation forms, readable sections, and calm editorial spacing.</p>
+              </div>
+            </article>
+
+            <article class="color-accordion-item" style="--panel-color: #ff5e54; --panel-text: #ffffff;">
+              <button class="color-accordion-trigger" type="button" aria-expanded="false">
+                <span class="color-accordion-logo" aria-hidden="true"><img src="assets/images/favicon.svg" alt=""></span>
+                <span class="color-accordion-title">Watermelon With Carrot</span>
+              </button>
+              <div class="color-accordion-panel">
+                <p>Urgent accent for crisis alerts, active controls, and campaign deadlines.</p>
+              </div>
+            </article>
+
+            <article class="color-accordion-item" style="--panel-color: #28bf5d; --panel-text: #ffffff;">
+              <button class="color-accordion-trigger" type="button" aria-expanded="false">
+                <span class="color-accordion-logo" aria-hidden="true"><img src="assets/images/favicon.svg" alt=""></span>
+                <span class="color-accordion-title">Light Malachite</span>
+              </button>
+              <div class="color-accordion-panel">
+                <p>Positive progress color for fulfilled routes, impact totals, and volunteer wins.</p>
+              </div>
+            </article>
+
+            <article class="color-accordion-item" style="--panel-color: #1283eb; --panel-text: #ffffff;">
+              <button class="color-accordion-trigger" type="button" aria-expanded="false">
+                <span class="color-accordion-logo" aria-hidden="true"><img src="assets/images/favicon.svg" alt=""></span>
+                <span class="color-accordion-title">Azure Cornflower</span>
+              </button>
+              <div class="color-accordion-panel">
+                <p>Trust signal for data, route tracking, and links that need clear affordance.</p>
+              </div>
+            </article>
+
+            <article class="color-accordion-item" style="--panel-color: #ffe459; --panel-text: #111111;">
+              <button class="color-accordion-trigger" type="button" aria-expanded="false">
+                <span class="color-accordion-logo" aria-hidden="true"><img src="assets/images/favicon.svg" alt=""></span>
+                <span class="color-accordion-title">Lemon And Banana</span>
+              </button>
+              <div class="color-accordion-panel">
+                <p>Attention color for donation prompts, open slots, and section breakouts.</p>
+              </div>
+            </article>
+
+            <article class="color-accordion-item" style="--panel-color: #7b61ff; --panel-text: #ffffff;">
+              <button class="color-accordion-trigger" type="button" aria-expanded="false">
+                <span class="color-accordion-logo" aria-hidden="true"><img src="assets/images/favicon.svg" alt=""></span>
+                <span class="color-accordion-title">Amethyst Bellflower</span>
+              </button>
+              <div class="color-accordion-panel">
+                <p>Expressive highlight for story cards, learning programs, and special campaigns.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="course-feature-section" aria-label="Learning feature cards">
+        <div class="container">
+          <div class="course-feature-grid">
+            <article class="course-feature-card course-feature-photo course-feature-wide">
+              <img src="https://images.pexels.com/photos/9968379/pexels-photo-9968379.jpeg?w=1920&dpr=1" alt="Children standing together outdoors">
+              <div class="course-feature-note">
+                <span class="course-feature-icon" aria-hidden="true"><i class="fa-solid fa-book-open-reader"></i></span>
+                <strong>Give today &amp;<br>change tomorrow.</strong>
+              </div>
+            </article>
+
+            <article class="course-feature-card course-feature-lime">
+              <div class="course-feature-avatars" aria-label="Teacher support group">
+                <img src="assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg" alt="Volunteer teacher">
+                <img src="assets/images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg" alt="Program mentor">
+                <img src="assets/images/premium_photo-1663090106056-bbb60d2be552.jpg" alt="Learning coordinator">
+                <span>40+</span>
+              </div>
+              <h2>Professional Teachers</h2>
+            </article>
+
+            <article class="course-feature-card course-feature-purple">
+              <h2>Every child deserves the chance to learn</h2>
+              <p>Meals, kits, tutors, and route notes help each classroom week begin prepared.</p>
+            </article>
+
+            <article class="course-feature-card course-feature-photo course-feature-tall">
+              <img src="assets/images/premium_photo-1661775322183-bf9d38cff431.jpg" alt="Child focused on a beginner math lesson">
+              <div class="course-feature-pill">
+                <div>
+                  <strong>Math</strong>
+                  <span>For Beginner</span>
+                </div>
+                <a href="#donate" aria-label="Support beginner math route"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                <div>
+                  <strong>12</strong>
+                  <span>Weeks</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <section class="hero-highlights" aria-label="Kindario campaign highlights">
         <div class="container">
@@ -320,48 +491,93 @@
             <p class="section-label">Why support works</p>
             <h2 id="talent-grid-title">Field help gets lighter when the route is clear.</h2>
           </div>
-          <div class="talent-grid" aria-label="Kindario support advantages">
-            <article class="talent-card talent-card-fast">
-              <div class="talent-card-copy">
-                <h3>Fast and flexible</h3>
-                <p>Move support within 72 hours, then scale food, school, or water routes month to month as needs change.</p>
-              </div>
-              <span class="talent-card-mark" aria-hidden="true"><i class="fa-solid fa-route"></i></span>
+          <div class="row talent-grid" aria-label="Kindario support advantages">
+            <div class="col-12 col-lg-4">
+              <article class="card h-100 border-0 talent-card talent-card-fast">
+                <div class="talent-card-copy">
+                  <h3>Urgent relief</h3>
+                  <p>Move food, water, or shelter support fast.</p>
+                </div>
+                <span class="talent-bg-icon" aria-hidden="true"><i class="fa-solid fa-truck-fast"></i></span>
+              </article>
+            </div>
+            <div class="col-12 col-lg-6">
+              <article class="card h-100 border-0 talent-card talent-card-decentralized">
+                <div class="talent-card-copy">
+                  <h3>Local giving</h3>
+                  <p>Community partners list real needs so donations reach the next verified step.</p>
+                </div>
+                <span class="talent-bg-icon" aria-hidden="true"><i class="fa-solid fa-hand-holding-heart"></i></span>
+              </article>
+            </div>
+            <div class="col-12 col-lg-8">
+              <article class="card h-100 border-0 talent-card talent-card-best">
+                <div class="talent-card-copy">
+                  <h3>Trusted donations</h3>
+                  <p>Every campaign is reviewed, budgeted, and confirmed before it reaches donors.</p>
+                </div>
+                <span class="talent-bg-icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+              </article>
+            </div>
+            <div class="col-12 col-lg-4">
+              <article class="card h-100 border-0 talent-card talent-card-legal">
+                <div class="talent-card-copy">
+                  <h3>Volunteer ready</h3>
+                  <p>Shifts, supplies, and delivery notes stay clear.</p>
+                </div>
+                <span class="talent-bg-icon" aria-hidden="true"><i class="fa-solid fa-file-signature"></i></span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card-carousel-section" id="route-carousel" aria-labelledby="route-carousel-title">
+        <div class="card-carousel-head container">
+          <p class="section-label">Charity action carousel</p>
+          <h2 id="route-carousel-title">Support routes for giving, volunteering, and community care.</h2>
+          <p class="section-copy">Browse donation needs, volunteer shifts, classroom support, and food relief routes ready for community action.</p>
+        </div>
+        <div class="card-carousel-shell" data-card-carousel>
+          <div class="card-carousel-track" tabindex="0" aria-label="Horizontal carousel of Kindario impact cards">
+            <article class="route-card route-card-green">
+              <div class="route-card-mark" aria-hidden="true"><i class="fa-solid fa-seedling"></i></div>
+              <h3>Food donations help families receive meals before the weekend.</h3>
+              <p>Emergency food relief</p>
+              <a href="#donate" aria-label="Fund food parcel route"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </article>
-            <article class="talent-card talent-card-wide talent-card-decentralized">
-              <div class="talent-card-copy">
-                <h3>Decentralized</h3>
-                <p>Local partners publish the practical need directly, so donors fund the next verified step without a long chain.</p>
-              </div>
-              <span class="talent-network" aria-hidden="true">
-                <i class="fa-solid fa-cube"></i>
-                <i class="fa-solid fa-cube"></i>
-                <i class="fa-solid fa-cube"></i>
-                <i class="fa-solid fa-cube"></i>
-              </span>
+            <article class="route-card route-card-ink">
+              <div class="route-card-mark" aria-hidden="true"><i class="fa-solid fa-hands-holding-child"></i></div>
+              <h3>Volunteer teams pack supplies and prepare routes for local delivery.</h3>
+              <p>Volunteer coordination</p>
+              <a href="#volunteer" aria-label="View volunteer shifts"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </article>
-            <article class="talent-card talent-card-wide talent-card-best">
-              <div class="talent-card-copy">
-                <h3>Only the best</h3>
-                <p>Field requests pass partner review, budget checks, and route confirmation before they reach the giving board.</p>
-              </div>
-              <span class="talent-rings" aria-hidden="true">
-                <i></i>
-                <i></i>
-                <i></i>
-              </span>
+            <article class="route-card route-card-blue">
+              <div class="route-card-mark" aria-hidden="true"><i class="fa-solid fa-school"></i></div>
+              <h3>Classroom gifts keep children supplied with books and learning kits.</h3>
+              <p>Education donations</p>
+              <a href="#causes" aria-label="Open classroom causes"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </article>
-            <article class="talent-card talent-card-legal">
-              <div class="talent-card-copy">
-                <h3>No legal hassle</h3>
-                <p>Donation, volunteer, and partner routes stay documented, confirmed, and ready for follow-up notes.</p>
-              </div>
-              <span class="talent-orbs" aria-hidden="true">
-                <i></i>
-                <i></i>
-              </span>
+            <article class="route-card route-card-pink">
+              <div class="route-card-mark" aria-hidden="true"><i class="fa-solid fa-people-carry-box"></i></div>
+              <h3>Community partners turn every pledge into a clear next step.</h3>
+              <p>Partner support</p>
+              <a href="#stories" aria-label="Read field stories"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+            <article class="route-card route-card-deep">
+              <div class="route-card-mark" aria-hidden="true"><i class="fa-solid fa-chart-simple"></i></div>
+              <h3>Donation updates show what moved, where it arrived, and who confirmed it.</h3>
+              <p>Transparent giving</p>
+              <a href="#proof" aria-label="View proof section"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+            <article class="route-card route-card-sun">
+              <div class="route-card-mark" aria-hidden="true"><i class="fa-solid fa-book-open-reader"></i></div>
+              <h3>Monthly supporters keep food, school, and care routes moving.</h3>
+              <p>Recurring donations</p>
+              <a href="#donate" aria-label="Support school kits"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </article>
           </div>
+          <div class="card-carousel-controls" aria-label="Carousel controls" data-carousel-controls></div>
         </div>
       </section>
 
@@ -369,41 +585,55 @@
         <div class="container">
           <div class="impact-steps-head">
             <p class="section-label">How it works</p>
-            <h2 id="impact-steps-title">Four simple steps keep every gift moving.</h2>
+            <h2 id="impact-steps-title">Five simple steps keep every gift moving.</h2>
             <p class="section-copy">From field request to donor update, each step gives supporters a clear view of what happens next.</p>
           </div>
           <div class="impact-steps" aria-label="Kindario support process">
+            <svg class="impact-connectors" aria-hidden="true" focusable="false">
+              <line></line>
+              <line></line>
+              <line></line>
+              <line></line>
+            </svg>
+            <span class="impact-arrow impact-arrow-1" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="impact-arrow impact-arrow-2" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="impact-arrow impact-arrow-3" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="impact-arrow impact-arrow-4" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
             <article class="impact-step impact-step-blue">
-              <span class="impact-step-icon" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span>
-              <span class="impact-step-node" aria-hidden="true"></span>
+              <span class="impact-pulse" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+              <span class="impact-step-node" aria-hidden="true"><i class="fa-solid fa-ribbon"></i></span>
               <div class="impact-step-copy">
-                <h3>Step 01</h3>
-                <p>Field partners publish a practical need with timing, target, and local confirmation.</p>
+                <h3>Discover Need</h3>
+                <p>Partners publish the need, target, and field confirmation.</p>
               </div>
             </article>
             <article class="impact-step impact-step-violet">
-              <span class="impact-step-icon" aria-hidden="true"><i class="fa-regular fa-calendar-days"></i></span>
-              <span class="impact-step-node" aria-hidden="true"></span>
+              <span class="impact-pulse" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+              <span class="impact-step-node" aria-hidden="true"><i class="fa-regular fa-calendar-days"></i></span>
               <div class="impact-step-copy">
-                <h3>Step 02</h3>
-                <p>Kindario shapes the route, lists supplies, and schedules the volunteer or delivery window.</p>
+                <h3>Plan Route</h3>
+                <p>Kindario maps supplies, route, and volunteer timing.</p>
               </div>
             </article>
             <article class="impact-step impact-step-rose">
-              <span class="impact-step-icon" aria-hidden="true"><i class="fa-regular fa-credit-card"></i></span>
-              <span class="impact-step-node" aria-hidden="true"></span>
+              <span class="impact-pulse" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+              <span class="impact-step-node" aria-hidden="true"><i class="fa-regular fa-credit-card"></i></span>
               <div class="impact-step-copy">
-                <h3>Step 03</h3>
-                <p>Supporters fund the gap while teams track what is packed, purchased, and released.</p>
+                <h3>Fund Gap</h3>
+                <p>Supporters fund the gap while teams track release.</p>
               </div>
             </article>
             <article class="impact-step impact-step-orange">
-              <span class="impact-step-icon" aria-hidden="true"><i class="fa-solid fa-cart-shopping"></i></span>
-              <span class="impact-step-node" aria-hidden="true"></span>
+              <span class="impact-pulse" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+              <span class="impact-step-node" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
               <div class="impact-step-copy">
-                <h3>Step 04</h3>
-                <p>Updates close the loop with arrival notes, photos, and the next field request.</p>
+                <h3>Confirm Arrival</h3>
+                <p>Updates close with arrival notes, photos, and next request.</p>
               </div>
+            </article>
+            <article class="impact-step impact-step-teal">
+              <span class="impact-pulse" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+              <span class="impact-step-node" aria-hidden="true"><i class="fa-solid fa-rotate"></i></span>
             </article>
           </div>
         </div>
@@ -684,6 +914,59 @@
           </div>
         </div>
       </section>
+
+      <section class="floating-cta-section" aria-label="Start supporting children">
+        <div class="container">
+          <div class="floating-cta-card">
+            <img class="floating-face face-one" src="https://img.magnific.com/free-photo/horizontal-portrait-attractive-blue-eyed-caucasian-schoolboy-with-stylish-hairdo-smiling-joyfully-having-delighted-excited-facial-expression-fascinated-with-something-amazing-positive-emotions_343059-4425.jpg?w=300" alt="Child profile from a support program">
+            <img class="floating-face face-two" src="https://img.magnific.com/premium-photo/happy-black-child-boy-maks-wish-blue-background_263368-13076.jpg" alt="Child profile from a support program">
+            <img class="floating-face face-three" src="https://img.magnific.com/free-photo/portrait-french-thai-girl_53876-137690.jpg?w=300" alt="Child profile from a support program">
+            <img class="floating-face face-four" src="https://img.magnific.com/premium-photo/smiling-asian-girl-with-long-black-hair-looking-camera-portrait-adorable-young-child_135170-25490.jpg?w=300" alt="Child profile from a support program">
+            <img class="floating-face face-five" src="https://img.magnific.com/free-photo/black-white-portrait-young-child-showing-vulnerability-self-acceptance_23-2151237416.jpg?w=300" alt="Child profile from a support program">
+            <img class="floating-face face-six" src="https://img.magnific.com/free-photo/young-person-portrait-photorealistic-style-with-braids_23-2151570069.jpg" alt="Child profile from a support program">
+            <img class="floating-face face-seven" src="https://img.magnific.com/free-photo/close-up-african-boy-portrait_23-2148860424.jpg" alt="Child profile from a support program">
+            <img class="floating-face face-eight" src="https://img.magnific.com/premium-photo/young-girl-with-long-hair-poses-against-green-background-showcasing-playful-side-profile_93675-363437.jpg?w=300" alt="Child profile from a support program">
+            <img class="floating-face face-nine" src="https://img.magnific.com/premium-photo/baby-smiling-smiling-with-smile-his-face_1221677-10602.jpg?w=300" alt="Child profile from a support program">
+            <img class="floating-face face-ten" src="https://img.magnific.com/free-photo/portrait-youth-with-freckles-beauty-marks_23-2151703774.jpg?w=300" alt="Child profile from a support program">
+
+            <div class="floating-cta-copy">
+              <h2>Ready to get started?</h2>
+              <p>Claim Your $799 Strategy Session at No Cost.</p>
+              <a class="btn btn-pill floating-cta-button" href="#donate">
+                <span>Get Started Now</span>
+                <span class="floating-cta-button-icon" aria-hidden="true">
+                  <svg class="hero-arrow-icon floating-cta-arrow-icon" viewBox="0 0 35 20" focusable="false">
+                    <path d="M2 10H31M23 2L31 10L23 18"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="service-cta-section" aria-label="Schedule a service call">
+        <div class="container">
+          <div class="service-cta-card">
+            <div class="service-cta-main">
+              <div class="service-cta-copy">
+                <h2>Cleaning<br>That Works<br>Around You</h2>
+                <p>Our expert cleaners handle the mess so you can focus on what matters.</p>
+              </div>
+              <ul class="service-cta-links" aria-label="Cleaning services">
+                <li><a href="#home-cleaning">Home Cleaning</a></li>
+                <li><a href="#store-cleaning">Store Cleaning</a></li>
+                <li><a href="#workspace-cleaning">Workspace Cleaning</a></li>
+                <li><a href="#move-cleaning">Move In / Out Cleaning</a></li>
+              </ul>
+            </div>
+            <div class="service-cta-action">
+              <p>Got a space in need<br>of a refresh?</p>
+              <a class="service-cta-button" href="#contact">Schedule a Call</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -780,6 +1063,7 @@
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

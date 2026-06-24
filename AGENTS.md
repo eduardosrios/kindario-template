@@ -19,6 +19,27 @@
 - For find/list requests, use `rtk find` before `Get-ChildItem` when output may be medium/large.
 - Do not use `rtk powershell`, `rtk rg`, or wrapper-style fallbacks when an RTK native subcommand exists, except if RTK fails.
 
+
+## Playwright rules:
+
+* You are authorized to run real browser tests outside the sandbox, including Playwright, Chromium, Firefox, WebKit, Node, npm, and related test runners, when needed for QA, console checks, frontend checks, screenshots, and final QC.
+* You are authorized to run `npm`, `node`, and Playwright-related commands for this HTML template.
+* You are authorized to use Playwright and browser automation to test the frontend and other relevant parts of the current HTML template.
+
+Playwright specifics:
+
+* You are authorized to run Playwright outside the sandbox if sandbox execution fails or produces errors such as `spawn EPERM`.
+
+  * `npx playwright test`
+* Playwright/browser QA is considered an approved part of normal HTML template QA.
+* Do not avoid necessary QA just because it requires real browser execution, Node, npm, or Playwright.
+* Playwright:
+
+  * `npx playwright test`
+* If Playwright, browser execution, or runtime QA is needed, do not stop only because sandboxed execution fails.
+
+
+
 ## Design Tooling Rule
 
 - Use Product Design plugin only for future design/planning/template work unless the user explicitly allows another skill.

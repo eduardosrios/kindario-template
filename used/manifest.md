@@ -53,6 +53,10 @@ The page must be led by the selected screenshots, not by a generic charity landi
 | 38 | `screenshot_image_223.png` | Horizontal priority board and dense aid cards. |
 | 39 | `screenshot_image_57.png` | Donation form, amount choices, and form/image pairing. |
 | 40 | `screenshot_image_39.png` | Dark footer composition and compact utility navigation. |
+| Extra | `14.jpg` | Four-step process section: centered heading, large pulsing halo nodes, dotted arrow connector, compact step labels. |
+| Extra | `15.jpg` | New four-card bento section: 4-column/2-row grid, 1/3 and 3/1 spans, pastel green/lavender/peach/yellow cards, rounded corners, oversized soft visual marks, compact bold card copy. |
+| Extra | `37.jpg` | Horizontal carousel section: centered overflow track, colorful vertical cards, edge peeking, fine dotted background texture, circular arrow controls, high-contrast percentage/stat cards. |
+| Extra | `20.jpg` | Colorful accordion section: stacked rounded color bands, bold uppercase names, small technical color metadata columns, compressed poster-like rhythm, click-to-expand behavior. |
 
 ## Extracted Direction
 
@@ -75,6 +79,24 @@ Use mixed-width mission cards, one image-backed card, one yellow action card, an
 Dominant references: `58.jpg`, `59.jpg`, `screenshot_image_57.png`, `screenshot_image_102.png`, `screenshot_image_178.png`.
 
 Use progress meters, amount chips, campaign targets, raised values, and compact campaign summaries. The section should feel accountable and transactional without becoming a fake payment flow.
+
+### Inserted Section: How It Works Steps
+
+Dominant reference: `14.jpg`.
+
+Use a clean white band with four evenly spaced process nodes. Each node has a Font Awesome line icon, a soft colored radial pulse, a black center dot, a dotted connector with arrow direction on desktop, and stacked vertical rhythm on mobile. Colors move blue to violet to rose to orange, matching the reference while using Kindario copy.
+
+### Inserted Section: Field Help Bento
+
+Dominant reference: `15.jpg`.
+
+Use a four-column, two-row bento grid with four cards: small/wide on the first row and wide/small on the second row. Keep the screenshot's soft rounded cards, pastel green/lavender/peach/yellow palette, bold compact headings, tighter paragraph copy, and oversized background marks pushed to card edges. Adapt copy to Kindario's field-support model rather than remote hiring.
+
+### Inserted Section: Route Snapshot Carousel
+
+Dominant reference: `37.jpg`.
+
+Use a horizontal carousel with tall colorful stat cards, visible side peeks, a warm dotted canvas, thin internal card rules, circular arrow links, and bottom-centered previous/next controls. Cards should feel like operational proof snippets, not generic feature tiles.
 
 ### Section 3: Proof Wall
 

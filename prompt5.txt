@@ -138,6 +138,34 @@ Do not start with:
 
 Start from the selected screenshot reference direction only.
 
+For Bootstrap:
+
+Use a 30px gap as the default for general gaps.
+
+Also use 30px as the standard spacing for general distances and spacing between elements. Bootstrap has a default 15px lateral padding, so the distance between two cards will be 30px.
+
+Distances:
+
+Also use:
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1360px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1530px;
+  }
+}
+
+@media (min-width: 1680px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
 If the implementation begins to resemble a previous template, stop and redesign the structure before continuing.
 
 The future agent must explicitly compare the new structure against any previous local template and avoid reusing:
@@ -374,6 +402,7 @@ Create:
 4. `design.md`
    - Include the extracted design system process.
    - Require every design decision to cite screenshot files.
+   - aplique line-height: 1.6; para body e tudo, exceto h1 and h2
 
 5. `prd.md`
    - Include requirements for the static front page.
@@ -407,7 +436,38 @@ Create:
    - It must follow all generic requirements.
    - It must not weaken the screenshot-first rules.
 
-# Final Instruction
+10. Also add to the goal files:
+
+User Intent: You are an expert UI/UX Designer and Front-End QA Engineer. Analyze the attached screenshot(s) of a landing page design and identify any design flaws, layout bugs, or usability issues. 
+
+Review the layout, structures, cards, sections, boxes you created. Do a visual verification. If the site has issues, try to fix it by yourself. Take screenshot(s) with Playwright and fix the issues you find.
+
+Please evaluate the page using the following checklist and group your feedback accordingly, you are authorized to use Playwright if you need:
+
+### 1. Layout & Grid Consistency
+- Are there any accidental overlapping elements, broken grids, or awkward gaps of dead whitespace?
+- Do elements align cleanly to an established vertical or horizontal grid?
+- Does the structural flow feel balanced, or does it look like a CSS/rendering bug?
+
+### 2. Component & UI Consistency
+- Are global elements (buttons, form inputs, dropdowns, cards) completely uniform in their styling (border-radius, padding, typography, hover states)?
+- Do primary call-to-action (CTA) buttons change appearance or color drastically between sections without a clear functional reason?
+
+### 3. Typography & Text Bugs
+- Is any text clipped, cut off, or overflowing past its container boundaries?
+- Are font sizes, weights, and line heights scaled proportionally throughout the page?
+
+### 4. Accessibility & Readability (WCAG)
+- Is there sufficient color contrast between text and backgrounds (especially text overlaid directly on images)?
+- Are text blocks easy to scan, or are there walls of text?
+
+### 5. Hierarchy & Information Architecture
+- Is the visual hierarchy clear? (Does the eye naturally move from the main headline to the primary CTA?)
+- Are headings used logically to separate distinct ideas?
+
+Repeate these 5 sub steps 3 times to make sure that all the issues were solved.
+
+# Final Instructions
 
 After creating or updating the files, summarize:
 
