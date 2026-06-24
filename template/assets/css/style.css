@@ -1015,7 +1015,7 @@ select {
 }
 
 .hero-impact-strip {
-  background: #ffd84a;
+  background: #f4ca35;
   color: #0C9144;
 }
 
@@ -1119,7 +1119,7 @@ select {
   margin: 0;
   color: #4d4d4d;
   font-size: clamp(0.95rem, 1.05vw, 1.08rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.55;
 }
 
@@ -3329,7 +3329,7 @@ select {
 }
 
 .route-card-sun {
-  background: #ffd84a;
+  background: #f4ca35;
   color: #181814;
   --route-card-arrow: #181814;
 }
@@ -4066,7 +4066,7 @@ h3 {
 
 .donate-marquee {
   overflow: hidden;
-  background: #ffd84a;
+  background: #f4ca35;
   color: #fff;
   white-space: nowrap;
 }
@@ -4075,6 +4075,9 @@ h3 {
   display: flex;
   width: max-content;
   animation: donate-marquee 18s linear infinite;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 .donate-marquee-group {
@@ -4086,7 +4089,8 @@ h3 {
   display: inline-flex;
   align-items: center;
   flex: 0 0 auto;
-  padding: 45px 90px 45px 0;
+  background: var(--marquee-band);
+  padding: 60px 90px;
   font-family: var(--font-display);
   font-size: clamp(38px, 6vw, 64px);
   font-weight: 600;
@@ -4096,18 +4100,38 @@ h3 {
   gap: 90px;
 }
 
+.donate-marquee span:nth-child(5n + 1) {
+  --marquee-band: #f4ca35;
+}
+
+.donate-marquee span:nth-child(5n + 2) {
+  --marquee-band: var(--orange);
+}
+
+.donate-marquee span:nth-child(5n + 3) {
+  --marquee-band: var(--blue);
+}
+
+.donate-marquee span:nth-child(5n + 4) {
+  --marquee-band: var(--ink);
+}
+
+.donate-marquee span:nth-child(5n + 5) {
+  --marquee-band: #8f63ff;
+}
+
 .donate-marquee .fa-solid {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-left: 0.04em;
-  width: 60px;
-  height: 130px;
-  border-radius: 60px;
+  width: 80px;
+  height: 80px;
+  border-radius: 900px;
   background: #fff;
-  color: #f4ca35;
-  font-size: 0.9em;
-  line-height: 150px;
+  color: var(--marquee-band);
+  font-size: 0.6em;
+  line-height: 80px;
   transform: rotate(45deg) translateY(0.02em);
   transform-origin: center;
 }
@@ -4118,7 +4142,7 @@ h3 {
   }
 
   to {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-33.3333333333%, 0, 0);
   }
 }
 
