@@ -4214,13 +4214,14 @@ h3 {
 
 .featured-category-grid > .col,
 .featured-category-grid > .featured-category-wide {
-  flex: 0 0 230px;
-  width: 230px;
-  max-width: 230px;
+  flex: 0 0 163px;
+  width: 163px;
+  max-width: 163px;
   padding: 0;
 }
 
 .featured-category-card {
+  display: block;
   position: relative;
   isolation: isolate;
   width: 230px;
@@ -4232,6 +4233,7 @@ h3 {
   color: #153b33;
   text-align: center;
   transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.15);
 }
 
 .featured-category-card .card-body {
@@ -4268,14 +4270,17 @@ h3 {
 }
 
 .featured-category-grid .col:nth-child(7) .featured-category-card {
-  --category-color: #E9C23A;
+  --category-color: #F4CA35;
 }
 
 .featured-category-grid .col:nth-child(4) .featured-category-card {
-  --category-color: var(--orange);
+  --category-color: #f03939;
 }
 
-.featured-category-grid .col:nth-child(5) .featured-category-card,
+.featured-category-grid .col:nth-child(5) .featured-category-card {
+  --category-color: var(--category-navy);
+}
+
 .featured-category-grid .col:nth-child(9) .featured-category-card {
   --category-color: var(--category-navy);
 }
@@ -4290,6 +4295,7 @@ h3 {
 
 .featured-category-grid .col:nth-child(1) .featured-category-card,
 .featured-category-grid .col:nth-child(3) .featured-category-card,
+.featured-category-grid .col:nth-child(5) .featured-category-card,
 .featured-category-grid .col:nth-child(7) .featured-category-card,
 .featured-category-grid .col:nth-child(9) .featured-category-card {
   background: var(--category-color);
@@ -4298,6 +4304,7 @@ h3 {
 
 .featured-category-grid .col:nth-child(1) .featured-category-card .featured-category-icon,
 .featured-category-grid .col:nth-child(3) .featured-category-card .featured-category-icon,
+.featured-category-grid .col:nth-child(5) .featured-category-card .featured-category-icon,
 .featured-category-grid .col:nth-child(7) .featured-category-card .featured-category-icon,
 .featured-category-grid .col:nth-child(9) .featured-category-card .featured-category-icon {
   border-bottom-color: #fff !important;
@@ -4306,9 +4313,11 @@ h3 {
 
 .featured-category-grid .col:nth-child(1) .featured-category-card .card-text,
 .featured-category-grid .col:nth-child(3) .featured-category-card .card-text,
+.featured-category-grid .col:nth-child(5) .featured-category-card .card-text,
 .featured-category-grid .col:nth-child(7) .featured-category-card .card-text,
 .featured-category-grid .col:nth-child(9) .featured-category-card .card-text {
-  color: rgba(255, 255, 255, 0.78);
+  background: #fff;
+  color: var(--category-color, var(--green));
 }
 
 .featured-category-card:hover {
@@ -4318,8 +4327,10 @@ h3 {
 
 .featured-category-icon {
   display: grid;
-  width: 74px;
-  height: 74px;
+  width: 94px;
+  height: 94px;
+  margin-top: -15px;
+  margin-bottom: 4px;
   place-items: center;
   border: 5px solid transparent !important;
   border-bottom: 5px solid var(--category-color, var(--green)) !important;
@@ -4334,7 +4345,7 @@ h3 {
 }
 
 .featured-category-card .card-title {
-  margin-top: 16px;
+  margin-top: 13px;
   margin-bottom: 0;
   font-size: 1.05rem;
   font-weight: 700;
@@ -4342,11 +4353,18 @@ h3 {
 }
 
 .featured-category-card .card-text {
-  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
   margin-bottom: 0;
-  color: color-mix(in srgb, var(--category-color, var(--green)) 70%, #153b33);
-  font-size: 0.84rem;
-  font-weight: 800;
+  min-width: 38.75px;
+  padding: 7.5px 9.73px 7px;
+  border-radius: 500px;
+  background: var(--category-color, var(--green));
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
