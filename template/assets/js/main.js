@@ -502,7 +502,7 @@ if (impactSteps) {
   let impactResizeFrame;
 
   const syncImpactConnectors = () => {
-    if (!svg || lines.length < nodes.length - 1 || nodes.length < 2 || window.innerWidth < 992) return;
+    if (!svg || lines.length < nodes.length - 1 || nodes.length < 2 || window.innerWidth < 768) return;
 
     const wrapRect = impactSteps.getBoundingClientRect();
     const centers = nodes.map((node) => {
