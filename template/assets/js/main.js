@@ -234,7 +234,17 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
   let pagePositions = [];
   let carouselScrollTimer;
   let carouselProgrammaticTimer;
+  let carouselSettleTimer;
+  let carouselDragFrame;
   let isProgrammaticScroll = false;
+  let isDraggingCarousel = false;
+  let didDragCarousel = false;
+  let dragStartX = 0;
+  let dragCurrentX = 0;
+  let dragStartScrollLeft = 0;
+  let pendingDragScrollLeft = 0;
+  let dragStartPage = 0;
+  let activeDragPointerId = null;
 
   const setActiveDot = (index) => {
     const dots = Array.from(controls.querySelectorAll("[data-carousel-dot]"));
@@ -266,6 +276,46 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
     return positions;
   };
 
+  const settleCarouselScroll = () => {
+    track.classList.add("is-settling");
+    window.clearTimeout(carouselSettleTimer);
+    carouselSettleTimer = window.setTimeout(() => {
+      track.classList.remove("is-settling");
+    }, 760);
+  };
+
+  const getNearestPageIndex = () => {
+    if (!pagePositions.length) return 0;
+
+    return pagePositions.reduce((nearest, position, index) => {
+      return Math.abs(position - track.scrollLeft) < Math.abs(pagePositions[nearest] - track.scrollLeft) ? index : nearest;
+    }, 0);
+  };
+
+  const scrollToPage = (index) => {
+    const nextIndex = Math.max(0, Math.min(index, pagePositions.length - 1));
+    const left = pagePositions[nextIndex];
+
+    isProgrammaticScroll = true;
+    settleCarouselScroll();
+    window.clearTimeout(carouselProgrammaticTimer);
+
+    track.scrollTo({
+      left,
+      behavior: "smooth"
+    });
+
+    setActiveDot(nextIndex);
+
+    carouselProgrammaticTimer = window.setTimeout(() => {
+      isProgrammaticScroll = false;
+    }, 700);
+  };
+
+  const updateActiveFromScroll = () => {
+    setActiveDot(getNearestPageIndex());
+  };
+
   const renderDots = () => {
     pagePositions = getPagePositions();
     controls.innerHTML = "";
@@ -284,32 +334,96 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
     setActiveDot(Math.min(activePage, pagePositions.length - 1));
   };
 
-  const scrollToPage = (index) => {
-    const nextIndex = Math.max(0, Math.min(index, pagePositions.length - 1));
-    const left = pagePositions[nextIndex];
+  const stopCarouselDrag = () => {
+    if (!isDraggingCarousel) return;
 
-    isProgrammaticScroll = true;
-    window.clearTimeout(carouselProgrammaticTimer);
+    const dragDistance = dragCurrentX - dragStartX;
+    const dragThreshold = 18;
 
-    track.scrollTo({
-      left,
-      behavior: "smooth"
-    });
+    isDraggingCarousel = false;
+    activeDragPointerId = null;
+    track.classList.remove("is-dragging");
 
-    setActiveDot(nextIndex);
+    if (didDragCarousel && Math.abs(dragDistance) >= dragThreshold) {
+      scrollToPage(dragStartPage + (dragDistance < 0 ? 1 : -1));
+    } else if (didDragCarousel) {
+      scrollToPage(dragStartPage);
+    } else {
+      updateActiveFromScroll();
+    }
 
-    carouselProgrammaticTimer = window.setTimeout(() => {
-      isProgrammaticScroll = false;
-    }, 700);
-  };
-
-  const updateActiveFromScroll = () => {
-    const nearestIndex = pagePositions.reduce((nearest, position, index) => {
-      return Math.abs(position - track.scrollLeft) < Math.abs(pagePositions[nearest] - track.scrollLeft) ? index : nearest;
+    window.setTimeout(() => {
+      didDragCarousel = false;
     }, 0);
-
-    setActiveDot(nearestIndex);
   };
+
+  track.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0) return;
+
+    isDraggingCarousel = true;
+    didDragCarousel = false;
+    activeDragPointerId = event.pointerId;
+    dragStartX = event.clientX;
+    dragCurrentX = event.clientX;
+    dragStartScrollLeft = track.scrollLeft;
+    pendingDragScrollLeft = dragStartScrollLeft;
+    dragStartPage = activePage;
+    isProgrammaticScroll = false;
+    window.clearTimeout(carouselProgrammaticTimer);
+    window.clearTimeout(carouselSettleTimer);
+    window.cancelAnimationFrame(carouselDragFrame);
+    track.classList.remove("is-settling");
+    track.classList.add("is-dragging");
+    track.setPointerCapture?.(event.pointerId);
+  });
+
+  track.addEventListener("pointermove", (event) => {
+    if (!isDraggingCarousel || activeDragPointerId !== event.pointerId) return;
+
+    dragCurrentX = event.clientX;
+
+    if (Math.abs(dragCurrentX - dragStartX) > 4) {
+      didDragCarousel = true;
+    }
+
+    pendingDragScrollLeft = dragStartScrollLeft - (dragCurrentX - dragStartX);
+    track.scrollLeft = pendingDragScrollLeft;
+
+    if (didDragCarousel) {
+      event.preventDefault();
+    }
+  });
+
+  track.addEventListener("pointerup", stopCarouselDrag);
+  track.addEventListener("pointercancel", stopCarouselDrag);
+  track.addEventListener("lostpointercapture", stopCarouselDrag);
+
+  track.addEventListener("click", (event) => {
+    if (!didDragCarousel) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+  }, true);
+
+  track.addEventListener("wheel", (event) => {
+    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    if (maxScroll <= 0) return;
+
+    const wheelDelta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+    if (Math.abs(wheelDelta) < 4) return;
+
+    const wantsNext = wheelDelta > 0;
+    const atStart = track.scrollLeft <= 1;
+    const atEnd = track.scrollLeft >= maxScroll - 1;
+
+    if ((wantsNext && atEnd) || (!wantsNext && atStart)) return;
+
+    event.preventDefault();
+
+    if (isProgrammaticScroll) return;
+
+    scrollToPage(activePage + (wantsNext ? 1 : -1));
+  }, { passive: false });
 
   track.addEventListener("keydown", (event) => {
     if (event.key === "ArrowLeft") {
@@ -324,7 +438,7 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
   });
 
   track.addEventListener("scroll", () => {
-    if (isProgrammaticScroll) return;
+    if (isProgrammaticScroll || isDraggingCarousel) return;
 
     window.clearTimeout(carouselScrollTimer);
     carouselScrollTimer = window.setTimeout(updateActiveFromScroll, 80);
