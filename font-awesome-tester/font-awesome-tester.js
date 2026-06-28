@@ -1,25 +1,103 @@
-const FONT_AWESOME_TESTER_SELECTOR = ".ticket-board .ticket-card:first-child .ticket-card-price > div:first-child";
+const FONT_AWESOME_TESTER_SELECTOR = ".course-feature-accordion-icon i";
 
 (() => {
+  // const iconOptions = [
+  // "fa-solid fa-route",
+  // "fa-solid fa-fire",
+  // "fa-solid fa-star-of-life",
+  // "fa-solid fa-sun",
+  // "fa-solid fa-utensils",
+  // "fa-solid fa-arrow-trend-up",
+  // "fa-solid fa-clock-rotate-left",
+  // "fa-solid fa-earth-americas",
+  // "fa-solid fa-euro-sign",
+  // "fa-solid fa-gear",
+  // "fa-solid fa-layer-group",
+  // "fa-solid fa-cube",
+  // "fa-solid fa-exclamation",
+  // "fa-solid fa-globe",
+  // "fa-solid fa-medal",
+  // "fa-solid fa-people-group",
+  // "fa-solid fa-star-half-stroke",
+  // "fa-solid fa-dollar-sign"
+  // ];
+
   const iconOptions = [
-    "fa-solid fa-circle-radiation",
+    "fa-solid fa-dove",
+    "fa-solid fa-hand-holding-heart",
+    "fa-solid fa-ribbon",
+    "fa-solid fa-dollar-sign",
+    "fa-solid fa-gift",
+    "fa-solid fa-hand-holding-dollar",
+    "fa-solid fa-arrow-trend-up",
+    "fa-solid fa-circle-right",
+    "fa-solid fa-angles-right",
+    "fa-solid fa-circle-chevron-right",
+    "fa-solid fa-clock-rotate-left",
+    "fa-solid fa-rotate",
+    "fa-regular fa-circle-right",
+    "fa-solid fa-arrow-up-right-dots",
     "fa-solid fa-address-card",
+    "fa-solid fa-arrows-rotate",
+    "fa-solid fa-at",
+    "fa-solid fa-braille",
+    "fa-solid fa-bullseye",
+    "fa-solid fa-circle-nodes",
+    "fa-solid fa-circle-radiation",
+    "fa-solid fa-code-branch",
+    "fa-solid fa-comment-dollar",
     "fa-solid fa-cubes",
+    "fa-solid fa-earth-americas",
+    "fa-solid fa-euro-sign",
     "fa-solid fa-fire",
+    "fa-solid fa-fingerprint",
+    "fa-solid fa-gear",
+    "fa-solid fa-gears",
+    "fa-solid fa-gifts",
+    "fa-solid fa-hexagon-nodes",
+    "fa-solid fa-file-pdf",
+    "fa-solid fa-layer-group",
     "fa-solid fa-life-ring",
     "fa-solid fa-parachute-box",
     "fa-solid fa-piggy-bank",
+    "fa-solid fa-sack-dollar",
     "fa-solid fa-universal-access",
     "fa-solid fa-user-graduate",
-    "fa-solid fa-hand-holding-heart",
-    "fa-solid fa-hand-holding-dollar",
-    "fa-solid fa-heart-circle-bolt",
-    "fa-solid fa-dove"
+    "fa-solid fa-bolt",
+    "fa-solid fa-bowl-food",
+    "fa-solid fa-box-open",
+    "fa-solid fa-child",
+    "fa-solid fa-child-dress",
+    "fa-solid fa-child-reaching",
+    "fa-solid fa-children",
+    "fa-solid fa-comment-medical",
+    "fa-solid fa-cube",
+    "fa-solid fa-gem",
+    "fa-solid fa-exclamation",
+    "fa-solid fa-futbol",
+    "fa-solid fa-globe",
+    "fa-solid fa-heat-pulse",
+    "fa-solid fa-id-badge",
+    "fa-solid fa-kit-medical",
+    "fa-solid fa-medal",
+    "fa-solid fa-people-group",
+    "fa-solid fa-person",
+    "fa-solid fa-person-breastfeeding",
+    "fa-solid fa-shield-heart",
+    "fa-solid fa-star",
+    "fa-solid fa-star-half-stroke",
+    "fa-solid fa-star-of-life",
+    "fa-solid fa-sun",
+    "fa-solid fa-user-group",
+    "fa-solid fa-users",
+    "fa-solid fa-user-shield",
+    "fa-solid fa-utensils",
+    "fa-solid fa-users-gear"
   ];
 
   const config = {
     selector: FONT_AWESOME_TESTER_SELECTOR,
-    storageKey: "font-awesome-tester-saved-icons"
+    storageKey: "font-awesome-tester-accordion-icons-v3"
   };
 
   const testerId = "font-awesome-tester";
@@ -115,7 +193,7 @@ const FONT_AWESOME_TESTER_SELECTOR = ".ticket-board .ticket-card:first-child .ti
     document.head.appendChild(style);
   };
 
-  const getTargets = () => Array.from(document.querySelectorAll(config.selector));
+  const getTargets = () => Array.from(document.querySelectorAll(".course-feature-accordion-icon i")).filter((_, index) => index === 1);
 
 
   const getCurrentIconClass = () => {

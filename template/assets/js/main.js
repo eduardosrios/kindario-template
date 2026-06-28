@@ -42,6 +42,52 @@ document.querySelectorAll("[data-color-accordion]").forEach((accordion) => {
   });
 });
 
+document.querySelectorAll(".course-feature-accordion").forEach((accordion) => {
+  const items = Array.from(accordion.querySelectorAll(".course-feature-accordion-item"));
+
+  const syncArrows = () => {
+    items.forEach((currentItem) => {
+      const icon = currentItem.querySelector(".course-feature-accordion-arrow i");
+      icon?.classList.toggle("fa-chevron-up", currentItem.open);
+      icon?.classList.toggle("fa-chevron-down", !currentItem.open);
+    });
+  };
+
+  const refreshPanelScroll = (item) => {
+    const panel = item?.querySelector(".course-feature-accordion-panel");
+    const instance = panel && window.SimpleBar?.instances?.get(panel);
+    instance?.recalculate();
+  };
+
+  const setOpenItem = (targetItem) => {
+    items.forEach((currentItem) => {
+      currentItem.open = currentItem === targetItem;
+    });
+    syncArrows();
+    requestAnimationFrame(() => refreshPanelScroll(targetItem));
+  };
+
+  syncArrows();
+  requestAnimationFrame(() => items.forEach(refreshPanelScroll));
+
+  items.forEach((item, index) => {
+    const summary = item.querySelector("summary");
+    const arrow = item.querySelector(".course-feature-accordion-arrow");
+
+    const toggleItem = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const targetIndex = item.open ? (index + 1) % items.length : index;
+      setOpenItem(items[targetIndex]);
+    };
+
+    summary?.addEventListener("click", toggleItem);
+    arrow?.addEventListener("click", toggleItem);
+  });
+
+  if (!items.some((item) => item.open) && items[0]) setOpenItem(items[0]);
+});
+
 const heroSlider = document.querySelector("[data-hero-slider]");
 
 if (heroSlider) {
@@ -777,9 +823,7 @@ if (floatingCtaCard) {
   }
 }
 
-const courseFeatureWaveCard = document.querySelector(".course-feature-wide");
-
-if (courseFeatureWaveCard) {
+document.querySelectorAll(".course-feature-wide").forEach((courseFeatureWaveCard) => {
   const outerWave = courseFeatureWaveCard.querySelector(".course-feature-wave--outer");
   const innerWave = courseFeatureWaveCard.querySelector(".course-feature-wave--inner");
   const thirdWave = courseFeatureWaveCard.querySelector(".course-feature-wave--third");
@@ -886,8 +930,7 @@ if (courseFeatureWaveCard) {
     courseFeatureWaveCard.addEventListener("mouseenter", settleWavesToStaticState);
     courseFeatureWaveCard.addEventListener("mouseleave", resumeWaveAnimation);
   }
-}
-
+});
 document.querySelectorAll("[data-countdown-target]").forEach((countdown) => {
   const targetValue = countdown.getAttribute("data-countdown-target");
   const targetTime = targetValue ? Date.parse(targetValue) : NaN;
