@@ -2455,7 +2455,7 @@ select {
 .hero-slider-timer-ring-circle {
   fill: none;
   stroke: #fff;
-  stroke-width: 5.2;
+  stroke-width: 6.5;
   stroke-linecap: round;
   stroke-dasharray: 0 385.31;
   stroke-dashoffset: 0;
@@ -2908,6 +2908,7 @@ select {
   padding: 30px 0 90px;
 }
 
+
 .ticket-board-section {
   background: #fff;
   padding: clamp(88px, 8vw, 120px) 0;
@@ -2955,7 +2956,7 @@ select {
   margin: 0;
   color: #111111;
   font-family: var(--font-display);
-  font-size: clamp(3rem, 5.6vw, 6.75rem);
+  font-size: clamp(3rem, 5.4688vw, 6.75rem);
   font-weight: 900;
   line-height: 0.93;
   letter-spacing: 0;
@@ -3249,8 +3250,32 @@ select {
 }
 
 .talent-grid-head {
-  max-width: 760px;
-  margin: 0 0 34px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.44fr);
+  align-items: start;
+  gap: clamp(42px, 7vw, 120px);
+  max-width: none;
+  margin: 0 0 42px;
+}
+.talent-grid-head .section-copy {
+  position: relative;
+  max-width: 610px;
+  margin: 30px 0 0;
+  padding-top: 36px;
+  color: rgba(18, 17, 39, 0.72);
+  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.talent-grid-head .section-copy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 114px;
+  height: 8px;
+  background: #ffd532;
 }
 
 .talent-grid {
@@ -3371,7 +3396,7 @@ select {
   font-size: clamp(2rem, 2vw, 2rem);
   line-height: 1;
   text-align: center;
-  border: 6px solid transparent;
+  border: 6px solid transparent !important;
   border-right: 6px solid #fff;
 }
 
@@ -3810,15 +3835,14 @@ select {
 
 .card-carousel-head {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.42fr);
-  gap: 30px;
-  align-items: end;
-  margin-bottom: 34px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.44fr);
+  gap: clamp(42px, 7vw, 120px);
+  align-items: start;
+  margin-bottom: 42px;
 }
 
 .card-carousel-head .section-label {
-  grid-column: 1 / -1;
-  margin-bottom: -12px;
+  margin-bottom: 20px;
 }
 
 .card-carousel-head h2 {
@@ -3827,7 +3851,24 @@ select {
 }
 
 .card-carousel-head .section-copy {
-  max-width: 410px;
+  position: relative;
+  max-width: 610px;
+  margin: 30px 0 0;
+  padding-top: 36px;
+  color: rgba(18, 17, 39, 0.72);
+  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.card-carousel-head .section-copy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 114px;
+  height: 8px;
+  background: #ffd532;
 }
 
 .card-carousel-shell {
@@ -4682,8 +4723,8 @@ h2::before {
   content: "";
   position: absolute;
   z-index: -1;
-  top: -0.16em;
-  left: -0.3em;
+  top: -0.125em;
+  left: -0.35em;
   width: 1.32em;
   height: 1.32em;
   border-radius: 50%;
@@ -5175,19 +5216,8 @@ h3 {
 }
 
 .featured-category-section::before {
-  content: "category";
-  position: absolute;
-  top: 32px;
-  left: 50%;
-  z-index: 0;
-  transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.82);
-  font-family: var(--font-display);
-  font-size: clamp(6rem, 18vw, 17rem);
-  font-weight: 900;
-  line-height: 0.8;
-  pointer-events: none;
-  text-transform: lowercase;
+  content: none;
+  display: none;
 }
 
 .featured-category-section .container {
@@ -5197,9 +5227,9 @@ h3 {
 
 .featured-category-head {
   display: grid;
-  grid-template-columns: minmax(280px, 0.92fr) minmax(280px, 1fr);
-  align-items: end;
-  gap: 56px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.44fr);
+  align-items: start;
+  gap: clamp(42px, 7vw, 120px);
   margin-bottom: 56px;
 }
 
@@ -5213,11 +5243,24 @@ h3 {
 }
 
 .featured-category-head .section-copy {
-  max-width: 640px;
-  margin: 0;
-  border-left: 4px solid #0fb98f;
-  padding-left: 34px;
-  color: rgba(8, 40, 32, 0.66);
+  position: relative;
+  max-width: 610px;
+  margin: 30px 0 0;
+  padding-top: 36px;
+  color: rgba(18, 17, 39, 0.72);
+  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.featured-category-head .section-copy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 114px;
+  height: 8px;
+  background: #ffd532;
 }
 
 .featured-category-grid {
@@ -5225,6 +5268,9 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  width: 100%;
+  max-width: 100%;
+  transform: translateX(-40px);
   margin-right: 0;
   margin-left: 0;
   --bs-gutter-x: 0;
@@ -5236,9 +5282,9 @@ h3 {
 
 .featured-category-grid > .col,
 .featured-category-grid > .featured-category-wide {
-  flex: 0 0 163px;
-  width: 163px;
-  max-width: 163px;
+  flex: 0 0 150px;
+  width: 150px;
+  max-width: 150px;
   padding: 0;
 }
 
@@ -5354,8 +5400,8 @@ h3 {
   margin-top: -15px;
   margin-bottom: 4px;
   place-items: center;
-  border: 5px solid transparent !important;
-  border-bottom: 5px solid var(--category-color, var(--green)) !important;
+  border: 6px solid transparent !important;
+  border-bottom: 6px solid var(--category-color, var(--green)) !important;
   border-radius: 50%;
   color: var(--category-color, var(--green));
   font-size: 30px;
@@ -6294,12 +6340,16 @@ details p {
   }
 
   .card-carousel-head {
-    grid-template-columns: 1fr;
-  }
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.44fr);
+  gap: clamp(42px, 7vw, 120px);
+  align-items: start;
+  margin-bottom: 42px;
+}
 
   .card-carousel-head .section-label {
-    margin-bottom: 0;
-  }
+  margin-bottom: 20px;
+}
 
   .impact-steps-section {
     padding: 78px 0 40px;
@@ -6412,7 +6462,6 @@ details p {
 
   .featured-category-head {
     grid-template-columns: 1fr;
-    align-items: start;
     gap: 24px;
   }
 
@@ -6755,12 +6804,13 @@ details p {
   }
 
   .featured-category-head {
-    margin-bottom: 34px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .featured-category-head .section-copy {
-    border-left-width: 3px;
-    padding-left: 18px;
+    max-width: 720px;
+    margin-top: 0;
   }
 
   .featured-category-card {
@@ -7518,12 +7568,12 @@ details p {
 
 .donation-campaigns-grid > .donation-campaign-card-main .donation-progress-card {
   gap: 12px;
-  border-radius: 6px 25px;
+  border-radius: 6px;
   background: #ffffff;
   padding: 20px 30px 24px;
 }
 .donation-campaigns-grid > .donation-campaign-card-main:not(.donation-campaign-card-featured) .donation-progress-card {
-  margin-top: auto;
+  margin-top: 10px;
 }
 
 .donation-campaigns-grid > .donation-campaign-card-main .donation-progress-card p {
@@ -7561,19 +7611,24 @@ details p {
 
 .donation-campaigns-grid > .donation-campaign-card-featured .donation-campaign-body {
   align-items: center;
+  gap: 0;
 }
 
-.donation-campaigns-grid > .donation-campaign-card-featured .donation-campaign-body h3,
+.donation-campaigns-grid > .donation-campaign-card-main,
+.donation-campaigns-grid > .donation-campaign-card-main:hover,
+.donation-campaigns-grid > .donation-campaign-card-featured,
+.donation-campaigns-grid > .donation-campaign-card-featured:hover {
+  box-shadow: none;
+}
+
 .donation-campaigns-grid > .donation-campaign-card-featured .donation-campaign-body > p {
   align-self: stretch;
-}
-.donation-campaigns-grid > .donation-campaign-card-featured .donation-campaign-body > p {
   min-height: 0;
   margin-right: -30px;
   margin-left: -30px;
   margin-top: -30px;
   padding: 25px 30px;
-  background: rgba(0, 0, 0, 0.2);
+  background: none;
   font-size: 1.05rem;
 }
 
@@ -7581,16 +7636,15 @@ details p {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
 }
-
 .featured-circle-progress {
   position: relative;
   display: grid;
   min-width: min(100%, 230px);
   aspect-ratio: 1;
   place-items: center;
-  margin: 4px auto 0;
+  margin: 0;
   border-radius: 50%;
   background: #ffffff;
   color: var(--featured-card-bg);
@@ -7668,12 +7722,16 @@ details p {
 }
 
 .donation-secondary-head {
-  max-width: 780px;
-  margin: 0 0 36px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.44fr);
+  align-items: start;
+  gap: clamp(42px, 7vw, 120px);
+  max-width: none;
+  margin: 0 0 42px;
 }
 
 .donation-secondary-head h2 {
-  max-width: 720px;
+  max-width: 820px;
   margin: 0;
   color: #133d33;
   font-family: var(--font-display);
@@ -7681,6 +7739,27 @@ details p {
   font-weight: 800;
   line-height: 0.98;
   letter-spacing: 0;
+}
+
+.donation-secondary-head .section-copy {
+  position: relative;
+  max-width: 610px;
+  margin: 30px 0 0;
+  padding-top: 36px;
+  color: rgba(18, 17, 39, 0.72);
+  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.donation-secondary-head .section-copy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 114px;
+  height: 8px;
+  background: #ffd532;
 }
 
 .donation-secondary-grid {
@@ -7719,7 +7798,7 @@ details p {
 .donation-secondary-grid .donation-campaign-media img,
 .donation-secondary-grid .donation-campaign-media span,
 .donation-secondary-grid .donation-campaign-stats {
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .donation-secondary-grid .donation-campaign-media span {
@@ -7818,6 +7897,18 @@ details p {
 }
 
 @media (max-width: 991.98px) {
+  .featured-category-head,
+  .donation-secondary-head {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .featured-category-head .section-copy,
+  .donation-secondary-head .section-copy {
+    max-width: 720px;
+    margin-top: 0;
+  }
+
   .donation-secondary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -7874,5 +7965,118 @@ details p {
   .donation-campaigns-head h2 {
     font-size: clamp(3.25rem, 4.1vw, 4.35rem);
     white-space: nowrap;
+  }
+}
+/* Shared split headers */
+.split-section-head {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.38fr);
+  gap: clamp(20px, 2.5vw, 40px);
+  align-items: start;
+  margin-bottom: clamp(74px, 8vw, 90px);
+}
+
+.row.split-section-head {
+  --bs-gutter-x: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row.split-section-head > [class*="col-"] {
+  width: auto;
+  max-width: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.split-section-title-wrap {
+  position: relative;
+  isolation: isolate;
+  padding-left: 0;
+}
+
+.split-section-head .section-label,
+.split-section-head .donation-campaigns-kicker {
+  display: none;
+}
+
+.split-section-head h2 {
+  max-width: 760px;
+  margin: 0;
+  color: #111111;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.4688vw, 6.75rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.split-section-head h2::before {
+  content: "";
+  top: -0.125em;
+  left: -0.35em;
+  width: 1.32em;
+  height: 1.32em;
+  background: #ffd532;
+}
+
+.split-section-head .split-section-title-wrap::before,
+.split-section-head .ticket-board-title-wrap::before {
+  content: none;
+  display: none;
+}
+.split-section-note,
+.ticket-board-note.split-section-note,
+.featured-category-head .split-section-note,
+.donation-secondary-head .split-section-note,
+.card-carousel-head .split-section-note,
+.talent-grid-head .split-section-note {
+  position: relative;
+  max-width: 610px;
+  margin: 25px 0 0;
+  padding-top: 36px;
+  color: rgba(18, 17, 39, 0.72);
+  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.split-section-note::before,
+.ticket-board-note.split-section-note::before,
+.featured-category-head .split-section-note::before,
+.donation-secondary-head .split-section-note::before,
+.card-carousel-head .split-section-note::before,
+.talent-grid-head .split-section-note::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 114px;
+  height: 7px;
+  background: #ffd532;
+}
+
+@media (max-width: 991.98px) {
+  .split-section-head {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: clamp(48px, 8vw, 72px);
+  }
+
+  .split-section-note,
+  .ticket-board-note.split-section-note,
+  .featured-category-head .split-section-note,
+  .donation-secondary-head .split-section-note,
+  .card-carousel-head .split-section-note,
+  .talent-grid-head .split-section-note {
+    max-width: 720px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .split-section-head h2 {
+    font-size: clamp(2.7rem, 15vw, 4.6rem);
   }
 }
