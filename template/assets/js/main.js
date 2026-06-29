@@ -42,6 +42,34 @@ document.querySelectorAll("[data-color-accordion]").forEach((accordion) => {
   });
 });
 
+if (!window.courseFeatureAccordionWheelReady) {
+  window.courseFeatureAccordionWheelReady = true;
+  document.addEventListener("wheel", (event) => {
+    const panel = event.target.closest?.(".course-feature-accordion-panel");
+    if (!panel) return;
+
+    const wrapper = panel.querySelector(".simplebar-content-wrapper") || panel;
+    const maxScrollTop = wrapper.scrollHeight - wrapper.clientHeight;
+    const canScrollInside = maxScrollTop > 1;
+    const atTop = wrapper.scrollTop <= 0;
+    const atBottom = wrapper.scrollTop >= maxScrollTop - 1;
+    const wheelUp = event.deltaY < 0;
+    const wheelDown = event.deltaY > 0;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    if (canScrollInside && !((wheelUp && atTop) || (wheelDown && atBottom))) {
+      const windowScrollX = window.scrollX;
+      const windowScrollY = window.scrollY;
+      wrapper.scrollTop += event.deltaY;
+      requestAnimationFrame(() => window.scrollTo(windowScrollX, windowScrollY));
+      return;
+    }
+
+    window.scrollBy({ top: event.deltaY, left: event.deltaX, behavior: "auto" });
+  }, { passive: false, capture: true });
+}
 document.querySelectorAll(".course-feature-accordion").forEach((accordion) => {
   const items = Array.from(accordion.querySelectorAll(".course-feature-accordion-item"));
 

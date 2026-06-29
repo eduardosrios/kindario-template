@@ -1346,6 +1346,15 @@ select {
   line-height: 1.22;
 }
 
+
+
+.course-routes-section {
+  padding: clamp(72px, 7vw, 104px) 0;
+}
+
+.course-routes-head {
+  margin-bottom: clamp(42px, 5vw, 70px);
+}
 .course-feature-grid {
   --bs-gutter-x: 30px;
   --bs-gutter-y: 30px;
@@ -1402,6 +1411,7 @@ select {
   flex: 0 0 274px;
   height: 274px;
   min-height: 0;
+  padding: 25px 30px;
   grid-template-rows: auto minmax(0, 1fr);
   align-content: stretch;
   justify-content: stretch;
@@ -1537,6 +1547,7 @@ select {
 
 .course-feature-accordion-panel p {
   max-width: 100%;
+  min-height: 30px;
   margin: 0;
   color: var(--course-accordion-muted, rgba(18, 17, 39, 0.7));
   font-size: 1rem;
@@ -1544,6 +1555,54 @@ select {
   line-height: 1.5;
 }
 
+.course-feature-accordion-cta {
+  display: inline-flex;
+  width: calc(100% + 12px);
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 21px;
+  border: 0;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--course-accordion-text, #121127);
+  font-size: 0.96rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.course-feature-accordion-cta:hover,
+.course-feature-accordion-cta:focus-visible {
+  background-color: rgba(0, 0, 0, 0.44);
+  color: var(--course-accordion-text, #121127);
+  transform: translateY(-1px);
+}
+
+
+
+
+.course-feature-accordion-dark .course-feature-accordion-cta {
+  background: #B856A2;
+}
+
+.course-feature-accordion-dark .course-feature-accordion-cta:hover,
+.course-feature-accordion-dark .course-feature-accordion-cta:focus-visible {
+  background: #a84c95;
+}
+
+.course-feature-accordion-yellow .course-feature-accordion-cta {
+  background-color: #121127;
+  color: #ffffff;
+}
+
+.course-feature-accordion-yellow .course-feature-accordion-cta:hover,
+.course-feature-accordion-yellow .course-feature-accordion-cta:focus-visible {
+  background-color: #000000;
+  color: #ffffff;
+}
 
 .course-feature-accordion-dark {
   --course-accordion-bg: #282828;
@@ -2778,7 +2837,7 @@ select {
   justify-items: end;
   gap: 28px;
   width: max-content;
-  margin-top: 0;
+  margin-top: 21px;
   margin-right: 40px;
 }
 
@@ -3179,7 +3238,7 @@ select {
   position: relative;
   max-width: 610px;
   margin: 30px 0 0;
-  padding-top: 36px;
+  padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
   font-size: clamp(1.05rem, 1.35vw, 1.48rem);
   font-weight: 700;
@@ -3474,7 +3533,7 @@ select {
   position: relative;
   max-width: 610px;
   margin: 30px 0 0;
-  padding-top: 36px;
+  padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
   font-size: clamp(1.05rem, 1.35vw, 1.48rem);
   font-weight: 700;
@@ -4067,7 +4126,7 @@ select {
   position: relative;
   max-width: 610px;
   margin: 30px 0 0;
-  padding-top: 36px;
+  padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
   font-size: clamp(1.05rem, 1.35vw, 1.48rem);
   font-weight: 700;
@@ -5459,7 +5518,7 @@ h3 {
   position: relative;
   max-width: 610px;
   margin: 30px 0 0;
-  padding-top: 36px;
+  padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
   font-size: clamp(1.05rem, 1.35vw, 1.48rem);
   font-weight: 700;
@@ -7484,7 +7543,7 @@ details p {
   height: 5px;
   border-radius: 999px;
   background: #ececec;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .donation-progress-bar span {
@@ -7762,6 +7821,110 @@ details p {
 }
 
 
+.donation-campaign-card-stack {
+  display: grid;
+  min-width: 0;
+  gap: 30px;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.donation-campaign-card-stack .donation-campaign-card-horizontal {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+  background: var(--featured-card-bg);
+  color: #ffffff;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.donation-campaign-card-stack .donation-campaign-card-horizontal:hover {
+  box-shadow: none;
+}
+
+.donation-campaign-card-stack .donation-campaign-media {
+  width: 112px;
+  height: 112px;
+  min-height: 0;
+  margin: 0;
+  border: 5px solid rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(18, 17, 39, 0.16);
+}
+
+.donation-campaign-card-stack .donation-campaign-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.donation-campaign-card-stack .donation-campaign-body {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+}
+
+.donation-campaign-card-stack .donation-campaign-body h3 {
+  display: -webkit-box;
+  min-height: 0;
+  max-height: 2.44em;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #ffffff;
+  font-size: clamp(1rem, 1.02vw, 1.18rem);
+  line-height: 1.22;
+}
+
+.donation-campaign-card-stack .donation-campaign-body p {
+  display: -webkit-box;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.donation-campaign-card-stack .donation-progress-card {
+  gap: 7px;
+  margin-top: 2px;
+  border-radius: 6px 14px;
+  background: #ffffff;
+  padding: 10px 12px 12px;
+}
+
+.donation-campaign-card-stack .donation-progress-card p {
+  display: block;
+  color: #69707a;
+  font-size: 0.84rem;
+  line-height: 1.2;
+}
+
+.donation-campaign-card-stack .donation-progress-card p strong {
+  color: var(--featured-card-bg);
+  font-size: 0.92rem;
+}
+
+.donation-campaign-card-stack .donation-progress-bar {
+  height: 5px;
+}
+
+.donation-campaign-card-stack .donation-progress-bar span {
+  background: var(--featured-card-bg);
+}
 .donation-campaigns-grid > .donation-campaign-card-featured .donation-campaign-body {
   align-items: center;
   gap: 0;
@@ -7898,7 +8061,7 @@ details p {
   position: relative;
   max-width: 610px;
   margin: 30px 0 0;
-  padding-top: 36px;
+  padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
   font-size: clamp(1.05rem, 1.35vw, 1.48rem);
   font-weight: 700;
@@ -8183,12 +8346,13 @@ details p {
 .ticket-board-note.split-section-note,
 .featured-category-head .split-section-note,
 .donation-secondary-head .split-section-note,
+.course-routes-head .split-section-note,
 .card-carousel-head .split-section-note,
 .talent-grid-head .split-section-note {
   position: relative;
   max-width: 610px;
   margin: 25px 0 0;
-  padding-top: 36px;
+  padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
   font-size: clamp(1.05rem, 1.35vw, 1.48rem);
   font-weight: 700;
@@ -8199,6 +8363,7 @@ details p {
 .ticket-board-note.split-section-note::before,
 .featured-category-head .split-section-note::before,
 .donation-secondary-head .split-section-note::before,
+.course-routes-head .split-section-note::before,
 .card-carousel-head .split-section-note::before,
 .talent-grid-head .split-section-note::before {
   content: "";
