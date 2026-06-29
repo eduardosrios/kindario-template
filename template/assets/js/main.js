@@ -990,3 +990,110 @@ document.querySelectorAll("[data-countdown-target]").forEach((countdown) => {
   updateCountdown();
   window.setInterval(updateCountdown, 1000);
 });
+
+const initDonationCampaignHoverSwap = () => {
+  const section = document.querySelector(".donation-campaigns-section");
+  if (!section) return;
+
+  const targetCard = section.querySelector("[data-donation-hover-target]");
+  const stackCards = Array.from(section.querySelectorAll(".donation-campaign-card-stack[aria-label='Urgent support campaign cards'] > .donation-campaign-card-horizontal"));
+  if (!targetCard || !stackCards.length) return;
+
+  const targetMedia = targetCard.querySelector(".donation-campaign-media");
+  const targetImage = targetMedia?.querySelector("img");
+  const targetBadge = targetMedia?.querySelector("span:not(.featured-corner-ribbon):not(.featured-title-percent)");
+  const targetTitle = targetCard.querySelector(".donation-campaign-body h3");
+  const targetDescription = targetCard.querySelector(".donation-campaign-body > p");
+  const targetProgress = targetCard.querySelector(".donation-progress-card");
+  const targetProgressCopy = targetProgress?.querySelector("p");
+  const targetProgressStrong = targetProgressCopy?.querySelector("strong");
+  const targetProgressBar = targetProgress?.querySelector(".donation-progress-bar");
+  const targetProgressValue = targetProgressBar?.querySelector("span");
+  const targetDonators = targetProgress?.querySelector(".donation-progress-donators");
+
+  const readCardData = (card) => {
+    const dataNode = card.querySelector(".donation-campaign-hover-data");
+    if (!dataNode?.textContent) return null;
+
+    try {
+      return JSON.parse(dataNode.textContent);
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const setActiveStackCard = (targetStackCard) => {
+    stackCards.forEach((card) => {
+      card.classList.toggle("is-active-campaign", card === targetStackCard);
+    });
+  };
+
+  const setFeaturedCard = (data, sourceCard) => {
+    if (!data) return;
+    setActiveStackCard(sourceCard);
+    if (targetCard.dataset.activeDonationCampaign === data.title) return;
+
+    targetCard.dataset.activeDonationCampaign = data.title;
+    targetCard.style.setProperty("--featured-card-bg", data.background);
+
+    if (targetMedia) {
+      targetMedia.setAttribute("href", data.href);
+      targetMedia.setAttribute("aria-label", data.ariaLabel);
+    }
+
+    if (targetImage) {
+      targetImage.setAttribute("src", data.image);
+      targetImage.setAttribute("alt", data.alt);
+    }
+
+    if (targetBadge) targetBadge.textContent = data.badge;
+    if (targetTitle) targetTitle.textContent = data.title;
+    if (targetDescription) targetDescription.textContent = data.description;
+
+    if (targetProgress) targetProgress.setAttribute("aria-label", `${data.title} campaign progress`);
+    if (targetProgressStrong) targetProgressStrong.textContent = data.amount;
+    if (targetProgressCopy) {
+      const suffixNode = Array.from(targetProgressCopy.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
+      if (suffixNode) suffixNode.textContent = ` ${data.goal}`;
+    }
+
+    if (targetProgressBar) {
+      targetProgressBar.setAttribute("aria-label", data.progressLabel);
+      targetProgressBar.setAttribute("aria-valuemin", String(data.min));
+      targetProgressBar.setAttribute("aria-valuemax", String(data.max));
+      targetProgressBar.setAttribute("aria-valuenow", String(data.now));
+    }
+
+    if (targetProgressValue) targetProgressValue.style.width = data.width;
+
+    if (targetDonators) {
+      targetDonators.replaceChildren();
+      data.donators.forEach((donator) => {
+        const item = document.createElement("span");
+        item.setAttribute("aria-hidden", "true");
+        item.textContent = donator;
+        targetDonators.appendChild(item);
+      });
+      const total = document.createElement("strong");
+      total.textContent = data.donatorText;
+      targetDonators.appendChild(total);
+    }
+  };
+
+  const currentData = {
+    title: targetTitle?.textContent?.trim()
+  };
+  targetCard.dataset.activeDonationCampaign = currentData.title || "";
+  const initialActiveCard = stackCards.find((card) => readCardData(card)?.title === targetCard.dataset.activeDonationCampaign);
+  if (initialActiveCard) setActiveStackCard(initialActiveCard);
+
+  stackCards.forEach((card) => {
+    const data = readCardData(card);
+    if (!data) return;
+
+    card.addEventListener("mouseenter", () => setFeaturedCard(data, card));
+    card.addEventListener("focusin", () => setFeaturedCard(data, card));
+  });
+};
+
+initDonationCampaignHoverSwap();

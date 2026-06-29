@@ -7661,7 +7661,7 @@ details p {
   font-size: 0.94rem;
   font-weight: 800;
 }
-.donation-campaigns-grid > .donation-campaign-card-featured .donation-campaign-media::after {
+`r`n.donation-campaigns-grid > .donation-campaign-card-featured .donation-campaign-media::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -7833,7 +7833,7 @@ details p {
   display: grid;
   min-width: 0;
   min-height: 0;
-  grid-template-columns: 124px minmax(0, 1fr);
+  grid-template-columns: 140px minmax(0, 1fr);
   align-items: center;
   gap: 27px;
   padding: 0;
@@ -7845,24 +7845,84 @@ details p {
 
 .donation-campaign-card-stack .donation-campaign-card-horizontal:hover {
   box-shadow: none;
+  transform: none;
 }
 
 .donation-campaign-card-stack .donation-campaign-media {
-  width: 124px;
-  height: 124px;
+  width: 140px;
+  height: 140px;
   min-height: 0;
   margin: 0;
-  border: 8.5px solid color-mix(in srgb, var(--featured-card-bg) 100%, #ffffff);
+  border: 7.5px solid color-mix(in srgb, var(--featured-card-bg) 100%, #ffffff);
   border-radius: 50%;
   color: #ffffff;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: none;
 }
 
-.donation-campaign-card-stack .donation-campaign-media img {
+
+.donation-campaign-card-stack .donation-campaign-card-bolt {
+  position: absolute;
+  top: calc(50% + 11px);
+  right: auto;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--featured-card-bg);
+  color: #fff;
+  font-size: 15px;
+  line-height: 1;
+  padding: 0;
+  transform: translate(-50%, -50%) translate(52px, -52px);
+  animation: campaign-bolt-to-rest 240ms ease both;
+}
+
+.donation-campaign-card-stack .donation-campaign-card-horizontal.is-active-campaign .donation-campaign-card-bolt,
+.donation-campaign-card-stack .donation-campaign-card-horizontal:hover .donation-campaign-card-bolt,
+.donation-campaign-card-stack .donation-campaign-card-horizontal:focus-within .donation-campaign-card-bolt {
+  animation: campaign-bolt-to-active 260ms ease both;
+}
+
+@keyframes campaign-bolt-to-active {
+  0% {
+    transform: translate(-50%, -50%) translate(52px, -52px);
+  }
+
+  55% {
+    transform: translate(-50%, -50%) translate(28px, -72px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translate(0, -77px);
+  }
+}
+
+@keyframes campaign-bolt-to-rest {
+  0% {
+    transform: translate(-50%, -50%) translate(0, -77px);
+  }
+
+  45% {
+    transform: translate(-50%, -50%) translate(28px, -72px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translate(52px, -52px);
+  }
+}.donation-campaign-card-stack .donation-campaign-card-bolt i {
+  line-height: 1;
+}
+.donation-campaign-card-stack .donation-campaign-card-horizontal:hover .donation-campaign-media img {
+  transform: none;
+}.donation-campaign-card-stack .donation-campaign-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .donation-campaign-card-stack .donation-campaign-body {
@@ -7882,8 +7942,8 @@ details p {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  color: #121127;
-  font-size: clamp(0.92rem, 0.94vw, 1.05rem);
+  color: #244a40;
+  font-size: clamp(1.15rem, 0.94vw, 1.05rem);
   line-height: 1.22;
 }
 
@@ -7919,9 +7979,24 @@ details p {
   background: #f7f7f3;
 }
 
+
+.donation-route-card-grid .donation-campaign-card-horizontal {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  grid-template-columns: 140px minmax(0, 1fr);
+  align-items: center;
+  gap: 27px;
+  padding: 0;
+  background: transparent;
+  color: #121127;
+  box-shadow: none;
+  overflow: visible;
+}
+
 .donation-route-card-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
+  gap: 55px 30px;
 }
 
 
@@ -7950,7 +8025,7 @@ details p {
   background: #ffd532;
 }
 
-@media (max-width: 1199.98px) {
+`r`n@media (max-width: 1199.98px) {
   .donation-route-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -8433,4 +8508,8 @@ details p {
   .split-section-head h2 {
     font-size: clamp(2.7rem, 15vw, 4.6rem);
   }
+}
+
+.donation-campaign-hover-data {
+  display: none !important;
 }
