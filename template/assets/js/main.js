@@ -15,6 +15,132 @@ if (window.GLightbox) {
   });
 }
 
+
+
+const initQuickSearchModal = () => {
+  const modal = document.querySelector("[data-search-modal]");
+  const input = modal?.querySelector("[data-search-input]");
+  const dialog = modal?.querySelector(".quick-search-dialog");
+  const openButtons = Array.from(document.querySelectorAll("[data-search-open]"));
+  const closeButtons = Array.from(modal?.querySelectorAll("[data-search-close]") || []);
+  const keywordButtons = Array.from(modal?.querySelectorAll(".quick-search-chip-track button") || []);
+  const quickLinks = Array.from(modal?.querySelectorAll("a[href^='#']") || []);
+  const form = modal?.querySelector(".quick-search-form");
+  const chipTrack = modal?.querySelector("[data-search-chip-track]");
+  const chipPrev = modal?.querySelector("[data-search-chip-prev]");
+  const chipNext = modal?.querySelector("[data-search-chip-next]");
+  const focusableSelector = "a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex='-1'])";
+  let lastFocusedElement = null;
+
+  if (!modal || !input || !openButtons.length) return;
+
+  const updateChipNavState = () => {
+    if (!chipTrack || !chipPrev || !chipNext) return;
+    const maxScroll = chipTrack.scrollWidth - chipTrack.clientWidth;
+    chipPrev.disabled = chipTrack.scrollLeft <= 1;
+    chipNext.disabled = chipTrack.scrollLeft >= maxScroll - 1;
+  };
+
+  const scrollChipTrack = (direction) => {
+    if (!chipTrack) return;
+    chipTrack.scrollBy({ left: direction * Math.max(180, chipTrack.clientWidth * 0.7), behavior: "smooth" });
+    window.setTimeout(updateChipNavState, 260);
+  };
+
+  const openModal = () => {
+    lastFocusedElement = document.activeElement;
+    modal.classList.remove("is-closing");
+    modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
+    if (dialog) dialog.scrollTop = 0;
+    document.body.classList.add("search-modal-open");
+    window.setTimeout(() => {
+      input.focus();
+      updateChipNavState();
+    }, 30);
+  };
+
+  const closeModal = () => {
+    if (modal.hidden || modal.classList.contains("is-closing")) return;
+    modal.classList.add("is-closing");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("search-modal-open");
+    window.setTimeout(() => {
+      modal.hidden = true;
+      modal.classList.remove("is-closing");
+      lastFocusedElement?.focus?.();
+    }, 190);
+  };
+
+  openButtons.forEach((button) => {
+    button.addEventListener("click", openModal);
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  keywordButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      input.value = button.textContent.trim();
+      input.focus();
+    });
+  });
+
+  chipPrev?.addEventListener("click", () => scrollChipTrack(-1));
+  chipNext?.addEventListener("click", () => scrollChipTrack(1));
+  chipTrack?.addEventListener("scroll", updateChipNavState, { passive: true });
+  window.addEventListener("resize", updateChipNavState);
+
+  quickLinks.forEach((link) => {
+    link.addEventListener("click", closeModal);
+  });
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    input.focus();
+  });
+
+  modal.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+
+    const focusableElements = Array.from(modal.querySelectorAll(focusableSelector)).filter((element) => !element.hidden && element.offsetParent !== null);
+    if (!focusableElements.length) return;
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (event.shiftKey && document.activeElement === firstElement) {
+      event.preventDefault();
+      lastElement.focus();
+    } else if (!event.shiftKey && document.activeElement === lastElement) {
+      event.preventDefault();
+      firstElement.focus();
+    }
+  });
+};
+
+initQuickSearchModal();
+
+document.querySelectorAll("[data-donation-show-more]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const section = button.closest(".donation-secondary-section");
+    const grid = section?.querySelector("[data-donation-secondary-grid]");
+    const hiddenCards = Array.from(grid?.querySelectorAll(".donation-secondary-extra-card[hidden]") || []);
+
+    hiddenCards.slice(0, 8).forEach((card) => {
+      card.hidden = false;
+    });
+
+    button.hidden = true;
+  });
+});
+
 document.querySelectorAll("[data-color-accordion]").forEach((accordion) => {
   const items = Array.from(accordion.querySelectorAll(".color-accordion-item"));
 
@@ -1075,7 +1201,13 @@ const initDonationCampaignHoverSwap = () => {
         targetDonators.appendChild(item);
       });
       const total = document.createElement("strong");
-      total.textContent = data.donatorText;
+      const totalText = String(data.donatorText || "");
+      const donorMatch = totalText.match(/^(.*)\s+(donators)$/i);
+      if (donorMatch) {
+        total.append(donorMatch[1], document.createElement("br"), donorMatch[2]);
+      } else {
+        total.textContent = totalText;
+      }
       targetDonators.appendChild(total);
     }
   };

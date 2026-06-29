@@ -22,6 +22,72 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
+
+  <div class="quick-search-modal" data-search-modal hidden aria-hidden="true">
+    <div class="quick-search-backdrop" data-search-close></div>
+    <section class="quick-search-dialog" role="dialog" aria-modal="true" aria-labelledby="quick-search-title">
+      <div class="quick-search-topbar">
+        <button class="quick-search-close" type="button" aria-label="Close search" data-search-close><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+      <div class="quick-search-shell">
+        <form class="quick-search-form" role="search">
+          <label id="quick-search-title" for="quickSearchInput">Search support routes and verified impact</label>
+          <p class="quick-search-intro">Find urgent campaigns, donation routes, field reports, volunteer paths, and donor updates without leaving the page.</p>
+          <div class="quick-search-input-row">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input id="quickSearchInput" type="search" placeholder="Search food relief, volunteer routes, water, gift aid..." autocomplete="off" data-search-input>
+            <button type="submit">Search</button>
+          </div>
+        </form>
+        <div class="quick-search-panel" aria-label="Quick search shortcuts">
+          <div class="quick-search-chip-carousel" aria-label="Quick search shortcuts">
+            <button class="quick-search-chip-nav" type="button" aria-label="Previous shortcuts" data-search-chip-prev disabled><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="quick-search-chip-track" data-search-chip-track tabindex="0">
+              <a class="quick-search-chip ribbon-blue" href="#donate">Urgent food kits</a>
+              <a class="quick-search-chip ribbon-pink" href="#gift-cards">Gift aid</a>
+              <a class="quick-search-chip ribbon-green" href="#volunteer">Volunteer routes</a>
+              <a class="quick-search-chip ribbon-orange" href="#proof">Impact reports</a>
+              <button class="quick-search-chip" type="button">Poverty</button>
+              <button class="quick-search-chip" type="button">Africa</button>
+              <button class="quick-search-chip" type="button">Poor children</button>
+              <button class="quick-search-chip" type="button">Crowdfunding</button>
+              <button class="quick-search-chip" type="button">Donor trust</button>
+              <button class="quick-search-chip" type="button">Humanitarian relief</button>
+            </div>
+            <button class="quick-search-chip-nav" type="button" aria-label="Next shortcuts" data-search-chip-next><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+          <div class="quick-search-results" aria-label="Search results">
+            <a class="quick-search-result" href="#causes">
+              <img src="assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg" alt="">
+              <span><strong>Emergency aid for urgent family needs</strong><small>Campaign page</small></span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="quick-search-result" href="#proof">
+              <img src="assets/images/michael-ali-y9dxpbveFmU-unsplash.jpg" alt="">
+              <span><strong>Clean water access for remote communities</strong><small>Verified route</small></span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="quick-search-result" href="#volunteer">
+              <img src="assets/images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg" alt="">
+              <span><strong>Volunteer routes and field teams</strong><small>Recruitment hub</small></span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="quick-search-result" href="#proof">
+              <img src="assets/images/michael-ali-2_rFy9TFRRc-unsplash.jpg" alt="">
+              <span><strong>Impact reports and arrival proof</strong><small>Reports archive</small></span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="quick-search-result" href="#medical-aid">
+              <img src="assets/images/larm-rmah-AEaTUnvneik-unsplash.jpg" alt="">
+              <span><strong>Medical kits for field teams today</strong><small>Active support route</small></span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <div class="page-frame">
     <header class="site-header" id="top">
       <section class="hero-section" aria-label="Kindario community support campaign">
@@ -62,20 +128,20 @@
                         <a class="nav-link" href="#proof">Impact <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
                         <div class="nav-mega-panel">
                           <div class="nav-mega-panel-inner container">
-                            <a class="nav-mega-hero" href="#proof">
+                            <div class="nav-mega-hero">
                               <div class="nav-mega-hero-copy">
                                 <strong>Track every route from pledge to verified arrival.</strong>
                                 <p>See every confirmed drop, route update, and arrival note.</p>
                                 <div class="nav-mega-report-list">
-                                  <div class="nav-mega-hero-foot">
+                                  <a class="nav-mega-hero-foot" href="#proof" aria-label="Open 2026 ongoing impact report">
                                     <b><span>2026</span>Ongoing Impact</b>
-                                  </div>
-                                  <div class="nav-mega-hero-foot">
+                                  </a>
+                                  <a class="nav-mega-hero-foot" href="#proof" aria-label="Open 2025 impact report">
                                     <b><span>2025</span>Impact Report</b>
-                                  </div>
+                                  </a>
                                 </div>
                               </div>
-                              <div class="nav-mega-hero-media" aria-hidden="true">
+                              <a class="nav-mega-hero-media" href="#proof" aria-label="Open impact proof and verified arrivals">
                                 <img src="https://images.pexels.com/photos/8923269/pexels-photo-8923269.jpeg?w=1920&dpr=1" alt="">
                                 <div class="nav-mega-hero-trust">
                                   <div class="nav-mega-hero-trust-brand" aria-label="Trustpilot">
@@ -94,8 +160,8 @@
     font-weight: 600;
 "><span>Score 4.9  </span></span>
                                 </div>
-                              </div>
-                            </a>
+                              </a>
+                            </div>
                             <div class="nav-mega-column">
                               <div class="nav-mega-story-card">
                                 <strong>Field notes from each completed drop.</strong>
@@ -154,7 +220,7 @@
                     </ul>
                     <div class="hero-nav-actions">
                       <div class="hero-top-panel" aria-label="Account and language">
-                        <button class="hero-utility-search fa-solid fa-search" type="button" aria-label="Search"></button>
+                        <button class="hero-utility-search fa-solid fa-search" type="button" aria-label="Search" data-search-open></button>
                         <div class="language-switcher" data-current-language="en">
                           <button class="language-current" type="button" aria-label="Change language">
                             <span class="language-code">EN</span>
@@ -541,8 +607,8 @@
                   <p><strong>$68,420</strong> of $120K</p>
                   <div class="donation-progress-bar" role="progressbar" aria-label="$68,420 raised of $120,000" aria-valuemin="0" aria-valuemax="120000" aria-valuenow="68420"><span style="width: 57.02%"></span></div>
                   <div class="donation-progress-donators">
-                    <span aria-hidden="true">La</span><span aria-hidden="true">Ci</span><span aria-hidden="true">Ko</span><span aria-hidden="true">+</span>
-                    <strong>1029 donators</strong>
+                    <span aria-hidden="true">La</span><span aria-hidden="true">Ci</span><span aria-hidden="true">Ko</span>
+                    <strong>1029<br>donators</strong>
                   </div>
                 </div>
               </div>
@@ -560,7 +626,7 @@
                     <div class="donation-progress-bar" role="progressbar" aria-label="$68,420 raised of $120,000" aria-valuemin="0" aria-valuemax="120000" aria-valuenow="68420"><span style="width: 57.02%"></span></div>
                   </div>
                 </div>
-                <script type="application/json" class="donation-campaign-hover-data">{"background":"#0C9144","href":"#proof","ariaLabel":"Support hunger relief worldwide","image":"assets/images/michael-ali-y9dxpbveFmU-unsplash.jpg","alt":"Community members gathered in a local relief setting","badge":"Food","title":"Fighting Hunger and Feeding Families","description":"Providing meals, staples, and nutrition support for hungry families.","amount":"$68,420","goal":"of $120K","progressLabel":"$68,420 raised of $120,000","min":0,"max":120000,"now":68420,"width":"57.02%","donators":["La","Ci","Ko","+"],"donatorText":"1029 donators"}</script>
+                <script type="application/json" class="donation-campaign-hover-data">{"background":"#0C9144","href":"#proof","ariaLabel":"Support hunger relief worldwide","image":"assets/images/michael-ali-y9dxpbveFmU-unsplash.jpg","alt":"Community members gathered in a local relief setting","badge":"Food","title":"Fighting Hunger and Feeding Families","description":"Providing meals, staples, and nutrition support for hungry families.","amount":"$68,420","goal":"of $120K","progressLabel":"$68,420 raised of $120,000","min":0,"max":120000,"now":68420,"width":"57.02%","donators":["La","Ci","Ko"],"donatorText":"1029 donators"}</script>
               </article>
               <article class="donation-campaign-card donation-campaign-card-main donation-campaign-card-horizontal" style="--featured-card-bg: #b856a2;">
                 <a class="donation-campaign-media" href="#causes" aria-label="Support emergency aid response">
@@ -574,7 +640,7 @@
                     <div class="donation-progress-bar" role="progressbar" aria-label="$42,850 raised of $80,000" aria-valuemin="0" aria-valuemax="80000" aria-valuenow="42850"><span style="width: 53.56%"></span></div>
                   </div>
                 </div>
-                <script type="application/json" class="donation-campaign-hover-data">{"background":"#b856a2","href":"#causes","ariaLabel":"Support emergency aid response","image":"assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg","alt":"Children receiving support through a food and care program","badge":"Emergency Aid","title":"Emergency aid for urgent family needs","description":"Send food, water, shelter, and volunteers for urgent needs.","amount":"$42,850","goal":"of $80K","progressLabel":"$42,850 raised of $80,000","min":0,"max":80000,"now":42850,"width":"53.56%","donators":["La","Ci","Ko","+"],"donatorText":"684 donators"}</script>
+                <script type="application/json" class="donation-campaign-hover-data">{"background":"#b856a2","href":"#causes","ariaLabel":"Support emergency aid response","image":"assets/images/annie-spratt-1uWRsg8NM4g-unsplash.jpg","alt":"Children receiving support through a food and care program","badge":"Emergency Aid","title":"Emergency aid for urgent family needs","description":"Send food, water, shelter, and volunteers for urgent needs.","amount":"$42,850","goal":"of $80K","progressLabel":"$42,850 raised of $80,000","min":0,"max":80000,"now":42850,"width":"53.56%","donators":["La","Ci","Ko"],"donatorText":"684 donators"}</script>
               </article>
               <article class="donation-campaign-card donation-campaign-card-main donation-campaign-card-horizontal" style="--featured-card-bg: #F03939;">
                 <a class="donation-campaign-media" href="#medical-aid" aria-label="Support medical aid response">
@@ -588,7 +654,7 @@
                     <div class="donation-progress-bar" role="progressbar" aria-label="$49,320 raised of $90,000" aria-valuemin="0" aria-valuemax="90000" aria-valuenow="49320"><span style="width: 54.8%"></span></div>
                   </div>
                 </div>
-                <script type="application/json" class="donation-campaign-hover-data">{"background":"#F03939","href":"#medical-aid","ariaLabel":"Support medical aid response","image":"assets/images/michael-ali-2_rFy9TFRRc-unsplash.jpg","alt":"Children smiling together during a food relief program","badge":"Medical Aid","title":"Medical kits for field teams today","description":"Move clinic kits, first-aid supplies, and field checklists into active routes.","amount":"$49,320","goal":"of $90K","progressLabel":"$49,320 raised of $90,000","min":0,"max":90000,"now":49320,"width":"54.8%","donators":["La","Ci","Ko","+"],"donatorText":"742 donators"}</script>
+                <script type="application/json" class="donation-campaign-hover-data">{"background":"#F03939","href":"#medical-aid","ariaLabel":"Support medical aid response","image":"assets/images/michael-ali-2_rFy9TFRRc-unsplash.jpg","alt":"Children smiling together during a food relief program","badge":"Medical Aid","title":"Medical kits for field teams today","description":"Move clinic kits, first-aid supplies, and field checklists into active routes.","amount":"$49,320","goal":"of $90K","progressLabel":"$49,320 raised of $90,000","min":0,"max":90000,"now":49320,"width":"54.8%","donators":["La","Ci","Ko"],"donatorText":"742 donators"}</script>
               </article>
             </div>
           </div>
@@ -730,7 +796,7 @@
             </div>
             <p class="section-copy split-section-note">Follow focused support routes with clear totals, donor counts, and field-ready next steps.</p>
           </div>
-          <div class="donation-secondary-grid donation-secondary-grid-plain" aria-label="Additional support campaigns copy">
+          <div class="donation-secondary-grid donation-secondary-grid-plain" aria-label="Additional support campaigns copy" data-donation-secondary-grid>
             <article class="donation-campaign-card">
               <div class="donation-campaign-body">
                 <h3>Clean water access for remote communities</h3>
@@ -759,12 +825,68 @@
                 <div class="donation-progress-card" aria-label="Emergency aid campaign progress"><p><strong>$19,480</strong> of $30K</p><div class="donation-progress-bar" role="progressbar" aria-label="$19,480 raised of $30,000" aria-valuemin="0" aria-valuemax="30000" aria-valuenow="19480"><span style="width: 64.93%"></span></div><div class="donation-progress-donators"><span aria-hidden="true">La</span><span aria-hidden="true">Ci</span><span aria-hidden="true">Ko</span><strong>309<br>donators</strong></div></div>
               </div>
             </article>
+            <article class="donation-campaign-card donation-secondary-extra-card" hidden>
+              <div class="donation-campaign-body">
+                <h3>Volunteer transport for weekend outreach</h3>
+                <p>Cover safe rides, fuel, and route checks for volunteers serving families beyond city centers.</p>
+                <div class="donation-progress-card" aria-label="Volunteer transport campaign progress"><p><strong>$6,420</strong> of $10K</p><div class="donation-progress-bar" role="progressbar" aria-label="$6,420 raised of $10,000" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="6420"><span style="width: 64.2%"></span></div><div class="donation-progress-donators"><span aria-hidden="true">Am</span><span aria-hidden="true">No</span><span aria-hidden="true">Re</span><strong>98<br>donators</strong></div></div>
+              </div>
+            </article>
+            <article class="donation-campaign-card donation-secondary-extra-card" hidden>
+              <div class="donation-campaign-body">
+                <h3>Food pantry restock for school breaks</h3>
+                <p>Keep shelf-stable meals ready when children lose daily access to classroom lunches.</p>
+                <div class="donation-progress-card" aria-label="Food pantry campaign progress"><p><strong>$13,280</strong> of $20K</p><div class="donation-progress-bar" role="progressbar" aria-label="$13,280 raised of $20,000" aria-valuemin="0" aria-valuemax="20000" aria-valuenow="13280"><span style="width: 66.4%"></span></div><div class="donation-progress-donators"><span aria-hidden="true">Jo</span><span aria-hidden="true">Em</span><span aria-hidden="true">Vi</span><strong>212<br>donators</strong></div></div>
+              </div>
+            </article>
+            <article class="donation-campaign-card donation-secondary-extra-card" hidden>
+              <div class="donation-campaign-body">
+                <h3>Clinic supplies for mobile health visits</h3>
+                <p>Move hygiene packs, first-aid basics, and screening supplies into rural partner clinics.</p>
+                <div class="donation-progress-card" aria-label="Clinic supplies campaign progress"><p><strong>$9,750</strong> of $16K</p><div class="donation-progress-bar" role="progressbar" aria-label="$9,750 raised of $16,000" aria-valuemin="0" aria-valuemax="16000" aria-valuenow="9750"><span style="width: 60.94%"></span></div><div class="donation-progress-donators"><span aria-hidden="true">Sa</span><span aria-hidden="true">Be</span><span aria-hidden="true">Lu</span><strong>145<br>donators</strong></div></div>
+              </div>
+            </article>
+            <article class="donation-campaign-card donation-secondary-extra-card" hidden>
+              <div class="donation-campaign-body">
+                <h3>Learning corners for crowded classrooms</h3>
+                <p>Fund books, mats, lamps, and supply crates for small-group reading support.</p>
+                <div class="donation-progress-card" aria-label="Learning corners campaign progress"><p><strong>$7,360</strong> of $12K</p><div class="donation-progress-bar" role="progressbar" aria-label="$7,360 raised of $12,000" aria-valuemin="0" aria-valuemax="12000" aria-valuenow="7360"><span style="width: 61.33%"></span></div><div class="donation-progress-donators"><span aria-hidden="true">Ma</span><span aria-hidden="true">Ez</span><span aria-hidden="true">Fi</span><strong>121<br>donators</strong></div></div>
+              </div>
+            </article>
+            <article class="donation-campaign-card donation-secondary-extra-card" hidden>
+              <div class="donation-campaign-body">
+                <h3>Family shelter kits before heavy rain</h3>
+                <p>Prepare tarps, blankets, lamps, and storage bins before seasonal storms hit.</p>
+                <div class="donation-progress-card" aria-label="Family shelter campaign progress"><p><strong>$17,510</strong> of $28K</p><div class="donation-progress-bar" role="progressbar" aria-label="$17,510 raised of $28,000" aria-valuemin="0" aria-valuemax="28000" aria-valuenow="17510"><span style="width: 62.54%"></span></div><div class="donation-progress-donators"><span aria-hidden="true">An</span><span aria-hidden="true">Ke</span><span aria-hidden="true">Pa</span><strong>267<br>donators</strong></div></div>
+              </div>
+            </article>
+            <article class="donation-campaign-card donation-secondary-extra-card" hidden>
+              <div class="donation-campaign-body">
+                <h3>Mentor sessions for young volunteers</h3>
+                <p>Support training, supervision, and local coordination for new volunteer teams.</p>
+                <div class="donation-progress-card" aria-label="Mentor sessions campaign progress"><p><strong>$5,940</strong> of $9K</p><div class="donation-progress-bar" role="progressbar" aria-label="$5,940 raised of $9,000" aria-valuemin="0" aria-valuemax="9000" aria-valuenow="5940"><span style="width: 66%"></span></div><div class="donation-progress-donators"><span aria-hidden="true">El</span><span aria-hidden="true">Na</span><span aria-hidden="true">Bo</span><strong>88<br>donators</strong></div></div>
+              </div>
+            </article>
+            <article class="donation-campaign-card donation-secondary-extra-card" hidden>
+              <div class="donation-campaign-body">
+                <h3>Seed grants for neighborhood fundraisers</h3>
+                <p>Help local partners print materials, host tables, and start small donor circles.</p>
+                <div class="donation-progress-card" aria-label="Seed grants campaign progress"><p><strong>$10,680</strong> of $17K</p><div class="donation-progress-bar" role="progressbar" aria-label="$10,680 raised of $17,000" aria-valuemin="0" aria-valuemax="17000" aria-valuenow="10680"><span style="width: 62.82%"></span></div><div class="donation-progress-donators"><span aria-hidden="true">Ru</span><span aria-hidden="true">Op</span><span aria-hidden="true">Ga</span><strong>169<br>donators</strong></div></div>
+              </div>
+            </article>
+            <article class="donation-campaign-card donation-secondary-extra-card" hidden>
+              <div class="donation-campaign-body">
+                <h3>Water storage tanks for family gardens</h3>
+                <p>Provide tanks, fittings, and repair visits that protect small food gardens through dry weeks.</p>
+                <div class="donation-progress-card" aria-label="Water storage campaign progress"><p><strong>$14,210</strong> of $22K</p><div class="donation-progress-bar" role="progressbar" aria-label="$14,210 raised of $22,000" aria-valuemin="0" aria-valuemax="22000" aria-valuenow="14210"><span style="width: 64.59%"></span></div><div class="donation-progress-donators"><span aria-hidden="true">He</span><span aria-hidden="true">In</span><span aria-hidden="true">Mo</span><strong>231<br>donators</strong></div></div>
+              </div>
+            </article>
           </div>
           <div class="donation-secondary-actions" aria-label="More campaign actions">
-            <button class="donation-secondary-action" type="button" aria-label="Show more support cards">
+            <button class="donation-secondary-action" type="button" aria-label="Show more support cards" data-donation-show-more>
               <i class="fa-solid fa-plus" aria-hidden="true"></i>
             </button>
-            <button class="donation-secondary-action" type="button" aria-label="Search support cards">
+            <button class="donation-secondary-action" type="button" aria-label="Search support cards" data-search-open>
               <i class="fa-solid fa-search" aria-hidden="true"></i>
             </button>
           </div>
