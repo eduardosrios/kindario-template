@@ -183,9 +183,9 @@ select {
 @media (min-width: 992px) {
   .brand-mark {
     display: grid;
-    flex: 0 0 50px;
-    width: 72px;
-    height: 72px;
+    flex: 0 0 76px;
+    width: 76px;
+    height: 76px;
     place-items: center;
   }
 
@@ -1037,6 +1037,18 @@ select {
   align-items: center;
   min-width: 0;
 }
+.hero-impact-item:nth-child(2) {
+  --hero-impact-accent: #4264cb;
+}
+
+.hero-impact-item:nth-child(3) {
+  --hero-impact-accent: #8a3ec4;
+}
+
+.hero-impact-item:nth-child(4) {
+  --hero-impact-accent: #0C9144;
+}
+
 
 .hero-impact-item i {
   position: relative;
@@ -1046,7 +1058,7 @@ select {
   justify-content: center;
   width: 76px;
   height: 76px;
-  color: #0C9144;
+  color: var(--hero-impact-accent, #0C9144);
   font-size: 28px;
   line-height: 0;
   transition: color 220ms ease;
@@ -1066,12 +1078,12 @@ select {
   background: #fff;
   box-shadow: 10px 10px 10px rgba(24, 24, 20, 0.09);
   border: 5px solid transparent;
-  border-bottom: 5px solid #0C9144;
+  border-bottom: 5px solid var(--hero-impact-accent, #0C9144);
 }
 
 .hero-impact-item > div strong {
   display: block;
-  color: #0C9144;
+  color: var(--hero-impact-accent, #0C9144);
   font-size: clamp(1.56rem, 2vw, 2rem);
   font-weight: 900;
   line-height: 1;
@@ -1647,6 +1659,10 @@ select {
   min-height: 574px;
 }
 
+.course-feature-wide .course-feature-waves {
+  z-index: 2;
+}
+
 .course-feature-waves {
   position: absolute;
   inset: 0;
@@ -1845,6 +1861,14 @@ select {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 20%, rgba(0, 0, 0, 0.72) 100%);
+}
+.course-feature-wide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 20%, rgba(0, 0, 0, 0.72) 100%);
+  pointer-events: none;
 }
 
 .course-feature-photo > img {
@@ -5661,6 +5685,19 @@ h3 {
   background: #fff;
   color: var(--category-color, var(--green));
 }
+.featured-category-grid .col:nth-child(7) .featured-category-card {
+  color: #222;
+}
+
+.featured-category-grid .col:nth-child(7) .featured-category-card .featured-category-icon {
+  border-bottom-color: #222 !important;
+  color: #222;
+}
+
+.featured-category-grid .col:nth-child(7) .featured-category-card .card-text {
+  background: #222;
+  color: var(--category-color, #F4CA35);
+}
 
 .featured-category-card:hover {
   transform: translateY(-6px);
@@ -5692,6 +5729,11 @@ h3 {
   font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.2;
+}
+.featured-category-grid .col:nth-child(2) .featured-category-card .card-title,
+.featured-category-grid .col:nth-child(4) .featured-category-card .card-title,
+.featured-category-grid .col:nth-child(6) .featured-category-card .card-title {
+  color: #222;
 }
 
 .featured-category-card .card-text {
@@ -7592,7 +7634,7 @@ details p {
   border-radius: 50%;
   color: #ffffff;
   font-size: 0.94rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: capitalize;
 }
@@ -7667,7 +7709,8 @@ details p {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 28%, rgba(0, 0, 0, 0.5) 100%);
   pointer-events: none;
 }
-.donation-campaigns-grid > .donation-campaign-card-featured .featured-corner-ribbon {
+.donation-campaigns-grid > .donation-campaign-card-featured .featured-corner-ribbon,
+.donation-campaigns-grid > .donation-campaign-card-has-corner .featured-corner-ribbon {
   position: absolute;
   top: 0;
   left: -1px;
@@ -7679,7 +7722,8 @@ details p {
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
-.donation-campaigns-grid > .donation-campaign-card-featured .featured-corner-ribbon i {
+.donation-campaigns-grid > .donation-campaign-card-featured .featured-corner-ribbon i,
+.donation-campaigns-grid > .donation-campaign-card-has-corner .featured-corner-ribbon i {
   position: absolute;
   top: 25px;
   left: 30px;
@@ -7692,6 +7736,9 @@ details p {
   height: 36px;
   line-height: 37px;
   border-radius: 60px;
+}
+.donation-campaigns-grid > .donation-campaign-card-has-corner .featured-corner-ribbon i {
+  font-size: 17.4px;
 }
 
 .donation-campaigns-grid > .donation-campaign-card-featured .donation-campaign-media h3 {
@@ -7872,7 +7919,7 @@ details p {
   border-radius: 50%;
   background: var(--featured-card-bg);
   color: #fff;
-  font-size: 15px;
+  font-size: 17.4px;
   line-height: 1;
   padding: 0;
   transform: translate(-50%, -50%) translate(52px, -52px);
@@ -8487,6 +8534,19 @@ details p {
   height: 7px;
   background: #ffd532;
 }
+.course-routes-head h2::before,
+.course-routes-head .split-section-note::before {
+  background: #5074e0;
+}
+.split-section-head:not(.text-center) h2::first-letter,
+.stories-section h2::first-letter,
+.donate-panel h2::first-letter,
+.faq-panel h2::first-letter,
+.footer-cta h2::first-letter {
+  color: var(--title-first-letter-color, inherit);
+}
+
+
 
 @media (max-width: 991.98px) {
   .split-section-head {
