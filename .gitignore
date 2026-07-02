@@ -43,3 +43,16 @@ screenshots-references/
 test-results/
 tmp/
 /index.html
+
+# Local backup template copies and scratch exports
+template BK/
+template  BK2/
+logo/
+tmp-*.png
+*.psd
+ULTIMOS TF.txt
+
+template/assets/images/logo - Copia*.png
+template/assets/images/ticket-left.png
+template/assets/images/ticket-right.png
+template/assets/images/ticket-top-bottom.png
