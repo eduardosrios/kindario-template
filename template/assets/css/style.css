@@ -8536,7 +8536,12 @@ details p {
 }
 .course-routes-head h2::before,
 .course-routes-head .split-section-note::before {
-  background: #5074e0;
+  background: #315CDB;
+}
+
+.ticket-board-head h2::before,
+.ticket-board-note.split-section-note::before {
+  background: #f03939;
 }
 .split-section-head:not(.text-center) h2::first-letter,
 .stories-section h2::first-letter,
