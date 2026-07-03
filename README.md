@@ -65,4 +65,6 @@ Recommended topics:
 
 ## License
 
-Kindario is released under the [MIT License](LICENSE).
+This project is proprietary and all rights are reserved.
+
+You may view the source code on GitHub, but you are not permitted to use, copy, modify, distribute, commercialize, or create derivative works from this project without prior written permission.
