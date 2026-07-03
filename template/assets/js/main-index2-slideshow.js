@@ -248,12 +248,14 @@ if (heroSlider) {
   const heroShell = document.querySelector("[data-hero-slider-shell]");
   const slides = Array.from(heroSlider.querySelectorAll("[data-hero-slide]"));
   const dots = Array.from(heroSlider.querySelectorAll("[data-hero-dot]"));
+  const dotsWrap = heroSlider.querySelector(".hero-slider-dots");
+  const sliderItems = heroSlider.querySelector(".hero-slider-items");
   const prevButton = heroSlider.querySelector("[data-hero-prev]");
   const nextButton = heroSlider.querySelector("[data-hero-next]");
   const timerIndicator = heroSlider.querySelector("[data-hero-timer]");
   const timerIcon = heroSlider.querySelector("[data-hero-timer-icon]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const heroSlideDuration = 6500;
+  const heroSlideDuration = 60000000;
   const heroTimerFlipDuration = 520;
   const heroTimerIcons = [
     "https://cdn-icons-png.flaticon.com/512/3162/3162269.png",
@@ -266,6 +268,24 @@ if (heroSlider) {
   let timerFlipSwapTimeout;
   let timerFlipCleanupTimeout;
   let heroBgTransitionTimeout;
+
+  const placeTimerOnActiveDot = () => {
+    if (!timerIndicator) return;
+    const activeDot = dots.find((dot) => Number.parseInt(dot.dataset.heroDot || "-1", 10) === activeSlide);
+    if (!activeDot) return;
+
+    if (timerIndicator.parentElement !== activeDot) {
+      activeDot.appendChild(timerIndicator);
+    }
+
+    if (dotsWrap) {
+      dotsWrap.style.top = "24px";
+      dotsWrap.style.bottom = "auto";
+      dotsWrap.style.transform = "none";
+    }
+  };
+
+
 
   const animateHeroBackgroundSwap = () => {
     if (!heroShell || reduceMotion) return;
@@ -301,7 +321,8 @@ if (heroSlider) {
       slide.classList.toggle("is-active", slideIndex === activeSlide);
     });
 
-    dots.forEach((dot, dotIndex) => {
+    dots.forEach((dot) => {
+      const dotIndex = Number.parseInt(dot.dataset.heroDot || "-1", 10);
       const isActive = dotIndex === activeSlide;
       dot.classList.toggle("is-active", isActive);
       dot.setAttribute("aria-current", isActive ? "true" : "false");
@@ -321,6 +342,8 @@ if (heroSlider) {
     if (timerIcon && heroTimerIcons[activeSlide]) {
       timerIcon.src = heroTimerIcons[activeSlide];
     }
+
+    placeTimerOnActiveDot();
   };
 
   const resetHeroTimer = () => {
@@ -400,7 +423,8 @@ if (heroSlider) {
 
   dots.forEach((dot, dotIndex) => {
     dot.addEventListener("click", () => {
-      showHeroSlideWithFlip(dotIndex);
+      const targetIndex = Number.parseInt(dot.dataset.heroDot || String(dotIndex), 10);
+      showHeroSlideWithFlip(Number.isNaN(targetIndex) ? dotIndex : targetIndex);
       restartHeroSliderAfterClick();
     });
   });
@@ -1230,3 +1254,7 @@ const initDonationCampaignHoverSwap = () => {
 };
 
 initDonationCampaignHoverSwap();
+
+
+
+
