@@ -1,32 +1,32 @@
 # Security Policy
 
-## Supported versions
+## Supported Version
 
-Kindario is currently in early template development. Security updates are applied to the latest version on the `main` branch.
+Security fixes are applied to the latest state of the `main` branch.
 
-## Reporting a vulnerability
+## Reporting a Vulnerability
 
-Please do not open a public issue for security vulnerabilities.
+Do not open public issues for security vulnerabilities.
 
-To report a vulnerability, contact the repository owner through GitHub with:
+Instead, contact the repository owner through GitHub and include:
 
-- A clear description of the issue.
-- Steps to reproduce the behavior.
-- The affected file, dependency, or configuration.
-- Any known impact or suggested remediation.
+- A clear summary of the issue
+- Steps to reproduce it
+- The affected file, asset, dependency, or interaction
+- The expected risk or impact
+- Any suggested remediation if available
 
-The maintainers will review the report and respond with next steps when possible.
+## Relevant Security Scope
 
-## Scope
+For this repository, valid reports may include:
 
-Security reports may include:
+- Cross-site scripting or unsafe DOM injection
+- Insecure third-party assets or scripts
+- Exposed secrets, keys, or tokens
+- Misleading donation UX that could harm user trust
+- Accessibility regressions that create serious user risk
+- Dependency vulnerabilities in project tooling
 
-- Unsafe dependencies.
-- Cross-site scripting risks in template code.
-- Insecure external resource usage.
-- Exposure of secrets, tokens, or private project notes.
-- Misleading donation or form flows that could put users at risk.
+## Out of Scope
 
-## Out of scope
-
-The repository does not process live donations, store donor records, or operate production infrastructure by itself. Issues in deployments, third-party payment processors, hosting providers, or customized downstream copies should be reported to the operators of those systems.
+The repository itself is a static template. It does not process live donations, store donor records, or manage production infrastructure by default. Security issues in downstream deployments, payment providers, analytics tools, or custom hosting stacks should be reported to the operators of those systems.
