@@ -1,36 +1,48 @@
 # Contributing
 
-Thank you for considering a contribution to Kindario.
+Thank you for contributing to Kindario.
 
-Kindario is maintained as an English-first HTML, CSS, and JavaScript charity website template. All code comments, documentation, commit messages, release notes, issue titles, and pull request descriptions should be written in English.
+Kindario is an English-first HTML, CSS, and JavaScript template. All documentation, issue reports, pull request descriptions, release notes, commit messages, and visible project text should be written in English.
 
-## Ways to contribute
+## What We Accept
 
-- Improve accessibility, semantic HTML, keyboard navigation, and color contrast.
-- Refine responsive layouts for mobile, tablet, and desktop screens.
-- Add reusable sections for donation campaigns, volunteer programs, impact reporting, and humanitarian relief.
-- Improve documentation, examples, and setup instructions.
-- Report bugs with clear reproduction steps.
+Contributions are welcome in areas such as:
 
-## Development workflow
+- Layout and responsive improvements
+- Accessibility and semantic HTML
+- Donation and volunteer user-flow refinements
+- Visual polish for nonprofit and humanitarian use cases
+- Documentation, release notes, and repository health files
+- Testing, QA, and reproducible bug reports
 
-1. Create a branch from `main`.
-2. Make focused changes that match the existing project structure.
-3. Run the relevant local checks before opening a pull request.
-4. Keep pull requests small enough to review with confidence.
+## Working Rules
 
-## Running the template
+1. Start from `main`.
+2. Keep changes focused and reviewable.
+3. Stay within the static-template scope: HTML, CSS, and JavaScript.
+4. Do not add React, Next.js, Vue, Angular, backend code, or database logic.
+5. Keep project text in English.
+6. Include screenshots for visual changes when practical.
 
-The root `index.html` can be opened directly in a browser.
+## Local Review Checklist
 
-## Pull request expectations
+Before opening a pull request:
 
-- Explain the purpose of the change.
-- Include screenshots for visual updates.
-- Mention any accessibility considerations.
-- Link related issues when applicable.
-- Avoid committing generated archives, local notes, dependency folders, or build output.
+- Verify affected pages in a browser.
+- Check desktop and mobile behavior.
+- Confirm links, buttons, and sliders still work.
+- Keep repository docs aligned with the current behavior.
+- Avoid committing generated archives, local notes, temporary screenshots, and private references.
 
-## Code of Conduct
+## Pull Requests
+
+A good pull request should include:
+
+- A short summary of the change
+- The reason for the update
+- Screenshots for UI changes
+- Notes about any risk, limitation, or follow-up work
+
+## Conduct
 
 Participation in this project is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
