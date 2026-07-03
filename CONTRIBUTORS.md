@@ -1,13 +1,19 @@
 # Contributors
 
-Kindario is maintained by the repository owner and project collaborators.
+Kindario is maintained by the repository owner and approved project collaborators.
 
-## Current contributors
+## Current Contributors
 
 - Eduardo Rios
 
-## Contribution recognition
+## Recognition Policy
 
-Contributors may be added here after meaningful accepted contributions such as code improvements, documentation updates, accessibility fixes, design refinements, testing, or issue triage.
+Contributors may be added after meaningful accepted work such as:
 
-Automated assistants and generated tooling should not be listed as project contributors.
+- Template code improvements
+- Accessibility or responsiveness fixes
+- Documentation and governance updates
+- QA, issue triage, and reproducible bug reporting
+- Release and maintenance support
+
+Automated assistants, generated tooling, and anonymous machine output should not be listed as human contributors.
