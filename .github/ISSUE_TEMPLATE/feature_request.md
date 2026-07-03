@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an improvement for the Kindario template
+about: Suggest an improvement for the Kindario static template
 title: "Feature: "
 labels: enhancement
 assignees: ""
@@ -10,14 +10,14 @@ assignees: ""
 
 Describe the improvement.
 
-## Use case
+## Problem or Opportunity
 
-Explain how this helps charities, NGOs, donors, volunteers, or campaign managers.
+Explain what user need, nonprofit use case, or project gap this request addresses.
 
-## Proposed solution
+## Proposed Solution
 
-Describe the desired behavior or layout.
+Describe the desired behavior, UI pattern, or repository improvement.
 
-## Additional context
+## Additional Context
 
 Add references, screenshots, or constraints.

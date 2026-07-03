@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a reproducible problem in the Kindario template
+about: Report a reproducible problem in the Kindario static template
 title: "Bug: "
 labels: bug
 assignees: ""
@@ -10,25 +10,25 @@ assignees: ""
 
 Describe the problem.
 
-## Steps to reproduce
+## Affected Area
 
-1. Open the page or component.
-2. Perform the action.
+- Page or component:
+- Browser:
+- Viewport size:
+
+## Steps to Reproduce
+
+1. Open the relevant page.
+2. Perform the interaction.
 3. Observe the result.
 
-## Expected behavior
+## Expected Behavior
 
 Describe what should happen.
 
-## Actual behavior
+## Actual Behavior
 
 Describe what happens instead.
-
-## Environment
-
-- Browser:
-- Operating system:
-- Viewport size:
 
 ## Screenshots
 
