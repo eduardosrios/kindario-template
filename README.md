@@ -1,16 +1,23 @@
 # Kindario
 
-Kindario is an HTML, CSS, and JavaScript website template for charities, NGOs, humanitarian organizations, donor campaigns, volunteer programs, and social impact initiatives.
+Kindario is an HTML, CSS, and JavaScript website template for charities, NGOs, donation campaigns, volunteer recruitment, humanitarian relief programs, and social impact storytelling.
 
-The project is designed for organizations that need a warm, modern web presence for donation funnels, campaign storytelling, volunteer recruitment, poverty and hunger relief programs, crowdfunding, donor trust signals, and community impact reporting.
+The repository is focused on a static front-end workflow. It is intended for nonprofit organizations, fundraising teams, volunteer coordinators, donor-facing campaigns, and humanitarian brands that need a credible public web presence without a framework or backend dependency.
 
-## Features
+## Core Focus
 
-- Static front page built with HTML, CSS, and JavaScript.
-- Donation and volunteer-oriented calls to action.
-- Editorial storytelling sections for mission, trust, field notes, support paths, and humanitarian programs.
-- Curated screenshot reference manifest for traceable visual direction.
-- English-first project documentation and repository governance files.
+- Charity and NGO landing experiences
+- Donation and fundraising storytelling
+- Volunteer recruitment and conversion flows
+- Poverty, hunger, and child support campaigns
+- Humanitarian relief communication
+- Trust, transparency, and donor confidence signals
+
+## Tech Stack
+
+- HTML
+- CSS
+- JavaScript
 
 ## Repository Structure
 
@@ -18,34 +25,44 @@ The project is designed for organizations that need a warm, modern web presence 
 .
 |-- template/
 |   |-- index.html
+|   |-- index-2.html
 |   `-- assets/
 |       |-- css/
-|       |-- js/
 |       |-- images/
-|       `-- vendor/
-|-- used/
-|   `-- manifest.md
+|       `-- js/
+|-- .github/
+|-- README.md
 |-- CODE_OF_CONDUCT.md
 |-- CONTRIBUTING.md
-|-- LICENSE
 |-- SECURITY.md
+|-- SUPPORT.md
+|-- LICENSE
 `-- CONTRIBUTORS.md
 ```
 
-## Running the Template
+## Local Usage
 
-Open `template/index.html` directly in a browser, or serve the `template/` folder with any static file server.
+Open `template/index.html` or `template/index-2.html` directly in a browser, or serve the `template/` directory with any static file server.
 
-## Recommended Repository About Text
+## Repository About
 
-Use this short description in the GitHub repository About section:
+Recommended short description:
 
-> Kindario is an HTML, CSS, and JavaScript charity website template for donation campaigns, volunteer recruitment, humanitarian relief, and social impact storytelling.
+> Kindario is an HTML, CSS, and JavaScript charity template for donation campaigns, volunteer recruitment, humanitarian relief, and nonprofit storytelling.
 
 Recommended topics:
 
-`charity`, `ngo`, `donation`, `nonprofit`, `volunteering`, `fundraising`, `crowdfunding`, `humanitarian-relief`, `social-impact`, `philanthropy`, `donor`, `poverty`, `hunger`, `gift-aid`, `volunteer-recruitment`
+`charity`, `ngo`, `donation`, `nonprofit`, `volunteering`, `volunteers`, `poverty`, `hunger`, `africa`, `giving`, `crowdfunding`, `fundraising`, `donor`, `gift-aid`, `humanitarian-relief`, `volunteer-recruitment`, `social-impact`, `humanitarian-organization`, `philanthropy`
+
+## Community Resources
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
+- [Support](SUPPORT.md)
+- [Contributors](CONTRIBUTORS.md)
+- [License](LICENSE)
 
 ## License
 
-This project is available under the MIT License. See [LICENSE](LICENSE).
+Kindario is released under the [MIT License](LICENSE).
