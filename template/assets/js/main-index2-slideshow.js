@@ -31,6 +31,7 @@ const initQuickSearchModal = () => {
   const chipNext = modal?.querySelector("[data-search-chip-next]");
   const focusableSelector = "a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex='-1'])";
   let lastFocusedElement = null;
+  let lockedScrollY = 0;
 
   if (!modal || !input || !openButtons.length) return;
 
@@ -53,7 +54,10 @@ const initQuickSearchModal = () => {
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     if (dialog) dialog.scrollTop = 0;
+    lockedScrollY = window.scrollY || window.pageYOffset || 0;
+    document.documentElement.classList.add("search-modal-open");
     document.body.classList.add("search-modal-open");
+    document.body.style.top = `-${lockedScrollY}px`;
     window.setTimeout(() => {
       input.focus();
       updateChipNavState();
@@ -64,7 +68,15 @@ const initQuickSearchModal = () => {
     if (modal.hidden || modal.classList.contains("is-closing")) return;
     modal.classList.add("is-closing");
     modal.setAttribute("aria-hidden", "true");
+    document.documentElement.classList.remove("search-modal-open");
     document.body.classList.remove("search-modal-open");
+    document.body.style.top = "";
+    const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, lockedScrollY);
+    window.requestAnimationFrame(() => {
+      document.documentElement.style.scrollBehavior = previousScrollBehavior;
+    });
     window.setTimeout(() => {
       modal.hidden = true;
       modal.classList.remove("is-closing");
@@ -278,12 +290,67 @@ if (heroSlider) {
       activeDot.appendChild(timerIndicator);
     }
 
-    if (dotsWrap) {
-      dotsWrap.style.top = "24px";
-      dotsWrap.style.bottom = "auto";
-      dotsWrap.style.transform = "none";
+  };
+
+  let heroAlignmentFrame = 0;
+  let heroDotsPositioned = false;
+
+  const syncHeroSlideBounds = () => {
+    if (!heroShell) return;
+
+    const heroBodyRect = heroSlider.getBoundingClientRect();
+    const brandRect = document.querySelector(".hero-nav-inner.container .brand-lockup")?.getBoundingClientRect();
+    const donateRect = document.querySelector(".hero-nav-cta")?.getBoundingClientRect();
+    const navInnerRect = document.querySelector(".hero-nav-inner.container")?.getBoundingClientRect();
+    const shellStyles = window.getComputedStyle(heroShell);
+    const fallbackLeft = Number.parseFloat(shellStyles.getPropertyValue("--active-slide-left")) || 0;
+    const fallbackWidth = Number.parseFloat(shellStyles.getPropertyValue("--slide-width")) || heroBodyRect.width;
+
+    let targetLeft = brandRect ? brandRect.left - heroBodyRect.left : fallbackLeft;
+    let targetRight;
+
+    if (donateRect && donateRect.width > 0) {
+      targetRight = donateRect.right - heroBodyRect.left;
+    } else if (navInnerRect) {
+      targetRight = navInnerRect.right - heroBodyRect.left - 15;
+    } else {
+      targetRight = targetLeft + fallbackWidth;
+    }
+
+    targetLeft = Math.max(0, Math.round(targetLeft));
+    targetRight = Math.min(Math.round(targetRight), Math.round(heroBodyRect.width));
+
+    const targetWidth = Math.max(0, targetRight - targetLeft);
+
+    if (targetWidth > 0) {
+      heroShell.style.setProperty("--active-slide-left", `${targetLeft}px`);
+      heroShell.style.setProperty("--slide-width", `${targetWidth}px`);
+    }
+    if (dotsWrap && !heroDotsPositioned) {
+      const activeSlideElement = slides.find((slide) => slide.classList.contains("is-active")) || slides[activeSlide];
+      if (!activeSlideElement) return;
+
+      const heroBodyRectForDots = heroSlider.getBoundingClientRect();
+      const activeSlideRect = activeSlideElement.getBoundingClientRect();
+      const wrapRect = dotsWrap.getBoundingClientRect();
+      const timerRingRect = dotsWrap.querySelector(".hero-slider-timer-ring")?.getBoundingClientRect();
+      const markerRects = Array.from(dotsWrap.querySelectorAll(".hero-slider-dot-marker")).map((marker) => marker.getBoundingClientRect());
+      const rightmostControlRight = [timerRingRect?.right || 0, ...markerRects.map((rect) => rect.right)].reduce((maxRight, value) => Math.max(maxRight, value), 0);
+      const visualOffset = Math.max(0, wrapRect.right - rightmostControlRight);
+      const slideRightInset = Math.max(0, Math.round(heroBodyRectForDots.right - activeSlideRect.right));
+      const dotsRight = Math.max(0, slideRightInset + 25 - visualOffset);
+
+      dotsWrap.style.setProperty("right", `${dotsRight}px`, "important");
+      dotsWrap.style.setProperty("left", "auto", "important");
+      heroDotsPositioned = true;
     }
   };
+
+  const queueHeroSlideBoundsSync = () => {
+    window.cancelAnimationFrame(heroAlignmentFrame);
+    heroAlignmentFrame = window.requestAnimationFrame(syncHeroSlideBounds);
+  };
+
 
 
 
@@ -442,6 +509,27 @@ if (heroSlider) {
       restartHeroSliderAfterClick();
     });
   }
+
+  window.addEventListener("resize", queueHeroSlideBoundsSync);
+  window.addEventListener("orientationchange", queueHeroSlideBoundsSync);
+
+  if (window.ResizeObserver) {
+    const heroAlignmentObserver = new window.ResizeObserver(() => {
+      queueHeroSlideBoundsSync();
+    });
+
+    const navInner = document.querySelector(".hero-nav-inner.container");
+    if (navInner) heroAlignmentObserver.observe(navInner);
+    heroAlignmentObserver.observe(heroSlider);
+  }
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => {
+      queueHeroSlideBoundsSync();
+    }).catch(() => {});
+  }
+
+  queueHeroSlideBoundsSync();
 
   const initialHeroSlide = Number.parseInt(heroShell?.dataset.heroSlide || "0", 10);
   showHeroSlide(Number.isNaN(initialHeroSlide) ? 0 : initialHeroSlide);
@@ -1254,6 +1342,16 @@ const initDonationCampaignHoverSwap = () => {
 };
 
 initDonationCampaignHoverSwap();
+
+
+
+
+
+
+
+
+
+
 
 
 
