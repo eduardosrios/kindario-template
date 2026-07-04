@@ -1871,6 +1871,13 @@ select {
   pointer-events: none;
 }
 
+.course-feature-photo-bg {
+  background-image: var(--course-feature-photo);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .course-feature-photo > img {
   position: absolute;
   inset: 0;
@@ -2202,25 +2209,25 @@ select {
 
 .hero-shell[data-hero-slide="0"] {
   --hero-shell-bg: #108032;
-  --hero-shell-image: url("../images/michael-ali-2_rFy9TFRRc-unsplash.jpg");
+  --hero-shell-image: url("../images/kindario-hero-slide-4c.jpg");
   --hero-shell-overlay: linear-gradient(90deg, rgba(12, 145, 68, 0.96) 0%, rgba(12, 145, 68, 0.92) 44%, rgba(12, 145, 68, 0.58) 76%, rgba(12, 145, 68, 0.38) 100%);
 }
 
 .hero-shell[data-hero-slide="1"] {
   --hero-shell-bg: #315cdb;
-  --hero-shell-image: url("../images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg");
+  --hero-shell-image: url("../images/kindario-hero-slide-1.jpg");
   --hero-shell-overlay: linear-gradient(90deg, rgba(49, 92, 219, 0.94) 0%, rgba(49, 92, 219, 0.82) 42%, rgba(49, 92, 219, 0.56) 76%, rgba(49, 92, 219, 0.34) 100%);
 }
 
 .hero-shell[data-hero-slide="2"] {
   --hero-shell-bg: #014576;
-  --hero-shell-image: url("../images/annie-spratt-cVEOh_JJmEE-unsplash.jpg");
+  --hero-shell-image: url("../images/kindario-hero-slide-2.jpg");
   --hero-shell-overlay: linear-gradient(90deg, rgba(23, 82, 112, 0.92) 0%, rgba(23, 82, 112, 0.8) 42%, rgba(23, 82, 112, 0.6) 76%, rgba(23, 82, 112, 0.4) 100%);
 }
 
 .hero-shell[data-hero-slide="3"] {
   --hero-shell-bg: #9532be;
-  --hero-shell-image: url("../images/larm-rmah-AEaTUnvneik-unsplash.jpg");
+  --hero-shell-image: url("../images/kindario-hero-slide-3b.jpg");
   --hero-shell-overlay: linear-gradient(90deg, rgba(184, 86, 162, 0.94) 0%, rgba(184, 86, 162, 0.82) 42%, rgba(184, 86, 162, 0.56) 76%, rgba(184, 86, 162, 0.34) 100%);
 }
 
@@ -9211,25 +9218,25 @@ body.search-modal-open {
 
 .index2-peek-slideshow .hero-slide[data-hero-slide="0"] {
   --slide-bg: #108032;
-  --slide-image: url("../images/michael-ali-2_rFy9TFRRc-unsplash.jpg");
+  --slide-image: url("../images/kindario-hero-slide-4c.jpg");
   --slide-overlay: linear-gradient(90deg, rgba(12, 145, 68, 0.95) 0%, rgba(12, 145, 68, 0.82) 42%, rgba(12, 145, 68, 0.42) 100%);
 }
 
 .index2-peek-slideshow .hero-slide[data-hero-slide="1"] {
   --slide-bg: #315cdb;
-  --slide-image: url("../images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg");
+  --slide-image: url("../images/kindario-hero-slide-1.jpg");
   --slide-overlay: linear-gradient(90deg, rgba(49, 92, 219, 0.95) 0%, rgba(49, 92, 219, 0.78) 42%, rgba(49, 92, 219, 0.38) 100%);
 }
 
 .index2-peek-slideshow .hero-slide[data-hero-slide="2"] {
   --slide-bg: #014576;
-  --slide-image: url("../images/annie-spratt-cVEOh_JJmEE-unsplash.jpg");
+  --slide-image: url("../images/kindario-hero-slide-2.jpg");
   --slide-overlay: linear-gradient(90deg, rgba(23, 82, 112, 0.94) 0%, rgba(23, 82, 112, 0.76) 42%, rgba(23, 82, 112, 0.42) 100%);
 }
 
 .index2-peek-slideshow .hero-slide[data-hero-slide="3"] {
   --slide-bg: #9532be;
-  --slide-image: url("../images/larm-rmah-AEaTUnvneik-unsplash.jpg");
+  --slide-image: url("../images/kindario-hero-slide-3b.jpg");
   --slide-overlay: linear-gradient(90deg, rgba(184, 86, 162, 0.94) 0%, rgba(184, 86, 162, 0.76) 42%, rgba(184, 86, 162, 0.38) 100%);
 }
 
@@ -11510,19 +11517,19 @@ body.index2-peek-slideshow {
 }
 
 .index2-peek-slideshow .hero-slide[data-hero-slide="0"]::after {
-  background-image: url("../images/michael-ali-2_rFy9TFRRc-unsplash.jpg") !important;
+  background-image: url("../images/kindario-hero-slide-4c.jpg") !important;
 }
 
 .index2-peek-slideshow .hero-slide[data-hero-slide="1"]::after {
-  background-image: url("../images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg") !important;
+  background-image: url("../images/kindario-hero-slide-1.jpg") !important;
 }
 
 .index2-peek-slideshow .hero-slide[data-hero-slide="2"]::after {
-  background-image: url("../images/annie-spratt-cVEOh_JJmEE-unsplash.jpg") !important;
+  background-image: url("../images/kindario-hero-slide-2.jpg") !important;
 }
 
 .index2-peek-slideshow .hero-slide[data-hero-slide="3"]::after {
-  background-image: url("../images/larm-rmah-AEaTUnvneik-unsplash.jpg") !important;
+  background-image: url("../images/kindario-hero-slide-3b.jpg") !important;
 }
 
 .index2-peek-slideshow .hero-slide::after,
