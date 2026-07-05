@@ -4696,20 +4696,29 @@ select {
   text-align: center;
 }
 
+.impact-step-blue {
+  --step-rgb: 231, 35, 158;
+  --impact-step-mask: url("../images/impact-step-1b.png");
+}
+
 .impact-step-violet {
-  --step-rgb: 130, 88, 239;
+  --step-rgb: 49, 92, 219;
+  --impact-step-mask: url("../images/impact-step-2b.png");
 }
 
 .impact-step-rose {
-  --step-rgb: 239, 75, 92;
+  --step-rgb: 149, 50, 190;
+  --impact-step-mask: url("../images/impact-step-1.png");
 }
 
 .impact-step-orange {
-  --step-rgb: 0, 155, 92;
+  --step-rgb: 16, 128, 50;
+  --impact-step-mask: url("../images/impact-step-4.png");
 }
 
 .impact-step-teal {
   --step-rgb: 244, 202, 53;
+  --impact-step-mask: url("../images/impact-step-5.png");
 }
 .impact-pulse {
   position: relative;
@@ -4766,8 +4775,8 @@ select {
   border: 0;
   border-radius: 0;
   background: rgba(var(--step-rgb), 1);
-  -webkit-mask: url("../images/badge-mask.svg") center / contain no-repeat;
-  mask: url("../images/badge-mask.svg") center / contain no-repeat;
+  -webkit-mask: var(--impact-step-mask) center / contain no-repeat;
+  mask: var(--impact-step-mask) center / contain no-repeat;
   color: #fff;
   font-size: 30px;
   line-height: 1;
@@ -4778,7 +4787,7 @@ select {
 .impact-step-node-icon {
   position: relative;
   z-index: 4;
-  display: inline-grid;
+  display: none;
   grid-area: 1 / 1;
   place-items: center;
   align-self: center;
@@ -12539,8 +12548,8 @@ body.index2-peek-slideshow {
   --donation-accent: #49bd88;
 }
 
-.index2-peek-slideshow .donation-secondary-grid .donation-campaign-card:nth-child(1) { --donation-accent: #315CDB; }
-.index2-peek-slideshow .donation-secondary-grid .donation-campaign-card:nth-child(2) { --donation-accent: #F03939; }
+.index2-peek-slideshow .donation-secondary-grid .donation-campaign-card:nth-child(1) { --donation-accent: #F03939; }
+.index2-peek-slideshow .donation-secondary-grid .donation-campaign-card:nth-child(2) { --donation-accent: #315CDB; }
 .index2-peek-slideshow .donation-secondary-grid .donation-campaign-card:nth-child(3) { --donation-accent: #014576; }
 .index2-peek-slideshow .donation-secondary-grid .donation-campaign-card:nth-child(4) { --donation-accent: #9532BE; }
 .index2-peek-slideshow .donation-secondary-grid .donation-campaign-card:nth-child(5) { --donation-accent: #108032; }
@@ -12560,6 +12569,51 @@ body.index2-peek-slideshow {
 .index2-peek-slideshow .donation-secondary-grid .donation-progress-bar span::after {
   background: var(--donation-accent);
 }
+
+
+
+
+
+.index2-peek-slideshow .btn-hero-primary:hover,
+.index2-peek-slideshow .btn-hero-primary:focus-visible {
+  border-color: var(--white);
+  background: var(--white);
+}
+
+.index2-peek-slideshow .hero-shell[data-hero-slide="0"] .btn-hero-primary:hover,
+.index2-peek-slideshow .hero-shell[data-hero-slide="0"] .btn-hero-primary:focus-visible {
+  color: #315CDB;
+}
+
+.index2-peek-slideshow .hero-shell[data-hero-slide="1"] .btn-hero-primary:hover,
+.index2-peek-slideshow .hero-shell[data-hero-slide="1"] .btn-hero-primary:focus-visible {
+  color: #F03939;
+}
+
+.index2-peek-slideshow .hero-shell[data-hero-slide="2"] .btn-hero-primary:hover,
+.index2-peek-slideshow .hero-shell[data-hero-slide="2"] .btn-hero-primary:focus-visible {
+  color: #111111;
+}
+
+.index2-peek-slideshow .hero-shell[data-hero-slide="3"] .btn-hero-primary:hover,
+.index2-peek-slideshow .hero-shell[data-hero-slide="3"] .btn-hero-primary:focus-visible {
+  color: #9532BE;
+}
+
+
+.index2-peek-slideshow .impact-step:not(:nth-of-type(2)) .impact-step-node {
+  animation: none !important;
+}
+
+.index2-peek-slideshow .impact-step:not(:nth-of-type(2)) .impact-pulse {
+  display: none !important;
+}
+
+.index2-peek-slideshow .impact-step:nth-of-type(2) .impact-step-node {
+  animation: impactBadgeSpinDesktop 16s linear infinite;
+}
+
+
 
 
 
