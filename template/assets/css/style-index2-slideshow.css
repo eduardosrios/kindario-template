@@ -1564,7 +1564,7 @@ select {
 
 .course-feature-accordion-cta {
   display: inline-flex;
-  width: calc(100% + 12px);
+  width: calc(100% + 20px);
   min-height: 50px;
   align-items: center;
   justify-content: center;
@@ -2330,9 +2330,16 @@ select {
   line-height: 1;
 }
 
+.hero-utility-links a,
+.hero-utility-search,
+.language-current,
+.hero-login-link {
+  transition: opacity 180ms ease;
+}
+
 .hero-utility-links a:hover {
   color: var(--white);
-  opacity: 0.88;
+  opacity: 0.65;
 }
 
 .hero-utility-search {
@@ -2357,7 +2364,7 @@ select {
 
 .hero-utility-search:hover,
 .hero-utility-search:focus-visible {
-  background: rgba(255, 255, 255, 0.12);
+  background: transparent;
 }
 
 .hero-shell[data-hero-slide="0"] .hero-utility-bar {
@@ -5989,8 +5996,8 @@ details p {
 }
 
 .floating-cta-section {
-    padding: clamp(82px, calc(8vw + 10px), 120px) 0 clamp(102px, calc(8vw + 30px), 140px);
-    background: #f7f7f5;
+    padding: clamp(102px, calc(8vw + 30px), 140px) 0;
+    background: #111;
   }
 
 .floating-cta-card {
@@ -6020,6 +6027,7 @@ details p {
 .floating-cta-copy h2 {
   margin: 0;
   display: inline-block;
+  color: #fff;
   font-size: clamp(3rem, 5.4688vw, 6.75rem);
   font-weight: 900;
   line-height: 1.1;
@@ -6034,12 +6042,13 @@ details p {
     transform: translate(-50%);
     top: -0.12em;
     left: 50%;
+    opacity: 0;
   }
 
 .floating-cta-copy p {
     max-width: 420px;
     margin: 0;
-    color: rgba(18, 17, 39, 0.72);
+    color: #eee;
     font-size: clamp(1.05rem, 1.35vw, 1.48rem);
     font-weight: 700;
     line-height: 1.55;
@@ -6053,7 +6062,7 @@ details p {
     min-height: 60px;
     border: 0;
     border-radius: 6px 40px 40px 6px;
-    background: #1284ee;
+    background: #315CDB;
     color: #fff;
     padding: 0 18px 0 28px;
     font-size: 1.125rem;
@@ -6071,7 +6080,7 @@ details p {
     min-height: 60px;
     border: 0;
     border-radius: 6px 40px 40px 6px;
-    background: #1284ee;
+    background: #315CDB;
     color: #fff;
     padding: 0 18px 0 28px;
     font-size: 1.125rem;
@@ -6107,7 +6116,7 @@ details p {
 }
 
 .floating-cta-arrow-icon path {
-  stroke: #1284ee;
+  stroke: #315CDB;
 }
 
 .floating-cta-button:hover,
@@ -6126,6 +6135,27 @@ details p {
   pointer-events: none;
   will-change: transform;
   transform: translate3d(0, 0, 0);
+}
+
+.floating-face::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  border: 6px solid #F4CA35;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.floating-face img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .face-one {
@@ -6191,7 +6221,7 @@ details p {
 
 .face-ten {
   bottom: calc(1% - 5px);
-  right: calc(16% - 10px);
+  right: calc(16% - 31px);
   width: 108px;
   height: 108px;
 }
@@ -7126,8 +7156,9 @@ details p {
   }
 
   .floating-cta-section {
-      padding: 58px 0 88px;
-    }
+    padding: clamp(102px, calc(8vw + 30px), 140px) 0;
+    background: #111;
+  }
 
   .floating-cta-card {
     min-height: 390px;
@@ -7140,8 +7171,13 @@ details p {
   }
 
   .floating-cta-copy h2 {
-    max-width: 12ch;
-  }
+  margin: 0;
+  display: inline-block;
+  color: #fff;
+  font-size: clamp(3rem, 5.4688vw, 6.75rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
 
   .floating-cta-button-icon {
     display: inline-grid;
@@ -12824,8 +12860,16 @@ body.index2-peek-slideshow {
 }
 
 .index2-peek-slideshow .floating-cta-copy h2::before {
-    box-shadow: 0 -70px rgba(255, 213, 50, 0.2), 0 -35px rgba(255, 213, 50, 0.4);
-}
+    top: 50%;
+    left: 50%;
+    width: 1.32em;
+    height: 1.32em;
+    background: #FFD532;
+    transform: translate(-50%);
+    top: -0.12em;
+    left: 50%;
+    opacity: 0;
+  }
 
 /* Index 2: add horizontal shadow stacks to left-aligned section title circles. */
 .index2-peek-slideshow .split-section-head h2::before,
@@ -12986,7 +13030,6 @@ body.index2-peek-slideshow {
   padding-left: 0;
   padding-right: 0;
 }
-
 .partner-logo-carousel {
   border: 0;
   background: #fff;
@@ -13062,24 +13105,23 @@ body.index2-peek-slideshow {
 }
 
 .partner-logo-card img {
-  width: 100%;
-  max-width: 160px;
-  max-height: 120px;
-  object-fit: contain;
+    width: 100%;
+    max-width: 160px;
+    max-height: 120px;
+    object-fit: contain;
 }
 
 @media (max-width: 1199.98px) {
   .partner-logo-carousel-section > .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .partner-logo-carousel {
-    border: 0;
-    background: #fff;
-    padding: 0 28px;
-    box-shadow: none;
-  }
+  padding-left: 0;
+  padding-right: 0;
+}
+.partner-logo-carousel {
+  border: 0;
+  background: #fff;
+  padding: 0 28px;
+  box-shadow: none;
+}
 
   .partner-logo-card {
     flex-basis: calc((100% - 54px) / 4);
@@ -13097,16 +13139,15 @@ body.index2-peek-slideshow {
   }
 
   .partner-logo-carousel-section > .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .partner-logo-carousel {
-    border: 0;
-    background: #fff;
-    padding: 0 28px;
-    box-shadow: none;
-  }
+  padding-left: 0;
+  padding-right: 0;
+}
+.partner-logo-carousel {
+  border: 0;
+  background: #fff;
+  padding: 0 28px;
+  box-shadow: none;
+}
 
   .partner-logo-card {
     flex-basis: calc((100% - 18px) / 2);
@@ -13118,3 +13159,292 @@ body.index2-peek-slideshow {
     max-height: 52px;
   }
 }
+
+/* Index 2: card carousel split-head accents back to green. */
+.card-carousel-head h2::before,
+.card-carousel-head .split-section-note::before {
+  background: #108032 !important;
+}
+
+/* Floating face rings: alternate transparent side per bubble. */
+.face-one::before,
+.face-five::before,
+.face-nine::before {
+  border-top: 12px solid transparent;
+}
+
+.face-two::before,
+.face-six::before,
+.face-ten::before {
+  border-right: 12px solid transparent;
+}
+
+.face-three::before,
+.face-seven::before {
+  border-bottom: 12px solid transparent;
+}
+
+.face-four::before,
+.face-eight::before {
+  border-left: 12px solid transparent;
+}
+
+/* Floating face arcs use real SVG, not pseudo borders. */
+.floating-face::before {
+  content: none !important;
+}
+
+.floating-face-arc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%) rotate(-32deg);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.floating-face-arc circle {
+  fill: none;
+  stroke: #F4CA35;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 278 82;
+}
+
+.face-two .floating-face-arc,
+.face-six .floating-face-arc,
+.face-ten .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(58deg);
+}
+
+.face-three .floating-face-arc,
+.face-seven .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(148deg);
+}
+
+.face-four .floating-face-arc,
+.face-eight .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(236deg);
+}
+
+/* Floating face arc colors alternate through the 8-color set. */
+.face-one .floating-face-arc circle { stroke: #108032; }
+.face-two .floating-face-arc circle { stroke: #315CDB; }
+.face-three .floating-face-arc circle { stroke: #E7239E; }
+.face-four .floating-face-arc circle { stroke: #F03939; }
+.face-five .floating-face-arc circle { stroke: #014576; }
+.face-six .floating-face-arc circle { stroke: #FFFFFF; }
+.face-seven .floating-face-arc circle { stroke: #9532BE; }
+.face-eight .floating-face-arc circle { stroke: #F4CA35; }
+.face-nine .floating-face-arc circle { stroke: #108032; }
+.face-ten .floating-face-arc circle { stroke: #315CDB; }
+
+/* Floating face arc colors remapped for better fit, same palette counts. */
+.face-one .floating-face-arc circle { stroke: #108032; }
+.face-two .floating-face-arc circle { stroke: #315CDB; }
+.face-three .floating-face-arc circle { stroke: #E7239E; }
+.face-four .floating-face-arc circle { stroke: #F03939; }
+.face-five .floating-face-arc circle { stroke: #FFFFFF; }
+.face-six .floating-face-arc circle { stroke: #9532BE; }
+.face-seven .floating-face-arc circle { stroke: #014576; }
+.face-eight .floating-face-arc circle { stroke: #108032; }
+.face-nine .floating-face-arc circle { stroke: #F4CA35; }
+.face-ten .floating-face-arc circle { stroke: #315CDB; }
+
+/* Index 2: course routes note rule pink only for this section. */
+.course-routes-head .split-section-note::before {
+  background: #E7239E !important;
+}
+
+/* Index 2: requested top-right small floating arc white. */
+.face-seven .floating-face-arc circle {
+  stroke: #F4CA35 !important;
+}
+
+/* Index 2: requested top-left small floating arc yellow. */
+.face-one .floating-face-arc circle {
+  stroke: #F4CA35 !important;
+}
+
+/* Index 2: fix duplicate support-routes sections note colors. */
+.course-routes-head .split-section-note::before {
+  background: #315CDB !important;
+}
+
+.donation-secondary-head .split-section-note::before {
+  background: #E7239E !important;
+}
+
+/* Index 2: requested grayscale floating arc purple. */
+.face-five .floating-face-arc circle {
+  stroke: #F4CA35 !important;
+}
+
+/* Index 2: final override grayscale floating arc purple. */
+.face-five .floating-face-arc circle {
+  stroke: #9532BE !important;
+}
+
+/* Index 2: final override grayscale floating arc white. */
+.face-five .floating-face-arc circle {
+  stroke: #FFFFFF !important;
+}
+
+/* Index 2: final override grayscale floating arc yellow. */
+.face-five .floating-face-arc circle {
+  stroke: #F4CA35 !important;
+}
+
+/* Index 2: final override grayscale floating arc navy. */
+.face-five .floating-face-arc circle {
+  stroke: #014576 !important;
+}
+
+/* Index 2: final override grayscale floating arc white again. */
+.face-five .floating-face-arc circle {
+  stroke: #FFFFFF !important;
+}
+
+/* Index 2: final override grayscale floating arc yellow again. */
+.face-five .floating-face-arc circle {
+  stroke: #F4CA35 !important;
+}
+
+/* Index 2: requested small floating arcs white. */
+.face-one .floating-face-arc circle,
+.face-nine .floating-face-arc circle {
+  stroke: #FFFFFF !important;
+}
+
+
+
+/* Index 2: tighten white-cards split header only. */
+.donation-secondary-head.split-section-head {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr) !important;
+  gap: clamp(20px, 2.8vw, 40px) !important;
+}
+
+.donation-secondary-head .split-section-note {
+  max-width: 460px !important;
+  margin-top: 16px !important;
+}
+
+/* Index 2: animate nav Donate Now icon from right to left on hover. */
+.hero-nav-cta {
+  position: relative;
+  justify-content: center;
+}
+
+.hero-nav-cta > span:first-child {
+  position: relative;
+  z-index: 1;
+  transition: transform 260ms ease;
+}
+
+.hero-nav-cta-icon {
+  left: auto;
+  right: -30px;
+  transition: left 260ms ease, right 260ms ease, border-radius 260ms ease;
+}
+
+.hero-nav-cta:hover > span:first-child,
+.hero-nav-cta:focus-visible > span:first-child {
+  transform: translateX(18px);
+}
+
+.hero-nav-cta:hover .hero-nav-cta-icon,
+.hero-nav-cta:focus-visible .hero-nav-cta-icon {
+  left: -30px;
+  right: auto;
+  border-radius: 6px 0 0 6px;
+}
+
+/* Index 2: black utility topbar hover opacity. */
+.hero-utility-links a:hover,
+.hero-utility-links a:focus-visible,
+.hero-utility-search:hover,
+.hero-utility-search:focus-visible,
+.language-current:hover,
+.language-current:focus-visible,
+.hero-login-link:hover,
+.hero-login-link:focus-visible {
+  opacity: 0.65 !important;
+}
+
+/* Index 2: final nav Donate Now hover uses a circular icon only. */
+.hero-nav-cta {
+  position: relative !important;
+  justify-content: center !important;
+  padding: 0 24px !important;
+}
+
+.hero-nav-cta > span:first-child {
+  position: relative;
+  z-index: 1;
+  transition: transform 260ms ease;
+}
+
+.hero-nav-cta-icon {
+  position: absolute !important;
+  top: 50% !important;
+  left: calc(100% - 54px) !important;
+  right: auto !important;
+  width: 42px !important;
+  height: 42px !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  transform: translateY(-50%) !important;
+  transition: left 260ms ease, transform 260ms ease !important;
+}
+
+.hero-nav-cta:hover > span:first-child,
+.hero-nav-cta:focus-visible > span:first-child {
+  transform: translateX(14px) !important;
+}
+
+.hero-nav-cta:hover .hero-nav-cta-icon,
+.hero-nav-cta:focus-visible .hero-nav-cta-icon {
+  left: 12px !important;
+}
+
+/* Index 2: preserve Donate Now visual, only slide the existing circle left on hover. */
+.index2-peek-slideshow .hero-nav-cta {
+  position: relative !important;
+  justify-content: space-between !important;
+  padding: 0 20px 0 25px !important;
+}
+
+.index2-peek-slideshow .hero-nav-cta > span:first-child {
+  position: relative !important;
+  z-index: 1 !important;
+  transition: transform 260ms ease !important;
+}
+
+.index2-peek-slideshow .hero-nav-cta-icon {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 34px !important;
+  height: 34px !important;
+  flex: 0 0 34px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  transform: translateX(0) !important;
+  transition: transform 260ms ease !important;
+}
+
+.index2-peek-slideshow .hero-nav-cta:hover > span:first-child,
+.index2-peek-slideshow .hero-nav-cta:focus-visible > span:first-child {
+  transform: translateX(48px) !important;
+}
+
+.index2-peek-slideshow .hero-nav-cta:hover .hero-nav-cta-icon,
+.index2-peek-slideshow .hero-nav-cta:focus-visible .hero-nav-cta-icon {
+  transform: translateX(-142px) !important;
+}
+
+
+

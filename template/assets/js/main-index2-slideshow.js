@@ -1121,28 +1121,6 @@ document.querySelectorAll(".course-feature-wide").forEach((courseFeatureWaveCard
   const innerWave = courseFeatureWaveCard.querySelector(".course-feature-wave--inner");
   const thirdWave = courseFeatureWaveCard.querySelector(".course-feature-wave--third");
   const canTrackHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-
-  const syncFloatingFaceArcs = () => {
-    floatingFaces.forEach((face) => {
-      const svg = face.querySelector(".floating-face-arc");
-      const circle = svg?.querySelector("circle");
-      if (!svg || !circle) return;
-
-      const faceSize = Math.min(face.offsetWidth, face.offsetHeight);
-      const arcSize = faceSize + 30;
-      const arcRadius = faceSize / 2 + 12;
-      const arcCenter = arcSize / 2;
-
-      svg.style.width = `${arcSize}px`;
-      svg.style.height = `${arcSize}px`;
-      svg.setAttribute("viewBox", `0 0 ${arcSize} ${arcSize}`);
-      circle.setAttribute("cx", arcCenter.toFixed(2));
-      circle.setAttribute("cy", arcCenter.toFixed(2));
-      circle.setAttribute("r", arcRadius.toFixed(2));
-    });
-  };
-
-  syncFloatingFaceArcs();
   const staticWaveState = {
     outer: { left: "-230px", bottom: "-280px", width: "720px", height: "720px" },
     inner: { left: "-130px", bottom: "-180px", width: "520px", height: "520px" },
@@ -1473,4 +1451,3 @@ if (logoCarousel) {
   updateLogoCarousel();
   restartAutoAdvance();
 }
-
