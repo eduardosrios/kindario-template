@@ -7518,8 +7518,8 @@ details p {
 
 .donation-campaign-card {
   border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0 14px 36px rgba(20, 49, 40, 0.08);
+  background: transparent;
+  box-shadow: none;
   transition: transform 180ms ease, box-shadow 180ms ease;
   overflow: hidden;
 }
@@ -8326,27 +8326,59 @@ details p {
 
 
 .donation-secondary-grid .donation-campaign-card {
-  --secondary-ribbon: #43b37d;
+  --donation-accent: #F03939;
+  --secondary-ribbon: var(--donation-accent);
   display: flex;
   flex-direction: column;
 }
 
 .donation-secondary-grid .donation-campaign-card:nth-child(1) {
-  --secondary-ribbon: #315cdb;
+  --donation-accent: #F03939;
 }
 
 .donation-secondary-grid .donation-campaign-card:nth-child(2) {
-  --secondary-ribbon: #f03939;
+  --donation-accent: #315CDB;
 }
 
 .donation-secondary-grid .donation-campaign-card:nth-child(3) {
-  --secondary-ribbon: #014576;
+  --donation-accent: #014576;
 }
 
 .donation-secondary-grid .donation-campaign-card:nth-child(4) {
-  --secondary-ribbon: #9532be;
+  --donation-accent: #9532BE;
 }
 
+.donation-secondary-grid .donation-campaign-card:nth-child(5) {
+  --donation-accent: #108032;
+}
+
+.donation-secondary-grid .donation-campaign-card:nth-child(6) {
+  --donation-accent: #E7239E;
+}
+
+.donation-secondary-grid .donation-campaign-card:nth-child(7) {
+  --donation-accent: #315CDB;
+}
+
+.donation-secondary-grid .donation-campaign-card:nth-child(8) {
+  --donation-accent: #9532BE;
+}
+
+.donation-secondary-grid .donation-campaign-card:nth-child(9) {
+  --donation-accent: #F03939;
+}
+
+.donation-secondary-grid .donation-campaign-card:nth-child(10) {
+  --donation-accent: #108032;
+}
+
+.donation-secondary-grid .donation-campaign-card:nth-child(11) {
+  --donation-accent: #F4CA35;
+}
+
+.donation-secondary-grid .donation-campaign-card:nth-child(12) {
+  --donation-accent: #014576;
+}
 .donation-secondary-grid .donation-campaign-card,
 .donation-secondary-grid .donation-campaign-media,
 .donation-secondary-grid .donation-campaign-media img,
@@ -8662,19 +8694,103 @@ details p {
   display: flex;
   min-height: 0;
   flex-direction: column;
-  background: #ffffff;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  position: relative;
+  perspective: 900px;
+}
+.donation-secondary-grid-plain .donation-campaign-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: var(--donation-accent);
   box-shadow: 0 14px 36px rgba(20, 49, 40, 0.08);
-  overflow: hidden;
+  pointer-events: none;
+  transform: rotateY(-180deg);
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  backface-visibility: hidden;
+}
+.donation-secondary-grid-plain .donation-campaign-card {
+  --secondary-mask-photo: url("../images/kindario-hero-slide-1.jpg");
 }
 
+.donation-secondary-grid-plain .donation-campaign-card:nth-child(4n + 1) {
+  --secondary-mask-photo: url("../images/kindario-hero-slide-1.jpg");
+}
+
+.donation-secondary-grid-plain .donation-campaign-card:nth-child(4n + 2) {
+  --secondary-mask-photo: url("../images/annie-spratt-cVEOh_JJmEE-unsplash.jpg");
+}
+
+.donation-secondary-grid-plain .donation-campaign-card:nth-child(4n + 3) {
+  --secondary-mask-photo: url("../images/kindario-hero-slide-2.jpg");
+}
+
+.donation-secondary-grid-plain .donation-campaign-card:nth-child(4n + 4) {
+  --secondary-mask-photo: url("../images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg");
+}
+.donation-secondary-grid-plain .donation-campaign-card::after {
+  content: "";
+  position: absolute;
+  inset: 28px;
+  z-index: 3;
+  background-image: var(--secondary-mask-photo);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transform: rotateY(-180deg) rotate(-90deg) scale(0.82);
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  backface-visibility: hidden;
+  -webkit-mask-image: url("../images/4699201.svg");
+  mask-image: url("../images/4699201.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+.donation-secondary-grid-plain .donation-campaign-card:hover,
+.donation-secondary-grid-plain .donation-campaign-card:focus-within {
+  background: transparent;
+  box-shadow: none;
+}
+.donation-secondary-grid-plain .donation-campaign-card:hover::before,
+.donation-secondary-grid-plain .donation-campaign-card:focus-within::before {
+  transform: rotateY(0deg);
+}
+.donation-secondary-grid-plain .donation-campaign-card:hover::after,
+.donation-secondary-grid-plain .donation-campaign-card:focus-within::after {
+  transform: rotateY(0deg) rotate(0deg) scale(1);
+}
+.donation-secondary-grid-plain .donation-campaign-card:hover .donation-campaign-body,
+.donation-secondary-grid-plain .donation-campaign-card:focus-within .donation-campaign-body {
+  transform: rotateY(180deg);
+}
+.donation-secondary-grid-plain .donation-campaign-card:hover .donation-campaign-body > *,
+.donation-secondary-grid-plain .donation-campaign-card:focus-within .donation-campaign-body > * {
+  opacity: 0;
+}
 .donation-secondary-grid-plain .donation-campaign-body {
+  position: relative;
+  z-index: 2;
   display: grid;
   min-height: 230px;
   align-content: center;
   gap: 22px;
+  border-radius: inherit;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(20, 49, 40, 0.08);
   padding: 38px 30px;
+  pointer-events: none;
+  transform: rotateY(0deg);
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  backface-visibility: hidden;
 }
-
 .donation-secondary-grid-plain .donation-campaign-body h3 {
   min-height: 0;
   max-height: 2.44em;
@@ -8731,7 +8847,6 @@ details p {
   align-content: start;
   padding: 32px 30px 34px;
 }
-
 .donation-secondary-grid-plain .donation-campaign-body > p {
   min-height: 2.9em;
   margin: 0;
@@ -10112,8 +10227,24 @@ body.index2-peek-slideshow {
 }
 
 .index2-peek-slideshow .rotating-play-badge {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 108px;
+  height: 108px;
+  margin: 0;
   background: #108032;
-  filter: drop-shadow(0 14px 28px rgba(0, 79, 59, 0.24));
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='440' height='440' aria-label='Badge mask' shape-rendering='geometricPrecision'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='m7.8 196 .7 4 1.4 4 23.6 40-12.5 46.5.1 5.5 1.3 5 1.4 3 2.2 3 4 3.6 37.8 21.4 2.9 2 .6 1 11.3 44 1.9 4 2.2 3 3.3 3.1 2 1.3 4 1.7 4 1.1 48-.3 33 33.4 3 2.1 4 1.8 4 .7 4 .4 4-.8 4-1.4 40-23.6 46 12.4h6l5-1.3 3-1.4 3-2.1 4.3-5.1 20.7-36.8 2-2.9 1-.6 42-10.7 4-1.5 4-2.4 4.1-4.1 1.3-2 1.7-4 1-4-.2-48 33.5-33 2-3 1.8-4 .7-4 .4-4-.8-4-1.4-4-23.6-40 10.7-39 1.8-7.5-.1-5.5-.5-3-1.2-3-1-2-3-4-4.2-3.3-39.7-22.7-.6-1-10.7-42-1.5-4-2.4-4-2.1-2.3-4-3.1-4-1.7-4-1.1-48 .3-33-33.4-3-2.1-4-1.8-4-.7-4-.4-4 .8-4 1.4-40 23.6-46-12.4h-6l-5 1.3-3 1.4-3 2.1-2.1 2.1-2.2 3-20.7 36.8-2 2.9-1 .6-42 10.7-6 2.5-3 2.2-3.1 3.3-1.3 2-1.7 4-1 4 .2 48-33.5 33-2 3-1.8 4Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='440' height='440' aria-label='Badge mask' shape-rendering='geometricPrecision'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='m7.8 196 .7 4 1.4 4 23.6 40-12.5 46.5.1 5.5 1.3 5 1.4 3 2.2 3 4 3.6 37.8 21.4 2.9 2 .6 1 11.3 44 1.9 4 2.2 3 3.3 3.1 2 1.3 4 1.7 4 1.1 48-.3 33 33.4 3 2.1 4 1.8 4 .7 4 .4 4-.8 4-1.4 40-23.6 46 12.4h6l5-1.3 3-1.4 3-2.1 4.3-5.1 20.7-36.8 2-2.9 1-.6 42-10.7 4-1.5 4-2.4 4.1-4.1 1.3-2 1.7-4 1-4-.2-48 33.5-33 2-3 1.8-4 .7-4 .4-4-.8-4-1.4-4-23.6-40 10.7-39 1.8-7.5-.1-5.5-.5-3-1.2-3-1-2-3-4-4.2-3.3-39.7-22.7-.6-1-10.7-42-1.5-4-2.4-4-2.1-2.3-4-3.1-4-1.7-4-1.1-48 .3-33-33.4-3-2.1-4-1.8-4-.7-4-.4-4 .8-4 1.4-40 23.6-46-12.4h-6l-5 1.3-3 1.4-3 2.1-2.1 2.1-2.2 3-20.7 36.8-2 2.9-1 .6-42 10.7-6 2.5-3 2.2-3.1 3.3-1.3 2-1.7 4-1 4 .2 48-33.5 33-2 3-1.8 4Z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  filter: drop-shadow(0 14px 28px rgba(49, 92, 219, 0.24));
+  transform-origin: 50% 50%;
+  animation: rotatingPlayBadge 10s linear infinite;
 }
 
 .index2-peek-slideshow .rotating-play-outline {
@@ -11112,8 +11243,24 @@ body.index2-peek-slideshow {
 }
 
 .index2-peek-slideshow .rotating-play-badge {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 108px;
+  height: 108px;
+  margin: 0;
   background: #108032;
-  filter: drop-shadow(0 14px 28px rgba(16, 128, 50, 0.24));
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='440' height='440' aria-label='Badge mask' shape-rendering='geometricPrecision'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='m7.8 196 .7 4 1.4 4 23.6 40-12.5 46.5.1 5.5 1.3 5 1.4 3 2.2 3 4 3.6 37.8 21.4 2.9 2 .6 1 11.3 44 1.9 4 2.2 3 3.3 3.1 2 1.3 4 1.7 4 1.1 48-.3 33 33.4 3 2.1 4 1.8 4 .7 4 .4 4-.8 4-1.4 40-23.6 46 12.4h6l5-1.3 3-1.4 3-2.1 4.3-5.1 20.7-36.8 2-2.9 1-.6 42-10.7 4-1.5 4-2.4 4.1-4.1 1.3-2 1.7-4 1-4-.2-48 33.5-33 2-3 1.8-4 .7-4 .4-4-.8-4-1.4-4-23.6-40 10.7-39 1.8-7.5-.1-5.5-.5-3-1.2-3-1-2-3-4-4.2-3.3-39.7-22.7-.6-1-10.7-42-1.5-4-2.4-4-2.1-2.3-4-3.1-4-1.7-4-1.1-48 .3-33-33.4-3-2.1-4-1.8-4-.7-4-.4-4 .8-4 1.4-40 23.6-46-12.4h-6l-5 1.3-3 1.4-3 2.1-2.1 2.1-2.2 3-20.7 36.8-2 2.9-1 .6-42 10.7-6 2.5-3 2.2-3.1 3.3-1.3 2-1.7 4-1 4 .2 48-33.5 33-2 3-1.8 4Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='440' height='440' aria-label='Badge mask' shape-rendering='geometricPrecision'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='m7.8 196 .7 4 1.4 4 23.6 40-12.5 46.5.1 5.5 1.3 5 1.4 3 2.2 3 4 3.6 37.8 21.4 2.9 2 .6 1 11.3 44 1.9 4 2.2 3 3.3 3.1 2 1.3 4 1.7 4 1.1 48-.3 33 33.4 3 2.1 4 1.8 4 .7 4 .4 4-.8 4-1.4 40-23.6 46 12.4h6l5-1.3 3-1.4 3-2.1 4.3-5.1 20.7-36.8 2-2.9 1-.6 42-10.7 4-1.5 4-2.4 4.1-4.1 1.3-2 1.7-4 1-4-.2-48 33.5-33 2-3 1.8-4 .7-4 .4-4-.8-4-1.4-4-23.6-40 10.7-39 1.8-7.5-.1-5.5-.5-3-1.2-3-1-2-3-4-4.2-3.3-39.7-22.7-.6-1-10.7-42-1.5-4-2.4-4-2.1-2.3-4-3.1-4-1.7-4-1.1-48 .3-33-33.4-3-2.1-4-1.8-4-.7-4-.4-4 .8-4 1.4-40 23.6-46-12.4h-6l-5 1.3-3 1.4-3 2.1-2.1 2.1-2.2 3-20.7 36.8-2 2.9-1 .6-42 10.7-6 2.5-3 2.2-3.1 3.3-1.3 2-1.7 4-1 4 .2 48-33.5 33-2 3-1.8 4Z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  filter: drop-shadow(0 14px 28px rgba(49, 92, 219, 0.24));
+  transform-origin: 50% 50%;
+  animation: rotatingPlayBadge 10s linear infinite;
 }
 
 
@@ -13448,3 +13595,45 @@ body.index2-peek-slideshow {
 
 
 
+
+
+
+/* Index 2: under zoom-out wide screens, all split headers need more title room. */
+@media (min-width: 1200px) {
+  .index2-peek-slideshow .split-section-head {
+    grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.32fr) !important;
+    gap: clamp(24px, 2.6vw, 44px) !important;
+  }
+
+  .index2-peek-slideshow .split-section-head h2 {
+    max-width: min(100%, 980px) !important;
+  }
+
+  .index2-peek-slideshow .split-section-note,
+  .index2-peek-slideshow .ticket-board-note.split-section-note,
+  .index2-peek-slideshow .featured-category-head .split-section-note,
+  .index2-peek-slideshow .donation-secondary-head .split-section-note,
+  .index2-peek-slideshow .course-routes-head .split-section-note,
+  .index2-peek-slideshow .card-carousel-head .split-section-note,
+  .index2-peek-slideshow .talent-grid-head .split-section-note,
+  .index2-peek-slideshow .donation-route-cards-head .split-section-note {
+    max-width: 560px !important;
+  }
+}
+
+
+
+/* Index 2: under zoom-out wide screens, floating CTA copy needs more width too. */
+@media (min-width: 1200px) {
+  .index2-peek-slideshow .floating-cta-copy {
+    width: min(100%, 760px) !important;
+  }
+
+  .index2-peek-slideshow .floating-cta-copy h2 {
+    max-width: min(100%, 760px) !important;
+  }
+
+  .index2-peek-slideshow .floating-cta-copy p {
+    max-width: 520px !important;
+  }
+}
