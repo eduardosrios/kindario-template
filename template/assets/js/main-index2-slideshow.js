@@ -1356,3 +1356,72 @@ initDonationCampaignHoverSwap();
 
 
 
+
+const logoCarousel = document.querySelector("[data-logo-carousel]");
+
+if (logoCarousel) {
+  const track = logoCarousel.querySelector("[data-logo-track]");
+  const cards = Array.from(track?.children || []);
+  const prevButton = logoCarousel.querySelector("[data-logo-prev]");
+  const nextButton = logoCarousel.querySelector("[data-logo-next]");
+  let index = 0;
+  let autoAdvanceTimer;
+
+  const cardsPerView = () => {
+    if (window.innerWidth < 768) return 2;
+    if (window.innerWidth < 1200) return 4;
+    return 5;
+  };
+
+  const maxIndex = () => Math.max(0, cards.length - cardsPerView());
+
+  const updateLogoCarousel = () => {
+    const cardWidth = cards[0]?.getBoundingClientRect().width || 0;
+    const gap = parseFloat(window.getComputedStyle(track).gap || "0") || 0;
+    const offset = index * (cardWidth + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+
+    if (prevButton) prevButton.disabled = index === 0;
+    if (nextButton) nextButton.disabled = index >= maxIndex();
+  };
+
+  const restartAutoAdvance = () => {
+    window.clearInterval(autoAdvanceTimer);
+
+    if (maxIndex() <= 0) return;
+
+    autoAdvanceTimer = window.setInterval(() => {
+      index = index >= maxIndex() ? 0 : index + 1;
+      updateLogoCarousel();
+    }, 2000);
+  };
+
+  prevButton?.addEventListener("click", () => {
+    index = Math.max(0, index - 1);
+    updateLogoCarousel();
+    restartAutoAdvance();
+  });
+
+  nextButton?.addEventListener("click", () => {
+    index = Math.min(maxIndex(), index + 1);
+    updateLogoCarousel();
+    restartAutoAdvance();
+  });
+
+  logoCarousel.addEventListener("mouseenter", () => {
+    window.clearInterval(autoAdvanceTimer);
+  });
+
+  logoCarousel.addEventListener("mouseleave", () => {
+    restartAutoAdvance();
+  });
+
+  window.addEventListener("resize", () => {
+    index = Math.min(index, maxIndex());
+    updateLogoCarousel();
+    restartAutoAdvance();
+  });
+
+  updateLogoCarousel();
+  restartAutoAdvance();
+}
