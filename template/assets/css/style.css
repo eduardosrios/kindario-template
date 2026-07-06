@@ -4,7 +4,7 @@
   --paper: #f8f2ef;
   --white: #fffdf9;
   --green: #004f3b;
-  --green-2: #0b6a54;
+  --green-2: #108032;
   --lime: #d9ff58;
   --blue: #315cdb;
   --orange: #ff7247;
@@ -480,7 +480,7 @@ select {
 .nav-mega-list-card p,
 .nav-mega-route-action p {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: 1.12rem;
   font-weight: 600;
   line-height: 1.55;
 }
@@ -1203,16 +1203,21 @@ select {
 }
 
 .rotating-play-outline {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 38px;
-  height: 38px;
-  fill: none;
-  stroke: #fff;
-  stroke-width: 2.2;
-  stroke-linejoin: round;
-  transform: translate(1px, 0.5px);
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 60px;
+    height: 60px;
+    fill: none;
+    stroke: transparent !important;
+    stroke-width: 2.2;
+    stroke-linejoin: round;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/11872/11872466.png);
+    filter: invert(1) !important;
+    transform: translate(1px, 0.5px);
 }
 
 @keyframes rotatingPlayBadge {
@@ -2451,7 +2456,7 @@ select {
   width: auto;
   min-width: 0;
   height: calc(100vh - 60px);
-  padding: 30px 34px;
+  padding: 35px 34px;
   overflow-y: auto;
   border-radius: 0;
   background: var(--white);
@@ -3241,7 +3246,7 @@ select {
   width: clamp(78px, 7vw, 122px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #ffd532;
+  background: #F03939;
 }
 
 .ticket-board-head .section-label {
@@ -3278,7 +3283,7 @@ select {
   left: 0;
   width: 114px;
   height: 12px;
-  background: #ffd532;
+  background: #F03939;
 }
 
 @media (max-width: 991.98px) {
@@ -3362,7 +3367,7 @@ select {
   gap: 25px;
   align-items: center;
   min-height: 80px;
-  padding: 30px 34px;
+  padding: 35px 34px;
 }
 
 
@@ -3482,7 +3487,7 @@ select {
 .ticket-card h3 {
   margin: 0;
   color: var(--ticket-stroke);
-  font-size: clamp(1.2rem, 1.55vw, 1.65rem);
+  font-size: clamp(1.2rem, 1.65vw, 1.65rem);
   font-weight: 900;
   line-height: 1.15;
 }
@@ -3490,7 +3495,7 @@ select {
 .ticket-card p {
   margin: 12px 0 0;
   color: color-mix(in srgb, currentColor 78%, transparent);
-  font-size: 0.98rem;
+  font-size: 1.12rem;
   font-weight: 700;
   line-height: 1.55;
 }
@@ -3499,7 +3504,7 @@ select {
 
 .ticket-card-green {
   --ticket-fill: #fff;
-  --ticket-stroke: #0b6a54;
+  --ticket-stroke: #108032;
   color: #121127;
 }
 
@@ -3573,7 +3578,7 @@ select {
   left: 0;
   width: 114px;
   height: 8px;
-  background: #ffd532;
+  background: #F03939;
 }
 
 .talent-grid {
@@ -5411,7 +5416,7 @@ h3 {
 }
 
 .donate-marquee a:nth-child(5n + 2) {
-  --marquee-band: var(--orange);
+  --marquee-band: #108032;
 }
 
 .donate-marquee a:nth-child(5n + 3) {
@@ -6296,7 +6301,7 @@ details p {
 }
 
 .site-footer {
-  background: #07392d;
+  background: #111;
   color: #fff;
   padding: 0 0 30px;
 }
@@ -7578,7 +7583,7 @@ details p {
 .donation-progress-card p strong {
   color: #24d36b;
   font-family: var(--font-body);
-  font-size: inherit;
+  font-size: 0.96rem;
   font-weight: 900;
 }
 
@@ -7666,7 +7671,7 @@ details p {
   margin-left: 7px;
   color: #65717a;
   font-family: var(--font-body);
-  font-size: inherit;
+  font-size: 0.96rem;
   font-weight: 700;
   line-height: 1.15;
 }
@@ -8532,7 +8537,7 @@ details p {
   left: 0;
   width: 114px;
   height: 7px;
-  background: #ffd532;
+  background: #F03939;
 }
 .course-routes-head h2::before,
 .course-routes-head .split-section-note::before {
@@ -9117,4 +9122,84 @@ body.search-modal-open {
     min-width: 0;
     border-radius: 0 0 4px 4px;
   }
+}
+
+
+
+
+
+
+
+
+
+.index2-peek-slideshow .donation-secondary-head h2::before,
+.index2-peek-slideshow #additional-campaigns-title::before,
+.index2-peek-slideshow #additional-campaigns-title-copy::before {
+  background: #EB1E86;
+  box-shadow: -70px 0 rgba(235, 30, 134, 0.2), -35px 0 rgba(235, 30, 134, 0.4);
+}
+
+.index2-peek-slideshow .donation-secondary-head .section-copy::before,
+.index2-peek-slideshow .donation-secondary-head .split-section-note::before {
+  background: #EB1E86;
+}
+
+.index2-peek-slideshow #additional-campaigns-title::first-letter,
+.index2-peek-slideshow #additional-campaigns-title-copy::first-letter {
+  color: #ffffff !important;
+}
+
+
+.index2-peek-slideshow .ticket-board-head h2::before,
+.index2-peek-slideshow #ticket-board-title::before,
+.index2-peek-slideshow .ticket-board-title-wrap::before {
+  background: #F03939;
+}
+
+.index2-peek-slideshow .ticket-board-note::before,
+.index2-peek-slideshow .ticket-board-note.split-section-note::before {
+  background: #F03939;
+}
+
+
+.index2-peek-slideshow .card-carousel-head h2::before,
+.index2-peek-slideshow #route-carousel-title::before,
+.index2-peek-slideshow #route-carousel-secondary-title::before {
+  background: #F03939;
+  box-shadow: -70px 0 rgba(240, 57, 57, 0.2), -35px 0 rgba(240, 57, 57, 0.4);
+}
+
+.index2-peek-slideshow .card-carousel-head .section-copy::before,
+.index2-peek-slideshow .card-carousel-head .split-section-note::before {
+  background: #F03939;
+}
+
+.index2-peek-slideshow .ticket-board-head h2::before,
+.index2-peek-slideshow #ticket-board-title::before,
+.index2-peek-slideshow .ticket-board-title-wrap::before {
+  background: #9532BE;
+  box-shadow: -70px 0 rgba(149, 50, 190, 0.2), -35px 0 rgba(149, 50, 190, 0.4);
+}
+
+.index2-peek-slideshow .ticket-board-note::before,
+.index2-peek-slideshow .ticket-board-note.split-section-note::before {
+  background: #9532BE;
+}
+
+
+.index2-peek-slideshow .card-carousel-head h2::before,
+.index2-peek-slideshow #route-carousel-title::before,
+.index2-peek-slideshow #route-carousel-secondary-title::before {
+  background: #F03939;
+  box-shadow: -70px 0 rgba(16, 128, 50, 0.2), -35px 0 rgba(16, 128, 50, 0.4);
+}
+
+.index2-peek-slideshow .card-carousel-head .section-copy::before,
+.index2-peek-slideshow .card-carousel-head .split-section-note::before {
+  background: #F03939;
+}
+
+.index2-peek-slideshow #route-carousel-title::first-letter,
+.index2-peek-slideshow #route-carousel-secondary-title::first-letter {
+  color: #ffffff !important;
 }
