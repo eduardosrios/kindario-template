@@ -56,3 +56,22 @@ template/assets/images/logo - Copia*.png
 template/assets/images/ticket-left.png
 template/assets/images/ticket-right.png
 template/assets/images/ticket-top-bottom.png
+
+# Private project workflow files - do not publish
+/AGENTS.md
+/GOAL.md
+/PLAN.md
+/design-qa.md
+/design.md
+/prd.md
+/project_brand.md
+/roadmap.md
+/generic-goal-prompt.txt
+/niched-goal-prompt.txt
+/prompt5.txt
+/playwright.config.js
+/skills-lock.json
+
+# Local QA artifacts - do not publish
+/qa-*.png
+/tests/
