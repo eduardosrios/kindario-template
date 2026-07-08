@@ -1,4 +1,4 @@
-const FONT_AWESOME_TESTER_SELECTOR = ".course-feature-accordion-icon i";
+const FONT_AWESOME_TESTER_SELECTOR = ".featured-category-grid .col:last-child .featured-category-icon i";
 
 (() => {
   // const iconOptions = [
@@ -193,7 +193,7 @@ const FONT_AWESOME_TESTER_SELECTOR = ".course-feature-accordion-icon i";
     document.head.appendChild(style);
   };
 
-  const getTargets = () => Array.from(document.querySelectorAll(".course-feature-accordion-icon i")).filter((_, index) => index === 1);
+  const getTargets = () => Array.from(document.querySelectorAll(config.selector));
 
 
   const getCurrentIconClass = () => {
