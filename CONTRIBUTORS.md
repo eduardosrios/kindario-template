@@ -4,7 +4,7 @@ Kindario is maintained by the repository owner and approved project collaborator
 
 ## Current Contributors
 
-- Eduardo Rios
+- Eduardo Silveira Rios
 
 ## Recognition Policy
 

@@ -75,3 +75,6 @@ template/assets/images/ticket-top-bottom.png
 # Local QA artifacts - do not publish
 /qa-*.png
 /tests/
+
+# Stray pasted notes inside public image folders
+/template/assets/images/*.txt

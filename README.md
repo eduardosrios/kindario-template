@@ -1,17 +1,18 @@
 # Kindario
 
-Kindario is an HTML, CSS, and JavaScript website template for charities, NGOs, donation campaigns, volunteer recruitment, humanitarian relief programs, and social impact storytelling.
+Kindario is a static HTML, CSS, and JavaScript website template for charity, NGO, donation, nonprofit, volunteering, humanitarian relief, volunteer recruitment, social impact, philanthropy, crowdfunding, fundraising, gift aid, donor engagement, poverty relief, hunger relief, poor children support, and Africa-focused humanitarian storytelling.
 
-The repository is focused on a static front-end workflow. It is intended for nonprofit organizations, fundraising teams, volunteer coordinators, donor-facing campaigns, and humanitarian brands that need a credible public web presence without a framework or backend dependency.
+The project is built as a front-end template only. It does not include React, Next.js, Vue, Angular, backend services, payment processing, databases, account systems, donor records, or fake transaction flows.
 
-## Core Focus
+## Project Focus
 
 - Charity and NGO landing experiences
-- Donation and fundraising storytelling
-- Volunteer recruitment and conversion flows
-- Poverty, hunger, and child support campaigns
-- Humanitarian relief communication
-- Trust, transparency, and donor confidence signals
+- Donation, crowdfunding, and fundraising campaign pages
+- Volunteer recruitment and volunteer action flows
+- Gift aid, donor confidence, and social proof sections
+- Poverty, hunger, and poor children support storytelling
+- Humanitarian relief and humanitarian organization presentation
+- Philanthropy and social impact brand communication
 
 ## Tech Stack
 
@@ -30,14 +31,13 @@ The repository is focused on a static front-end workflow. It is intended for non
 |       |-- css/
 |       |-- images/
 |       `-- js/
-|-- .github/
 |-- README.md
 |-- CODE_OF_CONDUCT.md
 |-- CONTRIBUTING.md
 |-- SECURITY.md
 |-- SUPPORT.md
-|-- LICENSE
-`-- CONTRIBUTORS.md
+|-- CONTRIBUTORS.md
+`-- LICENSE
 ```
 
 ## Local Usage
@@ -48,7 +48,7 @@ Open `template/index.html` or `template/index-2.html` directly in a browser, or 
 
 Recommended short description:
 
-> Kindario is an HTML, CSS, and JavaScript charity template for donation campaigns, volunteer recruitment, humanitarian relief, and nonprofit storytelling.
+> Kindario is a static HTML, CSS, and JavaScript charity template for donation campaigns, volunteer recruitment, humanitarian relief, and nonprofit storytelling.
 
 Recommended topics:
 
