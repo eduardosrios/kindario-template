@@ -2170,6 +2170,50 @@ select {
   background: var(--lime);
   color: var(--ink);
 }
+.course-feature-pill-volunteer {
+  display: flex;
+  justify-content: center;
+  min-height: 108px;
+  padding: 25px 15px;
+  border-top: 7px solid #315CDB;
+}
+
+.course-feature-pill .course-feature-volunteer {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: var(--ink);
+  text-align: center;
+  text-decoration: none;
+}
+
+.course-feature-pill .course-feature-volunteer-icon {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: #315CDB;
+  box-shadow: none;
+  margin-bottom: 7px;
+}
+
+.course-feature-pill .course-feature-volunteer-icon i {
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.course-feature-pill .course-feature-volunteer strong {
+  font-size: 1.12rem;
+  font-weight: 800;
+}
 
 .hero-section > .container {
   max-width: none;
@@ -2221,7 +2265,7 @@ select {
 .hero-shell[data-hero-slide="3"] {
   --hero-shell-bg: #9532be;
   --hero-shell-image: url("../images/kindario-hero-slide-3b.jpg");
-  --hero-shell-overlay: linear-gradient(90deg, rgba(184, 86, 162, 0.94) 0%, rgba(184, 86, 162, 0.82) 42%, rgba(184, 86, 162, 0.56) 76%, rgba(184, 86, 162, 0.34) 100%);
+  --hero-shell-overlay: linear-gradient(90deg, rgba(149, 50, 190, 0.94) 0%, rgba(149, 50, 190, 0.82) 42%, rgba(149, 50, 190, 0.56) 76%, rgba(149, 50, 190, 0.34) 100%);
 }
 
 .hero-shell[data-hero-slide="4"] {
@@ -3268,7 +3312,7 @@ select {
 
 .ticket-board-note {
   position: relative;
-  max-width: 610px;
+  max-width: 760px;
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
@@ -3287,6 +3331,12 @@ select {
   background: #ffd532;
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .ticket-board-head {
     grid-template-columns: 1fr;
@@ -3563,7 +3613,7 @@ select {
 }
 .talent-grid-head .section-copy {
   position: relative;
-  max-width: 610px;
+  max-width: 760px;
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
@@ -4156,7 +4206,7 @@ select {
 
 .card-carousel-head .section-copy {
   position: relative;
-  max-width: 610px;
+  max-width: 760px;
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
@@ -4214,7 +4264,7 @@ select {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .card-carousel-track {
     --carousel-container-width: 1140px;
     --carousel-side-padding: max(24px, calc((100vw - 1140px) / 2));
@@ -4523,6 +4573,12 @@ select {
   --alt-image-tilt: -9deg;
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   #route-carousel-secondary .card-carousel-shell {
   overflow: hidden;
@@ -5557,7 +5613,7 @@ h3 {
 
 .featured-category-head .section-copy {
   position: relative;
-  max-width: 610px;
+  max-width: 760px;
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
@@ -6714,6 +6770,12 @@ details p {
 
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .hero-impact-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -7273,6 +7335,12 @@ details p {
   }
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .service-cta-card {
     min-height: 620px;
@@ -8133,7 +8201,7 @@ details p {
 
 .donation-route-cards-head .split-section-note {
   position: relative;
-  max-width: 610px;
+  max-width: 760px;
   margin: 25px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
@@ -8158,6 +8226,12 @@ details p {
   }
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .donation-route-card-grid {
     grid-template-columns: 1fr;
@@ -8297,7 +8371,7 @@ details p {
 
 .donation-secondary-head .section-copy {
   position: relative;
-  max-width: 610px;
+  max-width: 760px;
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
@@ -8482,6 +8556,12 @@ details p {
   font-size: 1.08rem;
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .featured-category-head,
   .donation-secondary-head {
@@ -8506,6 +8586,12 @@ details p {
   }
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .donation-campaigns-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -8557,7 +8643,7 @@ details p {
 .split-section-head {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.38fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 0.38fr);
   gap: clamp(20px, 2.5vw, 40px);
   align-items: start;
   margin-bottom: clamp(74px, 8vw, 90px);
@@ -8619,7 +8705,7 @@ details p {
 .card-carousel-head .split-section-note,
 .talent-grid-head .split-section-note {
   position: relative;
-  max-width: 610px;
+  max-width: 760px;
   margin: 25px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
@@ -8662,6 +8748,12 @@ details p {
 
 
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .split-section-head {
     grid-template-columns: 1fr;
@@ -9242,7 +9334,7 @@ body.search-modal-open {
 }
 
 .quick-search-result:nth-child(3) i {
-  background: #b856a2;
+  background: #9532BE;
 }
 
 .quick-search-result:nth-child(4) i {
@@ -9432,7 +9524,7 @@ body.search-modal-open {
 .index2-peek-slideshow .hero-slide[data-hero-slide="3"] {
   --slide-bg: #9532be;
   --slide-image: url("../images/kindario-hero-slide-3b.jpg");
-  --slide-overlay: linear-gradient(90deg, rgba(184, 86, 162, 0.94) 0%, rgba(184, 86, 162, 0.76) 42%, rgba(184, 86, 162, 0.38) 100%);
+  --slide-overlay: linear-gradient(90deg, rgba(149, 50, 190, 0.94) 0%, rgba(149, 50, 190, 0.76) 42%, rgba(149, 50, 190, 0.38) 100%);
 }
 
 .index2-peek-slideshow .hero-slide.is-active {
@@ -9502,6 +9594,12 @@ body.search-modal-open {
   right: calc(var(--peek-width) + var(--slide-gap) + clamp(20px, 4vw, 72px));
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .index2-peek-slideshow .hero-shell {
     --peek-width: 34px;
@@ -9625,7 +9723,7 @@ body.index2-peek-slideshow {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .index2-peek-slideshow .hero-shell {
     --container-width: 1140px;
   }
@@ -9694,6 +9792,12 @@ body.index2-peek-slideshow {
 }
 
 /* Below desktop, Bootstrap side space is too small for a 30px gap plus visible peeks; keep peek layout usable. */
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .index2-peek-slideshow .hero-shell {
     --slide-width: calc(100vw - ((var(--peek-width) * 2) + (var(--slide-gap) * 2)));
@@ -9790,6 +9894,12 @@ body.index2-peek-slideshow {
   width: 38px;
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .index2-peek-slideshow .hero-shell,
   .index2-peek-slideshow .hero-shell[data-hero-slide="0"],
@@ -11766,6 +11876,12 @@ body.index2-peek-slideshow {
   z-index: 2;
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .index2-peek-slideshow .hero-slide::after,
   .index2-peek-slideshow .hero-slide.is-active::after,
@@ -11827,6 +11943,12 @@ body.index2-peek-slideshow {
   mask-repeat: no-repeat !important;
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .index2-peek-slideshow .hero-slide::after,
   .index2-peek-slideshow .hero-slide.is-active::after,
@@ -11953,6 +12075,12 @@ body.index2-peek-slideshow {
   }
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .index2-peek-slideshow .hero-slide.is-active::after {
     width: min(90vw, 625px) !important;
@@ -11983,6 +12111,12 @@ body.index2-peek-slideshow {
   }
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .index2-peek-slideshow .hero-slide.is-active::after {
     width: min(81vw, 562.5px) !important;
@@ -12048,6 +12182,12 @@ body.index2-peek-slideshow {
   }
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
   .index2-peek-slideshow .hero-masked-media {
     right: 28px;
@@ -12637,7 +12777,7 @@ body.index2-peek-slideshow {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .index2-peek-slideshow .hero-shell,
   .index2-peek-slideshow .hero-shell[data-hero-slide="0"],
   .index2-peek-slideshow .hero-shell[data-hero-slide="1"],
@@ -12969,6 +13109,12 @@ body.index2-peek-slideshow {
     text-align: center;
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
     .index2-peek-slideshow .impact-steps-head {
         margin-left: auto;
@@ -13075,6 +13221,12 @@ body.index2-peek-slideshow {
     pointer-events: none;
 }
 
+
+@media (min-width: 1400px) {
+  .split-section-head {
+    grid-template-columns: minmax(0, 0.8fr) minmax(560px, 0.5fr);
+  }
+}
 @media (max-width: 991.98px) {
     .index2-peek-slideshow .hero-slide-bg-circle {
         left: -370px;
@@ -13599,9 +13751,9 @@ body.index2-peek-slideshow {
 
 
 /* Index 2: under zoom-out wide screens, all split headers need more title room. */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .index2-peek-slideshow .split-section-head {
-    grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.32fr) !important;
+    grid-template-columns: minmax(0, 1fr) minmax(485px, 0.46fr) !important;
     gap: clamp(24px, 2.6vw, 44px) !important;
   }
 
@@ -13619,12 +13771,16 @@ body.index2-peek-slideshow {
   .index2-peek-slideshow .donation-route-cards-head .split-section-note {
     max-width: 560px !important;
   }
+
+  .index2-peek-slideshow .course-routes-head h2 {
+    font-size: clamp(3rem, 5vw, 6.15rem) !important;
+  }
 }
 
 
 
 /* Index 2: under zoom-out wide screens, floating CTA copy needs more width too. */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .index2-peek-slideshow .floating-cta-copy {
     width: min(100%, 760px) !important;
   }
@@ -13636,4 +13792,2196 @@ body.index2-peek-slideshow {
   .index2-peek-slideshow .floating-cta-copy p {
     max-width: 520px !important;
   }
+}
+
+
+/* Index 2: plain campaign cards keep requested accent order after card swaps. */
+.index2-peek-slideshow .donation-secondary-grid-plain .donation-campaign-card:nth-child(1) { --donation-accent: #9532BE; }
+.index2-peek-slideshow .donation-secondary-grid-plain .donation-campaign-card:nth-child(4) { --donation-accent: #108032; }
+.index2-peek-slideshow .donation-secondary-grid-plain .donation-campaign-card:nth-child(5) { --donation-accent: #315CDB; }
+.index2-peek-slideshow .donation-secondary-grid-plain .donation-campaign-card:nth-child(7) { --donation-accent: #F03939; }
+
+/* Index 2: quick donation strip full-width white band above marquee. */
+.index2-peek-slideshow .support-donation-strip-band {
+  background: #fff;
+  padding: 0 0 clamp(42px, 5vw, 72px);
+}
+
+.index2-peek-slideshow .support-donation-strip-container {
+  background: #fff;
+}
+/* Index 2: quick donation strip above featured categories. */
+.index2-peek-slideshow .support-donation-strip-row {
+  --bs-gutter-x: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.index2-peek-slideshow .support-donation-strip-row > .col-sm-12 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.index2-peek-slideshow .support-donation-strip {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(18px, 2.5vw, 36px);
+  margin: 0;
+  padding: clamp(22px, 2.8vw, 34px) clamp(24px, 3.5vw, 54px);
+  border: 0;
+  border-radius: 999px;
+  background: #315CDB;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+}
+
+.index2-peek-slideshow .support-donation-options {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 28px);
+  min-width: 0;
+}
+
+.index2-peek-slideshow .support-donation-choice {
+  display: grid;
+  width: clamp(76px, 7.2vw, 106px);
+  height: clamp(76px, 7.2vw, 106px);
+  flex: 0 0 auto;
+  place-items: center;
+  margin: 0;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.35vw, 1.45rem);
+  font-weight: 900;
+  line-height: 1;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.index2-peek-slideshow .support-donation-choice input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.index2-peek-slideshow .support-donation-choice.is-selected,
+.index2-peek-slideshow .support-donation-choice:has(input:checked) {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.index2-peek-slideshow .support-donation-choice:hover,
+.index2-peek-slideshow .support-donation-choice:focus-within {
+  transform: translateY(-2px);
+}
+
+.index2-peek-slideshow .support-donation-custom {
+  display: grid;
+  grid-template-columns: auto minmax(92px, 1fr);
+  width: clamp(210px, 20vw, 270px);
+  height: clamp(76px, 7.2vw, 106px);
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0 clamp(28px, 3vw, 44px);
+  border: 3px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.45vw, 1.55rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.index2-peek-slideshow .support-donation-custom input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  text-align: center;
+}
+
+.index2-peek-slideshow .support-donation-custom input::selection {
+  background: #FFD532;
+  color: #111;
+}
+
+.index2-peek-slideshow .support-donation-submit {
+  display: inline-flex;
+  min-width: clamp(170px, 16vw, 230px);
+  height: clamp(68px, 6.3vw, 92px);
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: #FFD532;
+  color: #111;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .support-donation-strip {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 42px;
+  }
+
+  .index2-peek-slideshow .support-donation-options {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-strip {
+    padding: 22px 16px;
+    border-radius: 30px;
+  }
+
+  .index2-peek-slideshow .support-donation-options {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .index2-peek-slideshow .support-donation-choice {
+    width: 70px;
+    height: 70px;
+    font-size: 1rem;
+  }
+
+  .index2-peek-slideshow .support-donation-custom,
+  .index2-peek-slideshow .support-donation-submit {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Index 2: keep donation strip the same height as the marquee. */
+.index2-peek-slideshow .support-donation-strip {
+  height: 140px;
+  min-height: 140px;
+  padding: 0 clamp(34px, 3.2vw, 48px);
+  gap: clamp(18px, 2.1vw, 28px);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.index2-peek-slideshow .support-donation-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.index2-peek-slideshow .support-donation-options {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  gap: clamp(14px, 1.7vw, 24px);
+}
+
+.index2-peek-slideshow .support-donation-choice {
+  width: clamp(76px, 6.2vw, 88px);
+  height: clamp(76px, 6.2vw, 88px);
+  font-size: clamp(1rem, 1.12vw, 1.22rem);
+}
+
+.index2-peek-slideshow .support-donation-custom {
+  width: clamp(220px, 19vw, 260px);
+  height: clamp(76px, 6.2vw, 88px);
+  padding: 0 clamp(26px, 2.6vw, 38px);
+  font-size: clamp(1.05rem, 1.16vw, 1.28rem);
+}
+
+.index2-peek-slideshow .support-donation-submit {
+  min-width: clamp(180px, 15vw, 220px);
+  height: clamp(70px, 5.6vw, 80px);
+  font-size: clamp(1rem, 1.12vw, 1.2rem);
+}
+
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .support-donation-strip {
+    height: 140px;
+    min-height: 140px;
+    justify-content: flex-start;
+    border-radius: 999px;
+  }
+
+  .index2-peek-slideshow .support-donation-options {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-strip {
+    height: 140px;
+    min-height: 140px;
+    padding: 0 18px;
+    border-radius: 999px;
+  }
+
+  .index2-peek-slideshow .support-donation-options {
+    width: auto;
+    gap: 12px;
+  }
+
+  .index2-peek-slideshow .support-donation-choice {
+    width: 64px;
+    height: 64px;
+    font-size: 0.88rem;
+  }
+
+  .index2-peek-slideshow .support-donation-custom {
+    width: 160px;
+    max-width: none;
+    height: 64px;
+    gap: 12px;
+    padding: 0 22px;
+    font-size: 1rem;
+  }
+
+  .index2-peek-slideshow .support-donation-submit {
+    width: 150px;
+    min-width: 150px;
+    max-width: none;
+    height: 64px;
+    font-size: 1rem;
+  }
+}
+
+/* Index 2: donation strip width follows its inner controls instead of filling the container. */
+.index2-peek-slideshow .support-donation-strip-container {
+  display: flex;
+  justify-content: center;
+}
+
+.index2-peek-slideshow .support-donation-strip-row,
+.index2-peek-slideshow .support-donation-strip-row > .col-sm-12 {
+  width: auto;
+  max-width: 100%;
+}
+
+.index2-peek-slideshow .support-donation-strip {
+  width: fit-content;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Index 2: equal horizontal spacing inside donation strip. */
+.index2-peek-slideshow .support-donation-strip {
+  --support-strip-gap: clamp(20px, 2.05vw, 28px);
+  padding-right: var(--support-strip-gap);
+  padding-left: var(--support-strip-gap);
+  gap: var(--support-strip-gap);
+}
+
+.index2-peek-slideshow .support-donation-options {
+  gap: var(--support-strip-gap);
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-strip {
+    --support-strip-gap: 12px;
+    padding-right: var(--support-strip-gap);
+    padding-left: var(--support-strip-gap);
+    gap: var(--support-strip-gap);
+  }
+
+  .index2-peek-slideshow .support-donation-options {
+    gap: var(--support-strip-gap);
+  }
+}
+
+/* Index 2: prevent legacy space-between from changing equal visual gaps. */
+.index2-peek-slideshow .support-donation-strip {
+  width: max-content;
+  inline-size: max-content;
+  max-width: 100%;
+  max-inline-size: 100%;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.index2-peek-slideshow .support-donation-choice,
+.index2-peek-slideshow .support-donation-custom,
+.index2-peek-slideshow .support-donation-submit {
+  box-sizing: border-box;
+}
+
+/* Index 2: donation amount buttons requested visual. */
+.index2-peek-slideshow .support-donation-choice {
+  display: grid;
+  width: clamp(76px, 7.2vw, 106px);
+  height: clamp(76px, 7.2vw, 106px);
+  flex: 0 0 auto;
+  place-items: center;
+  margin: 0;
+  border: transparent;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.35vw, 1.45rem);
+  font-weight: 900;
+  line-height: 1;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+/* Index 2: selected donation amount follows the same requested white style. */
+.index2-peek-slideshow .support-donation-choice.is-selected,
+.index2-peek-slideshow .support-donation-choice:has(input:checked) {
+  border: transparent;
+  background: #fff;
+  color: #111;
+}
+
+/* Index 2: requested fixed side padding for donation strip. */
+.index2-peek-slideshow .support-donation-strip {
+  --support-strip-gap: clamp(20px, 2.05vw, 28px);
+  padding-right: 36px;
+  padding-left: 36px;
+  gap: var(--support-strip-gap);
+}
+
+/* Index 2: separate currency circle and numeric-only amounts. */
+.index2-peek-slideshow .support-donation-currency {
+  display: grid;
+  width: clamp(76px, 7.2vw, 106px);
+  height: clamp(76px, 7.2vw, 106px);
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.35vw, 1.45rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.index2-peek-slideshow .support-donation-custom {
+  grid-template-columns: minmax(92px, 1fr);
+  justify-items: center;
+}
+
+.index2-peek-slideshow .support-donation-custom input {
+  text-align: center;
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-currency {
+    width: 76px;
+    height: 76px;
+    font-size: 1.05rem;
+  }
+
+  .index2-peek-slideshow .support-donation-custom {
+    grid-template-columns: minmax(80px, 1fr);
+  }
+}
+
+/* Index 2: keep mobile overflow inside the strip after adding currency circle. */
+.index2-peek-slideshow .support-donation-strip {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+}
+
+.index2-peek-slideshow .support-donation-strip-row,
+.index2-peek-slideshow .support-donation-strip-row > .col-sm-12 {
+  overflow-x: hidden;
+}
+
+.index2-peek-slideshow .support-donation-custom {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Index 2: contain the horizontal scroller so the page itself never widens. */
+.index2-peek-slideshow .support-donation-strip-band,
+.index2-peek-slideshow .support-donation-strip-container,
+.index2-peek-slideshow .support-donation-strip-row,
+.index2-peek-slideshow .support-donation-strip-row > .col-sm-12 {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.index2-peek-slideshow .support-donation-strip {
+  min-width: 0;
+  max-width: min(100%, calc(100vw - 30px));
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Index 2: marquee animation must not create document horizontal overflow. */
+.index2-peek-slideshow .donate-marquee {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Keep the moving marquee clipped on small screens and prevent page scroll width. */
+.donate-marquee {
+  overflow: hidden;
+  max-width: 100vw;
+}
+
+.donate-marquee-track {
+  will-change: transform;
+}
+
+/* Index 2: prevent animated/transformed strips from widening the document. */
+html:has(body.index2-peek-slideshow),
+body.index2-peek-slideshow {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body.index2-peek-slideshow .donate-marquee {
+  contain: paint;
+}
+
+/* Index 2: currency circle sits outside the blue donation strip. */
+.index2-peek-slideshow .support-donation-form {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 24px);
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.index2-peek-slideshow .support-donation-form::-webkit-scrollbar {
+  display: none;
+}
+
+.index2-peek-slideshow .support-donation-form > .support-donation-currency {
+  width: clamp(76px, 7.2vw, 106px);
+  height: clamp(76px, 7.2vw, 106px);
+  background: #315CDB;
+  color: #fff;
+}
+
+.index2-peek-slideshow .support-donation-form > .support-donation-strip {
+  margin: 0;
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-form {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 15px;
+  }
+
+  .index2-peek-slideshow .support-donation-form > .support-donation-currency {
+    width: 76px;
+    height: 76px;
+  }
+}
+
+/* Index 2: donation form shadows must not be clipped by local wrappers. */
+.index2-peek-slideshow .support-donation-strip-band,
+.index2-peek-slideshow .support-donation-strip-container,
+.index2-peek-slideshow .support-donation-strip-row,
+.index2-peek-slideshow .support-donation-strip-row > .col-sm-12,
+.index2-peek-slideshow .support-donation-form,
+.index2-peek-slideshow .support-donation-strip {
+  overflow: visible !important;
+}
+
+/* Index 2: requested currency circle sizing. */
+.index2-peek-slideshow .support-donation-form > .support-donation-currency {
+  width: 110px;
+  height: 110px;
+  background: #315CDB;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+/* Index 2: requested currency symbol weight update. */
+.index2-peek-slideshow .support-donation-form > .support-donation-currency {
+  width: 110px;
+  height: 110px;
+  background: #315CDB;
+  color: #fff;
+  font-size: 44px;
+  font-weight: 600;
+}
+
+/* Index 2: decorative stacked-circle ::before for the currency bubble. */
+.index2-peek-slideshow .support-donation-form > .support-donation-currency {
+  position: relative;
+  isolation: isolate;
+}
+
+.index2-peek-slideshow .support-donation-form > .support-donation-currency::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -18px;
+  left: 0;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(49, 92, 219, 0.5);
+  box-shadow: 0 -30px 0 rgba(49, 92, 219, 0.2);
+  pointer-events: none;
+}
+
+/* Index 2: corrected left-side layered ::before for currency bubble. */
+.index2-peek-slideshow .support-donation-form > .support-donation-currency::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: -70px 0 rgba(49, 92, 219, 0.2), -35px 0 rgba(49, 92, 219, 0.4);
+  pointer-events: none;
+}
+
+/* Index 2: requested layered box-shadow for blue donation strip. */
+.index2-peek-slideshow .support-donation-strip {
+  box-shadow: 0 -70px rgba(49, 92, 219, 0.2), 0 -35px rgba(49, 92, 219, 0.4), 0 28px 70px rgba(0, 0, 0, 0.22);
+}
+
+/* Index 2: requested transparent donation strip with blue border and layered shadow. */
+.index2-peek-slideshow .support-donation-strip {
+  box-shadow: 0 -70px rgba(49, 92, 219, 0.2), 0 -35px rgba(49, 92, 219, 0.4), 0 28px 70px rgba(0, 0, 0, 0.22);
+  border: 6px solid #315CDB;
+  background: transparent;
+}
+
+/* Index 2: custom amount must remain visible inside transparent strip. */
+.index2-peek-slideshow .support-donation-strip .support-donation-custom,
+.index2-peek-slideshow .support-donation-strip .support-donation-custom input {
+  color: #315CDB;
+}
+
+/* Index 2: colored backgrounds for each inner donation amount circle. */
+.index2-peek-slideshow .support-donation-strip .support-donation-choice {
+  border: 0;
+  color: #111;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(1) {
+  background: #FFD532;
+  color: #111;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(2) {
+  background: #315CDB;
+  color: #fff;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(3),
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.is-selected,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:has(input:checked) {
+  background: #E91E7C;
+  color: #fff;
+}
+
+/* Index 2: seven internal donation circles with requested 82px sizing. */
+.index2-peek-slideshow .support-donation-choice {
+  display: grid;
+  width: 82px;
+  height: 82px;
+  flex: 0 0 auto;
+  place-items: center;
+  margin: 0;
+  border: transparent;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.35vw, 1.45rem);
+  font-weight: 900;
+  line-height: 1;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(1) {
+  background: #FFD532;
+  color: #111;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(2) {
+  background: #315CDB;
+  color: #fff;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(3) {
+  background: #E91E7C;
+  color: #fff;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(4) {
+  background: #108032;
+  color: #fff;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(5) {
+  background: #9532BE;
+  color: #fff;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(6) {
+  background: #F03939;
+  color: #fff;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(7),
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice-more {
+  background: #111;
+  color: #fff;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.is-selected,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:has(input:checked) {
+  color: #fff;
+}
+
+/* Index 2: desktop shadows stay visible; mobile keeps the long donation form from widening the page. */
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-strip-container,
+  .index2-peek-slideshow .support-donation-strip-row,
+  .index2-peek-slideshow .support-donation-strip-row > .col-sm-12 {
+    overflow-x: hidden !important;
+  }
+
+  .index2-peek-slideshow .support-donation-form,
+  .index2-peek-slideshow .support-donation-strip {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+  }
+}
+
+/* Index 2: mobile-only clipping for the oversized seven-circle form. */
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-form,
+  .index2-peek-slideshow .support-donation-strip {
+    overflow: hidden !important;
+  }
+}
+
+/* Index 2: after removing 250/500, the custom seventh-style circle remains black. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+/* Index 2: mobile containment for the wide donation control only. */
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-strip-band,
+  .index2-peek-slideshow .support-donation-strip-container,
+  .index2-peek-slideshow .support-donation-strip-row,
+  .index2-peek-slideshow .support-donation-strip-row > .col-sm-12,
+  .index2-peek-slideshow .support-donation-form,
+  .index2-peek-slideshow .support-donation-strip {
+    max-width: 100% !important;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+    contain: paint;
+  }
+}
+
+/* Index 2: mobile keeps page width fixed while the amount row scrolls inside itself. */
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-strip-band,
+  .index2-peek-slideshow .support-donation-strip-container,
+  .index2-peek-slideshow .support-donation-strip-row,
+  .index2-peek-slideshow .support-donation-strip-row > .col-sm-12 {
+    max-width: 100% !important;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+    contain: paint;
+  }
+
+  .index2-peek-slideshow .support-donation-form {
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .index2-peek-slideshow .support-donation-strip {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    contain: paint;
+    scrollbar-width: none;
+  }
+
+  .index2-peek-slideshow .support-donation-strip::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Index 2: custom donation input opens only from the Font Awesome plus control. */
+.index2-peek-slideshow .support-donation-form .support-donation-custom {
+  display: none !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-custom {
+  display: grid !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-options .support-donation-choice:not(.support-donation-choice-more) {
+  display: none !important;
+}
+
+.index2-peek-slideshow .support-donation-choice-more {
+  appearance: none;
+  border: 0;
+}
+
+.index2-peek-slideshow .support-donation-choice-more i {
+  font-size: 1.35rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Index 2: plus/minus is an inline icon control, not a filled circle. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+  width: clamp(64px, 5.4vw, 84px) !important;
+  height: 82px !important;
+  padding: 0 clamp(14px, 1.4vw, 22px) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #111 !important;
+  box-shadow: none !important;
+}
+
+.index2-peek-slideshow .support-donation-choice-more i {
+  color: #111;
+  font-size: clamp(2rem, 2.4vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-choice-more {
+  margin-right: clamp(8px, 1vw, 16px) !important;
+}
+
+/* Index 2: requested fixed donation choice typography. */
+.index2-peek-slideshow .support-donation-choice {
+  display: grid;
+  width: 82px;
+  height: 82px;
+  flex: 0 0 auto;
+  place-items: center;
+  margin: 0;
+  border: transparent;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+/* Index 2: return more control to black circle. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+  display: grid !important;
+  width: 82px !important;
+  height: 82px !important;
+  padding: 0 !important;
+  place-items: center !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #111 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.index2-peek-slideshow .support-donation-choice-more i {
+  color: #fff !important;
+  font-size: 30px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+/* Index 2: smaller black more circle, same icon size. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+  width: 66px !important;
+  height: 66px !important;
+}
+
+.index2-peek-slideshow .support-donation-choice-more i {
+  font-size: 30px !important;
+}
+
+/* Index 2: custom amount text matches donation circle values. */
+.index2-peek-slideshow .support-donation-strip .support-donation-custom,
+.index2-peek-slideshow .support-donation-strip .support-donation-custom input {
+  color: #111 !important;
+  font-family: var(--font-display) !important;
+  font-size: 30px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+/* Index 2: more control back to transparent with black icon. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+  background: transparent !important;
+  color: #111 !important;
+  box-shadow: none !important;
+}
+
+.index2-peek-slideshow .support-donation-choice-more i {
+  color: #111 !important;
+}
+
+/* Index 2: custom amount state turns currency and strip details red. */
+.index2-peek-slideshow .support-donation-form.is-custom-open > .support-donation-currency {
+  background: #F03939 !important;
+  color: #fff !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open > .support-donation-currency::before {
+  box-shadow: -70px 0 rgba(240, 57, 57, 0.2), -35px 0 rgba(240, 57, 57, 0.4) !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip {
+  border-color: #F03939 !important;
+  box-shadow: 0 -70px rgba(240, 57, 57, 0.2), 0 -35px rgba(240, 57, 57, 0.4), 0 28px 70px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Index 2: smooth transition for custom-open color changes. */
+.index2-peek-slideshow .support-donation-form > .support-donation-currency,
+.index2-peek-slideshow .support-donation-form > .support-donation-currency::before,
+.index2-peek-slideshow .support-donation-form .support-donation-strip {
+  transition: background-color 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease, color 0.32s ease;
+}
+
+/* Index 2: custom amount state uses requested yellow accent. */
+.index2-peek-slideshow .support-donation-form.is-custom-open > .support-donation-currency {
+  background: #F4CA35 !important;
+  color: #111 !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open > .support-donation-currency::before {
+  box-shadow: -70px 0 rgba(244, 202, 53, 0.2), -35px 0 rgba(244, 202, 53, 0.4) !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip {
+  border-color: #F4CA35 !important;
+  box-shadow: 0 -70px rgba(244, 202, 53, 0.2), 0 -35px rgba(244, 202, 53, 0.4), 0 28px 70px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Index 2: custom amount state uses requested pink accent. */
+.index2-peek-slideshow .support-donation-form.is-custom-open > .support-donation-currency {
+  background: #EB1E86 !important;
+  color: #fff !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open > .support-donation-currency::before {
+  box-shadow: -70px 0 rgba(235, 30, 134, 0.2), -35px 0 rgba(235, 30, 134, 0.4) !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip {
+  border-color: #EB1E86 !important;
+  box-shadow: 0 -70px rgba(235, 30, 134, 0.2), 0 -35px rgba(235, 30, 134, 0.4), 0 28px 70px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Index 2: requested Give button styling. */
+.index2-peek-slideshow .support-donation-submit {
+  text-transform: uppercase !important;
+  border: 6px solid #315CDB !important;
+  background: transparent !important;
+  font-size: 36px !important;
+  letter-spacing: 0.06em !important;
+  color: #315CDB !important;
+}
+
+/* Index 2: Give button hover transition. */
+.index2-peek-slideshow .support-donation-submit {
+  transition: background-color 0.28s ease, border-color 0.28s ease, color 0.28s ease, transform 0.28s ease !important;
+}
+
+.index2-peek-slideshow .support-donation-submit:hover,
+.index2-peek-slideshow .support-donation-submit:focus-visible {
+  background: #315CDB !important;
+  color: #fff !important;
+}
+
+/* Index 2: Give button follows pink custom-open state, including hover. */
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-submit {
+  border-color: #EB1E86 !important;
+  color: #EB1E86 !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-submit:hover,
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-submit:focus-visible {
+  background: #EB1E86 !important;
+  border-color: #EB1E86 !important;
+  color: #fff !important;
+}
+
+/* Index 2: requested horizontal padding for Give button. */
+.index2-peek-slideshow .support-donation-submit {
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+
+/* Index 2: requested custom amount width. */
+.index2-peek-slideshow .support-donation-custom {
+  width: clamp(220px, 19.5vw, 287px) !important;
+}
+
+/* Index 2: requested 7px borders for donation wrapper and Give button. */
+.index2-peek-slideshow .support-donation-strip {
+  border-width: 7px !important;
+}
+
+.index2-peek-slideshow .support-donation-submit {
+  border-width: 7px !important;
+}
+
+/* Index 2: CSS-only floating faces. JS pointer physics removed. */
+.index2-peek-slideshow .floating-face {
+  --float-x: 8px;
+  --float-y: 10px;
+  --float-rotate: 1.5deg;
+  animation: floatingFaceDrift 7.5s ease-in-out infinite alternate;
+}
+
+.index2-peek-slideshow .floating-face-arc {
+  position: absolute;
+  inset: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  overflow: visible;
+  pointer-events: none;
+  animation: floatingFaceArcSpin 9s linear infinite;
+}
+
+.index2-peek-slideshow .floating-face-arc circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-dasharray: 248 80;
+  transform-origin: center;
+}
+
+.index2-peek-slideshow .floating-face::before {
+  content: none !important;
+}
+
+.index2-peek-slideshow .face-one {
+  --float-x: -7px;
+  --float-y: 9px;
+  --float-rotate: -1.5deg;
+  color: #fff;
+  animation-duration: 7.4s;
+}
+
+.index2-peek-slideshow .face-two {
+  --float-x: 9px;
+  --float-y: -11px;
+  --float-rotate: 1.2deg;
+  color: #315CDB;
+  animation-duration: 8.4s;
+  animation-delay: -1.2s;
+}
+
+.index2-peek-slideshow .face-three {
+  --float-x: 8px;
+  --float-y: 10px;
+  --float-rotate: 2deg;
+  color: #EB1E86;
+  animation-duration: 7.9s;
+  animation-delay: -2s;
+}
+
+.index2-peek-slideshow .face-four {
+  --float-x: -9px;
+  --float-y: -8px;
+  --float-rotate: -2deg;
+  color: #F03939;
+  animation-duration: 8.7s;
+  animation-delay: -3.1s;
+}
+
+.index2-peek-slideshow .face-five {
+  --float-x: 10px;
+  --float-y: 8px;
+  --float-rotate: 1.8deg;
+  color: #F4CA35;
+  animation-duration: 8.1s;
+  animation-delay: -1.7s;
+}
+
+.index2-peek-slideshow .face-six {
+  --float-x: -8px;
+  --float-y: 10px;
+  --float-rotate: -1.8deg;
+  color: #9532BE;
+  animation-duration: 7.6s;
+  animation-delay: -2.5s;
+}
+
+.index2-peek-slideshow .face-seven {
+  --float-x: 7px;
+  --float-y: -9px;
+  --float-rotate: 1.4deg;
+  color: #F4CA35;
+  animation-duration: 8.8s;
+  animation-delay: -3.4s;
+}
+
+.index2-peek-slideshow .face-eight {
+  --float-x: -10px;
+  --float-y: 8px;
+  --float-rotate: -1.6deg;
+  color: #108032;
+  animation-duration: 8.2s;
+  animation-delay: -1.1s;
+}
+
+.index2-peek-slideshow .face-nine {
+  --float-x: 8px;
+  --float-y: 9px;
+  --float-rotate: 1.6deg;
+  color: #fff;
+  animation-duration: 7.8s;
+  animation-delay: -2.8s;
+}
+
+.index2-peek-slideshow .face-ten {
+  --float-x: -8px;
+  --float-y: -10px;
+  --float-rotate: -1.4deg;
+  color: #315CDB;
+  animation-duration: 8.5s;
+  animation-delay: -3.8s;
+}
+
+@keyframes floatingFaceDrift {
+  0% {
+    transform: translate3d(calc(var(--float-x) * -0.45), calc(var(--float-y) * 0.35), 0) rotate(calc(var(--float-rotate) * -0.35));
+  }
+  50% {
+    transform: translate3d(calc(var(--float-x) * 0.35), calc(var(--float-y) * -0.55), 0) rotate(calc(var(--float-rotate) * 0.5));
+  }
+  100% {
+    transform: translate3d(var(--float-x), var(--float-y), 0) rotate(var(--float-rotate));
+  }
+}
+
+@keyframes floatingFaceArcSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index2-peek-slideshow .floating-face,
+  .index2-peek-slideshow .floating-face-arc {
+    animation: none !important;
+  }
+}
+
+/* Index 2: corrected CSS-only idle drift; JS only controls hover repulsion on the face wrapper. */
+.index2-peek-slideshow .floating-face {
+  animation: none !important;
+  transition: transform 0.34s ease-out;
+  will-change: transform;
+}
+
+.index2-peek-slideshow .floating-face-arc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  inset: auto !important;
+  overflow: visible;
+  pointer-events: none;
+  animation: floatingFaceContentDrift 7.5s ease-in-out infinite alternate !important;
+  transform-origin: center;
+}
+
+.index2-peek-slideshow .floating-face img {
+  animation: floatingFaceContentDrift 7.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.index2-peek-slideshow .floating-face-arc circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-dasharray: 248 80;
+}
+
+.index2-peek-slideshow .face-one .floating-face-arc,
+.index2-peek-slideshow .face-one img { animation-duration: 7.4s; }
+.index2-peek-slideshow .face-two .floating-face-arc,
+.index2-peek-slideshow .face-two img { animation-duration: 8.4s; animation-delay: -1.2s; }
+.index2-peek-slideshow .face-three .floating-face-arc,
+.index2-peek-slideshow .face-three img { animation-duration: 7.9s; animation-delay: -2s; }
+.index2-peek-slideshow .face-four .floating-face-arc,
+.index2-peek-slideshow .face-four img { animation-duration: 8.7s; animation-delay: -3.1s; }
+.index2-peek-slideshow .face-five .floating-face-arc,
+.index2-peek-slideshow .face-five img { animation-duration: 8.1s; animation-delay: -1.7s; }
+.index2-peek-slideshow .face-six .floating-face-arc,
+.index2-peek-slideshow .face-six img { animation-duration: 7.6s; animation-delay: -2.5s; }
+.index2-peek-slideshow .face-seven .floating-face-arc,
+.index2-peek-slideshow .face-seven img { animation-duration: 8.8s; animation-delay: -3.4s; }
+.index2-peek-slideshow .face-eight .floating-face-arc,
+.index2-peek-slideshow .face-eight img { animation-duration: 8.2s; animation-delay: -1.1s; }
+.index2-peek-slideshow .face-nine .floating-face-arc,
+.index2-peek-slideshow .face-nine img { animation-duration: 7.8s; animation-delay: -2.8s; }
+.index2-peek-slideshow .face-ten .floating-face-arc,
+.index2-peek-slideshow .face-ten img { animation-duration: 8.5s; animation-delay: -3.8s; }
+
+@keyframes floatingFaceContentDrift {
+  0% {
+    transform: translate3d(calc(-50% - 3px), calc(-50% + 3px), 0) rotate(-0.35deg);
+  }
+  50% {
+    transform: translate3d(calc(-50% + 4px), calc(-50% - 5px), 0) rotate(0.45deg);
+  }
+  100% {
+    transform: translate3d(calc(-50% + 7px), calc(-50% + 6px), 0) rotate(0.8deg);
+  }
+}
+
+.index2-peek-slideshow .floating-face img {
+  transform-origin: center;
+}
+
+.index2-peek-slideshow .floating-face img {
+  animation-name: floatingFaceImageDrift;
+}
+
+@keyframes floatingFaceImageDrift {
+  0% {
+    transform: translate3d(-3px, 3px, 0) rotate(-0.35deg);
+  }
+  50% {
+    transform: translate3d(4px, -5px, 0) rotate(0.45deg);
+  }
+  100% {
+    transform: translate3d(7px, 6px, 0) rotate(0.8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index2-peek-slideshow .floating-face,
+  .index2-peek-slideshow .floating-face img,
+  .index2-peek-slideshow .floating-face-arc {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Index 2: final floating CTA model: CSS idle drift on wrapper, JS hover repulsion via vars. */
+.index2-peek-slideshow .floating-face {
+  --repel-x: 0px;
+  --repel-y: 0px;
+  animation: floatingFaceWrapperDrift 7.5s ease-in-out infinite alternate !important;
+  transition: none;
+  will-change: transform;
+}
+
+.index2-peek-slideshow .floating-face-arc {
+  position: absolute;
+  top: -15px !important;
+  left: -15px !important;
+  inset: auto !important;
+  overflow: visible;
+  pointer-events: none;
+  animation: none !important;
+  transform: none !important;
+  transform-origin: center;
+}
+
+.index2-peek-slideshow .floating-face img {
+  animation: none !important;
+  transform: none !important;
+}
+
+.index2-peek-slideshow .face-one { animation-duration: 7.4s !important; animation-delay: 0s !important; }
+.index2-peek-slideshow .face-two { animation-duration: 8.4s !important; animation-delay: -1.2s !important; }
+.index2-peek-slideshow .face-three { animation-duration: 7.9s !important; animation-delay: -2s !important; }
+.index2-peek-slideshow .face-four { animation-duration: 8.7s !important; animation-delay: -3.1s !important; }
+.index2-peek-slideshow .face-five { animation-duration: 8.1s !important; animation-delay: -1.7s !important; }
+.index2-peek-slideshow .face-six { animation-duration: 7.6s !important; animation-delay: -2.5s !important; }
+.index2-peek-slideshow .face-seven { animation-duration: 8.8s !important; animation-delay: -3.4s !important; }
+.index2-peek-slideshow .face-eight { animation-duration: 8.2s !important; animation-delay: -1.1s !important; }
+.index2-peek-slideshow .face-nine { animation-duration: 7.8s !important; animation-delay: -2.8s !important; }
+.index2-peek-slideshow .face-ten { animation-duration: 8.5s !important; animation-delay: -3.8s !important; }
+
+@keyframes floatingFaceWrapperDrift {
+  0% {
+    transform: translate3d(calc(var(--repel-x) - 4px), calc(var(--repel-y) + 3px), 0) rotate(-0.35deg);
+  }
+  50% {
+    transform: translate3d(calc(var(--repel-x) + 4px), calc(var(--repel-y) - 5px), 0) rotate(0.45deg);
+  }
+  100% {
+    transform: translate3d(calc(var(--repel-x) + 7px), calc(var(--repel-y) + 6px), 0) rotate(0.8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index2-peek-slideshow .floating-face {
+    animation: none !important;
+    transform: translate3d(var(--repel-x), var(--repel-y), 0) !important;
+  }
+}
+
+/* Index 2: restore original floating-face arc geometry; CSS drift only translates the whole face. */
+.index2-peek-slideshow .floating-face-arc {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  display: block !important;
+  inset: auto !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transform: translate(-50%, -50%) rotate(-32deg) !important;
+  transform-origin: center !important;
+}
+
+.index2-peek-slideshow .floating-face-arc circle {
+  fill: none !important;
+  stroke-width: 6 !important;
+  stroke-linecap: round !important;
+  stroke-dasharray: 278 82 !important;
+}
+
+.index2-peek-slideshow .face-two .floating-face-arc,
+.index2-peek-slideshow .face-six .floating-face-arc,
+.index2-peek-slideshow .face-ten .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(58deg) !important;
+}
+
+.index2-peek-slideshow .face-three .floating-face-arc,
+.index2-peek-slideshow .face-seven .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(148deg) !important;
+}
+
+.index2-peek-slideshow .face-four .floating-face-arc,
+.index2-peek-slideshow .face-eight .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(236deg) !important;
+}
+
+.index2-peek-slideshow .floating-face img {
+  animation: none !important;
+  transform: none !important;
+}
+
+@keyframes floatingFaceWrapperDrift {
+  0% {
+    transform: translate3d(calc(var(--repel-x) - 3px), calc(var(--repel-y) + 2px), 0);
+  }
+  50% {
+    transform: translate3d(calc(var(--repel-x) + 3px), calc(var(--repel-y) - 4px), 0);
+  }
+  100% {
+    transform: translate3d(calc(var(--repel-x) + 5px), calc(var(--repel-y) + 4px), 0);
+  }
+}
+
+/* Index 2: correct split - outer face handles JS repulsion, inner face handles CSS idle float. */
+.index2-peek-slideshow .floating-face {
+  --repel-x: 0px;
+  --repel-y: 0px;
+  animation: none !important;
+  transform: translate3d(var(--repel-x), var(--repel-y), 0) !important;
+  transition: transform 0.24s ease-out;
+  will-change: transform;
+}
+
+.index2-peek-slideshow .floating-face-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: floatingFaceInnerDrift 7.6s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.index2-peek-slideshow .floating-face-arc {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  display: block !important;
+  inset: auto !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transform: translate(-50%, -50%) rotate(-32deg) !important;
+  transform-origin: center !important;
+}
+
+.index2-peek-slideshow .floating-face img {
+  position: relative;
+  z-index: 1;
+  animation: none !important;
+  transform: none !important;
+}
+
+.index2-peek-slideshow .face-two .floating-face-arc,
+.index2-peek-slideshow .face-six .floating-face-arc,
+.index2-peek-slideshow .face-ten .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(58deg) !important;
+}
+
+.index2-peek-slideshow .face-three .floating-face-arc,
+.index2-peek-slideshow .face-seven .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(148deg) !important;
+}
+
+.index2-peek-slideshow .face-four .floating-face-arc,
+.index2-peek-slideshow .face-eight .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(236deg) !important;
+}
+
+.index2-peek-slideshow .floating-face-arc circle {
+  fill: none !important;
+  stroke-width: 6 !important;
+  stroke-linecap: round !important;
+  stroke-dasharray: 278 82 !important;
+}
+
+.index2-peek-slideshow .face-one .floating-face-inner { animation-duration: 7.4s; animation-delay: 0s; }
+.index2-peek-slideshow .face-two .floating-face-inner { animation-duration: 8.4s; animation-delay: -1.2s; }
+.index2-peek-slideshow .face-three .floating-face-inner { animation-duration: 7.9s; animation-delay: -2s; }
+.index2-peek-slideshow .face-four .floating-face-inner { animation-duration: 8.7s; animation-delay: -3.1s; }
+.index2-peek-slideshow .face-five .floating-face-inner { animation-duration: 8.1s; animation-delay: -1.7s; }
+.index2-peek-slideshow .face-six .floating-face-inner { animation-duration: 7.6s; animation-delay: -2.5s; }
+.index2-peek-slideshow .face-seven .floating-face-inner { animation-duration: 8.8s; animation-delay: -3.4s; }
+.index2-peek-slideshow .face-eight .floating-face-inner { animation-duration: 8.2s; animation-delay: -1.1s; }
+.index2-peek-slideshow .face-nine .floating-face-inner { animation-duration: 7.8s; animation-delay: -2.8s; }
+.index2-peek-slideshow .face-ten .floating-face-inner { animation-duration: 8.5s; animation-delay: -3.8s; }
+
+@keyframes floatingFaceInnerDrift {
+  0% {
+    transform: translate3d(-3px, 2px, 0);
+  }
+  50% {
+    transform: translate3d(3px, -4px, 0);
+  }
+  100% {
+    transform: translate3d(5px, 4px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index2-peek-slideshow .floating-face-inner {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Index 2: definitive centered arcs. SVG is kept in markup but no longer rendered. */
+.index2-peek-slideshow .floating-face-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  animation: floatingFaceInnerDrift 7.6s ease-in-out infinite alternate !important;
+  will-change: transform;
+}
+
+.index2-peek-slideshow .floating-face-arc {
+  display: none !important;
+}
+
+.index2-peek-slideshow .floating-face-inner::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -9px;
+  border-radius: 50%;
+  background: conic-gradient(from var(--floating-arc-start, -32deg), currentColor 0deg 278deg, transparent 278deg 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 6px) calc(100% - 1px), transparent calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 6px) calc(100% - 1px), transparent calc(100% - 1px));
+  pointer-events: none;
+}
+
+.index2-peek-slideshow .floating-face img {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+.index2-peek-slideshow .face-one { color: #FFFFFF !important; --floating-arc-start: -32deg; }
+.index2-peek-slideshow .face-two { color: #315CDB !important; --floating-arc-start: 58deg; }
+.index2-peek-slideshow .face-three { color: #E7239E !important; --floating-arc-start: 148deg; }
+.index2-peek-slideshow .face-four { color: #F03939 !important; --floating-arc-start: 236deg; }
+.index2-peek-slideshow .face-five { color: #F4CA35 !important; --floating-arc-start: -32deg; }
+.index2-peek-slideshow .face-six { color: #9532BE !important; --floating-arc-start: 58deg; }
+.index2-peek-slideshow .face-seven { color: #F4CA35 !important; --floating-arc-start: 148deg; }
+.index2-peek-slideshow .face-eight { color: #108032 !important; --floating-arc-start: 236deg; }
+.index2-peek-slideshow .face-nine { color: #FFFFFF !important; --floating-arc-start: -32deg; }
+.index2-peek-slideshow .face-ten { color: #315CDB !important; --floating-arc-start: 58deg; }
+
+/* Index 2: final SVG arcs - centered, rounded, and tied to the floating inner wrapper. */
+.index2-peek-slideshow .floating-face-inner::before {
+  content: none !important;
+}
+
+.index2-peek-slideshow .floating-face-arc {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  display: block !important;
+  inset: auto !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transform: translate(-50%, -50%) rotate(-32deg) !important;
+  transform-origin: center !important;
+}
+
+.index2-peek-slideshow .floating-face-arc circle {
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 6 !important;
+  stroke-linecap: round !important;
+  stroke-dasharray: 278 82 !important;
+}
+
+.index2-peek-slideshow .face-two .floating-face-arc,
+.index2-peek-slideshow .face-six .floating-face-arc,
+.index2-peek-slideshow .face-ten .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(58deg) !important;
+}
+
+.index2-peek-slideshow .face-three .floating-face-arc,
+.index2-peek-slideshow .face-seven .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(148deg) !important;
+}
+
+.index2-peek-slideshow .face-four .floating-face-arc,
+.index2-peek-slideshow .face-eight .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(236deg) !important;
+}
+
+/* Index 2: real fix - center SVG with translate only; rotate the inner circle, never the SVG box. */
+.index2-peek-slideshow .floating-face-arc {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  display: block !important;
+  inset: auto !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center !important;
+}
+
+.index2-peek-slideshow .floating-face-arc circle {
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 6 !important;
+  stroke-linecap: round !important;
+  stroke-dasharray: 278 82 !important;
+  transform: rotate(var(--floating-arc-rotation, -32deg)) !important;
+  transform-origin: 50px 50px !important;
+}
+
+.index2-peek-slideshow .face-one { --floating-arc-rotation: -32deg; }
+.index2-peek-slideshow .face-two { --floating-arc-rotation: 58deg; }
+.index2-peek-slideshow .face-three { --floating-arc-rotation: 148deg; }
+.index2-peek-slideshow .face-four { --floating-arc-rotation: 236deg; }
+.index2-peek-slideshow .face-five { --floating-arc-rotation: -32deg; }
+.index2-peek-slideshow .face-six { --floating-arc-rotation: 58deg; }
+.index2-peek-slideshow .face-seven { --floating-arc-rotation: 148deg; }
+.index2-peek-slideshow .face-eight { --floating-arc-rotation: 236deg; }
+.index2-peek-slideshow .face-nine { --floating-arc-rotation: -32deg; }
+.index2-peek-slideshow .face-ten { --floating-arc-rotation: 58deg; }
+
+/* Index 2: final authoritative arc rendering - CSS ring is centered on the face; SVG cannot drift. */
+.index2-peek-slideshow .floating-face-arc {
+  display: none !important;
+}
+
+.index2-peek-slideshow .floating-face-inner::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  inset: -8px !important;
+  border-radius: 50% !important;
+  background: conic-gradient(from var(--floating-arc-rotation, -32deg), currentColor 0deg 268deg, transparent 268deg 360deg) !important;
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 6px) calc(100% - 1px), transparent calc(100% - 1px)) !important;
+  mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 calc(100% - 6px) calc(100% - 1px), transparent calc(100% - 1px)) !important;
+  pointer-events: none !important;
+}
+
+.index2-peek-slideshow .floating-face img {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Index 2: requested compact more spacing. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+  width: 66px !important;
+  height: 66px !important;
+  margin-left: -18px;
+  margin-right: -18px;
+}
+
+/* Index 2: restore reference SVG arc appearance. */
+.index2-peek-slideshow .floating-face-inner::before {
+  content: none !important;
+}
+
+.index2-peek-slideshow .floating-face-arc {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  display: block !important;
+  inset: auto !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center !important;
+}
+
+.index2-peek-slideshow .floating-face-arc circle {
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 6 !important;
+  stroke-linecap: round !important;
+  stroke-dasharray: 278 82 !important;
+  transform: none !important;
+  transform-origin: initial !important;
+}
+
+.index2-peek-slideshow .floating-face img {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Index 2: exact original SVG arc geometry from reference. */
+.index2-peek-slideshow .floating-face-inner::before {
+  content: none !important;
+}
+
+.index2-peek-slideshow .floating-face-arc {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  display: block !important;
+  inset: auto !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transform: translate(-50%, -50%) rotate(-32deg) !important;
+  transform-origin: center center !important;
+}
+
+.index2-peek-slideshow .face-two .floating-face-arc,
+.index2-peek-slideshow .face-six .floating-face-arc,
+.index2-peek-slideshow .face-ten .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(58deg) !important;
+}
+
+.index2-peek-slideshow .face-three .floating-face-arc,
+.index2-peek-slideshow .face-seven .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(148deg) !important;
+}
+
+.index2-peek-slideshow .face-four .floating-face-arc,
+.index2-peek-slideshow .face-eight .floating-face-arc {
+  transform: translate(-50%, -50%) rotate(236deg) !important;
+}
+
+.index2-peek-slideshow .floating-face-arc circle {
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 6 !important;
+  stroke-linecap: round !important;
+  stroke-dasharray: 278 82 !important;
+  transform: none !important;
+}
+
+/* Index 2: currency bubble uses image asset instead of text symbol. */
+.index2-peek-slideshow .support-donation-currency img {
+  display: block;
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-currency img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Index 2: floating CTA SVG arc wrapper centering. */
+.index2-peek-slideshow .floating-cta-section .floating-face-inner {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .floating-face-inner::before {
+  content: none !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .floating-face-arc-wrap {
+  position: absolute !important;
+  z-index: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .floating-face-arc {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  display: block !important;
+  inset: auto !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transform: none !important;
+  translate: -50% -50% !important;
+  rotate: -32deg !important;
+  transform-origin: center center !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .face-two .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-six .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-ten .floating-face-arc {
+  rotate: 58deg !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .face-three .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-seven .floating-face-arc {
+  rotate: 148deg !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .face-four .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-eight .floating-face-arc {
+  rotate: 236deg !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .floating-face-arc circle {
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 6 !important;
+  stroke-linecap: round !important;
+  stroke-dasharray: 278 82 !important;
+  transform: none !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .floating-face img {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Index 2: hard center SVG arcs inside the new wrapper. */
+.index2-peek-slideshow .floating-cta-section .floating-face-arc-wrap {
+  position: absolute !important;
+  z-index: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .floating-face-arc {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  inset: auto !important;
+  display: block !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  translate: none !important;
+  rotate: none !important;
+  transform: rotate(-32deg) !important;
+  transform-origin: center center !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .face-two .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-six .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-ten .floating-face-arc {
+  transform: rotate(58deg) !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .face-three .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-seven .floating-face-arc {
+  transform: rotate(148deg) !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .face-four .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-eight .floating-face-arc {
+  transform: rotate(236deg) !important;
+}
+
+/* Index 2: SVG box stays centered; JS rotates only the circle path around its computed center. */
+.index2-peek-slideshow .floating-cta-section .floating-face-arc {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  inset: auto !important;
+  display: block !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  translate: none !important;
+  rotate: none !important;
+  transform: none !important;
+  transform-origin: center center !important;
+}
+
+/* Index 2: final arc centering uses JS pixel margins, so no SVG translate/rotate remains. */
+.index2-peek-slideshow .floating-cta-section .floating-face-arc {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  inset: auto !important;
+  display: block !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transform: none !important;
+  translate: none !important;
+  rotate: none !important;
+  transform-origin: center center !important;
+}
+
+.index2-peek-slideshow .floating-cta-section .face-one .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-two .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-three .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-four .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-five .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-six .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-seven .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-eight .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-nine .floating-face-arc,
+.index2-peek-slideshow .floating-cta-section .face-ten .floating-face-arc {
+  transform: none !important;
+  translate: none !important;
+  rotate: none !important;
+}
+
+/* Index 2: final position order - inset first, top/left last. */
+.index2-peek-slideshow .floating-cta-section .floating-face-arc {
+  position: absolute !important;
+  inset: auto !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  display: block !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transform: none !important;
+  translate: none !important;
+  rotate: none !important;
+  transform-origin: center center !important;
+}
+
+/* Index 2: stronger default floating motion for CTA faces. */
+@keyframes floatingFaceInnerDrift {
+  0% {
+    transform: translate3d(-10px, 7px, 0);
+  }
+  50% {
+    transform: translate3d(8px, -11px, 0);
+  }
+  100% {
+    transform: translate3d(12px, 9px, 0);
+  }
+}
+
+/* Index 2: keep CTA face drift staggered after stronger motion override. */
+.index2-peek-slideshow .floating-cta-section .face-one .floating-face-inner { animation-duration: 7.4s !important; animation-delay: 0s !important; }
+.index2-peek-slideshow .floating-cta-section .face-two .floating-face-inner { animation-duration: 8.4s !important; animation-delay: -1.2s !important; }
+.index2-peek-slideshow .floating-cta-section .face-three .floating-face-inner { animation-duration: 7.9s !important; animation-delay: -2s !important; }
+.index2-peek-slideshow .floating-cta-section .face-four .floating-face-inner { animation-duration: 8.7s !important; animation-delay: -3.1s !important; }
+.index2-peek-slideshow .floating-cta-section .face-five .floating-face-inner { animation-duration: 8.1s !important; animation-delay: -1.7s !important; }
+.index2-peek-slideshow .floating-cta-section .face-six .floating-face-inner { animation-duration: 7.6s !important; animation-delay: -2.5s !important; }
+.index2-peek-slideshow .floating-cta-section .face-seven .floating-face-inner { animation-duration: 8.8s !important; animation-delay: -3.4s !important; }
+.index2-peek-slideshow .floating-cta-section .face-eight .floating-face-inner { animation-duration: 8.2s !important; animation-delay: -1.1s !important; }
+.index2-peek-slideshow .floating-cta-section .face-nine .floating-face-inner { animation-duration: 7.8s !important; animation-delay: -2.8s !important; }
+.index2-peek-slideshow .floating-cta-section .face-ten .floating-face-inner { animation-duration: 8.5s !important; animation-delay: -3.8s !important; }
+
+/* Index 2: slightly stronger CTA face drift. */
+@keyframes floatingFaceInnerDrift {
+  0% {
+    transform: translate3d(-15px, 10px, 0);
+  }
+  50% {
+    transform: translate3d(12px, -16px, 0);
+  }
+  100% {
+    transform: translate3d(17px, 13px, 0);
+  }
+}
+
+/* Index 2: drawn plus/minus for quick donation more button, no Font Awesome. */
+.index2-peek-slideshow .support-donation-choice-more .support-donation-more-icon {
+  position: relative !important;
+  display: block !important;
+  width: 34px !important;
+  height: 34px !important;
+  pointer-events: none !important;
+}
+
+.index2-peek-slideshow .support-donation-choice-more .support-donation-more-icon::before,
+.index2-peek-slideshow .support-donation-choice-more .support-donation-more-icon::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 34px !important;
+  height: 5px !important;
+  border-radius: 999px !important;
+  background: currentColor !important;
+  transform: translate(-50%, -50%) !important;
+  transition: transform 0.22s ease, opacity 0.22s ease !important;
+}
+
+.index2-peek-slideshow .support-donation-choice-more .support-donation-more-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg) !important;
+}
+
+.index2-peek-slideshow .support-donation-choice-more .support-donation-more-icon.is-minus::after {
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) rotate(90deg) scaleX(0.2) !important;
+}
+
+/* Index 2: requested quick donation choice shadow. */
+.index2-peek-slideshow .support-donation-strip .support-donation-choice {
+  border: 0;
+  color: #111;
+  box-shadow: 10px 10px 20px rgba(20, 49, 40, 0.25);
+}
+
+/* Index 2: requested compact more spacing adjustment. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+  width: 66px !important;
+  height: 66px !important;
+  margin-left: -14px;
+  margin-right: -16px;
+}
+
+/* Index 2: requested quick donation submit border/shadow. */
+.index2-peek-slideshow .support-donation-submit {
+  border-width: 7px !important;
+  box-shadow: 10px 10px 20px rgba(20, 49, 40, 0.25);
+}
+
+/* Index 2: pencil hover blue; open state shows pink close icon. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+  color: #111 !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more:hover,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more:focus-visible {
+  color: #315CDB !important;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more.is-close {
+  color: #EB1E86 !important;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more.is-close:hover,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more.is-close:focus-visible {
+  color: #EB1E86 !important;
+}
+
+/* Index 2: force Font Awesome icon to inherit pencil/close state colors. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more i {
+  color: currentColor !important;
+}
+
+/* Index 2: close icon black by default, pink only on hover/focus. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more.is-close {
+  color: #111 !important;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more.is-close:hover,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more.is-close:focus-visible {
+  color: #EB1E86 !important;
+}
+
+/* Index 2: normal quick donation strip keeps simple blue outline and base shadow. */
+.index2-peek-slideshow .support-donation-strip {
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+  border: 6px solid #315CDB;
+  background: transparent;
+}
+
+/* Index 2: custom-open strip keeps pink layered shadow. */
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip {
+  border-color: #EB1E86 !important;
+  box-shadow: 0 -70px rgba(235, 30, 134, 0.2), 0 -35px rgba(235, 30, 134, 0.4), 0 28px 70px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Index 2: normal-only strip border is 6px; custom-open remains pink. */
+.index2-peek-slideshow .support-donation-form:not(.is-custom-open) .support-donation-strip {
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22) !important;
+  border: 6px solid #315CDB !important;
+  background: transparent !important;
+}
+
+/* Index 2: requested custom donation input width. */
+.index2-peek-slideshow .support-donation-custom {
+  width: clamp(220px, 19.5vw, 270px) !important;
+}
+
+/* Index 2: requested no padding on custom donation input wrapper. */
+.index2-peek-slideshow .support-donation-strip .support-donation-custom {
+  padding: 0 !important;
+}
+
+/* Index 2: requested currency image size. */
+.index2-peek-slideshow .support-donation-currency img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Index 2: custom input uses full available typing area with no left dead space. */
+.index2-peek-slideshow .support-donation-strip .support-donation-custom {
+  display: block !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-custom input {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 10px !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+/* Index 2: fix custom input visibility - hidden until pencil opens it. */
+.index2-peek-slideshow .support-donation-form:not(.is-custom-open) .support-donation-strip .support-donation-custom {
+  display: none !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom input {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+}
+
+/* Index 2: remove excessive left blank before custom amount text. */
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip {
+  gap: clamp(8px, 1vw, 14px) !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom input {
+  text-align: left !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Index 2: custom amount field expands left only; right spacing stays intact. */
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip {
+  gap: var(--support-strip-gap) !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom {
+  width: calc(clamp(220px, 19.5vw, 270px) + 24px) !important;
+  margin-left: -24px !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom input {
+  text-align: left !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Index 2: stronger left expansion for custom amount field, preserving right gap. */
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom {
+  width: calc(clamp(220px, 19.5vw, 270px) + 40px) !important;
+  margin-left: -40px !important;
+  margin-right: 0 !important;
+}
+
+/* Index 2: requested submit base sizing/font block. */
+.index2-peek-slideshow .support-donation-submit {
+  display: inline-flex;
+  min-width: clamp(170px, 16vw, 230px);
+  height: clamp(68px, 6.3vw, 92px);
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: #FFD532;
+  color: #111;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* Index 2: keep requested outline Give button after font-size reset. */
+.index2-peek-slideshow .support-donation-submit {
+  text-transform: uppercase !important;
+  border: 7px solid #315CDB !important;
+  background: transparent !important;
+  letter-spacing: 0.06em !important;
+  color: #315CDB !important;
+  box-shadow: 10px 10px 20px rgba(20, 49, 40, 0.25) !important;
+}
+
+.index2-peek-slideshow .support-donation-submit:hover,
+.index2-peek-slideshow .support-donation-submit:focus-visible {
+  background: #315CDB !important;
+  color: #fff !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-submit {
+  border-color: #EB1E86 !important;
+  color: #EB1E86 !important;
+}
+
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-submit:hover,
+.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-submit:focus-visible {
+  background: #EB1E86 !important;
+  border-color: #EB1E86 !important;
+  color: #fff !important;
+}
+
+/* Index 2: requested Give button font-size override. */
+.index2-peek-slideshow .support-donation-submit {
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem) !important;
+  line-height: 1 !important;
+}
+
+/* Index 2: requested Give button font size 30px. */
+.index2-peek-slideshow .support-donation-submit {
+  font-size: 30px !important;
+  line-height: 1 !important;
+}
+
+/* Index 2: static concentric pulse fill for floating CTA background. */
+.index2-peek-slideshow .floating-cta-section {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      #222 0 96px,
+      #111 96px 192px,
+      #222 192px 288px,
+      #111 288px 384px
+    ) !important;
+}
+
+/* Index 2: darker static concentric pulse fill. */
+.index2-peek-slideshow .floating-cta-section {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      #181818 0 96px,
+      #0c0c0c 96px 192px,
+      #181818 192px 288px,
+      #0c0c0c 288px 384px
+    ) !important;
+}
+
+/* Index 2: extra darker concentric pulse fill. */
+.index2-peek-slideshow .floating-cta-section {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      #0e0e0e 0 96px,
+      #070707 96px 192px,
+      #0e0e0e 192px 288px,
+      #070707 288px 384px
+    ) !important;
+}
+
+/* Index 2: slightly lighter light ring in concentric CTA fill. */
+.index2-peek-slideshow .floating-cta-section {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      #0f0f0f 0 96px,
+      #070707 96px 192px,
+      #0f0f0f 192px 288px,
+      #070707 288px 384px
+    ) !important;
+}
+
+/* Index 2: restore solid floating CTA background. */
+.index2-peek-slideshow .floating-cta-section {
+  background: #111111 !important;
 }
