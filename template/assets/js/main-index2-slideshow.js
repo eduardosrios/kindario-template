@@ -984,9 +984,10 @@ if (impactSteps) {
   syncImpactConnectors();
 }
 
-const floatingCtaCard = document.querySelector(".floating-cta-card");
+const initFloatingCtaFaces = () => {
+  const floatingCtaCard = document.querySelector(".floating-cta-card");
+  if (!floatingCtaCard) return;
 
-if (floatingCtaCard) {
   const floatingFaces = Array.from(floatingCtaCard.querySelectorAll(".floating-face"));
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const canTrackHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -1004,117 +1005,77 @@ if (floatingCtaCard) {
 
       svg.style.width = `${arcSize}px`;
       svg.style.height = `${arcSize}px`;
+      svg.style.left = "50%";
+      svg.style.top = "50%";
+      svg.style.marginLeft = `-${arcCenter}px`;
+      svg.style.marginTop = `-${arcCenter}px`;
       svg.setAttribute("viewBox", `0 0 ${arcSize} ${arcSize}`);
+      const rotation = face.classList.contains("face-two") || face.classList.contains("face-six") || face.classList.contains("face-ten")
+        ? 58
+        : face.classList.contains("face-three") || face.classList.contains("face-seven")
+          ? 148
+          : face.classList.contains("face-four") || face.classList.contains("face-eight")
+            ? 236
+            : -32;
+
       circle.setAttribute("cx", arcCenter.toFixed(2));
       circle.setAttribute("cy", arcCenter.toFixed(2));
       circle.setAttribute("r", arcRadius.toFixed(2));
+      circle.style.setProperty("transform", `rotate(${rotation}deg)`, "important");
+      circle.style.setProperty("transform-origin", `${arcCenter.toFixed(2)}px ${arcCenter.toFixed(2)}px`, "important");
+    });
+  };
+
+  const resetRepulsion = () => {
+    floatingFaces.forEach((face) => {
+      face.style.setProperty("--repel-x", "0px"); face.style.setProperty("--repel-y", "0px");
+    });
+  };
+
+  const updateRepulsion = (event) => {
+    if (reduceMotion || !canTrackHover) return;
+
+    const cardRect = floatingCtaCard.getBoundingClientRect();
+    const pointerX = event.clientX - cardRect.left;
+    const pointerY = event.clientY - cardRect.top;
+
+    floatingFaces.forEach((face) => {
+      const anchorX = face.offsetLeft + face.offsetWidth / 2;
+      const anchorY = face.offsetTop + face.offsetHeight / 2;
+      const dx = anchorX - pointerX;
+      const dy = anchorY - pointerY;
+      const distance = Math.hypot(dx, dy) || 0.001;
+      const influence = 130;
+
+      if (distance >= influence) {
+        face.style.setProperty("--repel-x", "0px"); face.style.setProperty("--repel-y", "0px");
+        return;
+      }
+
+      const force = ((influence - distance) / influence) ** 1.8;
+      const push = 30 * force;
+      const x = (dx / distance) * push;
+      const y = (dy / distance) * push;
+      face.style.setProperty("--repel-x", `${x.toFixed(2)}px`); face.style.setProperty("--repel-y", `${y.toFixed(2)}px`);
     });
   };
 
   syncFloatingFaceArcs();
+  window.addEventListener("load", syncFloatingFaceArcs);
+  window.addEventListener("resize", syncFloatingFaceArcs);
+  document.fonts?.ready.then(syncFloatingFaceArcs);
 
-  if (!reduceMotion && floatingFaces.length) {
-    const pointer = {
-      active: false,
-      x: 0,
-      y: 0
-    };
-
-    let cardRect = floatingCtaCard.getBoundingClientRect();
-    let animationFrame;
-
-    const faceStates = floatingFaces.map((face, index) => ({
-      face,
-      anchorX: 0,
-      anchorY: 0,
-      radiusX: 5 + (index % 3) * 1.5,
-      radiusY: 6 + (index % 4) * 1.25,
-      phase: index * 0.85,
-      speed: 0.9 + index * 0.06,
-      x: 0,
-      y: 0,
-      vx: 0,
-      vy: 0
-    }));
-
-    const syncAnchors = () => {
-      cardRect = floatingCtaCard.getBoundingClientRect();
-
-      faceStates.forEach((state) => {
-        state.anchorX = state.face.offsetLeft + state.face.offsetWidth / 2;
-        state.anchorY = state.face.offsetTop + state.face.offsetHeight / 2;
-      });
-    };
-
-    const updatePointer = (event) => {
-      cardRect = floatingCtaCard.getBoundingClientRect();
-      pointer.active = true;
-      pointer.x = event.clientX - cardRect.left;
-      pointer.y = event.clientY - cardRect.top;
-    };
-
-    const releasePointer = () => {
-      pointer.active = false;
-    };
-
-    const tick = (time) => {
-      const timeSeconds = time / 1000;
-
-      faceStates.forEach((state) => {
-        const idleX = Math.cos(timeSeconds * state.speed + state.phase) * state.radiusX;
-        const idleY = Math.sin(timeSeconds * (state.speed + 0.18) + state.phase) * state.radiusY;
-        let targetX = idleX;
-        let targetY = idleY;
-
-        if (pointer.active) {
-          const dx = state.anchorX + state.x - pointer.x;
-          const dy = state.anchorY + state.y - pointer.y;
-          const distance = Math.hypot(dx, dy) || 0.001;
-          const influence = 130;
-
-          if (distance < influence) {
-            const force = ((influence - distance) / influence) ** 1.8;
-            const push = 30 * force;
-            targetX += (dx / distance) * push;
-            targetY += (dy / distance) * push;
-          }
-        }
-
-        state.vx += (targetX - state.x) * 0.12;
-        state.vy += (targetY - state.y) * 0.12;
-        state.vx *= 0.8;
-        state.vy *= 0.8;
-        state.x += state.vx;
-        state.y += state.vy;
-
-        state.face.style.transform = `translate3d(${state.x.toFixed(2)}px, ${state.y.toFixed(2)}px, 0)`;
-      });
-
-      animationFrame = window.requestAnimationFrame(tick);
-    };
-
-    syncFloatingFaceArcs();
-    syncAnchors();
-
-    if (canTrackHover) {
-      floatingCtaCard.addEventListener("mousemove", updatePointer);
-      floatingCtaCard.addEventListener("mouseenter", updatePointer);
-      floatingCtaCard.addEventListener("mouseleave", releasePointer);
-    }
-
-    window.addEventListener("resize", () => {
-      syncFloatingFaceArcs();
-      syncAnchors();
-    });
+  if (canTrackHover && !reduceMotion) {
+    floatingCtaCard.addEventListener("mousemove", updateRepulsion);
+    floatingCtaCard.addEventListener("mouseenter", updateRepulsion);
+    floatingCtaCard.addEventListener("mouseleave", resetRepulsion);
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        releasePointer();
-      }
+      if (document.hidden) resetRepulsion();
     });
-
-    animationFrame = window.requestAnimationFrame(tick);
   }
-}
+};
+
+initFloatingCtaFaces();
 
 document.querySelectorAll(".course-feature-wide").forEach((courseFeatureWaveCard) => {
   const outerWave = courseFeatureWaveCard.querySelector(".course-feature-wave--outer");
@@ -1451,3 +1412,48 @@ if (logoCarousel) {
   updateLogoCarousel();
   restartAutoAdvance();
 }
+
+const initSupportDonationToggle = () => {
+  const forms = Array.from(document.querySelectorAll(".support-donation-form"));
+
+  forms.forEach((form) => {
+    const toggle = form.querySelector("[data-support-donation-toggle]");
+    const icon = toggle?.querySelector("i");
+    const customInput = form.querySelector(".support-donation-custom input");
+    if (!toggle || !icon) return;
+
+    const setCustomOpen = (isOpen) => {
+      form.classList.toggle("is-custom-open", isOpen);
+      toggle.classList.toggle("is-close", isOpen);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Hide custom donation amount" : "Enter custom donation amount");
+      icon.classList.toggle("fa-pencil", !isOpen);
+      icon.classList.toggle("fa-xmark", isOpen);
+
+      if (isOpen) {
+        window.setTimeout(() => customInput?.focus(), 0);
+      }
+    };
+
+    setCustomOpen(false);
+    toggle.addEventListener("click", (event) => {
+      event.preventDefault();
+      setCustomOpen(!form.classList.contains("is-custom-open"));
+    });
+  });
+};
+
+initSupportDonationToggle();
+
+const initNumericDonationInputs = () => {
+  const inputs = Array.from(document.querySelectorAll(".support-donation-custom input[type='text']"));
+
+  inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      const numericValue = input.value.replace(/\D/g, "");
+      if (input.value !== numericValue) input.value = numericValue;
+    });
+  });
+};
+
+initNumericDonationInputs();
