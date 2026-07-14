@@ -16002,4 +16002,8 @@ body.index2-peek-slideshow .donate-marquee {
 .index2-peek-slideshow .footer-cta h2::first-letter,
 .index2-peek-slideshow .footer-cta-panel h2::first-letter {
   color: #ffffff !important;
+}/* Index 2: give footer CTA title section-like breathing room at the top. */
+.index2-peek-slideshow .footer-cta-panel {
+  justify-content: flex-start;
+  padding-top: calc(clamp(96px, 7vw, 132px) + 80px);
 }
