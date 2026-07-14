@@ -9825,12 +9825,12 @@ body.index2-peek-slideshow {
 
 .index2-peek-slideshow .hero-body {
   height: clamp(650px, 40.8vw, 775px);
-  padding: 0 0 38px;
+  padding: 0 0 var(--slide-gap);
 }
 
 .index2-peek-slideshow .hero-slide {
   top: 0;
-  bottom: 38px;
+  bottom: var(--slide-gap);
   border-radius: 4px;
   background-position: center center;
   filter: saturate(0.92) brightness(0.76);
