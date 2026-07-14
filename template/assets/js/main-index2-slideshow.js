@@ -836,7 +836,7 @@ if (footerDonateForm) {
     event.preventDefault();
 
     if (footerInput && !footerInput.validity.valid) {
-      footerNote.textContent = "Enter a valid email to receive field updates.";
+      footerNote.textContent = "Enter a valid email to subscribe to the newsletter.";
       footerNote.dataset.state = "error";
       footerInput.focus();
       return;
@@ -846,13 +846,23 @@ if (footerDonateForm) {
     if (!submitButton) return;
 
     const originalText = submitButton.textContent;
-    submitButton.textContent = "Route saved";
-    footerNote.textContent = "Your field update route was saved.";
+    const originalLabel = submitButton.getAttribute("aria-label");
+    const iconOnlySubmit = Boolean(submitButton.querySelector("i"));
+    if (iconOnlySubmit) {
+      submitButton.setAttribute("aria-label", "Subscribed to newsletter");
+    } else {
+      submitButton.textContent = "Subscribed";
+    }
+    footerNote.textContent = "You are subscribed to the newsletter.";
     footerNote.dataset.state = "success";
     submitButton.disabled = true;
 
     window.setTimeout(() => {
-      submitButton.textContent = originalText;
+      if (iconOnlySubmit) {
+        if (originalLabel) submitButton.setAttribute("aria-label", originalLabel);
+      } else {
+        submitButton.textContent = originalText;
+      }
       submitButton.disabled = false;
       footerNote.textContent = "";
       delete footerNote.dataset.state;
