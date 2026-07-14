@@ -15992,3 +15992,14 @@ body.index2-peek-slideshow .donate-marquee {
 .index2-peek-slideshow .floating-cta-section {
   background: #111111 !important;
 }
+/* Index 2: footer title circle and first letter use official red treatment. */
+.index2-peek-slideshow .footer-cta h2::before,
+.index2-peek-slideshow .footer-cta-panel h2::before {
+  background: #F03939;
+  box-shadow: 0 -70px rgba(240, 57, 57, 0.2), 0 -35px rgba(240, 57, 57, 0.4);
+}
+
+.index2-peek-slideshow .footer-cta h2::first-letter,
+.index2-peek-slideshow .footer-cta-panel h2::first-letter {
+  color: #ffffff !important;
+}
