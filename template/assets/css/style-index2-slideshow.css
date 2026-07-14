@@ -16100,4 +16100,51 @@ body.index2-peek-slideshow .donate-marquee {
   .index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
     grid-template-columns: 1fr;
   }
+}/* Index 2: normalize footer newsletter card spacing to 30px. */
+.index2-peek-slideshow .footer-newsletter-card {
+  padding: 30px;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy p {
+  margin-top: 16px;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy ul {
+  margin-top: 30px;
+  gap: 12px 30px;
+}
+
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  padding: 18px;
+  border-radius: 6px;
+  background: #fff6e7;
+  margin-top: 18px;
+}
+
+.index2-peek-slideshow .footer-newsletter-form label {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: transparent;
+}
+
+.index2-peek-slideshow .footer-newsletter-form label,
+.index2-peek-slideshow .footer-newsletter-form input {
+  height: 58px;
+  min-height: 58px;
+}
+
+.index2-peek-slideshow .footer-newsletter-form input {
+  padding: 0 24px;
+}
+
+.index2-peek-slideshow .footer-newsletter-consent {
+  margin-top: 18px;
+}
+
+.index2-peek-slideshow .footer-newsletter-form .footer-form-note:empty {
+  display: none;
 }
