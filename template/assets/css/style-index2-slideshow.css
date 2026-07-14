@@ -16006,4 +16006,98 @@ body.index2-peek-slideshow .donate-marquee {
 .index2-peek-slideshow .footer-cta-panel {
   justify-content: flex-start;
   padding-top: calc(clamp(96px, 7vw, 132px) + 80px);
+}/* Index 2: footer newsletter subscription form. */
+.index2-peek-slideshow .footer-newsletter-form {
+  grid-template-columns: minmax(260px, 1fr) minmax(160px, 0.38fr);
+  max-width: 780px;
+}
+
+.index2-peek-slideshow .footer-newsletter-form label {
+  min-width: 0;
+}
+
+.index2-peek-slideshow .footer-newsletter-form input {
+  font-weight: 800;
+}
+
+.index2-peek-slideshow .footer-newsletter-form button {
+  padding: 0 34px;
+}
+/* Index 2: black newsletter content wrapper in footer CTA. */
+.index2-peek-slideshow .footer-newsletter-card {
+  width: min(780px, 100%);
+  margin-top: 40px;
+  padding: clamp(26px, 2.6vw, 38px);
+  border-radius: 6px;
+  background: #111111;
+  color: #ffffff;
+  text-align: left;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy h3 {
+  margin: 0;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: clamp(1.5rem, 2.15vw, 2.45rem);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy p {
+  max-width: 600px;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 999px;
+  background: #FFD532;
+}
+
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
+  width: 100%;
+  max-width: none;
+  margin-top: 24px;
+  filter: none;
+}
+
+.index2-peek-slideshow .footer-newsletter-consent {
+  max-width: 620px;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
+    grid-template-columns: 1fr;
+  }
 }
