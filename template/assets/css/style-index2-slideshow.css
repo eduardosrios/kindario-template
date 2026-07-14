@@ -1834,7 +1834,6 @@ select {
 .course-feature-purple {
   display: flex;
   flex-direction: column;
-  background: #FFD532;
   justify-content: center;
   min-height: 272px;
   padding: 30px;
@@ -4027,7 +4026,6 @@ select {
   grid-row: 4 / span 2;
   display: flex;
   flex-direction: column;
-  background: #FFD532;
   justify-content: center;
   align-items: center;
   background: var(--blue);
@@ -16002,11 +16000,13 @@ body.index2-peek-slideshow .donate-marquee {
 .index2-peek-slideshow .footer-cta h2::first-letter,
 .index2-peek-slideshow .footer-cta-panel h2::first-letter {
   color: #ffffff !important;
-}/* Index 2: give footer CTA title section-like breathing room at the top. */
+}
+/* Index 2: give footer CTA title section-like breathing room at the top. */
 .index2-peek-slideshow .footer-cta-panel {
   justify-content: flex-start;
   padding-top: calc(clamp(96px, 7vw, 132px) + 80px);
-}/* Index 2: footer newsletter subscription form. */
+}
+/* Index 2: footer newsletter subscription form. */
 .index2-peek-slideshow .footer-newsletter-form {
   grid-template-columns: minmax(260px, 1fr) minmax(160px, 0.38fr);
   max-width: 780px;
@@ -16022,6 +16022,30 @@ body.index2-peek-slideshow .donate-marquee {
 
 .index2-peek-slideshow .footer-newsletter-form button {
   padding: 0 34px;
+}
+/* Index 2: compact footer newsletter form after label removal. */
+.index2-peek-slideshow .footer-newsletter-form {
+  align-items: stretch;
+}
+
+.index2-peek-slideshow .footer-newsletter-form label,
+.index2-peek-slideshow .footer-newsletter-form button {
+  min-height: 72px;
+}
+
+.index2-peek-slideshow .footer-newsletter-form label {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.index2-peek-slideshow .footer-newsletter-form input {
+  min-height: 72px;
+  padding: 0 24px;
+}
+
+.index2-peek-slideshow .footer-newsletter-form button {
+  padding: 0 28px;
 }
 /* Index 2: black newsletter content wrapper in footer CTA. */
 .index2-peek-slideshow .footer-newsletter-card {
@@ -16091,8 +16115,8 @@ body.index2-peek-slideshow .donate-marquee {
   max-width: 620px;
   margin: 14px 0 0;
   color: rgba(255, 255, 255, 0.58);
-  font-size: 0.92rem;
-  font-weight: 500;
+  font-size: 0.74rem;
+  font-weight: 700;
   line-height: 1.45;
 }
 
@@ -16100,51 +16124,303 @@ body.index2-peek-slideshow .donate-marquee {
   .index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
     grid-template-columns: 1fr;
   }
-}/* Index 2: normalize footer newsletter card spacing to 30px. */
+}
+/* Index 2: shorter footer newsletter consent with slightly larger type. */
+.index2-peek-slideshow .footer-newsletter-consent {
+  font-size: 0.82rem;
+}
+/* Index 2: refine footer newsletter consent emphasis. */
+.index2-peek-slideshow .footer-newsletter-consent {
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+/* Index 2: normalize footer newsletter card spacing to 30px. */
 .index2-peek-slideshow .footer-newsletter-card {
   padding: 30px;
 }
 
+.index2-peek-slideshow .footer-newsletter-copy p,
+.index2-peek-slideshow .footer-newsletter-copy ul,
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form,
+.index2-peek-slideshow .footer-newsletter-consent {
+  margin-top: 30px;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy ul {
+  gap: 12px 30px;
+}
+/* Index 2: keep footer newsletter button inside the white form strip. */
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #fff6e7;
+}
+
+.index2-peek-slideshow .footer-newsletter-form label {
+  background: transparent;
+}
+
+.index2-peek-slideshow .footer-newsletter-form label,
+.index2-peek-slideshow .footer-newsletter-form input,
+.index2-peek-slideshow .footer-newsletter-form button {
+  min-height: 56px;
+}
+
+.index2-peek-slideshow .footer-newsletter-form button {
+  min-width: 160px;
+}
+/* Index 2: tighter footer newsletter title and consent spacing. */
 .index2-peek-slideshow .footer-newsletter-copy p {
   margin-top: 16px;
 }
 
-.index2-peek-slideshow .footer-newsletter-copy ul {
-  margin-top: 30px;
-  gap: 12px 30px;
+.index2-peek-slideshow .footer-newsletter-consent {
+  margin-top: 14px;
+}
+/* Index 2: equal vertical inset inside footer newsletter white strip. */
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
+  align-items: center;
+  grid-auto-rows: 56px;
 }
 
+.index2-peek-slideshow .footer-newsletter-form label,
+.index2-peek-slideshow .footer-newsletter-form input,
+.index2-peek-slideshow .footer-newsletter-form button {
+  height: 56px;
+  min-height: 56px;
+}
+/* Index 2: prevent empty form note from adding vertical space. */
 .index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 18px;
-  padding: 18px;
-  border-radius: 6px;
-  background: #fff6e7;
+  grid-auto-rows: auto;
+}
+
+.index2-peek-slideshow .footer-newsletter-form .footer-form-note:empty {
+  display: none;
+}
+/* Index 2: icon-only footer newsletter submit button. */
+.index2-peek-slideshow .footer-newsletter-form button {
+  gap: 10px;
+  font-size: 1.25rem;
+}
+
+.index2-peek-slideshow .footer-newsletter-form button .fa-regular {
+  line-height: 1;
+}
+/* Index 2: tighter gap between footer newsletter benefits and form. */
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
   margin-top: 18px;
 }
-
-.index2-peek-slideshow .footer-newsletter-form label {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  background: transparent;
+/* Index 2: footer newsletter button icon and compact label. */
+.index2-peek-slideshow .footer-newsletter-form button {
+  font-size: 0.95rem;
+  gap: 9px;
 }
 
+.index2-peek-slideshow .footer-newsletter-form button .fa-solid {
+  font-size: 0.92rem;
+  line-height: 1;
+}
+/* Index 2: more breathing room around footer newsletter submit button. */
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
+  padding: 14px;
+  gap: 12px;
+}
+
+.index2-peek-slideshow .footer-newsletter-form label,
+.index2-peek-slideshow .footer-newsletter-form input,
+.index2-peek-slideshow .footer-newsletter-form button {
+  height: 62px;
+  min-height: 62px;
+}
+
+.index2-peek-slideshow .footer-newsletter-form button {
+  min-width: 176px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+/* Index 2: top Donate Now CTA requested 58px height. */
+.index2-peek-slideshow .hero-nav-cta-wrap .hero-nav-cta,
+.index2-peek-slideshow .hero-shell[data-hero-slide="0"] .hero-nav-cta,
+.index2-peek-slideshow .hero-shell[data-hero-slide="1"] .hero-nav-cta,
+.index2-peek-slideshow .hero-shell[data-hero-slide="2"] .hero-nav-cta,
+.index2-peek-slideshow .hero-shell[data-hero-slide="3"] .hero-nav-cta,
+.index2-peek-slideshow .hero-shell[data-hero-slide="4"] .hero-nav-cta {
+  height: 58px;
+  min-height: 58px;
+}
+/* Index 2: equal newsletter form vertical gaps. */
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form,
+.index2-peek-slideshow .footer-newsletter-consent {
+  margin-top: 18px;
+}
+/* Index 2: footer newsletter submit matches Donate Now pill with paper-plane icon. */
+.index2-peek-slideshow .footer-newsletter-form button {
+  justify-content: center;
+  gap: 20px;
+  min-width: 0;
+  height: 58px;
+  min-height: 58px;
+  padding: 0 20px 0 25px;
+  border-radius: 6px;
+  font-size: 1.105rem;
+}
+
+.index2-peek-slideshow .footer-newsletter-submit-icon {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--orange);
+}
+
+.index2-peek-slideshow .footer-newsletter-submit-icon .fa-solid {
+  font-size: 15px;
+  line-height: 1;
+  transform: translateX(-1px);
+}
+/* Index 2: final footer Subscribe button match to top Donate Now CTA. */
+.index2-peek-slideshow .footer-newsletter-form button {
+  height: 58px;
+  min-height: 58px;
+  min-width: 0;
+  padding: 0 20px 0 25px;
+  border-radius: 6px;
+  background: #315cdb;
+  color: #ffffff;
+  font-size: 1.105rem;
+  font-weight: 800;
+  text-transform: none;
+  justify-content: center;
+  gap: 20px;
+  transition: background 220ms ease, color 220ms ease, transform 180ms ease;
+}
+
+.index2-peek-slideshow .footer-newsletter-form button:hover,
+.index2-peek-slideshow .footer-newsletter-form button:focus-visible {
+  background: #254ec8;
+  color: #ffffff;
+}
+
+.index2-peek-slideshow .footer-newsletter-submit-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  background: #ffffff;
+  color: #315cdb;
+}
+
+.index2-peek-slideshow .footer-newsletter-submit-icon .fa-solid {
+  font-size: 15px;
+  line-height: 1;
+}
+/* Index 2: equal larger white-strip inset around newsletter button. */
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
+  padding: 18px;
+  gap: 18px;
+}
+/* Index 2: align newsletter input row to button height for exact inset match. */
 .index2-peek-slideshow .footer-newsletter-form label,
 .index2-peek-slideshow .footer-newsletter-form input {
   height: 58px;
   min-height: 58px;
 }
-
-.index2-peek-slideshow .footer-newsletter-form input {
-  padding: 0 24px;
+/* Index 2: Subscribe button hover mirrors Donate Now icon travel. */
+.index2-peek-slideshow .footer-newsletter-form button {
+  position: relative;
+  overflow: hidden;
 }
 
-.index2-peek-slideshow .footer-newsletter-consent {
-  margin-top: 18px;
+.index2-peek-slideshow .footer-newsletter-form button > span:first-child {
+  position: relative;
+  z-index: 1;
+  transition: transform 260ms ease;
 }
 
-.index2-peek-slideshow .footer-newsletter-form .footer-form-note:empty {
-  display: none;
+.index2-peek-slideshow .footer-newsletter-submit-icon {
+  position: relative;
+  transition: transform 260ms ease;
+  transform: translateX(0);
+}
+
+.index2-peek-slideshow .footer-newsletter-form button:hover > span:first-child,
+.index2-peek-slideshow .footer-newsletter-form button:focus-visible > span:first-child {
+  transform: translateX(50px);
+}
+
+.index2-peek-slideshow .footer-newsletter-form button:hover .footer-newsletter-submit-icon,
+.index2-peek-slideshow .footer-newsletter-form button:focus-visible .footer-newsletter-submit-icon {
+  transform: translateX(-113px);
+}
+/* Index 2: footer title circle and vertical shadows use official blue. */
+.index2-peek-slideshow .footer-cta h2::before,
+.index2-peek-slideshow .footer-cta-panel h2::before {
+  background: #315cdb;
+  box-shadow: 0 -70px rgba(49, 92, 219, 0.2), 0 -35px rgba(49, 92, 219, 0.4);
+}
+/* Index 2: make footer CTA columns full-bleed while keeping content inside Bootstrap bounds. */
+.index2-peek-slideshow .footer-cta {
+  --footer-container-max: calc(100vw - 30px);
+  --footer-container-side: max(15px, calc((100vw - var(--footer-container-max)) / 2));
+  --footer-container-gutter: 15px;
+  --footer-container-content-side: calc(var(--footer-container-side) + var(--footer-container-gutter));
+  --footer-panel-pad-left: clamp(42px, 5.4vw, 72px);
+  --footer-panel-pad-right: var(--footer-container-content-side);
+  --footer-panel-content-max: calc((var(--footer-container-max) / 2) - var(--footer-panel-pad-left) - var(--footer-container-gutter));
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.index2-peek-slideshow .footer-cta-panel {
+  padding: calc(clamp(96px, 7vw, 132px) + 80px) var(--footer-panel-pad-right) clamp(54px, 5.6vw, 86px) var(--footer-panel-pad-left);
+}
+
+.index2-peek-slideshow .footer-cta-panel h2 {
+  max-width: min(9.4ch, var(--footer-panel-content-max));
+}
+
+.index2-peek-slideshow .footer-newsletter-card {
+  width: min(780px, 100%, var(--footer-panel-content-max));
+}
+
+@media (min-width: 1200px) {
+  .index2-peek-slideshow .footer-cta {
+    --footer-container-max: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .index2-peek-slideshow .footer-cta {
+    --footer-container-max: 1360px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .footer-cta {
+    --footer-panel-pad-left: max(30px, var(--footer-container-content-side));
+    --footer-panel-pad-right: max(30px, var(--footer-container-content-side));
+    --footer-panel-content-max: 100%;
+  }
+
+  .index2-peek-slideshow .footer-cta-panel h2 {
+    max-width: min(9.4ch, 100%);
+  }
+}
+/* Index 2: footer newsletter input typography and focus treatment. */
+.index2-peek-slideshow .footer-newsletter-form input[type="email"] {
+  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.index2-peek-slideshow .footer-newsletter-form input[type="email"]:focus {
+  outline: none;
+  box-shadow: none;
 }
