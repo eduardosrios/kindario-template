@@ -1,4 +1,4 @@
-# Kindario
+﻿# Kindario
 
 Kindario is a static HTML, CSS, and JavaScript website template for charity, NGO, donation, nonprofit, volunteering, humanitarian relief, volunteer recruitment, social impact, philanthropy, crowdfunding, fundraising, gift aid, donor engagement, poverty relief, hunger relief, poor children support, and Africa-focused humanitarian storytelling.
 
@@ -20,6 +20,17 @@ The project is built as a front-end template only. It does not include React, Ne
 - CSS
 - JavaScript
 
+## Active Template Files
+
+- `template/index.html`
+- `template/index-2.html`
+- `template/assets/css/`
+- `template/assets/js/`
+- `template/assets/images/`
+- `template/assets/vendor/`
+
+Only final website files and required repository governance files should be committed. Temporary notes, local screenshots, generated archives, private references, and unrelated working files should stay out of the repository.
+
 ## Repository Structure
 
 ```text
@@ -30,7 +41,8 @@ The project is built as a front-end template only. It does not include React, Ne
 |   `-- assets/
 |       |-- css/
 |       |-- images/
-|       `-- js/
+|       |-- js/
+|       `-- vendor/
 |-- README.md
 |-- CODE_OF_CONDUCT.md
 |-- CONTRIBUTING.md
