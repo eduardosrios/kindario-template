@@ -1467,3 +1467,41 @@ const initNumericDonationInputs = () => {
 };
 
 initNumericDonationInputs();
+
+const initFooterContactRows = () => {
+  const strip = document.querySelector(".footer-contact-strip");
+  if (!strip) return;
+
+  const updateRows = () => {
+    const items = Array.from(strip.children);
+    strip.style.setProperty("--footer-contact-strip-width", `${strip.clientWidth}px`);
+    items.forEach((item) => item.classList.remove("is-row-start"));
+
+    const rows = [];
+    items.forEach((item) => {
+      const top = Math.round(item.offsetTop);
+      let row = rows.find((entry) => Math.abs(entry.top - top) <= 2);
+      if (!row) {
+        row = { top, items: [] };
+        rows.push(row);
+      }
+      row.items.push(item);
+    });
+
+    rows
+      .sort((a, b) => a.top - b.top)
+      .slice(1)
+      .forEach((row) => {
+        row.items.sort((a, b) => a.offsetLeft - b.offsetLeft)[0]?.classList.add("is-row-start");
+      });
+  };
+
+  updateRows();
+  window.addEventListener("resize", updateRows);
+  if (window.ResizeObserver) {
+    new window.ResizeObserver(updateRows).observe(strip);
+  }
+};
+
+initFooterContactRows();
+

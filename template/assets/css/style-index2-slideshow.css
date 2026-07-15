@@ -16418,9 +16418,988 @@ body.index2-peek-slideshow .donate-marquee {
   font-size: clamp(1.05rem, 1.35vw, 1.48rem);
   font-weight: 700;
   line-height: 1.55;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .index2-peek-slideshow .footer-newsletter-form input[type="email"]:focus {
   outline: none;
   box-shadow: none;
+}
+/* Index 2: add a little more white inset around the footer Subscribe button without changing button size. */
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
+  padding: 27px 27px 27px 18px;
+}
+/* Index 2: remove footer CTA title circle treatment and keep title fully black. */
+.index2-peek-slideshow .footer-cta h2::before,
+.index2-peek-slideshow .footer-cta-panel h2::before {
+  content: none !important;
+  display: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.index2-peek-slideshow .footer-cta h2,
+.index2-peek-slideshow .footer-cta-panel h2,
+.index2-peek-slideshow .footer-cta h2::first-letter,
+.index2-peek-slideshow .footer-cta-panel h2::first-letter {
+  color: #111111 !important;
+}
+/* Index 2: footer newsletter subtitle size. */
+.index2-peek-slideshow .footer-newsletter-copy p {
+  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+}
+/* Index 2: footer newsletter bullet list size. */
+.index2-peek-slideshow .footer-newsletter-copy li {
+  font-size: 1.12rem;
+}
+
+/* Index 2: footer contact strip blue wrapper with left-side icons. */
+.index2-peek-slideshow .footer-contact-strip {
+  border-color: rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.index2-peek-slideshow .footer-contact-strip div {
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 18px;
+  row-gap: 4px;
+  align-items: center;
+  padding: 30px;
+}
+
+.index2-peek-slideshow .footer-contact-strip i {
+  display: inline-grid;
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: #ffffff;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.index2-peek-slideshow .footer-contact-strip span,
+.index2-peek-slideshow .footer-contact-strip strong {
+  grid-column: 2;
+}
+/* Index 2: footer contact icons use bordered white circles. */
+.index2-peek-slideshow .footer-contact-strip i {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+}
+/* Index 2: footer contact icon circles and footer logo size. */
+.index2-peek-slideshow .footer-contact-strip i {
+  width: 76px;
+  height: 76px;
+  font-size: 1.65rem;
+}
+
+.index2-peek-slideshow .footer-brand .brand-mark {
+  width: 76px;
+  height: 76px;
+}
+
+.index2-peek-slideshow .footer-brand .brand-mark img {
+  height: 76px;
+}
+/* Index 2: footer contact strip cleanup. */
+.index2-peek-slideshow .footer-contact-strip {
+  border-radius: 0;
+}
+
+.index2-peek-slideshow .footer-contact-strip div {
+  padding-left: 0;
+}
+
+.index2-peek-slideshow .footer-contact-strip div + div {
+  border-left: 0;
+}
+/* Index 2: contact items flow inline for future additions. */
+.index2-peek-slideshow .footer-contact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.index2-peek-slideshow .footer-contact-strip div {
+  width: auto;
+  min-width: max-content;
+  flex: 0 0 auto;
+  padding-right: 30px;
+}
+/* Index 2: footer contact item icon/text spacing. */
+.index2-peek-slideshow .footer-contact-strip div {
+  column-gap: 28px;
+}
+/* Index 2: draw separators between wrapped contact rows. */
+.index2-peek-slideshow .footer-contact-strip div {
+  position: relative;
+}
+
+.index2-peek-slideshow .footer-contact-strip div.is-row-start::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -15px;
+  width: var(--footer-contact-strip-width, 100%);
+  height: 1px;
+  background: rgba(255, 255, 255, 0.14);
+}
+/* Index 2: footer text must preserve authored casing. */
+.index2-peek-slideshow .site-footer,
+.index2-peek-slideshow .site-footer * {
+  text-transform: none !important;
+}
+/* Index 2: footer newsletter card final shape. */
+.index2-peek-slideshow .footer-newsletter-card {
+  width: min(780px, 100%);
+  margin-top: 40px;
+  padding: clamp(26px, 2.6vw, 38px);
+  border-radius: 6px 25px;
+  background: #111111;
+  color: #ffffff;
+  text-align: left;
+}
+/* Index 2: iconized yellow dots over the footer CTA column split. */
+.index2-peek-slideshow .footer-cta {
+  position: relative;
+}
+
+.index2-peek-slideshow .footer-cta-split-icons {
+  position: absolute;
+  inset: 0 auto auto 50%;
+  z-index: 3;
+  pointer-events: none;
+  font-size: clamp(3.4rem, 5.2vw, 5.8rem);
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span {
+  position: absolute;
+  left: 0;
+  display: grid;
+  width: 1.32em;
+  height: 1.32em;
+  place-items: center;
+  border-radius: 50%;
+  background: #FFD532;
+  color: #111111;
+  transform: translate(-50%, -50%);
+}
+
+.index2-peek-slideshow .footer-cta-split-icons i {
+  font-size: 0.36em;
+  line-height: 1;
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(1) {
+  top: 14%;
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(2) {
+  top: 36%;
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(3) {
+  top: 59%;
+}
+
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .footer-cta-split-icons {
+    display: none;
+  }
+}
+/* Index 2: split icon rail spans full footer CTA height. */
+.index2-peek-slideshow .footer-cta-split-icons {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+}
+/* Index 2: keep footer CTA title spacing unchanged by split icons. */
+.index2-peek-slideshow .footer-cta-panel {
+  padding-top: clamp(54px, 5.6vw, 86px);
+}
+/* Index 2: align first split icon with the first title letter. */
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(1) {
+  top: calc(clamp(54px, 5.6vw, 86px) + (clamp(4.2rem, 8vw, 9.4rem) * 0.37));
+}
+/* Index 2: keep split icon vertical spacing equal from the title-aligned first icon. */
+.index2-peek-slideshow .footer-cta-split-icons {
+  --footer-split-icon-first-top: calc(clamp(54px, 5.6vw, 86px) + (clamp(4.2rem, 8vw, 9.4rem) * 0.37));
+  --footer-split-icon-gap: 22.5%;
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(1) {
+  top: var(--footer-split-icon-first-top);
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(2) {
+  top: calc(var(--footer-split-icon-first-top) + var(--footer-split-icon-gap));
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(3) {
+  top: calc(var(--footer-split-icon-first-top) + 45%);
+}
+/* Index 2: five split icons with equal reduced spacing. */
+.index2-peek-slideshow .footer-cta-split-icons {
+  --footer-split-icon-gap: 15%;
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(1) {
+  top: var(--footer-split-icon-first-top);
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(2) {
+  top: calc(var(--footer-split-icon-first-top) + var(--footer-split-icon-gap));
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(3) {
+  top: calc(var(--footer-split-icon-first-top) + 30%);
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(4) {
+  top: calc(var(--footer-split-icon-first-top) + 45%);
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(5) {
+  top: calc(var(--footer-split-icon-first-top) + 60%);
+}
+/* Index 2: slightly wider split icon spacing. */
+.index2-peek-slideshow .footer-cta-split-icons {
+  --footer-split-icon-gap: 16.5%;
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(3) {
+  top: calc(var(--footer-split-icon-first-top) + 33%);
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(4) {
+  top: calc(var(--footer-split-icon-first-top) + 49.5%);
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(5) {
+  top: calc(var(--footer-split-icon-first-top) + 66%);
+}
+/* Index 2: keep only three split icons beside the newsletter card. */
+.index2-peek-slideshow .footer-cta-split-icons {
+  --footer-split-card-icon-top: 42%;
+  --footer-split-icon-gap: 20%;
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(1) {
+  top: var(--footer-split-card-icon-top);
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(2) {
+  top: calc(var(--footer-split-card-icon-top) + var(--footer-split-icon-gap));
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:nth-child(3) {
+  top: calc(var(--footer-split-card-icon-top) + 40%);
+}
+/* Index 2: quick search title circle yellow echo shadow. */
+.index2-peek-slideshow .quick-search-form label::before {
+  box-shadow: -70px 0 rgba(255, 213, 50, 0.2), -35px 0 rgba(255, 213, 50, 0.4);
+}
+/* Index 2: footer brand text matches header brand text, in white. */
+.index2-peek-slideshow .footer-brand {
+  gap: 16px;
+  font-family: inherit;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.index2-peek-slideshow .footer-brand span:not(.brand-mark) {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* Index 2: keep footer logo text horizontally beside the mark. */
+.index2-peek-slideshow .footer-main a.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  width: auto;
+  border-bottom: 0;
+  padding: 0;
+}
+/* Index 2: vertically align footer brand column with link columns. */
+.index2-peek-slideshow .footer-main h3 {
+  line-height: 1.16;
+}
+
+.index2-peek-slideshow .footer-main a.footer-brand {
+  height: calc(clamp(1.8rem, 2.3vw, 2.5rem) * 1.16);
+  margin-bottom: 24px;
+  overflow: visible;
+}
+/* Index 2: fine-tune footer intro text to align with first link row. */
+.index2-peek-slideshow .footer-brand + p {
+  margin-top: -2px;
+}
+/* Index 2: align first footer column text top with first link row. */
+.index2-peek-slideshow .footer-brand + p {
+  margin-top: 0;
+}
+/* Index 2: requested footer column vertical rhythm. */
+.index2-peek-slideshow .footer-main h3 {
+  margin-bottom: 20px;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.3vw, 2.5rem);
+  font-weight: 900;
+}
+
+.index2-peek-slideshow .footer-main a.footer-brand {
+  height: calc(clamp(1.8rem, 2.3vw, 2.5rem) * 1.16);
+  margin-bottom: 30px;
+  overflow: visible;
+}
+/* Index 2: align first footer paragraph top with first link after requested rhythm. */
+.index2-peek-slideshow .footer-brand + p {
+  margin-top: -10px;
+}
+/* Index 2: footer contact text larger and lighter. */
+.index2-peek-slideshow .footer-contact-strip span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.index2-peek-slideshow .footer-contact-strip strong {
+  font-size: 1.36rem;
+  font-weight: 700;
+}
+/* Index 2: requested footer brand margin. */
+.index2-peek-slideshow .footer-main a.footer-brand {
+  height: calc(clamp(1.8rem, 2.3vw, 2.5rem) * 1.16);
+  margin-bottom: 40px;
+  overflow: visible;
+}
+/* Index 2: footer social links match contact icon circles. */
+.index2-peek-slideshow .footer-social {
+  gap: 12px;
+}
+
+.index2-peek-slideshow .footer-social a {
+  display: inline-grid;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  color: #ffffff;
+  padding: 0;
+}
+
+.index2-peek-slideshow .footer-social a i {
+  color: #ffffff;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+/* Index 2: equal vertical white space above and below partner logo carousel. */
+.index2-peek-slideshow .partner-logo-carousel-section {
+  --partner-logo-section-y: 48px;
+  padding-top: var(--partner-logo-section-y);
+  padding-bottom: var(--partner-logo-section-y);
+}
+
+.index2-peek-slideshow .partner-logo-carousel-viewport {
+  --partner-logo-viewport-y: 28px;
+  padding-top: var(--partner-logo-viewport-y);
+  padding-bottom: var(--partner-logo-viewport-y);
+}
+/* Index 2: visually center partner logos by moving carousel upward in the white band. */
+.index2-peek-slideshow .partner-logo-carousel-section {
+  --partner-logo-section-top: 20px;
+  --partner-logo-section-bottom: 88px;
+  padding-top: var(--partner-logo-section-top);
+  padding-bottom: var(--partner-logo-section-bottom);
+}
+
+.index2-peek-slideshow .partner-logo-carousel-viewport {
+  --partner-logo-viewport-top: 16px;
+  --partner-logo-viewport-bottom: 28px;
+  padding-top: var(--partner-logo-viewport-top);
+  padding-bottom: var(--partner-logo-viewport-bottom);
+}
+/* Index 2: final partner-logo white band spacing to match reference image. */
+.index2-peek-slideshow .partner-logo-carousel-section {
+  --partner-logo-section-top: 60px;
+  --partner-logo-section-bottom: 108px;
+  padding-top: var(--partner-logo-section-top);
+  padding-bottom: var(--partner-logo-section-bottom);
+}
+
+.index2-peek-slideshow .partner-logo-carousel-viewport {
+  --partner-logo-viewport-top: 16px;
+  --partner-logo-viewport-bottom: 28px;
+  padding-top: var(--partner-logo-viewport-top);
+  padding-bottom: var(--partner-logo-viewport-bottom);
+}
+/* Index 2: second footer strip for social networks. */
+.index2-peek-slideshow .footer-contact-primary {
+  margin-bottom: 30px;
+}
+
+.index2-peek-slideshow .footer-social-strip {
+  margin-bottom: 92px;
+}
+
+.index2-peek-slideshow .footer-social-strip a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 28px;
+  row-gap: 4px;
+  align-items: center;
+  width: auto;
+  min-width: max-content;
+  flex: 0 0 auto;
+  border: 0;
+  padding: 30px 30px 30px 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.index2-peek-slideshow .footer-social-strip a i {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+}
+
+.index2-peek-slideshow .footer-social-strip a span,
+.index2-peek-slideshow .footer-social-strip a strong {
+  grid-column: 2;
+}
+/* Index 2: footer contact/social strips use equal Bootstrap columns. */
+.index2-peek-slideshow .footer-contact-strip.row {
+  --bs-gutter-x: 30px;
+  --bs-gutter-y: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: stretch;
+  overflow: visible;
+}
+
+.index2-peek-slideshow .footer-contact-strip.row > div,
+.index2-peek-slideshow .footer-contact-strip.row > a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 28px;
+  row-gap: 4px;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  flex: 0 0 auto;
+  padding: 30px calc(var(--bs-gutter-x) * 0.5);
+}
+
+@media (min-width: 992px) {
+  .index2-peek-slideshow .footer-contact-strip.row > div,
+  .index2-peek-slideshow .footer-contact-strip.row > a {
+    width: 33.333333%;
+  }
+}
+/* Index 2: restore Bootstrap row gutters for equal footer strips. */
+.index2-peek-slideshow .footer-contact-strip.row {
+  max-width: none;
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.index2-peek-slideshow .footer-contact-primary.row {
+  margin-bottom: 30px;
+}
+
+.index2-peek-slideshow .footer-social-strip.row {
+  margin-bottom: 92px;
+}
+/* Index 2: contact row now uses four equal Bootstrap columns. */
+@media (min-width: 992px) {
+  .index2-peek-slideshow .footer-contact-primary.row > div {
+    width: 25%;
+  }
+}
+/* Index 2: contact details strip returns to inline items with 30px gap. */
+.index2-peek-slideshow .footer-contact-primary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 30px;
+  max-width: none;
+  margin: 0 0 30px;
+  overflow: visible;
+}
+
+.index2-peek-slideshow .footer-contact-primary > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 28px;
+  row-gap: 4px;
+  align-items: center;
+  width: auto;
+  max-width: none;
+  min-width: max-content;
+  flex: 0 0 auto;
+  padding: 30px 30px 30px 0;
+}
+/* Index 2: footer social circle spacing. */
+.index2-peek-slideshow .footer-social {
+  gap: 25px;
+}
+/* Index 2: restore breathing room below footer contact details. */
+.index2-peek-slideshow .footer-contact-primary {
+  margin-bottom: 92px;
+}
+/* Index 2: footer link columns use larger, lighter links. */
+.index2-peek-slideshow .footer-main .col-lg-4:nth-child(2) a,
+.index2-peek-slideshow .footer-main .col-lg-4:nth-child(3) a {
+  font-size: 1.08rem;
+  font-weight: 650;
+}
+/* Index 2: show one centered bolt icon on the footer CTA split. */
+.index2-peek-slideshow .footer-cta-split-icons span {
+  top: 50% !important;
+}
+
+.index2-peek-slideshow .footer-cta-split-icons span:not(:first-child) {
+  display: none;
+}
+/* Index 2: footer main supports four equal columns. */
+.index2-peek-slideshow .footer-main .col-lg-3:nth-child(n + 2) a {
+  font-size: 1.08rem;
+  font-weight: 650;
+}
+/* Index 2: refine footer body/link typography hierarchy. */
+.index2-peek-slideshow .footer-brand + p {
+  font-size: clamp(1.02rem, 1.05vw, 1.12rem);
+  font-weight: 580;
+  line-height: 1.62;
+}
+
+.index2-peek-slideshow .footer-main .col-lg-3:nth-child(n + 2) a {
+  font-size: clamp(1.02rem, 1vw, 1.12rem);
+  font-weight: 580;
+  line-height: 1.45;
+}
+/* Index 2: keep the three footer link columns equal inside the remaining footer width. */
+.index2-peek-slideshow .footer-link-columns {
+  --bs-gutter-x: 30px;
+}
+
+.index2-peek-slideshow .footer-link-column a {
+  font-size: clamp(1.02rem, 1vw, 1.12rem);
+  font-weight: 580;
+  line-height: 1.45;
+}
+/* Index 2: footer bottom link spacing. */
+.index2-peek-slideshow .footer-bottom div {
+  gap: 25px;
+}
+/* Index 2: force matching typography across all footer link columns. */
+.index2-peek-slideshow .footer-main .footer-link-columns .footer-link-column a {
+  font-size: clamp(1.02rem, 1vw, 1.12rem);
+  font-weight: 580;
+  line-height: 1.45;
+}
+/* Index 2: footer bottom link spacing final. */
+.index2-peek-slideshow .footer-bottom div {
+  gap: 30px;
+}
+/* Index 2: increase vertical padding on footer link rows except the first item. */
+.index2-peek-slideshow .footer-link-column a:not(:first-of-type) {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+/* Index 2: first footer link keeps top tight but gets matching bottom padding. */
+.index2-peek-slideshow .footer-link-column a:first-of-type {
+  padding-bottom: 16px;
+}
+/* Index 2: remove border from the last footer link in each list. */
+.index2-peek-slideshow .footer-link-column a:last-of-type {
+  border-bottom: 0;
+}
+/* Index 2: expandable footer contact plus item. */
+.index2-peek-slideshow .footer-contact-primary > .footer-contact-more {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  align-self: center;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: transparent;
+  color: #ffffff;
+  padding: 0;
+  font-size: 1.65rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.index2-peek-slideshow .footer-contact-primary > .footer-contact-more:hover,
+.index2-peek-slideshow .footer-contact-primary > .footer-contact-more:focus-visible {
+  border-color: rgba(255, 255, 255, 0.34);
+  color: #ffffff;
+}
+
+.index2-peek-slideshow .footer-contact-primary > .footer-contact-more[hidden],
+.index2-peek-slideshow .footer-contact-primary > [data-footer-contact-extra][hidden] {
+  display: none;
+}
+/* Index 2: highlight the Explore footer column. */
+.index2-peek-slideshow .footer-link-column:first-child {
+  background: #ffffff;
+  color: #111111;
+}
+
+.index2-peek-slideshow .footer-link-column:first-child h3,
+.index2-peek-slideshow .footer-link-column:first-child a {
+  color: #111111;
+}
+
+.index2-peek-slideshow .footer-link-column:first-child a {
+  border-bottom-color: rgba(17, 17, 17, 0.16);
+}
+/* Index 2: keep Explore highlight inside the Bootstrap column gutter. */
+.index2-peek-slideshow .footer-link-column:first-child {
+  background: transparent;
+  color: inherit;
+}
+
+.index2-peek-slideshow .footer-link-column-highlight .footer-link-column-panel {
+  background: #ffffff;
+  color: #111111;
+  padding: 0 18px 22px;
+}
+
+.index2-peek-slideshow .footer-link-column-highlight .footer-link-column-panel h3,
+.index2-peek-slideshow .footer-link-column-highlight .footer-link-column-panel a {
+  color: #111111;
+}
+
+.index2-peek-slideshow .footer-link-column-highlight .footer-link-column-panel a {
+  border-bottom-color: rgba(17, 17, 17, 0.16);
+}
+/* Index 2: Explore footer panel inner padding. */
+.index2-peek-slideshow .footer-link-column-highlight .footer-link-column-panel {
+  padding: 30px;
+}
+/* Index 2: align Explore panel title and reduce bottom whitespace. */
+.index2-peek-slideshow .footer-link-column-highlight .footer-link-column-panel {
+  margin-top: -30px;
+  padding: 30px 30px 16px;
+}
+/* Index 2: undo Explore white panel and return all footer link columns to black footer styling. */
+.index2-peek-slideshow .footer-link-column:first-child {
+  background: transparent;
+  color: inherit;
+}
+
+.index2-peek-slideshow .footer-link-column:first-child h3 {
+  color: #ffffff;
+}
+
+.index2-peek-slideshow .footer-link-column:first-child a {
+  color: rgba(255, 255, 255, 0.72);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.index2-peek-slideshow .footer-link-column:first-child a:last-of-type {
+  border-bottom: 0;
+}
+/* Index 2: contact strip reverted to three static items. */
+.index2-peek-slideshow .footer-contact-primary > .footer-contact-more,
+.index2-peek-slideshow .footer-contact-primary > [data-footer-contact-extra] {
+  display: none !important;
+}
+/* Index 2: footer CTA requested vertical offset. */
+.index2-peek-slideshow .footer-cta {
+  margin: -60px auto 100px;
+}
+/* Index 2: only increase footer CTA bottom margin; preserve existing top/side margins. */
+.index2-peek-slideshow .footer-cta {
+  margin-top: inherit;
+  margin-right: auto;
+  margin-bottom: 100px;
+  margin-left: auto;
+}
+/* Index 2: footer CTA final margin fix - only bottom increases, full-bleed alignment restored. */
+.index2-peek-slideshow .footer-cta {
+  margin-top: -60px;
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 100px;
+  margin-left: calc(50% - 50vw);
+}
+/* Index 2: footer brand paragraph line height. */
+.index2-peek-slideshow .footer-brand + p {
+  line-height: 1.78;
+}
+/* Index 2: contact strip icons use white circles with black icons. */
+.index2-peek-slideshow .footer-contact-primary i {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #111111;
+}
+/* Index 2: footer social circles use brand-like colors with white icons. */
+.index2-peek-slideshow .footer-social a {
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.index2-peek-slideshow .footer-social a:nth-child(1) {
+  background: #1877f2;
+}
+
+.index2-peek-slideshow .footer-social a:nth-child(2) {
+  background: #e4405f;
+}
+
+.index2-peek-slideshow .footer-social a:nth-child(3) {
+  background: #0a66c2;
+}
+
+.index2-peek-slideshow .footer-social a i {
+  color: #ffffff;
+}
+/* Index 2: third footer social is YouTube red. */
+.index2-peek-slideshow .footer-social a:nth-child(3) {
+  background: #ff0000;
+}
+/* Index 2: footer social colors use template palette. */
+.index2-peek-slideshow .footer-social a:nth-child(2) {
+  background: #e7239e;
+}
+
+.index2-peek-slideshow .footer-social a:nth-child(3) {
+  background: var(--orange);
+}
+/* Index 2: footer YouTube uses exact template red. */
+.index2-peek-slideshow .footer-social a:nth-child(3) {
+  background: #F03939;
+}
+/* Index 2: footer Facebook uses template blue. */
+.index2-peek-slideshow .footer-social a:nth-child(1) {
+  background: #315CDB;
+}
+/* Index 2: footer link hover/focus turns white. */
+.index2-peek-slideshow .footer-link-column a:hover,
+.index2-peek-slideshow .footer-link-column a:focus-visible {
+  color: #ffffff;
+}
+/* Index 2: add 10px more space above footer contact strip. */
+.index2-peek-slideshow .footer-cta {
+  margin-bottom: 110px;
+}
+/* Index 2: footer yellow CTA panel vertical spacing. */
+.index2-peek-slideshow .footer-cta-panel {
+  padding-top: calc(clamp(54px, 5.6vw, 86px) + 10px);
+  padding-bottom: calc(clamp(54px, 5.6vw, 86px) + 20px);
+}
+/* Index 2: remove filled backgrounds from footer contact and social icon circles. */
+.index2-peek-slideshow .footer-contact-primary i,
+.index2-peek-slideshow .footer-social a {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.index2-peek-slideshow .footer-contact-primary i,
+.index2-peek-slideshow .footer-contact-primary i::before,
+.index2-peek-slideshow .footer-social a i {
+  color: #ffffff;
+}
+/* Index 2: force social circles back to transparent, overriding brand-color nth-child rules. */
+.index2-peek-slideshow .footer-social a:nth-child(1),
+.index2-peek-slideshow .footer-social a:nth-child(2),
+.index2-peek-slideshow .footer-social a:nth-child(3) {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+/* Index 2: social icon circles wrap instead of shrinking. */
+.index2-peek-slideshow .footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+}
+
+.index2-peek-slideshow .footer-social a {
+  flex: 0 0 76px;
+  width: 76px;
+  min-width: 76px;
+  max-width: 76px;
+  height: 76px;
+  min-height: 76px;
+  max-height: 76px;
+  aspect-ratio: 1 / 1;
+}
+/* Index 2: contact strip without labels, centered data text. */
+.index2-peek-slideshow .footer-contact-primary > div {
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: 76px;
+  align-items: center;
+  row-gap: 0;
+}
+
+.index2-peek-slideshow .footer-contact-primary > div > i {
+  grid-row: 1;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #111111;
+}
+
+.index2-peek-slideshow .footer-contact-primary > div > i::before {
+  color: #111111;
+}
+
+.index2-peek-slideshow .footer-contact-primary > div > strong {
+  grid-row: 1;
+  align-self: center;
+}
+/* Index 2: long address first, forcing remaining contact items to next row. */
+.index2-peek-slideshow .footer-contact-primary > div:first-child {
+  width: 100%;
+  min-width: 100%;
+  flex-basis: 100%;
+}
+
+.index2-peek-slideshow .footer-contact-primary > div:first-child strong {
+  white-space: normal;
+}
+/* Index 2: contact address department separator spacing. */
+.index2-peek-slideshow .footer-contact-separator {
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+/* Index 2: contact separator final spacing. */
+.index2-peek-slideshow .footer-contact-separator {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+/* Index 2: requested contact strip span typography and spacing. */
+.index2-peek-slideshow .footer-contact-strip span {
+  font-size: 1.36rem;
+  font-weight: 700;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+/* Index 2: keep all footer contact items inline; let long text wrap inside its own item. */
+.index2-peek-slideshow .footer-contact-primary > div,
+.index2-peek-slideshow .footer-contact-primary > div:first-child {
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  flex: 1 1 0;
+  flex-basis: 0;
+}
+
+.index2-peek-slideshow .footer-contact-primary > div > strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+/* Index 2: footer list row spacing requested. */
+.index2-peek-slideshow .footer-link-column a:not(:first-of-type) {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* Index 2: footer bottom links match footer column link typography. */
+.index2-peek-slideshow .footer-bottom a {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(1.02rem, 1vw, 1.12rem);
+  font-weight: 580;
+  line-height: 1.45;
+  text-transform: none;
+}
+
+.index2-peek-slideshow .footer-bottom a:hover,
+.index2-peek-slideshow .footer-bottom a:focus-visible {
+  color: #ffffff;
+}
+/* Index 2: blue emphasis in footer CTA title. */
+.index2-peek-slideshow .footer-cta-title-blue {
+  color: var(--blue);
+}
+/* Index 2: keep blue title word line height aligned. */
+.index2-peek-slideshow .footer-cta-title-blue {
+  line-height: 1.1;
+}
+/* Index 2: footer CTA image local asset. */
+.index2-peek-slideshow .footer-cta-image {
+  background-image: url('../images/couple-hand-heart-doodle.jpg');
+}
+/* Index 2: footer newsletter form final padding. */
+.index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
+  padding: 12px 12px 12px 18px;
+}
+/* Index 2: footer contact item icon/text gap. */
+.index2-peek-slideshow .footer-contact-primary > div {
+  column-gap: 18px;
+}
+/* Index 2: newsletter list uses Font Awesome yellow check icons. */
+.index2-peek-slideshow .footer-newsletter-copy li::before {
+  content: none;
+  display: none;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy li i {
+  color: var(--yellow);
+  font-size: 0.92em;
+  line-height: 1;
+}
+/* Index 2: newsletter check icons slightly larger. */
+.index2-peek-slideshow .footer-newsletter-copy li i {
+  font-size: 1.08em;
+}
+/* Index 2: newsletter item text lighter while check icons keep their weight. */
+.index2-peek-slideshow .footer-newsletter-copy li {
+  font-weight: 650;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy li i {
+  font-weight: 900;
+}
+/* Index 2: newsletter check icons requested size. */
+.index2-peek-slideshow .footer-newsletter-copy li i {
+  font-size: 1.4em;
+}
+/* Index 2: newsletter list text matches footer column links. */
+.index2-peek-slideshow .footer-newsletter-copy li {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(1.02rem, 1vw, 1.12rem);
+  font-weight: 580;
+  line-height: 1.45;
+  text-transform: none;
+}
+
+.index2-peek-slideshow .footer-newsletter-copy li i {
+  color: var(--yellow);
+  font-size: 1.4em;
+  font-weight: 900;
+  line-height: 1;
+}
+/* Index 2: newsletter consent matches footer column link text. */
+.index2-peek-slideshow .footer-newsletter-consent {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(1.02rem, 1vw, 1.12rem);
+  font-weight: 580;
+  line-height: 1.45;
 }
