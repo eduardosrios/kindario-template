@@ -1,4 +1,4 @@
-# Contributing
+﻿# Contributing
 
 Thank you for contributing to Kindario.
 
@@ -23,6 +23,8 @@ Contributions are welcome in areas such as:
 4. Do not add React, Next.js, Vue, Angular, backend code, or database logic.
 5. Keep project text in English.
 6. Include screenshots for visual changes when practical.
+7. Commit only final website assets and requested governance files.
+8. Do not commit local notes, temporary screenshots, generated archives, private references, or unrelated experiments.
 
 ## Local Review Checklist
 
@@ -30,7 +32,8 @@ Before opening a pull request:
 
 - Verify affected pages in a browser.
 - Check desktop and mobile behavior.
-- Confirm links, buttons, and sliders still work.
+- Confirm links, buttons, forms, sliders, and carousels still work.
+- Confirm local vendor assets load without CDN-only assumptions.
 - Keep repository docs aligned with the current behavior.
 - Avoid committing generated archives, local notes, temporary screenshots, and private references.
 

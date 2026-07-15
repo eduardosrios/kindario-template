@@ -1,4 +1,4 @@
-# Security Policy
+﻿# Security Policy
 
 ## Supported Version
 
@@ -26,6 +26,7 @@ For this repository, valid reports may include:
 - Misleading donation UX that could harm user trust
 - Accessibility regressions that create serious user risk
 - Dependency vulnerabilities in project tooling
+- Broken local vendor assets that silently fall back to unsafe remote sources
 
 ## Out of Scope
 
