@@ -549,6 +549,7 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
   let carouselProgrammaticTimer;
   let carouselSettleTimer;
   let carouselDragFrame;
+  let carouselDragActivationTimer;
   let isProgrammaticScroll = false;
   let isDraggingCarousel = false;
   let didDragCarousel = false;
@@ -558,6 +559,9 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
   let pendingDragScrollLeft = 0;
   let dragStartPage = 0;
   let activeDragPointerId = null;
+  let dragStartLink = null;
+  let isProgrammaticCardClick = false;
+  let suppressCarouselClick = false;
 
   const setActiveDot = (index) => {
     const dots = Array.from(controls.querySelectorAll("[data-carousel-dot]"));
@@ -647,34 +651,103 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
     setActiveDot(Math.min(activePage, pagePositions.length - 1));
   };
 
-  const stopCarouselDrag = () => {
-    if (!isDraggingCarousel) return;
+  const dragActivationThreshold = 4;
+
+  const startCarouselDrag = () => {
+    if (isDraggingCarousel) return;
+
+    isDraggingCarousel = true;
+    didDragCarousel = true;
+    isProgrammaticScroll = false;
+    window.clearTimeout(carouselProgrammaticTimer);
+    window.clearTimeout(carouselSettleTimer);
+    window.cancelAnimationFrame(carouselDragFrame);
+    track.classList.remove("is-settling");
+    track.classList.add("is-dragging");
+  };
+
+  const updateCarouselDragPosition = () => {
+    pendingDragScrollLeft = dragStartScrollLeft - (dragCurrentX - dragStartX);
+    track.scrollLeft = pendingDragScrollLeft;
+  };
+
+  const maybeStartCarouselDrag = () => {
+    if (Math.abs(dragCurrentX - dragStartX) <= dragActivationThreshold) return false;
+
+    startCarouselDrag();
+    updateCarouselDragPosition();
+    return true;
+  };
+
+  const startCarouselDragPolling = () => {
+    window.clearInterval(carouselDragActivationTimer);
+    carouselDragActivationTimer = window.setInterval(() => {
+      if (activeDragPointerId === null || isDraggingCarousel) return;
+
+      maybeStartCarouselDrag();
+    }, 100);
+  };
+
+  const runProgrammaticCardClick = () => {
+    if (!dragStartLink) return;
+
+    isProgrammaticCardClick = true;
+    dragStartLink.click();
+    window.setTimeout(() => {
+      isProgrammaticCardClick = false;
+    }, 0);
+  };
+
+  const stopCarouselDrag = (event) => {
+    if (activeDragPointerId === null || activeDragPointerId !== event.pointerId) return;
+
+    const isRelease = event.type === "pointerup";
+
+    if (!isDraggingCarousel && isRelease) {
+      maybeStartCarouselDrag();
+    }
 
     const dragDistance = dragCurrentX - dragStartX;
     const dragThreshold = 18;
+    const hadDrag = isDraggingCarousel && didDragCarousel;
 
+    window.clearInterval(carouselDragActivationTimer);
     isDraggingCarousel = false;
     activeDragPointerId = null;
     track.classList.remove("is-dragging");
 
-    if (didDragCarousel && Math.abs(dragDistance) >= dragThreshold) {
+    if (hadDrag && Math.abs(dragDistance) >= dragThreshold) {
       scrollToPage(dragStartPage + (dragDistance < 0 ? 1 : -1));
-    } else if (didDragCarousel) {
+    } else if (hadDrag) {
       scrollToPage(dragStartPage);
     } else {
       updateActiveFromScroll();
+      if (isRelease) {
+        runProgrammaticCardClick();
+      }
     }
 
-    window.setTimeout(() => {
-      didDragCarousel = false;
-    }, 0);
+    dragStartLink = null;
+
+    if (hadDrag) {
+      suppressCarouselClick = true;
+      window.setTimeout(() => {
+        suppressCarouselClick = false;
+        didDragCarousel = false;
+      }, 180);
+    } else {
+      window.setTimeout(() => {
+        didDragCarousel = false;
+      }, 0);
+    }
   };
 
   track.addEventListener("pointerdown", (event) => {
-    if (event.button !== 0) return;
+    if (event.button !== 0 || activeDragPointerId !== null) return;
 
-    isDraggingCarousel = true;
+    isDraggingCarousel = false;
     didDragCarousel = false;
+    dragStartLink = event.target.closest?.(".route-card-link") || null;
     activeDragPointerId = event.pointerId;
     dragStartX = event.clientX;
     dragCurrentX = event.clientX;
@@ -686,33 +759,47 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
     window.clearTimeout(carouselSettleTimer);
     window.cancelAnimationFrame(carouselDragFrame);
     track.classList.remove("is-settling");
-    track.classList.add("is-dragging");
     track.setPointerCapture?.(event.pointerId);
+    startCarouselDragPolling();
   });
 
   track.addEventListener("pointermove", (event) => {
-    if (!isDraggingCarousel || activeDragPointerId !== event.pointerId) return;
+    if (activeDragPointerId !== event.pointerId) return;
 
     dragCurrentX = event.clientX;
 
-    if (Math.abs(dragCurrentX - dragStartX) > 4) {
-      didDragCarousel = true;
+    if (!isDraggingCarousel) {
+      if (event.buttons === 1 && Math.abs(dragCurrentX - dragStartX) > dragActivationThreshold) {
+        event.preventDefault();
+      }
+      return;
     }
 
-    pendingDragScrollLeft = dragStartScrollLeft - (dragCurrentX - dragStartX);
-    track.scrollLeft = pendingDragScrollLeft;
-
-    if (didDragCarousel) {
-      event.preventDefault();
-    }
+    didDragCarousel = true;
+    updateCarouselDragPosition();
+    event.preventDefault();
   });
 
   track.addEventListener("pointerup", stopCarouselDrag);
   track.addEventListener("pointercancel", stopCarouselDrag);
   track.addEventListener("lostpointercapture", stopCarouselDrag);
 
+  track.addEventListener("dragstart", (event) => {
+    if (!event.target.closest?.(".route-card-link")) return;
+
+    event.preventDefault();
+  });
+
   track.addEventListener("click", (event) => {
-    if (!didDragCarousel) return;
+    const cardLink = event.target.closest?.(".route-card-link") || null;
+
+    if (cardLink && (event.isTrusted || !isProgrammaticCardClick)) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
+    if (!suppressCarouselClick) return;
 
     event.preventDefault();
     event.stopPropagation();
