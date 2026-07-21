@@ -18,11 +18,14 @@ if (window.GLightbox) {
 
 const initHeroNavScrollState = () => {
   const nav = document.querySelector(".hero-nav");
+  const footer = document.querySelector(".site-footer");
   if (!nav) return;
 
   let ticking = false;
   const update = () => {
-    document.body.classList.toggle("is-hero-nav-fixed", window.scrollY > 60);
+    const footerVisible = footer ? footer.getBoundingClientRect().top <= window.innerHeight : false;
+    document.body.classList.toggle("is-hero-nav-fixed", window.scrollY > 60 && !footerVisible);
+    document.body.classList.toggle("is-footer-visible", footerVisible);
     ticking = false;
   };
 
@@ -34,10 +37,121 @@ const initHeroNavScrollState = () => {
 
   update();
   window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 };
 
 initHeroNavScrollState();
 
+const initPrimaryNavToggle = () => {
+  const nav = document.querySelector(".hero-nav");
+  const toggle = nav?.querySelector(".navbar-toggler");
+  const collapse = nav?.querySelector(".navbar-collapse");
+
+  if (!nav || !toggle || !collapse) return;
+
+  collapse.setAttribute("tabindex", "-1");
+
+  const submenuItems = Array.from(collapse.querySelectorAll(".nav-dropdown, .nav-mega"));
+
+  const closeSubmenus = (exceptItem = null) => {
+    submenuItems.forEach((item) => {
+      if (item === exceptItem) return;
+
+      const trigger = item.querySelector(":scope > .nav-link");
+      const wasOpen = item.classList.contains("is-submenu-open");
+      item.classList.remove("is-submenu-open");
+      if (wasOpen && window.innerWidth < 1200) item.classList.add("is-submenu-just-closed");
+      trigger?.setAttribute("aria-expanded", "false");
+
+      if (trigger && (document.activeElement === trigger || item.contains(document.activeElement))) {
+        trigger.blur();
+      }
+    });
+  };
+
+  submenuItems.forEach((item) => {
+    const trigger = item.querySelector(":scope > .nav-link");
+    trigger?.setAttribute("aria-haspopup", "true");
+    trigger?.setAttribute("aria-expanded", "false");
+    item.addEventListener("pointerleave", () => item.classList.remove("is-submenu-just-closed"));
+  });
+
+  const closeMenu = () => {
+    closeSubmenus();
+    collapse.classList.remove("show");
+    toggle.classList.add("collapsed");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("is-primary-nav-open");
+  };
+
+  const openMenu = () => {
+    collapse.classList.add("show");
+    toggle.classList.remove("collapsed");
+    toggle.setAttribute("aria-expanded", "true");
+    document.body.classList.add("is-primary-nav-open");
+  };
+
+  toggle.classList.add("collapsed");
+  toggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (collapse.classList.contains("show")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  collapse.addEventListener("click", (event) => {
+    if (window.innerWidth >= 1200) return;
+
+    const submenuTrigger = event.target.closest(".nav-dropdown > .nav-link, .nav-mega > .nav-link");
+    if (submenuTrigger && collapse.contains(submenuTrigger)) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const item = submenuTrigger.closest(".nav-dropdown, .nav-mega");
+      const shouldOpen = item && !item.classList.contains("is-submenu-open");
+      closeSubmenus(shouldOpen ? item : null);
+
+      if (item && shouldOpen) {
+        item.classList.remove("is-submenu-just-closed");
+        item.classList.add("is-submenu-open");
+        submenuTrigger.setAttribute("aria-expanded", "true");
+      } else {
+        submenuTrigger.blur();
+        window.requestAnimationFrame(() => {
+          if (window.innerWidth < 1200 && collapse.classList.contains("show")) {
+            collapse.focus({ preventScroll: true });
+          }
+        });
+      }
+      return;
+    }
+
+    const link = event.target.closest("a[href]");
+    if (link) closeMenu();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (window.innerWidth >= 1200 || !collapse.classList.contains("show")) return;
+    if (!nav.contains(event.target)) closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && collapse.classList.contains("show")) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1200) closeMenu();
+  });
+};
+
+initPrimaryNavToggle();
 const initQuickSearchModal = () => {
   const modal = document.querySelector("[data-search-modal]");
   const input = modal?.querySelector("[data-search-input]");
@@ -1090,15 +1204,12 @@ if (impactSteps) {
 
       if (lines[2] && centers[4]) {
         const center = centers[4];
-        const finalCard = nodes[4].closest(".impact-step");
-        const finalRect = finalCard ? finalCard.getBoundingClientRect() : null;
-        const startX = finalRect ? finalRect.right - wrapRect.left + 24 : center.x + 58;
-        const x1 = clamp(startX, minX, maxX);
-        const x2 = clamp(startX + shortLineLength, minX, maxX);
+        const endX = clamp(center.x - horizontalInset, minX, maxX);
+        const startX = clamp(endX - shortLineLength, minX, maxX);
         lines[2].style.removeProperty("display");
-        lines[2].setAttribute("x1", Math.min(x1, x2).toFixed(2));
+        lines[2].setAttribute("x1", Math.min(startX, endX).toFixed(2));
         lines[2].setAttribute("y1", center.y.toFixed(2));
-        lines[2].setAttribute("x2", Math.max(x1, x2).toFixed(2));
+        lines[2].setAttribute("x2", Math.max(startX, endX).toFixed(2));
         lines[2].setAttribute("y2", center.y.toFixed(2));
       }
 
