@@ -18947,3 +18947,233 @@ body.index2-peek-slideshow .donate-marquee {
   transform: translateX(-142px) !important;
 }
 
+/* Index 2 nav action order: Donate first, hamburger at the far right. */
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .hero-nav-inner {
+    align-items: center !important;
+    gap: 0 12px !important;
+  }
+
+  .index2-peek-slideshow .navbar-brand.brand-lockup {
+    order: 1 !important;
+    margin-right: auto !important;
+  }
+
+  .index2-peek-slideshow .hero-nav-actions {
+    order: 2 !important;
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler {
+    order: 3 !important;
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 2px solid rgba(49, 92, 219, 0.16) !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    color: #315cdb !important;
+    box-shadow: 0 10px 24px rgba(24, 24, 20, 0.08) !important;
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease, background-color 180ms ease !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler:hover,
+  .index2-peek-slideshow .navbar-toggler:focus-visible {
+    border-color: rgba(49, 92, 219, 0.38) !important;
+    background: #fff !important;
+    box-shadow: 0 14px 28px rgba(49, 92, 219, 0.16) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler:focus-visible {
+    outline: 3px solid rgba(49, 92, 219, 0.22) !important;
+    outline-offset: 3px !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler-icon {
+    position: relative !important;
+    display: block !important;
+    width: 22px !important;
+    height: 16px !important;
+    background: none !important;
+    background-image: none !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler-icon::before,
+  .index2-peek-slideshow .navbar-toggler-icon::after,
+  .index2-peek-slideshow .navbar-toggler-icon {
+    transition: transform 180ms ease, opacity 180ms ease, background-color 180ms ease !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler-icon::before,
+  .index2-peek-slideshow .navbar-toggler-icon::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    width: 22px !important;
+    height: 2px !important;
+    border-radius: 999px !important;
+    background: currentColor !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler-icon::before {
+    top: 1px !important;
+    box-shadow: 0 7px 0 currentColor !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler-icon::after {
+    bottom: 2px !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    top: 7px !important;
+    box-shadow: none !important;
+    transform: rotate(45deg) !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    bottom: 7px !important;
+    transform: rotate(-45deg) !important;
+  }
+
+  .index2-peek-slideshow .hero-nav .navbar-collapse {
+    order: 4 !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .hero-nav-inner {
+    gap: 0 8px !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler-icon,
+  .index2-peek-slideshow .navbar-toggler-icon::before,
+  .index2-peek-slideshow .navbar-toggler-icon::after {
+    width: 19px !important;
+  }
+}
+
+/* Index 2 impact final row: dashed connector on the left, yellow icon on the right. */
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  .index2-peek-slideshow .impact-step:nth-of-type(5) {
+    grid-column: 2 / 3 !important;
+  }
+}
+
+/* Index 2 desktop logo lock: keep brand mark at 76px on desktop, including fixed nav. */
+@media (min-width: 1200px) {
+  .index2-peek-slideshow .brand-mark,
+  body.is-hero-nav-fixed .index2-peek-slideshow .brand-mark {
+    flex: 0 0 76px !important;
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+  }
+
+  .index2-peek-slideshow .brand-mark img,
+  body.is-hero-nav-fixed .index2-peek-slideshow .brand-mark img {
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+    object-fit: contain !important;
+  }
+}
+
+/* Index 2 footer contact tablet sizing: reduce white contact circles on iPad Pro and lower. */
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .footer-contact-primary > div {
+    grid-template-rows: 58px !important;
+  }
+
+  .index2-peek-slideshow .footer-contact-primary > div > i {
+    width: 58px !important;
+    height: 58px !important;
+    font-size: 1.28rem !important;
+  }
+}
+
+/* Index 2 footer links tablet layout: two columns plus full-width resources row. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .index2-peek-slideshow .footer-link-columns {
+    --bs-gutter-x: 48px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    row-gap: 34px !important;
+  }
+
+  .index2-peek-slideshow .footer-link-columns > .footer-link-column {
+    flex: 0 0 50% !important;
+    width: 50% !important;
+    max-width: 50% !important;
+  }
+
+  .index2-peek-slideshow .footer-link-columns > .footer-link-column:nth-child(3) {
+    flex-basis: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Index 2 nav hamburger: black circular button matched to Donate Now height. */
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .navbar-toggler {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: #111111 !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler:hover,
+  .index2-peek-slideshow .navbar-toggler:focus-visible,
+  .index2-peek-slideshow .navbar-toggler[aria-expanded="true"] {
+    background: #111111 !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24) !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler:focus-visible {
+    outline: 3px solid rgba(17, 17, 17, 0.22) !important;
+    outline-offset: 3px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .navbar-toggler {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+}
+
+/* Index 2 hero tablet alignment: content starts with the logo circle edge. */
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .hero-content {
+    padding-left: 0 !important;
+  }
+}
+
