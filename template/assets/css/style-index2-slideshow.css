@@ -20675,3 +20675,83 @@ body.index2-peek-slideshow .donate-marquee {
     padding-top: 22px !important;
   }
 }
+/* Index 2 tablet utility actions: keep right-side links inside the Bootstrap visual limit. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    right: max(28px, calc((100vw - 960px) / 2 + 24px)) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    right: max(32px, calc((100vw - 720px) / 2 + 24px)) !important;
+  }
+}
+/* Index 2 iPad Pro open menu: keep the closed-state logo row Y position. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-primary-nav-open:not(.is-hero-nav-fixed) .hero-nav-inner {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    row-gap: 30px !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open:not(.is-hero-nav-fixed) .hero-nav .navbar-collapse.show {
+    margin-top: 0 !important;
+    padding-top: 22px !important;
+  }
+}
+/* Index 2 fixed tablet menu: keep header row static; put utility strip inside the opened menu. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav {
+    top: 0 !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-utility-bar,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-utility-links-wrap {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav .navbar-collapse.show {
+    position: relative !important;
+    padding-top: 74px !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav .navbar-collapse.show::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    z-index: 0 !important;
+    display: block !important;
+    width: 100vw !important;
+    height: 52px !important;
+    background: #111111 !important;
+    pointer-events: none !important;
+    transform: translateX(-50%) !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    position: absolute !important;
+    top: 106px !important;
+    right: max(28px, calc((100vw - 960px) / 2 + 24px)) !important;
+    z-index: 2 !important;
+    height: 52px !important;
+    min-height: 52px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    right: max(32px, calc((100vw - 720px) / 2 + 24px)) !important;
+  }
+}
+/* Index 2 fixed tablet menu: vertically center restored utility actions in the inserted strip. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    top: 88px !important;
+  }
+}
