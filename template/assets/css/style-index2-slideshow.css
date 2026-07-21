@@ -20415,3 +20415,263 @@ body.index2-peek-slideshow .donate-marquee {
     line-height: 1 !important;
   }
 }
+/* Index 2 iPad footer links: place Explore beside the brand, then Support and Resources below. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow .footer-main {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 46px 54px !important;
+    align-items: start !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  body.index2-peek-slideshow .footer-main > .col-lg-4:first-child {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: auto !important;
+    max-width: none !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  body.index2-peek-slideshow .footer-main > .col-lg-8,
+  body.index2-peek-slideshow .footer-main .footer-link-columns {
+    display: contents !important;
+  }
+
+  body.index2-peek-slideshow .footer-main .footer-link-column {
+    width: auto !important;
+    max-width: none !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  body.index2-peek-slideshow .footer-main .footer-link-column:nth-child(1) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  body.index2-peek-slideshow .footer-main .footer-link-column:nth-child(2) {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  body.index2-peek-slideshow .footer-main .footer-link-column:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+  }
+}
+/* Index 2 utility links iPad Pro: equalize vertical inset inside the topbar. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow .hero-utility-links {
+    align-items: stretch !important;
+  }
+
+  body.index2-peek-slideshow .hero-utility-links a {
+    display: inline-flex !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    align-items: center !important;
+    line-height: 1 !important;
+  }
+
+  body.index2-peek-slideshow .hero-utility-links .fa-solid {
+    display: inline-flex !important;
+    width: 22px !important;
+    height: 22px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    transform: none !important;
+  }
+}
+/* Index 2 iPad custom donation close: keep the X away from the left edge. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+    width: 48px !important;
+    margin-left: 12px !important;
+    margin-right: 0 !important;
+  }
+}
+/* Index 2 utility topbar tablet alignment: keep equal inner space above and below links. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow .hero-utility-bar,
+  body.index2-peek-slideshow .hero-utility-links-wrap,
+  body.index2-peek-slideshow .hero-utility-links {
+    height: 52px !important;
+    min-height: 52px !important;
+  }
+
+  body.index2-peek-slideshow .hero-utility-links-wrap {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  body.index2-peek-slideshow .hero-utility-links {
+    align-items: center !important;
+  }
+
+  body.index2-peek-slideshow .hero-utility-links a {
+    height: 52px !important;
+    min-height: 52px !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 1 !important;
+  }
+}
+/* Index 2 tablet fixed nav: hide utility bar after scroll, restore it only while mobile menu is open. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed:not(.is-primary-nav-open) .hero-utility-bar,
+  body.index2-peek-slideshow.is-hero-nav-fixed:not(.is-primary-nav-open) .hero-utility-links-wrap {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-utility-bar {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 1190 !important;
+    display: block !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    background: #111111 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-utility-links-wrap {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 1191 !important;
+    display: flex !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    align-items: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    position: fixed !important;
+    top: 0 !important;
+    right: max(15px, calc((100vw - 960px) / 2)) !important;
+    z-index: 1192 !important;
+    height: 52px !important;
+    min-height: 52px !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .hero-utility-search,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .language-current,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .hero-login-link {
+    height: 52px !important;
+    min-height: 52px !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav {
+    top: 52px !important;
+  }
+}
+/* Index 2 tablet fixed nav: keep restored utility actions clickable while the menu is open. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .hero-utility-search,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .language-current,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .hero-login-link {
+    pointer-events: auto !important;
+  }
+}
+/* Index 2 tablet open menu nav spacing: center the logo between the top utility bar and menu content. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow.is-primary-nav-open .hero-nav-inner {
+    min-height: 102px !important;
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+    align-items: center !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-nav .navbar-collapse {
+    margin-top: 0 !important;
+  }
+}
+/* Index 2 tablet fixed open menu: place utility actions inside the restored black bar. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    top: -52px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .hero-utility-search,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .language-current,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .hero-login-link {
+    height: 52px !important;
+    min-height: 52px !important;
+    align-items: center !important;
+  }
+}
+/* Index 2 tablet fixed open menu: keep restored utility actions above the black bar. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav {
+    z-index: 1200 !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-utility-bar {
+    z-index: 1190 !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    z-index: 1201 !important;
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+}
+/* Index 2 tablet open menu: keep the collapsed menu below the logo row, not over it. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow.is-primary-nav-open .hero-nav-inner {
+    align-content: flex-start !important;
+    row-gap: 22px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-nav .navbar-collapse.show {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(24, 24, 20, 0.1) !important;
+  }
+}
+/* Index 2 tablet open menu final: lock the logo/action row; move only the opened menu down. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow.is-primary-nav-open .hero-nav-inner {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+    row-gap: 30px !important;
+    align-items: center !important;
+    align-content: flex-start !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .navbar-brand.brand-lockup,
+  body.index2-peek-slideshow.is-primary-nav-open .hero-nav-actions,
+  body.index2-peek-slideshow.is-primary-nav-open .navbar-toggler {
+    transform: none !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-nav .navbar-collapse.show {
+    margin-top: 0 !important;
+    padding-top: 22px !important;
+  }
+}
