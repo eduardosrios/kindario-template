@@ -20080,3 +20080,338 @@ body.index2-peek-slideshow .donate-marquee {
     transition: none !important;
   }
 }
+/* Index 2 footer contact separator final: desktop-like 30px breathing room on iPad Pro and lower. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary {
+    row-gap: 60px !important;
+  }
+
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div,
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div:first-child {
+    min-height: 118px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    align-content: center !important;
+  }
+
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div.is-row-start::before {
+    top: -30px !important;
+  }
+}
+/* Index 2 footer contact iPad Pro visual centering: first wrapped row accounts for the separator gap below it. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div:nth-child(-n + 2) {
+    transform: translateY(15px) !important;
+  }
+}
+
+/* Index 2 featured categories containment: keep circles inside Bootstrap container on iPad Pro and lower. */
+@media (max-width: 1366px) {
+  body.index2-peek-slideshow .featured-category-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    gap: clamp(18px, 2.4vw, 30px) !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  body.index2-peek-slideshow .featured-category-grid > .col,
+  body.index2-peek-slideshow .featured-category-grid > .featured-category-wide {
+    flex: 0 0 clamp(178px, 20.5vw, 220px) !important;
+    width: clamp(178px, 20.5vw, 220px) !important;
+    max-width: clamp(178px, 20.5vw, 220px) !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  body.index2-peek-slideshow .featured-category-card {
+    width: clamp(178px, 20.5vw, 220px) !important;
+    height: clamp(178px, 20.5vw, 220px) !important;
+    min-height: clamp(178px, 20.5vw, 220px) !important;
+  }
+
+  body.index2-peek-slideshow .featured-category-card .card-body {
+    min-height: clamp(178px, 20.5vw, 220px) !important;
+    padding: clamp(20px, 2.6vw, 28px) !important;
+  }
+}
+/* Index 2 section title circle iPad Pro size: 84px, preserving current center point. */
+@media (min-width: 768px) and (max-width: 1366px) {
+  body.index2-peek-slideshow .split-section-head h2::before,
+  body.index2-peek-slideshow .course-routes-head h2::before,
+  body.index2-peek-slideshow .featured-category-head h2::before,
+  body.index2-peek-slideshow .donation-secondary-head h2::before,
+  body.index2-peek-slideshow .ticket-board-head h2::before,
+  body.index2-peek-slideshow #ticket-board-title::before,
+  body.index2-peek-slideshow #route-carousel-title::before,
+  body.index2-peek-slideshow #route-carousel-secondary-title::before,
+  body.index2-peek-slideshow #next-action-title::before,
+  body.index2-peek-slideshow #talent-grid-title::before {
+    top: calc(0.535em - 42px) !important;
+    left: calc(0.31em - 42px) !important;
+    width: 84px !important;
+    height: 84px !important;
+    border-radius: 50% !important;
+  }
+
+  body.index2-peek-slideshow .donation-campaigns-head h2::before,
+  body.index2-peek-slideshow .impact-steps-head h2::before,
+  body.index2-peek-slideshow #impact-steps-title::before {
+    top: calc(0.54em - 42px) !important;
+    left: 50% !important;
+    width: 84px !important;
+    height: 84px !important;
+    border-radius: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+/* Index 2 iPad Pro campaign stack: smaller media circles leave more text room. */
+@media (min-width: 992px) and (max-width: 1366px) {
+  body.index2-peek-slideshow .donation-campaign-card-stack .donation-campaign-card-horizontal {
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  body.index2-peek-slideshow .donation-campaign-card-stack .donation-campaign-media {
+    width: 112px !important;
+    height: 112px !important;
+    min-width: 112px !important;
+    min-height: 112px !important;
+    max-width: 112px !important;
+    max-height: 112px !important;
+    border-width: 6px !important;
+  }
+
+  body.index2-peek-slideshow .donation-campaign-card-stack .donation-campaign-card-bolt,
+  body.index2-peek-slideshow .donation-campaign-card-stack .donation-campaign-card-horizontal.is-active-campaign .donation-campaign-card-bolt,
+  body.index2-peek-slideshow .donation-campaign-card-stack .donation-campaign-card-horizontal:hover .donation-campaign-card-bolt,
+  body.index2-peek-slideshow .donation-campaign-card-stack .donation-campaign-card-horizontal:focus-within .donation-campaign-card-bolt {
+    top: 14px !important;
+    left: calc(50% + 38px) !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+/* Index 2 footer contact tablet cleanup: remove broken per-item separator fragments. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div,
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div + div {
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+  }
+
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div.is-row-start::before {
+    content: none !important;
+    display: none !important;
+  }
+}
+/* Index 2 iPad Pro impact steps: remove dead space below the final icon-only connector. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .impact-steps {
+    gap: 42px 56px !important;
+    padding-bottom: 0 !important;
+  }
+
+  body.index2-peek-slideshow .impact-step.impact-step-teal {
+    min-height: calc(var(--impact-node-size) + 38px) !important;
+  }
+}
+/* Index 2 donation custom input iPad Pro: keep amount text clear of the close button. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom {
+    width: clamp(220px, 27vw, 270px) !important;
+    margin-left: 0 !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom input {
+    padding-left: 14px !important;
+    padding-right: 8px !important;
+  }
+}
+/* Index 2 iPad Pro marquee scale: restore stronger desktop-like rhythm. */
+@media (min-width: 992px) and (max-width: 1366px) {
+  body.index2-peek-slideshow .donate-marquee a {
+    padding: 24px 126px 24px 54px !important;
+    margin-left: -86px !important;
+    gap: 22px !important;
+    font-size: clamp(42px, 3.4vw, 46px) !important;
+    line-height: 0.82 !important;
+  }
+
+  body.index2-peek-slideshow .donate-marquee .fa-solid {
+    width: 68px !important;
+    height: 68px !important;
+    line-height: 68px !important;
+  }
+
+  body.index2-peek-slideshow .donate-marquee:hover a {
+    padding: 24px 54px 24px 126px !important;
+    margin-left: 0 !important;
+    margin-right: -86px !important;
+  }
+}
+/* Index 2 footer contact tablet row divider: one full-width separator between wrapped rows. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div.is-row-start::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: -30px !important;
+    display: block !important;
+    width: var(--footer-contact-strip-width, 100%) !important;
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    pointer-events: none !important;
+  }
+}
+/* Index 2 iPad Pro footer contact separator: one clean line between wrapped rows. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div.is-row-start::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: -30px !important;
+    left: 0 !important;
+    width: var(--footer-contact-strip-width, 100%) !important;
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    pointer-events: none !important;
+  }
+}
+/* Index 2 footer iPad Pro spacing: add breathing room between brand and link columns. */
+@media (min-width: 992px) and (max-width: 1366px) {
+  body.index2-peek-slideshow .footer-main {
+    --bs-gutter-x: 72px !important;
+  }
+
+  body.index2-peek-slideshow .footer-main > .col-lg-4:first-child {
+    flex: 0 0 30% !important;
+    width: 30% !important;
+    max-width: 30% !important;
+  }
+
+  body.index2-peek-slideshow .footer-main > .col-lg-8 {
+    flex: 0 0 70% !important;
+    width: 70% !important;
+    max-width: 70% !important;
+  }
+
+  body.index2-peek-slideshow .footer-main .footer-link-columns {
+    --bs-gutter-x: 30px !important;
+  }
+}
+/* Index 2 mobile nav plain links: prevent sticky hover/focus accent color on iPad. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item:not(.nav-dropdown):not(.nav-mega) > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item:not(.nav-dropdown):not(.nav-mega):hover > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item:not(.nav-dropdown):not(.nav-mega):focus-within > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item:not(.nav-dropdown):not(.nav-mega) > .nav-link:hover,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item:not(.nav-dropdown):not(.nav-mega) > .nav-link:focus,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item:not(.nav-dropdown):not(.nav-mega) > .nav-link:focus-visible {
+    color: #111111 !important;
+  }
+}
+/* Index 2 iPad Pro footer contact address row: center content inside the visual row. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div.is-row-start > i,
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div.is-row-start > strong {
+    transform: translateY(-14px) !important;
+  }
+}
+/* Index 2 mobile submenu dots: add requested 10px gap between items. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-flyout.submenu-has-dots .submenu-dots-wrap {
+    display: grid !important;
+    row-gap: 10px !important;
+  }
+}
+/* Index 2 iPad Pro footer CTA image: reduce stacked blue image section slightly. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .footer-cta-image {
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+/* Index 2 open mobile nav utility bar: swap left links for account controls on the right. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-primary-nav-open .hero-utility-links {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel {
+    position: fixed !important;
+    top: 0 !important;
+    right: max(15px, calc((100vw - 960px) / 2)) !important;
+    left: auto !important;
+    z-index: 1200 !important;
+    display: flex !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 24px !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .hero-utility-search,
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .language-current,
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .hero-login-link {
+    position: static !important;
+    inset: auto !important;
+    display: inline-flex !important;
+    width: auto !important;
+    height: 60px !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    line-height: 1 !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .hero-utility-search {
+    width: 28px !important;
+    font-size: 21px !important;
+    line-height: 60px !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .language-code,
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .hero-login-link {
+    color: #ffffff !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .hero-login-link {
+    gap: 10px !important;
+    text-decoration: none !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .hero-login-link i {
+    font-size: 21px !important;
+    line-height: 1 !important;
+  }
+}
