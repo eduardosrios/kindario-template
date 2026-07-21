@@ -16,6 +16,27 @@ if (window.GLightbox) {
 }
 
 
+const initHeroNavScrollState = () => {
+  const nav = document.querySelector(".hero-nav");
+  if (!nav) return;
+
+  let ticking = false;
+  const update = () => {
+    document.body.classList.toggle("is-hero-nav-fixed", window.scrollY > 60);
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  };
+
+  update();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+};
+
+initHeroNavScrollState();
 
 const initQuickSearchModal = () => {
   const modal = document.querySelector("[data-search-modal]");

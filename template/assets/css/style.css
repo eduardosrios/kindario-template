@@ -114,7 +114,7 @@ select {
 
 .site-header {
   position: relative;
-  z-index: 2;
+  z-index: 20;
 }
 
 .hero-nav {
@@ -172,12 +172,14 @@ select {
   width: 50px;
   height: 50px;
   place-items: center;
+  transition: width 180ms ease, height 180ms ease, flex-basis 180ms ease;
 }
 
 .brand-mark img {
   width: 50px;
   height: 50px;
   object-fit: contain;
+  transition: width 180ms ease, height 180ms ease;
 }
 
 @media (min-width: 992px) {
@@ -2452,6 +2454,7 @@ select {
   padding: 0 1px 0 34px;
   background: var(--white);
   color: var(--ink);
+  transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease;
 }
 
 .hero-top-panel::after {
@@ -2595,6 +2598,47 @@ select {
 .hero-nav {
   position: relative;
   z-index: 2;
+}
+body.is-hero-nav-fixed .hero-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  margin: 0;
+  transform: translateZ(0);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+body.is-hero-nav-fixed .hero-nav-inner {
+  min-height: 86px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+body.is-hero-nav-fixed .brand-mark {
+  flex-basis: 58px;
+  width: 58px;
+  height: 58px;
+}
+
+body.is-hero-nav-fixed .brand-mark img {
+  width: 58px;
+  height: 58px;
+}
+
+body.is-hero-nav-fixed .hero-top-panel {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+}
+body.is-hero-nav-fixed.index2-peek-slideshow .hero-nav-actions::before {
+  display: none;
+}
+body.is-hero-nav-fixed .nav-flyout {
+  top: calc(100% + -1.5px);
 }
 
 .hero-nav .navbar-collapse {

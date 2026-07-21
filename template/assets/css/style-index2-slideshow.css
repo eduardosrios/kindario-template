@@ -102,7 +102,7 @@ select {
 
 .site-header {
   position: relative;
-  z-index: 2;
+  z-index: 20;
 }
 
 .hero-nav {
@@ -160,12 +160,14 @@ select {
   width: 50px;
   height: 50px;
   place-items: center;
+  transition: width 180ms ease, height 180ms ease, flex-basis 180ms ease;
 }
 
 .brand-mark img {
   width: 50px;
   height: 50px;
   object-fit: contain;
+  transition: width 180ms ease, height 180ms ease;
 }
 
 @media (min-width: 992px) {
@@ -2447,6 +2449,7 @@ select {
   padding: 0 1px 0 34px;
   background: var(--white);
   color: var(--ink);
+  transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease;
 }
 
 .hero-top-panel::after {
@@ -2590,6 +2593,47 @@ select {
 .hero-nav {
   position: relative;
   z-index: 2;
+}
+body.is-hero-nav-fixed .hero-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  margin: 0;
+  transform: translateZ(0);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+body.is-hero-nav-fixed .hero-nav-inner {
+  min-height: 86px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+body.is-hero-nav-fixed .brand-mark {
+  flex-basis: 58px;
+  width: 58px;
+  height: 58px;
+}
+
+body.is-hero-nav-fixed .brand-mark img {
+  width: 58px;
+  height: 58px;
+}
+
+body.is-hero-nav-fixed .hero-top-panel {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+}
+body.is-hero-nav-fixed.index2-peek-slideshow .hero-nav-actions::before {
+  display: none;
+}
+body.is-hero-nav-fixed .nav-flyout {
+  top: calc(100% + -1.5px);
 }
 
 .hero-nav .navbar-collapse {
@@ -13921,7 +13965,7 @@ body.index2-peek-slideshow {
 }
 
 .index2-peek-slideshow .support-donation-choice:hover,
-.index2-peek-slideshow .support-donation-choice:focus-within {
+.index2-peek-slideshow .support-donation-choice:not(.is-selected):not(:has(input:checked)):focus-within {
   transform: translateY(-2px);
 }
 
@@ -14508,78 +14552,10 @@ body.index2-peek-slideshow .donate-marquee {
   color: #fff;
 }
 
-/* Index 2: desktop shadows stay visible; mobile keeps the long donation form from widening the page. */
-@media (max-width: 575.98px) {
-  .index2-peek-slideshow .support-donation-strip-container,
-  .index2-peek-slideshow .support-donation-strip-row,
-  .index2-peek-slideshow .support-donation-strip-row > .col-sm-12 {
-    overflow-x: hidden !important;
-  }
-
-  .index2-peek-slideshow .support-donation-form,
-  .index2-peek-slideshow .support-donation-strip {
-    overflow-x: auto !important;
-    overflow-y: visible !important;
-  }
-}
-
-/* Index 2: mobile-only clipping for the oversized seven-circle form. */
-@media (max-width: 575.98px) {
-  .index2-peek-slideshow .support-donation-form,
-  .index2-peek-slideshow .support-donation-strip {
-    overflow: hidden !important;
-  }
-}
-
 /* Index 2: after removing 250/500, the custom seventh-style circle remains black. */
 .index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
   background: #111 !important;
   color: #fff !important;
-}
-
-/* Index 2: mobile containment for the wide donation control only. */
-@media (max-width: 575.98px) {
-  .index2-peek-slideshow .support-donation-strip-band,
-  .index2-peek-slideshow .support-donation-strip-container,
-  .index2-peek-slideshow .support-donation-strip-row,
-  .index2-peek-slideshow .support-donation-strip-row > .col-sm-12,
-  .index2-peek-slideshow .support-donation-form,
-  .index2-peek-slideshow .support-donation-strip {
-    max-width: 100% !important;
-    overflow-x: clip !important;
-    overflow-y: visible !important;
-    contain: paint;
-  }
-}
-
-/* Index 2: mobile keeps page width fixed while the amount row scrolls inside itself. */
-@media (max-width: 575.98px) {
-  .index2-peek-slideshow .support-donation-strip-band,
-  .index2-peek-slideshow .support-donation-strip-container,
-  .index2-peek-slideshow .support-donation-strip-row,
-  .index2-peek-slideshow .support-donation-strip-row > .col-sm-12 {
-    max-width: 100% !important;
-    overflow-x: clip !important;
-    overflow-y: visible !important;
-    contain: paint;
-  }
-
-  .index2-peek-slideshow .support-donation-form {
-    max-width: 100% !important;
-    overflow: visible !important;
-  }
-
-  .index2-peek-slideshow .support-donation-strip {
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    contain: paint;
-    scrollbar-width: none;
-  }
-
-  .index2-peek-slideshow .support-donation-strip::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 /* Index 2: custom donation input opens only from the Font Awesome plus control. */
@@ -14668,7 +14644,6 @@ body.index2-peek-slideshow .donate-marquee {
   font-weight: 800 !important;
   line-height: 1 !important;
 }
-
 /* Index 2: smaller black more circle, same icon size. */
 .index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
   width: 66px !important;
@@ -14679,12 +14654,11 @@ body.index2-peek-slideshow .donate-marquee {
   font-size: 30px !important;
 }
 
-/* Index 2: custom amount text matches donation circle values. */
-.index2-peek-slideshow .support-donation-strip .support-donation-custom,
+/* Index 2: custom amount input requested size. */
 .index2-peek-slideshow .support-donation-strip .support-donation-custom input {
   color: #111 !important;
   font-family: var(--font-display) !important;
-  font-size: 30px !important;
+  font-size: 35px !important;
   font-weight: 800 !important;
   line-height: 1 !important;
 }
@@ -17440,4 +17414,77 @@ body.index2-peek-slideshow .donate-marquee {
   font-size: clamp(1.02rem, 1vw, 1.12rem);
   font-weight: 580;
   line-height: 1.45;
+}
+
+/* Index 2: quick donation hover keeps original colors; checked amount gets a small current-color dot. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:not(.support-donation-choice-more) {
+  position: relative;
+  isolation: isolate;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:not(.support-donation-choice-more)::before {
+  content: "";
+  position: absolute;
+  top: -17.2px;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--support-choice-accent, currentColor);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:not(.support-donation-choice-more):has(input:checked)::before,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:not(.support-donation-choice-more).is-selected::before {
+  opacity: 1;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(1) {
+  --support-choice-accent: #FFD532;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(2) {
+  --support-choice-accent: #315CDB;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(3) {
+  --support-choice-accent: #E91E7C;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(1):hover,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(1):focus-within {
+  background: #FFD532 !important;
+  color: #111 !important;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(2):hover,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(2):focus-within {
+  background: #315CDB !important;
+  color: #fff !important;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(3):hover,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(3):focus-within {
+  background: #E91E7C !important;
+  color: #fff !important;
+}
+/* Index 2: selected quick amount keeps its own background color. */
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(1).is-selected,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(1):has(input:checked) {
+  background: #FFD532 !important;
+  color: #111 !important;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(2).is-selected,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(2):has(input:checked) {
+  background: #315CDB !important;
+  color: #fff !important;
+}
+
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(3).is-selected,
+.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice:nth-child(3):has(input:checked) {
+  background: #E91E7C !important;
+  color: #fff !important;
 }

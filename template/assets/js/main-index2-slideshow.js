@@ -16,6 +16,27 @@ if (window.GLightbox) {
 }
 
 
+const initHeroNavScrollState = () => {
+  const nav = document.querySelector(".hero-nav");
+  if (!nav) return;
+
+  let ticking = false;
+  const update = () => {
+    document.body.classList.toggle("is-hero-nav-fixed", window.scrollY > 60);
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  };
+
+  update();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+};
+
+initHeroNavScrollState();
 
 const initQuickSearchModal = () => {
   const modal = document.querySelector("[data-search-modal]");
@@ -1564,6 +1585,30 @@ const initSupportDonationToggle = () => {
 };
 
 initSupportDonationToggle();
+const initSupportDonationChoices = () => {
+  const forms = Array.from(document.querySelectorAll(".support-donation-form"));
+
+  forms.forEach((form) => {
+    const choices = Array.from(form.querySelectorAll(".support-donation-choice input[name='quick-donation']"));
+    const customInput = form.querySelector(".support-donation-custom input");
+    if (!choices.length) return;
+
+    const syncSelectedChoice = () => {
+      choices.forEach((input) => {
+        const choice = input.closest(".support-donation-choice");
+        choice?.classList.toggle("is-selected", input.checked);
+      });
+
+      const checked = choices.find((input) => input.checked);
+      if (checked && customInput) customInput.value = checked.value;
+    };
+
+    choices.forEach((input) => input.addEventListener("change", syncSelectedChoice));
+    syncSelectedChoice();
+  });
+};
+
+initSupportDonationChoices();
 
 const initNumericDonationInputs = () => {
   const inputs = Array.from(document.querySelectorAll(".support-donation-custom input[type='text']"));
