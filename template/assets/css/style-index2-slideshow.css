@@ -20755,3 +20755,84 @@ body.index2-peek-slideshow .donate-marquee {
     top: 88px !important;
   }
 }
+
+/* Index 2 responsive menu: restore the original top-level menu link size. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-link {
+    font-size: 1.105rem !important;
+  }
+}
+
+/* Index 2 tablet fixed nav: keep the logo full size after scrolling. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed .hero-nav .navbar-brand.brand-lockup .brand-mark {
+    flex: 0 0 76px !important;
+    flex-basis: 76px !important;
+    flex-shrink: 0 !important;
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed .hero-nav .navbar-brand.brand-lockup .brand-mark img {
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+    object-fit: contain !important;
+  }
+}
+/* Index 2 iPad logo: match the iPad Pro logo size before scroll too. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-brand.brand-lockup .brand-mark {
+    flex: 0 0 76px !important;
+    flex-basis: 76px !important;
+    flex-shrink: 0 !important;
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-brand.brand-lockup .brand-mark img {
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+    object-fit: contain !important;
+  }
+}
+
+/* Index 2 tablet open menu utility bar: center actions in the 52px black strip. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel {
+    height: 52px !important;
+    min-height: 52px !important;
+    align-items: center !important;
+  }
+
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .hero-utility-search,
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .language-current,
+  body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel .hero-login-link {
+    height: 52px !important;
+    min-height: 52px !important;
+    align-items: center !important;
+    line-height: 1 !important;
+  }
+}
+
+/* Index 2 tablet nav actions: increase gap between Donate Now and hamburger. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-toggler {
+    margin-left: 28px !important;
+  }
+}

@@ -53,6 +53,12 @@ const initPrimaryNavToggle = () => {
 
   const submenuItems = Array.from(collapse.querySelectorAll(".nav-dropdown, .nav-mega"));
 
+  const setSubmenuIcon = (trigger, isOpen) => {
+    const icon = trigger?.querySelector(".fa-chevron-down, .fa-chevron-up");
+    icon?.classList.toggle("fa-chevron-up", isOpen);
+    icon?.classList.toggle("fa-chevron-down", !isOpen);
+  };
+
   const closeSubmenus = (exceptItem = null) => {
     submenuItems.forEach((item) => {
       if (item === exceptItem) return;
@@ -62,6 +68,7 @@ const initPrimaryNavToggle = () => {
       item.classList.remove("is-submenu-open");
       if (wasOpen && window.innerWidth < 1200) item.classList.add("is-submenu-just-closed");
       trigger?.setAttribute("aria-expanded", "false");
+      setSubmenuIcon(trigger, false);
 
       if (trigger && (document.activeElement === trigger || item.contains(document.activeElement))) {
         trigger.blur();
@@ -73,6 +80,7 @@ const initPrimaryNavToggle = () => {
     const trigger = item.querySelector(":scope > .nav-link");
     trigger?.setAttribute("aria-haspopup", "true");
     trigger?.setAttribute("aria-expanded", "false");
+    setSubmenuIcon(trigger, false);
     item.addEventListener("pointerleave", () => item.classList.remove("is-submenu-just-closed"));
   });
 
@@ -119,6 +127,7 @@ const initPrimaryNavToggle = () => {
         item.classList.remove("is-submenu-just-closed");
         item.classList.add("is-submenu-open");
         submenuTrigger.setAttribute("aria-expanded", "true");
+        setSubmenuIcon(submenuTrigger, true);
       } else {
         submenuTrigger.blur();
         window.requestAnimationFrame(() => {
@@ -1816,4 +1825,3 @@ const initFooterContactRows = () => {
 };
 
 initFooterContactRows();
-
