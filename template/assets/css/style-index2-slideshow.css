@@ -19797,3 +19797,286 @@ body.index2-peek-slideshow .donate-marquee {
     max-width: 33.333333% !important;
   }
 }
+/* Index 2 mobile nav open spacing: clean submenu rhythm and remove desktop underline bleed. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega {
+    padding-bottom: 0 !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown.is-submenu-open,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open {
+    padding-bottom: 22px !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown.is-submenu-open > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-link {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown.is-submenu-open > .nav-flyout,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-mega-panel {
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+    padding-top: 14px !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown.is-submenu-open > .nav-flyout::before,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown.is-submenu-open > .nav-flyout::after,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-mega-panel::before,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-mega-panel::after,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-link::after {
+    content: none !important;
+    display: none !important;
+    animation: none !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown.is-submenu-open > .nav-link {
+    border-top: 5px solid var(--nav-accent, #e7239e) !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-link {
+    border-top: 5px solid var(--nav-accent, #108032) !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-flyout.submenu-has-dots .submenu-dots-wrap a {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-mega-panel-inner {
+    gap: 18px !important;
+  }
+}
+/* Index 2 large-screen split headers: preserve desktop title/note proportions. */
+@media (min-width: 1400px) {
+  body.index2-peek-slideshow .split-section-head:not(.text-center),
+  body.index2-peek-slideshow .donation-secondary-head.split-section-head {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 440px) !important;
+    column-gap: clamp(56px, 5vw, 96px) !important;
+    align-items: start !important;
+  }
+
+  body.index2-peek-slideshow .split-section-head:not(.text-center) .split-section-title-wrap,
+  body.index2-peek-slideshow .donation-secondary-head.split-section-head .split-section-title-wrap {
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  body.index2-peek-slideshow .split-section-head:not(.text-center) h2,
+  body.index2-peek-slideshow .donation-secondary-head.split-section-head h2 {
+    max-width: min(100%, 980px) !important;
+  }
+
+  body.index2-peek-slideshow .split-section-head:not(.text-center) .split-section-note,
+  body.index2-peek-slideshow .donation-secondary-head.split-section-head .split-section-note {
+    max-width: 440px !important;
+    margin-top: 25px !important;
+  }
+}
+/* Index 2 large-screen split headers final: stop title scale before it breaks desktop rhythm. */
+@media (min-width: 1400px) {
+  body.index2-peek-slideshow .split-section-head:not(.text-center) h2,
+  body.index2-peek-slideshow .donation-secondary-head.split-section-head h2 {
+    font-size: clamp(4.45rem, 5vw, 4.8rem) !important;
+    line-height: 1.1 !important;
+  }
+}
+/* Index 2 section title circle final size: 110px on desktop and larger, same center point. */
+@media (min-width: 1200px) {
+  body.index2-peek-slideshow .split-section-head h2::before,
+  body.index2-peek-slideshow .course-routes-head h2::before,
+  body.index2-peek-slideshow .featured-category-head h2::before,
+  body.index2-peek-slideshow .donation-secondary-head h2::before,
+  body.index2-peek-slideshow .ticket-board-head h2::before,
+  body.index2-peek-slideshow #ticket-board-title::before,
+  body.index2-peek-slideshow #route-carousel-title::before,
+  body.index2-peek-slideshow #route-carousel-secondary-title::before,
+  body.index2-peek-slideshow #next-action-title::before,
+  body.index2-peek-slideshow #talent-grid-title::before {
+    top: calc(0.535em - 55px) !important;
+    left: calc(0.31em - 55px) !important;
+    width: 110px !important;
+    height: 110px !important;
+    border-radius: 50% !important;
+  }
+
+  body.index2-peek-slideshow .donation-campaigns-head h2::before,
+  body.index2-peek-slideshow .impact-steps-head h2::before,
+  body.index2-peek-slideshow #impact-steps-title::before {
+    top: calc(0.54em - 55px) !important;
+    left: 50% !important;
+    width: 110px !important;
+    height: 110px !important;
+    border-radius: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+/* Index 2 mobile nav submenu spacing final: match main link vertical rhythm. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown.is-submenu-open,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open {
+    padding-bottom: 0 !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown.is-submenu-open > .nav-flyout,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-mega-panel {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-flyout.submenu-has-dots .submenu-dots-wrap a {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-mega-panel-inner {
+    gap: 12px !important;
+  }
+}
+/* Index 2 mobile nav mega spacing final: bring mega panel closer to Impact label. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-link {
+    padding-bottom: 4px !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-mega-panel {
+    margin-top: -2px !important;
+    padding-top: 0 !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-mega-panel .nav-mega-panel-inner,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-mega-panel .nav-mega-hero {
+    margin-top: 0 !important;
+  }
+}
+/* Index 2 mobile nav focus cleanup: prevent desktop underline after submenu closes. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega > .nav-link::after,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega:hover > .nav-link::after,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega:focus-within > .nav-link::after {
+    content: none !important;
+    display: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown:not(.is-submenu-open):focus-within > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega:not(.is-submenu-open):focus-within > .nav-link {
+    color: #111111 !important;
+    border-top-color: transparent !important;
+  }
+}
+/* Index 2 mobile nav mega spacing balance: modest gap below Impact label. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-link {
+    padding-bottom: 8px !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-mega-panel {
+    margin-top: 8px !important;
+    padding-top: 0 !important;
+  }
+}
+/* Index 2 mobile nav closed parent state: remove lingering focus/hover color after close. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown:not(.is-submenu-open) > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown:not(.is-submenu-open):hover > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown:not(.is-submenu-open):focus-within > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega:not(.is-submenu-open) > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega:not(.is-submenu-open):hover > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega:not(.is-submenu-open):focus-within > .nav-link {
+    color: #111111 !important;
+    border-top-color: transparent !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown.is-submenu-open > .nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega.is-submenu-open > .nav-link {
+    color: var(--nav-accent) !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-dropdown > .nav-link i,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-item.nav-mega > .nav-link i {
+    color: currentColor !important;
+  }
+}
+/* Index 2 mobile nav closed parent color hard lock after toggle close. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-dropdown:not(.is-submenu-open) > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-dropdown:not(.is-submenu-open):hover > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-dropdown:not(.is-submenu-open):focus > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-dropdown:not(.is-submenu-open):focus-within > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-mega:not(.is-submenu-open) > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-mega:not(.is-submenu-open):hover > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-mega:not(.is-submenu-open):focus > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-mega:not(.is-submenu-open):focus-within > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-dropdown:not(.is-submenu-open) > a.nav-link > i,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-mega:not(.is-submenu-open) > a.nav-link > i {
+    color: #111111 !important;
+  }
+}
+/* Index 2 mobile nav just-closed state: parent link must not look focused/active. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.is-submenu-just-closed > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.is-submenu-just-closed:hover > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.is-submenu-just-closed:focus-within > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.is-submenu-just-closed > a.nav-link > i {
+    color: #111111 !important;
+    border-top-color: transparent !important;
+  }
+
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.is-submenu-just-closed > a.nav-link::after,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.is-submenu-just-closed:hover > a.nav-link::after,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.is-submenu-just-closed:focus-within > a.nav-link::after {
+    content: none !important;
+    display: none !important;
+    animation: none !important;
+  }
+}
+/* Index 2 footer iPad Pro portrait fix: keep brand plus all three link columns inline. */
+@media (min-width: 992px) and (max-width: 1366px) {
+  body.index2-peek-slideshow .footer-main {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    --bs-gutter-x: 30px !important;
+  }
+
+  body.index2-peek-slideshow .footer-main > .col-lg-4:first-child {
+    flex: 0 0 28% !important;
+    width: 28% !important;
+    max-width: 28% !important;
+  }
+
+  body.index2-peek-slideshow .footer-main > .col-lg-8 {
+    flex: 0 0 72% !important;
+    width: 72% !important;
+    max-width: 72% !important;
+  }
+
+  body.index2-peek-slideshow .footer-link-columns {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    --bs-gutter-x: 30px !important;
+    row-gap: 0 !important;
+  }
+
+  body.index2-peek-slideshow .footer-link-columns > .footer-link-column,
+  body.index2-peek-slideshow .footer-link-columns > .footer-link-column:nth-child(3) {
+    flex: 0 0 33.333333% !important;
+    width: 33.333333% !important;
+    max-width: 33.333333% !important;
+  }
+}
+/* Index 2 mobile nav close state: no color transition on parent toggles. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-dropdown > a.nav-link,
+  body.index2-peek-slideshow .hero-nav .navbar-collapse.show .navbar-nav > .nav-item.nav-mega > a.nav-link {
+    transition: none !important;
+  }
+}
