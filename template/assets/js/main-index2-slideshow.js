@@ -267,7 +267,7 @@ if (heroSlider) {
   const timerIndicator = heroSlider.querySelector("[data-hero-timer]");
   const timerIcon = heroSlider.querySelector("[data-hero-timer-icon]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const heroSlideDuration = 60000000;
+  const heroSlideDuration = 5000;
   const heroTimerFlipDuration = 520;
   const heroTimerIcons = [
     "https://cdn-icons-png.flaticon.com/512/3162/3162269.png",
@@ -688,6 +688,10 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
     }, 100);
   };
 
+  const getRouteCardActionLink = (target) => {
+    return target.closest?.(".route-card a[href]") || null;
+  };
+
   const runProgrammaticCardClick = () => {
     if (!dragStartLink) return;
 
@@ -747,7 +751,7 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
 
     isDraggingCarousel = false;
     didDragCarousel = false;
-    dragStartLink = event.target.closest?.(".route-card-link") || null;
+    dragStartLink = getRouteCardActionLink(event.target);
     activeDragPointerId = event.pointerId;
     dragStartX = event.clientX;
     dragCurrentX = event.clientX;
@@ -785,13 +789,13 @@ document.querySelectorAll("[data-card-carousel]").forEach((carousel) => {
   track.addEventListener("lostpointercapture", stopCarouselDrag);
 
   track.addEventListener("dragstart", (event) => {
-    if (!event.target.closest?.(".route-card-link")) return;
+    if (!getRouteCardActionLink(event.target)) return;
 
     event.preventDefault();
   });
 
   track.addEventListener("click", (event) => {
-    const cardLink = event.target.closest?.(".route-card-link") || null;
+    const cardLink = getRouteCardActionLink(event.target);
 
     if (cardLink && (event.isTrusted || !isProgrammaticCardClick)) {
       event.preventDefault();
@@ -1282,9 +1286,28 @@ document.querySelectorAll(".course-feature-wide").forEach((courseFeatureWaveCard
     courseFeatureWaveCard.addEventListener("mouseleave", resumeWaveAnimation);
   }
 });
-document.querySelectorAll("[data-countdown-target]").forEach((countdown) => {
+document.querySelectorAll("[data-countdown-target], [data-countdown-start-days], [data-countdown-start-hours], [data-countdown-start-minutes], [data-countdown-start-seconds]").forEach((countdown) => {
+  const durationParts = {
+    days: countdown.getAttribute("data-countdown-start-days"),
+    hours: countdown.getAttribute("data-countdown-start-hours"),
+    minutes: countdown.getAttribute("data-countdown-start-minutes"),
+    seconds: countdown.getAttribute("data-countdown-start-seconds")
+  };
+  const hasDurationOverride = Object.values(durationParts).some((value) => value !== null);
+  const parseDurationPart = (value) => {
+    if (value === null || value === "") return 0;
+    const parsed = Number.parseInt(value, 10);
+    return Number.isFinite(parsed) && parsed >= 0 ? parsed : NaN;
+  };
   const targetValue = countdown.getAttribute("data-countdown-target");
-  const targetTime = targetValue ? Date.parse(targetValue) : NaN;
+  const targetTime = hasDurationOverride
+    ? Date.now() + (
+      parseDurationPart(durationParts.days) * 86400 +
+      parseDurationPart(durationParts.hours) * 3600 +
+      parseDurationPart(durationParts.minutes) * 60 +
+      parseDurationPart(durationParts.seconds)
+    ) * 1000 + 999
+    : targetValue ? Date.parse(targetValue) : NaN;
 
   if (Number.isNaN(targetTime)) return;
 

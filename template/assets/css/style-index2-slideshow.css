@@ -2042,8 +2042,8 @@ select {
 
 .course-feature-note > span:not(.course-feature-icon) {
   display: block;
-  width: 350px;
-  max-width: calc(100% - 90px);
+  width: 430px;
+  max-width: 100%;
   margin-top: 16px;
   color: rgba(255, 255, 255, 0.86);
   font-size: 1rem;
@@ -2782,7 +2782,7 @@ select {
     border-radius: 50%;
     background: #315cdb;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0), 0 0 0 20px inset rgba(0, 0, 0, 0);
-    --hero-timer-duration: 6500ms;
+    --hero-timer-duration: 4900ms;
   --hero-timer-flip-duration: 520ms;
   pointer-events: none;
   transform-origin: center center;
@@ -2808,11 +2808,13 @@ select {
   stroke-linecap: round;
   stroke-dasharray: 0 385.31;
   stroke-dashoffset: 0;
+  opacity: 0;
   transform-origin: 72px 72px;
   transform: rotate(-90deg);
 }
 
 .hero-slider-timer.is-running .hero-slider-timer-ring-circle {
+  opacity: 1;
   animation: heroSliderTimerRing var(--hero-timer-duration) linear forwards;
 }
 
@@ -7933,17 +7935,19 @@ details p {
   z-index: 2;
   display: -webkit-box;
   max-width: 430px;
-  max-height: 2.8em;
+  max-height: calc(2.8em + 2px);
   margin: 0;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  white-space: normal;
   color: #ffffff;
   font-family: var(--font-display);
   font-size: clamp(1.52rem, 1.9vw, 2rem);
   font-weight: 900;
   line-height: 1.4;
   letter-spacing: 0;
+  overflow-wrap: normal;
   padding-right: 45px;
 }
 
@@ -7984,13 +7988,15 @@ details p {
 .donation-campaigns-grid > .donation-campaign-card-main .donation-campaign-body h3 {
   display: -webkit-box;
   min-height: 2.8em;
-  max-height: 2.8em;
+  max-height: calc(2.8em + 2px);
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  white-space: normal;
   color: #ffffff;
   font-size: clamp(1.52rem, 1.9vw, 2rem);
   line-height: 1.4;
+  overflow-wrap: normal;
 }
 
 .donation-campaigns-grid > .donation-campaign-card-main .donation-campaign-body p {
@@ -8847,27 +8853,12 @@ details p {
   --secondary-mask-photo: url("../images/kindario-hero-slide-1.jpg");
 }
 
-.donation-secondary-grid-plain .donation-campaign-card:nth-child(4n + 1) {
-  --secondary-mask-photo: url("../images/kindario-hero-slide-1.jpg");
-}
-
-.donation-secondary-grid-plain .donation-campaign-card:nth-child(4n + 2) {
-  --secondary-mask-photo: url("../images/annie-spratt-cVEOh_JJmEE-unsplash.jpg");
-}
-
-.donation-secondary-grid-plain .donation-campaign-card:nth-child(4n + 3) {
-  --secondary-mask-photo: url("../images/kindario-hero-slide-2.jpg");
-}
-
-.donation-secondary-grid-plain .donation-campaign-card:nth-child(4n + 4) {
-  --secondary-mask-photo: url("../images/delsie-bohol-IVfORR3ZqH4-unsplash.jpg");
-}
 .donation-secondary-grid-plain .donation-campaign-card::after {
   content: "";
   position: absolute;
   inset: 28px;
   z-index: 3;
-  background-image: var(--secondary-mask-photo);
+  background-image: var(--secondary-mask-photo, url("../images/kindario-hero-slide-1.jpg"));
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

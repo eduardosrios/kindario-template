@@ -1085,9 +1085,28 @@ document.querySelectorAll(".course-feature-wide").forEach((courseFeatureWaveCard
     courseFeatureWaveCard.addEventListener("mouseleave", resumeWaveAnimation);
   }
 });
-document.querySelectorAll("[data-countdown-target]").forEach((countdown) => {
+document.querySelectorAll("[data-countdown-target], [data-countdown-start-days], [data-countdown-start-hours], [data-countdown-start-minutes], [data-countdown-start-seconds]").forEach((countdown) => {
+  const durationParts = {
+    days: countdown.getAttribute("data-countdown-start-days"),
+    hours: countdown.getAttribute("data-countdown-start-hours"),
+    minutes: countdown.getAttribute("data-countdown-start-minutes"),
+    seconds: countdown.getAttribute("data-countdown-start-seconds")
+  };
+  const hasDurationOverride = Object.values(durationParts).some((value) => value !== null);
+  const parseDurationPart = (value) => {
+    if (value === null || value === "") return 0;
+    const parsed = Number.parseInt(value, 10);
+    return Number.isFinite(parsed) && parsed >= 0 ? parsed : NaN;
+  };
   const targetValue = countdown.getAttribute("data-countdown-target");
-  const targetTime = targetValue ? Date.parse(targetValue) : NaN;
+  const targetTime = hasDurationOverride
+    ? Date.now() + (
+      parseDurationPart(durationParts.days) * 86400 +
+      parseDurationPart(durationParts.hours) * 3600 +
+      parseDurationPart(durationParts.minutes) * 60 +
+      parseDurationPart(durationParts.seconds)
+    ) * 1000 + 999
+    : targetValue ? Date.parse(targetValue) : NaN;
 
   if (Number.isNaN(targetTime)) return;
 
