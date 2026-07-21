@@ -17920,3 +17920,358 @@ body.index2-peek-slideshow .donate-marquee {
     font-size: 17px !important;
   }
 }
+/* Index 2 responsive QA: iPad Pro and smaller layout refinements. */
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .hero-nav .navbar-collapse {
+    margin-top: 12px;
+    border-top: 1px solid var(--line);
+    padding: 14px 4px 2px;
+    border-radius: 6px;
+    background: rgba(255, 253, 249, 0.96);
+  }
+
+  .index2-peek-slideshow .navbar-nav {
+    gap: 0;
+  }
+
+  .index2-peek-slideshow .nav-flyout,
+  .index2-peek-slideshow .nav-mega-panel {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    margin: 8px 0 12px;
+    padding: 12px 0 0;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+
+  .index2-peek-slideshow .nav-mega-panel-inner,
+  .index2-peek-slideshow .nav-mega-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .index2-peek-slideshow .nav-mega-column,
+  .index2-peek-slideshow .nav-mega-routes-links {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .index2-peek-slideshow .hero-shell {
+    --active-slide-left: 0px !important;
+    --slide-width: 100% !important;
+    min-height: min(620px, calc(100svh - 24px)) !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    overflow: hidden;
+  }
+
+  .index2-peek-slideshow .hero-nav {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .index2-peek-slideshow .hero-nav-inner {
+    min-height: 88px !important;
+  }
+
+  .index2-peek-slideshow .hero-body {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: min(470px, calc(100svh - 150px)) !important;
+    padding-right: max(24px, calc((100vw - 960px) / 2)) !important;
+    padding-left: max(24px, calc((100vw - 960px) / 2)) !important;
+  }
+
+  .index2-peek-slideshow .hero-slide {
+    width: 100% !important;
+  }
+
+  .index2-peek-slideshow .hero-content {
+    width: min(100%, 650px) !important;
+    max-width: 650px !important;
+  }
+
+  .index2-peek-slideshow .course-feature-wide {
+    min-height: clamp(620px, 65vw, 700px) !important;
+  }
+
+  .index2-peek-slideshow .course-feature-note {
+    bottom: clamp(42px, 6vw, 72px) !important;
+  }
+
+  .index2-peek-slideshow .donation-campaigns-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 30px !important;
+  }
+
+  .index2-peek-slideshow .donation-campaign-card-stack {
+    display: grid !important;
+    grid-column: 1 / -1 !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+  }
+
+  .index2-peek-slideshow .impact-steps {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 34px 46px !important;
+    max-width: 960px !important;
+    padding: 26px 0 10px !important;
+  }
+
+  .index2-peek-slideshow .impact-connectors {
+    display: block !important;
+    z-index: 1;
+  }
+
+  .index2-peek-slideshow .impact-connectors line {
+    stroke: rgba(24, 24, 20, 0.52);
+    stroke-width: 4;
+    stroke-dasharray: 1 12;
+    stroke-linecap: round;
+  }
+
+  .index2-peek-slideshow .impact-arrow {
+    display: none !important;
+  }
+
+  .index2-peek-slideshow .impact-step,
+  .index2-peek-slideshow .impact-step:nth-of-type(even),
+  .index2-peek-slideshow .impact-step:nth-of-type(odd),
+  .index2-peek-slideshow .impact-step-teal {
+    display: grid !important;
+    grid-template-columns: 104px minmax(0, 1fr) !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    align-items: center !important;
+    justify-items: start !important;
+    min-height: 188px !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    box-shadow: 0 18px 44px rgba(24, 24, 20, 0.08) !important;
+    text-align: left !important;
+    transform: none !important;
+  }
+
+  .index2-peek-slideshow .impact-step:nth-of-type(5) {
+    grid-column: 1 / 2 !important;
+  }
+
+  .index2-peek-slideshow .impact-pulse,
+  .index2-peek-slideshow .impact-step:nth-of-type(odd) .impact-pulse,
+  .index2-peek-slideshow .impact-step:nth-of-type(even) .impact-pulse {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 92px !important;
+    transform: none !important;
+  }
+
+  .index2-peek-slideshow .impact-pulse span {
+    width: 70px !important;
+  }
+
+  .index2-peek-slideshow .impact-step-node,
+  .index2-peek-slideshow .impact-step:nth-of-type(odd) .impact-step-node,
+  .index2-peek-slideshow .impact-step:nth-of-type(even) .impact-step-node {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 82px !important;
+    height: 82px !important;
+    justify-self: center !important;
+    transform: none !important;
+  }
+
+  .index2-peek-slideshow .impact-step-copy,
+  .index2-peek-slideshow .impact-step:nth-of-type(odd) .impact-step-copy,
+  .index2-peek-slideshow .impact-step:nth-of-type(even) .impact-step-copy {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  .index2-peek-slideshow .impact-step-copy h3 {
+    font-size: clamp(1.28rem, 2.2vw, 1.72rem) !important;
+  }
+
+  .index2-peek-slideshow .impact-step-copy p {
+    font-size: 0.98rem !important;
+  }
+
+  .index2-peek-slideshow .card-carousel-track {
+    --carousel-columns: 3 !important;
+    --carousel-container-width: 960px !important;
+  }
+
+  .index2-peek-slideshow .route-card {
+    min-height: 500px !important;
+  }
+
+  .index2-peek-slideshow .route-card-link {
+    min-height: 500px !important;
+    padding-top: 146px !important;
+    padding-bottom: 138px !important;
+  }
+
+  .index2-peek-slideshow .footer-newsletter-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .index2-peek-slideshow .hero-shell {
+    min-height: 620px !important;
+  }
+
+  .index2-peek-slideshow .hero-body {
+    min-height: 500px !important;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+
+  .index2-peek-slideshow .course-feature-wide {
+    min-height: 520px !important;
+  }
+
+  .index2-peek-slideshow .donation-campaigns-grid,
+  .index2-peek-slideshow .donation-campaign-card-stack {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .index2-peek-slideshow .impact-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+  }
+
+  .index2-peek-slideshow .impact-step,
+  .index2-peek-slideshow .impact-step:nth-of-type(even),
+  .index2-peek-slideshow .impact-step:nth-of-type(odd),
+  .index2-peek-slideshow .impact-step-teal {
+    grid-template-columns: minmax(0, 1fr) !important;
+    justify-items: center !important;
+    min-height: 190px !important;
+    padding: 18px 12px !important;
+    text-align: center !important;
+  }
+
+  .index2-peek-slideshow .impact-step-copy,
+  .index2-peek-slideshow .impact-step:nth-of-type(odd) .impact-step-copy,
+  .index2-peek-slideshow .impact-step:nth-of-type(even) .impact-step-copy {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    text-align: center !important;
+  }
+
+  .index2-peek-slideshow .impact-step-copy h3::after {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .index2-peek-slideshow .impact-step-copy p {
+    font-size: 0.84rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .index2-peek-slideshow .card-carousel-track {
+    --carousel-columns: 1 !important;
+  }
+
+  .index2-peek-slideshow .route-card,
+  .index2-peek-slideshow .route-card-link {
+    min-height: 475px !important;
+  }
+}
+
+/* Index 2 responsive QA follow-up: keep compact step cards readable and carousel inside phones. */
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .impact-step::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .index2-peek-slideshow .card-carousel-track {
+    --carousel-container-width: calc(100vw - 30px) !important;
+    --carousel-side-padding: 15px !important;
+    --carousel-gap: 18px !important;
+  }
+
+  .index2-peek-slideshow .route-card,
+  .index2-peek-slideshow .route-card-link {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .impact-steps {
+    gap: 14px !important;
+    max-width: 100% !important;
+  }
+
+  .index2-peek-slideshow .impact-step,
+  .index2-peek-slideshow .impact-step:nth-of-type(even),
+  .index2-peek-slideshow .impact-step:nth-of-type(odd),
+  .index2-peek-slideshow .impact-step-teal {
+    min-height: 238px !important;
+    align-content: start !important;
+    padding: 16px 10px !important;
+  }
+
+  .index2-peek-slideshow .impact-pulse,
+  .index2-peek-slideshow .impact-step:nth-of-type(odd) .impact-pulse,
+  .index2-peek-slideshow .impact-step:nth-of-type(even) .impact-pulse {
+    width: 68px !important;
+    margin: 0 auto 8px !important;
+  }
+
+  .index2-peek-slideshow .impact-pulse span {
+    width: 48px !important;
+  }
+
+  .index2-peek-slideshow .impact-step-node,
+  .index2-peek-slideshow .impact-step:nth-of-type(odd) .impact-step-node,
+  .index2-peek-slideshow .impact-step:nth-of-type(even) .impact-step-node {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .index2-peek-slideshow .impact-step-copy h3 {
+    margin-bottom: 6px !important;
+    font-size: 0.92rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .index2-peek-slideshow .impact-step-copy h3::after {
+    width: 38px !important;
+    height: 4px !important;
+    margin-top: 5px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .index2-peek-slideshow .impact-step-copy p {
+    font-size: 0.68rem !important;
+    line-height: 1.28 !important;
+  }
+}

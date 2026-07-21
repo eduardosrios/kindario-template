@@ -1051,7 +1051,7 @@ if (impactSteps) {
   let impactResizeFrame;
 
   const syncImpactConnectors = () => {
-    if (!svg || lines.length < nodes.length - 1 || nodes.length < 2 || window.innerWidth < 768) return;
+    if (!svg || lines.length < nodes.length - 2 || nodes.length < 2) return;
 
     const wrapRect = impactSteps.getBoundingClientRect();
     const centers = nodes.map((node) => {
@@ -1063,6 +1063,51 @@ if (impactSteps) {
     });
 
     svg.setAttribute("viewBox", `0 0 ${wrapRect.width} ${wrapRect.height}`);
+
+    if (window.innerWidth < 1200) {
+      const horizontalInset = 58;
+      const shortLineLength = Math.min(260, Math.max(140, wrapRect.width * 0.36));
+      const minX = 16;
+      const maxX = Math.max(minX, wrapRect.width - 16);
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+      const rowPairs = [
+        [centers[0], centers[1]],
+        [centers[2], centers[3]]
+      ];
+
+      rowPairs.forEach(([start, end], index) => {
+        const line = lines[index];
+        if (!line || !start || !end) return;
+        const y = ((start.y + end.y) / 2).toFixed(2);
+        const x1 = clamp(Math.min(start.x, end.x) + horizontalInset, minX, maxX);
+        const x2 = clamp(Math.max(start.x, end.x) - horizontalInset, minX, maxX);
+        line.style.removeProperty("display");
+        line.setAttribute("x1", Math.min(x1, x2).toFixed(2));
+        line.setAttribute("y1", y);
+        line.setAttribute("x2", Math.max(x1, x2).toFixed(2));
+        line.setAttribute("y2", y);
+      });
+
+      if (lines[2] && centers[4]) {
+        const center = centers[4];
+        const finalCard = nodes[4].closest(".impact-step");
+        const finalRect = finalCard ? finalCard.getBoundingClientRect() : null;
+        const startX = finalRect ? finalRect.right - wrapRect.left + 24 : center.x + 58;
+        const x1 = clamp(startX, minX, maxX);
+        const x2 = clamp(startX + shortLineLength, minX, maxX);
+        lines[2].style.removeProperty("display");
+        lines[2].setAttribute("x1", Math.min(x1, x2).toFixed(2));
+        lines[2].setAttribute("y1", center.y.toFixed(2));
+        lines[2].setAttribute("x2", Math.max(x1, x2).toFixed(2));
+        lines[2].setAttribute("y2", center.y.toFixed(2));
+      }
+
+      lines.slice(3).forEach((line) => {
+        line.style.display = "none";
+      });
+
+      return;
+    }
 
     for (let index = 0; index < nodes.length - 1; index += 1) {
       const start = centers[index];
@@ -1082,6 +1127,7 @@ if (impactSteps) {
         y: end.y - Math.sin(angle) * inset
       };
 
+      line.style.removeProperty("display");
       line.setAttribute("x1", lineStart.x.toFixed(2));
       line.setAttribute("y1", lineStart.y.toFixed(2));
       line.setAttribute("x2", lineEnd.x.toFixed(2));
