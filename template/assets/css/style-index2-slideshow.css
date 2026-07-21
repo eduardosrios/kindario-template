@@ -19177,3 +19177,356 @@ body.index2-peek-slideshow .donate-marquee {
   }
 }
 
+/* Index 2 hero tablet alignment final: match active slide content to nav logo circle edge. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .index2-peek-slideshow .hero-content {
+    padding-left: calc(((100vw - 960px) / 2) + 12px) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .index2-peek-slideshow .hero-content {
+    padding-left: calc(((100vw - 720px) / 2) + 12px) !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .index2-peek-slideshow .hero-content {
+    padding-left: 15px !important;
+  }
+}
+
+/* Index 2 nav hamburger final size: circular 58px button matching Donate Now height. */
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .navbar-toggler {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    min-height: 58px !important;
+    flex-basis: 58px !important;
+    border-radius: 50% !important;
+    background: #111111 !important;
+    color: #ffffff !important;
+  }
+}
+
+/* Index 2 impact strip tablet layout: play circle left, metrics in right column. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .index2-peek-slideshow .hero-impact-grid {
+    display: grid !important;
+    grid-template-columns: 170px minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 24px 38px !important;
+    align-items: center !important;
+    padding: 38px 0 !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-video {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    justify-content: flex-start !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-grid > .hero-impact-item:not(.hero-impact-video) {
+    grid-template-columns: 82px minmax(0, 1fr) !important;
+    gap: 22px !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-grid > .hero-impact-item:not(.hero-impact-video) i {
+    width: 82px !important;
+    height: 82px !important;
+    font-size: 26px !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-grid > .hero-impact-item:nth-child(2) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-grid > .hero-impact-item:nth-child(3) {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-grid > .hero-impact-item:nth-child(4) {
+    grid-column: 2 / span 2 !important;
+    grid-row: 2 !important;
+    width: min(100%, 360px) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .index2-peek-slideshow .hero-impact-grid {
+    display: grid !important;
+    grid-template-columns: 160px minmax(0, 1fr) !important;
+    gap: 20px 34px !important;
+    align-items: center !important;
+    padding: 36px 0 !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-video {
+    grid-column: 1 !important;
+    grid-row: 1 / span 3 !important;
+    justify-content: flex-start !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-grid > .hero-impact-item:not(.hero-impact-video) {
+    grid-column: 2 !important;
+    grid-template-columns: 76px minmax(0, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-grid > .hero-impact-item:not(.hero-impact-video) i {
+    width: 76px !important;
+    height: 76px !important;
+    font-size: 24px !important;
+  }
+}
+
+/* Index 2 hero masked media tablet scale: larger and pushed farther right. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .index2-peek-slideshow .hero-masked-media {
+    right: clamp(26px, 4vw, 44px) !important;
+    width: clamp(300px, 33vw, 370px) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .index2-peek-slideshow .hero-masked-media {
+    right: clamp(18px, 3vw, 32px) !important;
+    width: clamp(245px, 35vw, 300px) !important;
+  }
+}
+
+/* Index 2 hero masked media tablet expansion: use extra right-side space on iPad. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .index2-peek-slideshow .hero-masked-media {
+    right: clamp(18px, 3vw, 34px) !important;
+    width: clamp(300px, 34vw, 390px) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .index2-peek-slideshow .hero-masked-media {
+    right: clamp(14px, 3vw, 28px) !important;
+    width: clamp(260px, 39vw, 330px) !important;
+  }
+}
+
+/* Index 2 nav hamburger line weight: thicker horizontal bars. */
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .navbar-toggler-icon {
+    width: 24px !important;
+    height: 20px !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler-icon::before,
+  .index2-peek-slideshow .navbar-toggler-icon::after {
+    width: 24px !important;
+    height: 4px !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler-icon::before {
+    top: 2px !important;
+    box-shadow: 0 7px 0 currentColor !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler-icon::after {
+    bottom: 2px !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    top: 8px !important;
+    box-shadow: none !important;
+  }
+
+  .index2-peek-slideshow .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    bottom: 8px !important;
+  }
+}
+
+/* Index 2 impact strip circle fix: keep desktop play badge proportions on iPad. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .index2-peek-slideshow .hero-impact-video {
+    min-width: 200px !important;
+    overflow: visible !important;
+  }
+
+  .index2-peek-slideshow .hero-impact-video .rotating-play,
+  .index2-peek-slideshow .rotating-play {
+    width: 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    flex: 0 0 200px !important;
+    transform: none !important;
+  }
+
+  .index2-peek-slideshow .rotating-play-text {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .index2-peek-slideshow .hero-impact-grid {
+    grid-template-columns: 220px minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .index2-peek-slideshow .hero-impact-grid {
+    grid-template-columns: 220px minmax(0, 1fr) !important;
+  }
+}
+
+/* Index 2 campaign stack iPad fix: keep mini-card image circles at desktop size. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .index2-peek-slideshow .donation-campaign-card-stack .donation-campaign-media {
+    width: 140px !important;
+    height: 140px !important;
+    min-width: 140px !important;
+    min-height: 140px !important;
+    max-width: 140px !important;
+    max-height: 140px !important;
+    border-width: 7.5px !important;
+  }
+
+  .index2-peek-slideshow .donation-campaign-card-stack .donation-campaign-card-bolt {
+    top: 18px !important;
+    left: calc(50% + 48px) !important;
+  }
+}
+
+/* Index 2 campaign stack iPad badge fix: keep bolt badges visible with 140px circles. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .index2-peek-slideshow .donation-campaign-card-stack .donation-campaign-card-bolt {
+    top: 18px !important;
+    left: calc(50% + 48px) !important;
+    right: auto !important;
+    width: 36px !important;
+    height: 36px !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Index 2 donation controls tablet/mobile scale: reduce form, buttons, wrapper, and marquee below desktop. */
+@media (max-width: 1199.98px) {
+  .index2-peek-slideshow .support-donation-strip-band {
+    padding-bottom: clamp(26px, 4vw, 44px) !important;
+  }
+
+  .index2-peek-slideshow .support-donation-form {
+    gap: clamp(10px, 1.6vw, 16px) !important;
+    max-width: calc(100vw - 28px) !important;
+  }
+
+  .index2-peek-slideshow .support-donation-form > .support-donation-currency,
+  .index2-peek-slideshow .support-donation-form > .support-donation-currency::before {
+    width: clamp(74px, 8.2vw, 88px) !important;
+    height: clamp(74px, 8.2vw, 88px) !important;
+  }
+
+  .index2-peek-slideshow .support-donation-form > .support-donation-currency {
+    font-size: clamp(31px, 4vw, 38px) !important;
+  }
+
+  .index2-peek-slideshow .support-donation-form > .support-donation-currency::before {
+    box-shadow: clamp(-56px, -5vw, -42px) 0 rgba(49, 92, 219, 0.2), clamp(-28px, -2.5vw, -21px) 0 rgba(49, 92, 219, 0.4) !important;
+  }
+
+  .index2-peek-slideshow .support-donation-strip {
+    height: clamp(94px, 10.2vw, 118px) !important;
+    min-height: clamp(94px, 10.2vw, 118px) !important;
+    padding: 0 clamp(18px, 2.6vw, 28px) !important;
+    gap: clamp(12px, 1.8vw, 18px) !important;
+    border-width: 5px !important;
+    box-shadow: 0 -48px rgba(49, 92, 219, 0.2), 0 -24px rgba(49, 92, 219, 0.4), 0 20px 44px rgba(0, 0, 0, 0.16) !important;
+  }
+
+  .index2-peek-slideshow .support-donation-options {
+    gap: clamp(12px, 1.8vw, 18px) !important;
+  }
+
+  .index2-peek-slideshow .support-donation-choice:not(.support-donation-choice-more) {
+    width: clamp(58px, 6.8vw, 74px) !important;
+    height: clamp(58px, 6.8vw, 74px) !important;
+    font-size: clamp(22px, 2.9vw, 30px) !important;
+  }
+
+  .index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+    width: clamp(42px, 5.2vw, 56px) !important;
+    height: clamp(58px, 6.8vw, 74px) !important;
+    margin-left: -8px !important;
+    margin-right: -10px !important;
+  }
+
+  .index2-peek-slideshow .support-donation-choice-more .support-donation-more-icon {
+    width: clamp(24px, 3.2vw, 30px) !important;
+    height: clamp(24px, 3.2vw, 30px) !important;
+  }
+
+  .index2-peek-slideshow .support-donation-choice-more .support-donation-more-icon::before,
+  .index2-peek-slideshow .support-donation-choice-more .support-donation-more-icon::after {
+    width: clamp(24px, 3.2vw, 30px) !important;
+    height: 4px !important;
+  }
+
+  .index2-peek-slideshow .support-donation-submit {
+    min-width: clamp(132px, 17vw, 172px) !important;
+    height: clamp(58px, 6.8vw, 74px) !important;
+    padding: 0 clamp(20px, 2.6vw, 28px) !important;
+    border-width: 5px !important;
+    font-size: clamp(22px, 3vw, 30px) !important;
+  }
+
+  .index2-peek-slideshow .donate-marquee a {
+    padding: clamp(18px, 2.6vw, 24px) clamp(78px, 10vw, 112px) clamp(18px, 2.6vw, 24px) clamp(34px, 5vw, 48px) !important;
+    margin-left: clamp(-74px, -7vw, -48px) !important;
+    gap: clamp(16px, 2.4vw, 22px) !important;
+    font-size: clamp(30px, 5vw, 40px) !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .index2-peek-slideshow .support-donation-form {
+    max-width: calc(100vw - 12px) !important;
+    gap: 7px !important;
+    padding: 0 6px !important;
+  }
+
+  .index2-peek-slideshow .support-donation-strip {
+    height: 62px !important;
+    min-height: 62px !important;
+    padding: 0 10px !important;
+    gap: 7px !important;
+  }
+
+  .index2-peek-slideshow .support-donation-choice:not(.support-donation-choice-more) {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 18px !important;
+  }
+
+  .index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+    width: 34px !important;
+    height: 48px !important;
+  }
+
+  .index2-peek-slideshow .support-donation-submit {
+    min-width: 92px !important;
+    height: 48px !important;
+    padding: 0 12px !important;
+    font-size: 18px !important;
+  }
+
+  .index2-peek-slideshow .donate-marquee a {
+    padding: 16px 70px 16px 30px !important;
+    margin-left: -48px !important;
+    font-size: clamp(26px, 8vw, 32px) !important;
+  }
+}
