@@ -3362,7 +3362,7 @@ body.is-hero-nav-fixed .nav-flyout {
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
-  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-size: clamp(1.12rem, 1.48vw, 1.6rem);
   font-weight: 700;
   line-height: 1.55;
 }
@@ -3676,7 +3676,7 @@ body.is-hero-nav-fixed .nav-flyout {
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
-  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-size: clamp(1.12rem, 1.48vw, 1.6rem);
   font-weight: 700;
   line-height: 1.55;
 }
@@ -4269,7 +4269,7 @@ body.is-hero-nav-fixed .nav-flyout {
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
-  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-size: clamp(1.12rem, 1.48vw, 1.6rem);
   font-weight: 700;
   line-height: 1.55;
 }
@@ -5696,7 +5696,7 @@ h3 {
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
-  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-size: clamp(1.12rem, 1.48vw, 1.6rem);
   font-weight: 700;
   line-height: 1.55;
 }
@@ -8293,7 +8293,7 @@ details p {
   margin: 25px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
-  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-size: clamp(1.12rem, 1.48vw, 1.6rem);
   font-weight: 700;
   line-height: 1.55;
 }
@@ -8463,7 +8463,7 @@ details p {
   margin: 30px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
-  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-size: clamp(1.12rem, 1.48vw, 1.6rem);
   font-weight: 700;
   line-height: 1.55;
 }
@@ -8797,7 +8797,7 @@ details p {
   margin: 25px 0 0;
   padding-top: 25px;
   color: rgba(18, 17, 39, 0.72);
-  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-size: clamp(1.12rem, 1.48vw, 1.6rem);
   font-weight: 700;
   line-height: 1.55;
 }
@@ -13000,7 +13000,7 @@ body.index2-peek-slideshow {
   max-width: 820px;
   margin: 0 auto;
   color: rgba(18, 17, 39, 0.72);
-  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-size: clamp(1.12rem, 1.48vw, 1.6rem);
   font-weight: 700;
   line-height: 1.55;
   text-align: center;
@@ -13152,7 +13152,7 @@ body.index2-peek-slideshow {
 .index2-peek-slideshow .talent-grid-head .split-section-note,
 .index2-peek-slideshow .donation-route-cards-head .split-section-note {
     color: rgba(18, 17, 39, 0.72);
-    font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+    font-size: clamp(1.12rem, 1.48vw, 1.6rem);
     font-weight: 700;
     line-height: 1.55;
 }
@@ -16459,7 +16459,7 @@ body.index2-peek-slideshow .donate-marquee {
 }
 /* Index 2: footer newsletter subtitle size. */
 .index2-peek-slideshow .footer-newsletter-copy p {
-  font-size: clamp(1.05rem, 1.35vw, 1.48rem);
+  font-size: clamp(1.12rem, 1.48vw, 1.6rem);
 }
 /* Index 2: footer newsletter bullet list size. */
 .index2-peek-slideshow .footer-newsletter-copy li {
@@ -17351,6 +17351,14 @@ body.index2-peek-slideshow .donate-marquee {
 /* Index 2: footer CTA image local asset. */
 .index2-peek-slideshow .footer-cta-image {
   background-image: url('../images/couple-hand-heart-doodle.jpg');
+}
+/* Index 2 iPad and iPad Pro: reduce footer CTA illustration size. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .index2-peek-slideshow .footer-cta-image {
+    aspect-ratio: 16 / 8.2;
+    background-color: #315cdb;
+    background-size: contain;
+  }
 }
 /* Index 2: footer newsletter form final padding. */
 .index2-peek-slideshow .footer-newsletter-card .footer-newsletter-form {
@@ -19143,7 +19151,7 @@ body.index2-peek-slideshow .donate-marquee {
     border-radius: 50% !important;
     background: #111111 !important;
     color: #ffffff !important;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18) !important;
+    box-shadow: none !important;
   }
 
   .index2-peek-slideshow .navbar-toggler:hover,
@@ -19152,7 +19160,7 @@ body.index2-peek-slideshow .donate-marquee {
     background: #111111 !important;
     color: #ffffff !important;
     border-color: transparent !important;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24) !important;
+    box-shadow: none !important;
   }
 
   .index2-peek-slideshow .navbar-toggler:focus-visible {
@@ -19651,13 +19659,13 @@ body.index2-peek-slideshow .donate-marquee {
   }
 }
 
-/* Index 2 nav hamburger SVG: straight horizontal lines with 1px rounding. */
+/* Index 2 nav hamburger SVG: square thicker bars with wider spacing. */
 @media (max-width: 1199.98px) {
   .index2-peek-slideshow .navbar-toggler-icon {
     display: block !important;
     width: 25px !important;
-    height: 21px !important;
-    background: center / 25px 21px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 21'%3E%3Crect x='1' y='3' width='23' height='3' rx='1' fill='white'/%3E%3Crect x='1' y='9' width='23' height='3' rx='1' fill='white'/%3E%3Crect x='1' y='15' width='23' height='3' rx='1' fill='white'/%3E%3C/svg%3E") !important;
+    height: 22px !important;
+    background: center / 25px 22px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 22'%3E%3Crect x='1' y='1' width='23' height='4' fill='white'/%3E%3Crect x='1' y='9' width='23' height='4' fill='white'/%3E%3Crect x='1' y='17' width='23' height='4' fill='white'/%3E%3C/svg%3E") !important;
     transform: none !important;
   }
 
@@ -20105,40 +20113,6 @@ body.index2-peek-slideshow .donate-marquee {
   }
 }
 
-/* Index 2 featured categories containment: keep circles inside Bootstrap container on iPad Pro and lower. */
-@media (max-width: 1366px) {
-  body.index2-peek-slideshow .featured-category-grid {
-    width: 100% !important;
-    max-width: 100% !important;
-    justify-content: center !important;
-    gap: clamp(18px, 2.4vw, 30px) !important;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-    transform: none !important;
-    overflow: visible !important;
-  }
-
-  body.index2-peek-slideshow .featured-category-grid > .col,
-  body.index2-peek-slideshow .featured-category-grid > .featured-category-wide {
-    flex: 0 0 clamp(178px, 20.5vw, 220px) !important;
-    width: clamp(178px, 20.5vw, 220px) !important;
-    max-width: clamp(178px, 20.5vw, 220px) !important;
-    display: flex !important;
-    justify-content: center !important;
-    padding: 0 !important;
-  }
-
-  body.index2-peek-slideshow .featured-category-card {
-    width: clamp(178px, 20.5vw, 220px) !important;
-    height: clamp(178px, 20.5vw, 220px) !important;
-    min-height: clamp(178px, 20.5vw, 220px) !important;
-  }
-
-  body.index2-peek-slideshow .featured-category-card .card-body {
-    min-height: clamp(178px, 20.5vw, 220px) !important;
-    padding: clamp(20px, 2.6vw, 28px) !important;
-  }
-}
 /* Index 2 section title circle iPad Pro size: 84px, preserving current center point. */
 @media (min-width: 768px) and (max-width: 1366px) {
   body.index2-peek-slideshow .split-section-head h2::before,
@@ -20327,6 +20301,23 @@ body.index2-peek-slideshow .donate-marquee {
     transform: translateY(-14px) !important;
   }
 }
+/* Index 2 iPad footer contact spacing: equalize separator-to-row distances without changing iPad Pro. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary {
+    row-gap: 15px !important;
+  }
+
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div,
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div:first-child {
+    min-height: 90px !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  body.index2-peek-slideshow .site-footer .footer-contact-strip.footer-contact-primary > div.is-row-start::before {
+    top: -17px !important;
+  }
+}
 /* Index 2 mobile submenu dots: add requested 10px gap between items. */
 @media (max-width: 1199.98px) {
   body.index2-peek-slideshow .hero-nav .navbar-collapse.show .nav-flyout.submenu-has-dots .submenu-dots-wrap {
@@ -20334,10 +20325,16 @@ body.index2-peek-slideshow .donate-marquee {
     row-gap: 10px !important;
   }
 }
-/* Index 2 iPad Pro footer CTA image: reduce stacked blue image section slightly. */
+/* Index 2 iPad Pro footer CTA image: match smaller tablet illustration size. */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   body.index2-peek-slideshow .footer-cta-image {
-    aspect-ratio: 16 / 9 !important;
+    aspect-ratio: 16 / 8.2 !important;
+  }
+}
+/* Index 2 iPad footer CTA image: increase illustration height slightly without changing iPad Pro. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow .footer-cta-image {
+    aspect-ratio: 16 / 8.8 !important;
   }
 }
 /* Index 2 open mobile nav utility bar: swap left links for account controls on the right. */
@@ -20488,12 +20485,198 @@ body.index2-peek-slideshow .donate-marquee {
     transform: none !important;
   }
 }
+/* Index 2 iPad and iPad Pro ticket titles: increase support tier title size. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .ticket-card h3 {
+    font-size: clamp(1.35rem, 2.2vw, 1.9rem) !important;
+  }
+}
+/* Index 2 iPad and iPad Pro impact steps: increase title and subtitle size. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .impact-step-copy h3 {
+    font-size: clamp(1.42rem, 2.45vw, 1.9rem) !important;
+  }
+
+  body.index2-peek-slideshow .impact-step-copy p {
+    font-size: clamp(1.05rem, 1.55vw, 1.18rem) !important;
+    line-height: 1.55 !important;
+  }
+}
+/* Index 2 donation strip spacing: add breathing room above quick donation bar. */
+body.index2-peek-slideshow .support-donation-strip-band {
+  padding-top: clamp(34px, 4vw, 58px) !important;
+}
+/* Index 2 iPad only: reduce empty space above quick donation strip. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow .impact-steps-section {
+    padding-bottom: 18px !important;
+  }
+
+  body.index2-peek-slideshow .impact-step.impact-step-teal {
+    min-height: calc(var(--impact-pulse-size) + 28px) !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-strip-band {
+    padding-top: 22px !important;
+  }
+}
+/* Index 2 iPad only: keep donate marquee at requested 94px height. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow .donate-marquee a {
+    min-height: 94px !important;
+  }
+}
 /* Index 2 iPad custom donation close: keep the X away from the left edge. */
 @media (min-width: 768px) and (max-width: 991.98px) {
   body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
     width: 48px !important;
-    margin-left: 12px !important;
+    margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom input {
+    transform: translateX(-24px) !important;
+  }
+}
+/* Index 2 iPad Pro custom donation input: reduce left empty space before amount. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom input {
+    transform: translateX(-12px) !important;
+  }
+}
+/* Index 2 iPad custom donation: keep amount text visible inside field. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip {
+    gap: 0 !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom {
+    width: clamp(220px, 29vw, 250px) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom input {
+    transform: none !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    text-align: left !important;
+  }
+}
+/* Index 2 mobile donation form: stack currency above and keep custom amount visible. */
+@media (max-width: 575.98px) {
+  body.index2-peek-slideshow .support-donation-form {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    padding: 0 14px !important;
+    overflow: visible !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form > .support-donation-currency,
+  body.index2-peek-slideshow .support-donation-form > .support-donation-currency::before {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form > .support-donation-currency {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    font-size: 32px !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form > .support-donation-currency::before {
+    top: 0 !important;
+    left: 0 !important;
+    box-shadow: -44px 0 rgba(49, 92, 219, 0.2), -22px 0 rgba(49, 92, 219, 0.4) !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form.is-custom-open > .support-donation-currency::before {
+    box-shadow: -44px 0 rgba(240, 57, 57, 0.2), -22px 0 rgba(240, 57, 57, 0.4) !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-strip {
+    display: flex !important;
+    width: 100% !important;
+    inline-size: 100% !important;
+    max-width: calc(100vw - 28px) !important;
+    max-inline-size: calc(100vw - 28px) !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(5px, 2vw, 8px) !important;
+    padding: 0 8px !important;
+    overflow: visible !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-options {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(5px, 2vw, 8px) !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-choice:not(.support-donation-choice-more) {
+    width: clamp(40px, 12vw, 48px) !important;
+    height: clamp(40px, 12vw, 48px) !important;
+    font-size: clamp(16px, 5vw, 20px) !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-strip .support-donation-options .support-donation-choice.support-donation-choice-more {
+    width: clamp(34px, 10vw, 42px) !important;
+    height: clamp(48px, 13.5vw, 56px) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-choice-more i {
+    font-size: clamp(22px, 7vw, 28px) !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-submit {
+    flex: 0 0 clamp(82px, 24vw, 96px) !important;
+    width: clamp(82px, 24vw, 96px) !important;
+    min-width: clamp(82px, 24vw, 96px) !important;
+    max-width: clamp(82px, 24vw, 96px) !important;
+    height: clamp(48px, 13.5vw, 56px) !important;
+    padding: 0 12px !important;
+    font-size: clamp(17px, 5.4vw, 21px) !important;
+    white-space: nowrap !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip {
+    justify-content: flex-start !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom {
+    display: grid !important;
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: clamp(48px, 13.5vw, 56px) !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.index2-peek-slideshow .support-donation-form.is-custom-open .support-donation-strip .support-donation-custom input {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    padding: 0 8px !important;
+    transform: none !important;
+    text-align: left !important;
+    font-size: clamp(28px, 8vw, 34px) !important;
   }
 }
 /* Index 2 utility topbar tablet alignment: keep equal inner space above and below links. */
@@ -20812,6 +20995,43 @@ body.index2-peek-slideshow .donate-marquee {
   }
 }
 
+/* Index 2 iPad zero-scroll open menu: keep white-bar items at the same Y after hamburger click. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow.is-primary-nav-open:not(.is-hero-nav-fixed) .hero-nav-inner {
+    padding-top: 31px !important;
+  }
+}
+/* Index 2 tablet fixed open menu: keep white-bar items at the same Y after hamburger click. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav-inner {
+    padding-top: 31px !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav-actions {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    z-index: 6 !important;
+  }
+}
+/* Index 2 tablet fixed main menu bar: desktop-only shrink must not reduce tablet height. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed:not(.is-primary-nav-open) .hero-nav-inner {
+    height: 120px !important;
+    min-height: 120px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    align-items: center !important;
+  }
+}
+/* Index 2 iPad main menu bar: keep the closed row as tall as iPad Pro. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.index2-peek-slideshow:not(.is-primary-nav-open):not(.is-hero-nav-fixed) .hero-nav-inner {
+    min-height: 120px !important;
+  }
+}
 /* Index 2 tablet open menu utility bar: center actions in the 52px black strip. */
 @media (max-width: 1199.98px) {
   body.index2-peek-slideshow.is-primary-nav-open .hero-top-panel {
@@ -20827,12 +21047,140 @@ body.index2-peek-slideshow .donate-marquee {
     min-height: 52px !important;
     align-items: center !important;
     line-height: 1 !important;
+    transform: translateY(-2px) !important;
   }
 }
 
+/* Index 2 iPad zero-scroll utility menu: keep black-bar controls vertically locked. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-primary-nav-open:not(.is-hero-nav-fixed) .hero-top-panel .hero-utility-search,
+  body.index2-peek-slideshow.is-primary-nav-open:not(.is-hero-nav-fixed) .hero-top-panel .language-current,
+  body.index2-peek-slideshow.is-primary-nav-open:not(.is-hero-nav-fixed) .hero-top-panel .hero-login-link {
+    transform: none !important;
+  }
+}
+
+/* Index 2 tablet scrolled open utility menu: keep real black bar above the white nav. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-utility-bar {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 1190 !important;
+    display: block !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    background: #111111 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-utility-links-wrap {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 1191 !important;
+    display: flex !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    align-items: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav {
+    top: 52px !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel {
+    position: fixed !important;
+    top: -52px !important;
+    z-index: 1201 !important;
+    display: flex !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .hero-utility-search,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .language-current,
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-top-panel .hero-login-link {
+    transform: none !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav .navbar-collapse.show {
+    padding-top: 22px !important;
+  }
+
+  body.index2-peek-slideshow.is-hero-nav-fixed.is-primary-nav-open .hero-nav .navbar-collapse.show::before {
+    content: none !important;
+    display: none !important;
+  }
+}
 /* Index 2 tablet nav actions: increase gap between Donate Now and hamburger. */
 @media (max-width: 1199.98px) {
   body.index2-peek-slideshow .hero-nav .navbar-toggler {
-    margin-left: 28px !important;
+    margin-left: 6px !important;
+  }
+}
+
+/* Index 2 footer logo image tablet/mobile size only. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .footer-brand .brand-mark img {
+    height: 58px !important;
+  }
+}
+
+/* Index 2 footer newsletter text/form size adjustment; submit button unchanged. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .footer-newsletter-copy h3 {
+    font-size: clamp(1.78rem, 2.55vw, 2.75rem) !important;
+  }
+
+  body.index2-peek-slideshow .footer-newsletter-copy p {
+    font-size: clamp(1.18rem, 1.65vw, 1.72rem) !important;
+    line-height: 1.48 !important;
+  }
+
+  body.index2-peek-slideshow .footer-newsletter-copy li,
+  body.index2-peek-slideshow .footer-newsletter-consent {
+    font-size: clamp(1.12rem, 1.3vw, 1.28rem) !important;
+    line-height: 1.45 !important;
+  }
+
+  body.index2-peek-slideshow .footer-newsletter-form input[type="email"] {
+    font-size: clamp(1.2rem, 1.55vw, 1.52rem) !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* Index 2 footer logo wrapper tablet/mobile size only. */
+@media (max-width: 1199.98px) {
+  body.index2-peek-slideshow .footer-brand .brand-mark {
+    width: 58px !important;
+    min-width: 58px !important;
+    max-width: 58px !important;
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
+    flex-basis: 58px !important;
+  }
+}
+
+/* Index 2 iPad/iPad Pro centered heading subtitle width. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.index2-peek-slideshow .impact-steps-head .section-copy,
+  body.index2-peek-slideshow .donation-campaigns-head .donation-campaigns-subtitle,
+  body.index2-peek-slideshow .split-section-head.text-center .section-copy,
+  body.index2-peek-slideshow .split-section-head.text-center .split-section-note {
+    max-width: 70vw !important;
+    margin: 22px auto 0 !important;
+    text-align: center !important;
   }
 }
